@@ -8,7 +8,7 @@ public class Main {
         calculateMortgage();
     }
 
-    public static void calculateMortgage(){
+    public static String calculateMortgage(){
         final byte numMonths = 12;
         final byte percent = 100;
         int principal;   float interestRate; byte  years;
@@ -47,6 +47,8 @@ public class Main {
                 /(Math.pow(1+monthlyPayment, numberOfPayment));
         String formattedMortgage
                 = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("Your Mortgage is\t" + formattedMortgage);
+//        System.out.println("Your Mortgage is\t" + formattedMortgage);
+
+        return formattedMortgage;
     }
 }
