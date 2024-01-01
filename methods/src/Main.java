@@ -5,13 +5,13 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-
+        calculateMortgage();
     }
 
     public static void calculateMortgage(){
         final byte numMonths = 12;
         final byte percent = 100;
-        int principal;   float intrestRate; byte  years;
+        int principal;   float interestRate; byte  years;
         float monthlyPayment; int numberOfPayment;
         Scanner scanner =  new Scanner(System.in);
 
@@ -25,9 +25,9 @@ public class Main {
         }
         while (true){
             System.out.print("Enter annual interest rate\t");
-            intrestRate = scanner.nextFloat();
-            if(intrestRate >=1 && intrestRate <= 30){
-                monthlyPayment = (intrestRate/percent/numMonths );
+            interestRate = scanner.nextFloat();
+            if(interestRate >=1 && interestRate <= 30){
+                monthlyPayment = (interestRate/percent/numMonths );
                 break;
             }
             System.out.println("Enter valid rate between 1 and 30");
@@ -45,7 +45,8 @@ public class Main {
 
         double mortgage = principal *(monthlyPayment * Math.pow(1 + monthlyPayment, numberOfPayment))
                 /(Math.pow(1+monthlyPayment, numberOfPayment));
-        String formatedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("Your Mortgage is\t" + formatedMortgage);
+        String formattedMortgage
+                = NumberFormat.getCurrencyInstance().format(mortgage);
+        System.out.println("Your Mortgage is\t" + formattedMortgage);
     }
 }
