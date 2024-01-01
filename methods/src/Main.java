@@ -5,7 +5,8 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        calculateMortgage();
+//        calculateMortgage();
+        System.out.println(calculateMortgage());
     }
 
     public static String calculateMortgage(){
@@ -45,10 +46,8 @@ public class Main {
 
         double mortgage = principal *(monthlyPayment * Math.pow(1 + monthlyPayment, numberOfPayment))
                 /(Math.pow(1+monthlyPayment, numberOfPayment));
-        String formattedMortgage
-                = NumberFormat.getCurrencyInstance().format(mortgage);
+        return NumberFormat.getCurrencyInstance().format(mortgage);
 //        System.out.println("Your Mortgage is\t" + formattedMortgage);
 
-        return formattedMortgage;
     }
 }
