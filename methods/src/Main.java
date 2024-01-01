@@ -5,6 +5,10 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
+
+    }
+
+    public static void calculateMortgage(){
         final byte numMonths = 12;
         final byte percent = 100;
         int principal;   float intrestRate; byte  years;
