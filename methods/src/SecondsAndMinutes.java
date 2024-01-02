@@ -9,13 +9,16 @@ public class SecondsAndMinutes {
         if(seconds < 0){
             return "Invalid data for seonds(" + seconds + "), must be a positive value";
         }
+
         int minutes = seconds / 60;
         return  getDurationString(minutes,seconds);
 
     }
 
     public static String getDurationString(int minutes, int seconds){
-
+        if(seconds < 0){
+            return "Invalid data for seonds(" + seconds + "), must be a positive value";
+        }
         int hours = minutes /60;
 
         int remainingMinutes = minutes % 60;
