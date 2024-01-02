@@ -2,6 +2,8 @@ public class MethodOverload {
     public static  void main(String[] args){
     int newScore = calculateScore("miles", 100);
         System.out.println(newScore);
+
+        calculateScore(75);
     }
 
     public static int calculateScore(String playerName, int score){
@@ -10,6 +12,6 @@ public class MethodOverload {
     }
     public static int calculateScore(int score){
         System.out.println("Player scored"+score+"points");
-        return score*1000;
+        return score;
     }
 }
