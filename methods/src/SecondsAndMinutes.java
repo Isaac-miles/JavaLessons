@@ -7,4 +7,7 @@ public class SecondsAndMinutes {
         return "";
     }
 
+    public static String getDurationString(int minutes, int seconds){
+        return "";
+    }
 }
