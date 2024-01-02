@@ -1,12 +1,12 @@
-public class Main {
+public class convertToCentimeters {
     public static void main(String[] arg){
-        System.out.println("5ft, 8in = "+ convertToCentimeters(5,8) + "cm");
-        System.out.println("68in = " + convertToCentimeters(68) + "cm");
+        System.out.println("5ft, 8in = "+ convertToCentimeter(5,8) + "cm");
+        System.out.println("68in = " + convertToCentimeter(68) + "cm");
     }
-    public static double convertToCentimeters(int inches){
+    public static double convertToCentimeter(int inches){
         return inches * 2.54;
     }
-    public static  double convertToCentimeters(int feet, int inches){
+    public static  double convertToCentimeter(int feet, int inches){
         return ((feet * 12) + inches) *2.54;
     }
 }
