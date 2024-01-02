@@ -9,9 +9,9 @@ public class SecondsAndMinutes {
         int hours = minutes /60;
         System.out.println("hours = "+ hours);
 
-      //one-step approach
-        int hours1 = seconds / 3600;
-        System.out.println("hours1 = " + hours);
+        int remainingMinutes = minutes % 60;
+        System.out.println("minutes =" + minutes);
+        System.out.println("remainingMinutes =" + remainingMinutes);
         return "";
     }
 
