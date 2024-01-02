@@ -11,8 +11,7 @@ public class MethodOverload {
         return score*1000;
     }
     public static int calculateScore(int score){
-        System.out.println("Player scored"+score+"points");
-        return score;
+        return calculateScore("Anonymous scored",  score);
     }
     public static int calculateScore(){
         System.out.println("No player scored anything");
