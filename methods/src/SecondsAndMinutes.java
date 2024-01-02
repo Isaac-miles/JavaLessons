@@ -12,7 +12,11 @@ public class SecondsAndMinutes {
         int remainingMinutes = minutes % 60;
         System.out.println("minutes =" + minutes);
         System.out.println("remainingMinutes =" + remainingMinutes);
-        return "";
+
+        int remainingSeconds = seconds%60;
+        System.out.println("remainingSeconds = " + remainingSeconds);
+
+        return hours + "h " + remainingMinutes + "m " + remainingSeconds + "s ";
     }
 
     public static String getDurationString(int minutes, int seconds){
