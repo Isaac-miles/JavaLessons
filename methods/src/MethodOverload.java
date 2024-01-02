@@ -6,7 +6,7 @@ public class MethodOverload {
 
     public static int calculateScore(String playerName, int score){
         System.out.println("Player"+playerName+"scored"+score+"points");
-        return score*1000;
+        return score*10;
     }
     public static int calculateScore(int score){
         return calculateScore("Anonymous scored",  score);
