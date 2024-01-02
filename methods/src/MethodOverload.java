@@ -14,4 +14,8 @@ public class MethodOverload {
         System.out.println("Player scored"+score+"points");
         return score;
     }
+    public static int calculateScore(){
+        System.out.println("No player scored anything");
+        return 0;
+    }
 }
