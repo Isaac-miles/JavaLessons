@@ -25,8 +25,6 @@ public class SecondsAndMinutes {
 
         int remainingMinutes = minutes % 60;
 
-        int remainingSeconds = seconds%60;
-
-        return hours + "h " + remainingMinutes + "m " + remainingSeconds + "s ";
+        return hours + "h " + remainingMinutes + "m " + seconds + "s ";
     }
 }
