@@ -1,6 +1,7 @@
 public class MethodOverload {
     public static  void main(String[] args){
     int newScore = calculateScore("miles", 100);
+        System.out.println(newScore);
     }
 
     public static int calculateScore(String playerName, int score){
