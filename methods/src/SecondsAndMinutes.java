@@ -7,7 +7,7 @@ public class SecondsAndMinutes {
 
     public static String getDurationString(int seconds){
         if(seconds < 0){
-            return "Invalid data for seonds(" + seconds + "), must be a positive value";
+            return "Invalid data for seconds(" + seconds + "), must be a positive value";
         }
         return  getDurationString(seconds/60,seconds%60);
 
