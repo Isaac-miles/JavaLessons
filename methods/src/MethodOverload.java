@@ -1,6 +1,6 @@
 public class MethodOverload {
     public static  void main(String[] args){
-
+    int newScore = calculateScore("miles", 100);
     }
 
     public static int calculateScore(String playerName, int score){
