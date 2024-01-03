@@ -15,7 +15,9 @@ public class Main {
             case "April", "May", "June" -> "2nd";
             case "July", "August", "September" -> "3rd";
             case "October", "November", "December" -> "4th";
-            default -> "Bad";
+            default -> {
+               yield (month + " is not a valid month");
+            }
         };
     }
 }
