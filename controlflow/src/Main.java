@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Enter month");
         String month = scanner.next();
 //        System.out.println(month +" is in the "+getQuarter(month) + " quarter");
-        System.out.println(printDayOfWeek(4));
+        printDayOfWeek(5);
     }
     public static String getQuarter(String month){
         return switch (month) {
@@ -22,8 +22,8 @@ public class Main {
         };
     }
 
-    public static String printDayOfWeek(int day){
-        return switch (day){
+    public static void printDayOfWeek(int day){
+        String dayOfTheWeek = switch (day){
             case 0 -> "Sunday";
             case 1-> "Monday";
             case 2-> "Tuesday";
@@ -33,5 +33,6 @@ public class Main {
             case 6-> "Saturday";
             default -> "Invalid Day";
         };
+        System.out.println(dayOfTheWeek);
     }
 }
