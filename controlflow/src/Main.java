@@ -5,13 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter val");
-        int val = scanner.nextInt();
-        switch (val) {
-            case 1 -> System.out.println("val was one");
-            case 2 -> System.out.println("val was two");
-            default -> System.out.println("was not one or two");
-        }
+        System.out.println("Enter month");
         String month = scanner.next();
         System.out.println(month +" is in the "+getQuarter(month) + " quarter");
     }
