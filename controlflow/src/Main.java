@@ -12,6 +12,8 @@ public class Main {
             case 2 -> System.out.println("val was two");
             default -> System.out.println("was not one or two");
         }
+        String month = scanner.next();
+        System.out.println(month +" is in the "+getQuarter(month) + " quarter");
     }
     public static String getQuarter(String month){
         switch (month){
@@ -25,9 +27,9 @@ public class Main {
                 return "2nd";
             case "July":
             case "August":
-            case "september":
+            case "September":
                 return "3rd";
-            case "october":
+            case "October":
             case "November":
             case "December":
                 return "4th";
