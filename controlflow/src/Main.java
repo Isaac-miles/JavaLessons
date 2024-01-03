@@ -7,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter month");
         String month = scanner.next();
-//        System.out.println(month +" is in the "+getQuarter(month) + " quarter");
+        System.out.println(month +" is in the "+getQuarter(month) + " quarter");
         printDayOfWeek(5);
     }
     public static String getQuarter(String month){
