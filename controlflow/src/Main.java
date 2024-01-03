@@ -13,4 +13,25 @@ public class Main {
             default -> System.out.println("was not one or two");
         }
     }
+    public static String getQuarter(String month){
+        switch (month){
+            case "January":
+            case "February":
+            case "March":
+                return "1st";
+            case "April":
+            case "May":
+            case "June":
+                return "2nd";
+            case "July":
+            case "August":
+            case "september":
+                return "3rd";
+            case "october":
+            case "November":
+            case "December":
+                return "4th";
+        }
+        return "Bad";
+    }
 }
