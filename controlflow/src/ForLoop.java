@@ -29,7 +29,7 @@ public class ForLoop {
     public static int challenge(int number){
         int count =0;
         for(int i=10; i<=number; i++){
-//            if(count ==3) break;
+            if(count ==3) break;
 
             if(isPrime(i)){
                 count++;
@@ -40,4 +40,5 @@ public class ForLoop {
 
         return count;
     }
+
 }
