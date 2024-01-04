@@ -41,4 +41,10 @@ public class ForLoop {
         return count;
     }
 
+    public static void challenge(double number){
+        int count=0;
+        for(double i = 1; i<=number; i++){
+
+        }
+    }
 }
