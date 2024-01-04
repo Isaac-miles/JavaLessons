@@ -3,7 +3,7 @@ public class WhileLoops {
 
         int j = 5;
         while (j<=20){
-            isEven(j);
+            System.out.println(j +" is even number "+ isEven(j));
             j++;
         }
 
