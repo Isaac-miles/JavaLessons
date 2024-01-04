@@ -16,12 +16,18 @@ public class WhileLoops {
         }
         System.out.println("Total odd numbers "+ oddCount);
         System.out.println("Total even numbers " + evenCount);
+
+        System.out.println("The sum of the digits in number is "+ sumDigitChallenge(1234));
     }
+
+
     public static boolean isEven(int number){
         return number % 2 == 0;
     }
 
-    public static void challenge(int number){
+    public static int sumDigitChallenge(int number){
+        int sum = 0;
 
+        return sum;
     }
 }
