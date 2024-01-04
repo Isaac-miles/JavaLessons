@@ -48,7 +48,7 @@ public class ForLoop {
         for(double i = 1; i<=number; i++){
             if(i%3==0 && i%5==0){
                 if(count >=5)break;
-                sumOfAll +=1;
+                sumOfAll +=i;
                 count++;
                 System.out.println(i+" that can be divided by 3 and 5");
             }
