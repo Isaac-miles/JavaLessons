@@ -7,7 +7,7 @@ public class ForLoop {
 //        for(double rate = 1.0; rate<=5.0; rate++){
 //            System.out.println(calculateInterest(10000.0, rate));
 //        }
-        challenge(50);
+//        challenge(50);
         challenge(50.0);
 
     }
@@ -53,6 +53,6 @@ public class ForLoop {
                 System.out.println(i+" that can be divided by 3 and 5");
             }
         }
-        System.out.println("Sume of the numbers "+ sumOfAll);
+        System.out.println("Sum of the numbers "+ sumOfAll);
     }
 }
