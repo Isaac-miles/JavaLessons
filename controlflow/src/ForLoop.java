@@ -36,6 +36,8 @@ public class ForLoop {
                 System.out.println(i + "is a prime number");
             }
         }
+        System.out.println("total prime numbers found is "+ count);
+
         return count;
     }
 }
