@@ -26,8 +26,13 @@ public class WhileLoops {
     }
 
     public static int sumDigitChallenge(int number){
-        int sum = 0;
+        if(number<0)return -1;
 
+        int sum = 0;
+        while(number>9){
+            sum += (number%10);
+            number = number/10;
+        }
         return sum;
     }
 }
