@@ -3,7 +3,8 @@ public class WhileLoops {
 
         int j = 5;
         while (j<=20){
-
+            isEven(j);
+            j++;
         }
 
     }
