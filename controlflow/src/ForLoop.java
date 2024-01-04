@@ -50,7 +50,7 @@ public class ForLoop {
                 if(count >=5)break;
                 sumOfAll +=i;
                 count++;
-//                System.out.println(i+" that can be divided by 3 and 5");
+                System.out.println(i+" that can be divided by 3 and 5");
             }
         }
         System.out.println("Sum of the numbers "+ sumOfAll);
