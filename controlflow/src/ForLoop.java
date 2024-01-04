@@ -3,7 +3,9 @@ public class ForLoop {
         for(int i= 0; i<=3; i++){
             System.out.println(i);
         }
-        System.out.println(calculateInterest(1000, 3.5));
+        for(double rate = 1.0; rate<=5.0; rate++){
+            System.out.println(calculateInterest(10000.0, rate));
+        }
     }
     public static double calculateInterest(double amount, double interestRate){
         return (amount* (interestRate/100));
