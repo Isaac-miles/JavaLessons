@@ -28,12 +28,12 @@ public class ForLoop {
     }
     public static int challenge(int number){
         int count =0;
-        for(int i=0; i<number;i++){
-            if(count ==3) break;
+        for(int i=10; i<=number; i++){
+//            if(count ==3) break;
 
             if(isPrime(i)){
                 count++;
-                System.out.println(i + "is a prime number");
+                System.out.println(i + " is a prime number");
             }
         }
         System.out.println("total prime numbers found is "+ count);
