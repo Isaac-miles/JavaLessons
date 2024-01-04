@@ -42,9 +42,17 @@ public class ForLoop {
     }
 
     public static void challenge(double number){
-        int count=0;
-        for(double i = 1; i<=number; i++){
+        double count=0;
+        double sumOfAll=0;
 
+        for(double i = 1; i<=number; i++){
+            if(i%3==0 && i%5==0){
+                if(count >=5)break;
+                sumOfAll +=1;
+                count++;
+                System.out.println(i+" that can be divided by 3 and 5");
+            }
         }
+        System.out.println("Sume of the numbers "+ sumOfAll);
     }
 }
