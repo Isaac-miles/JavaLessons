@@ -1,6 +1,6 @@
 public class ForLoop {
     public static void main(String[] args) {
-        for(int i= 0; i<=3; i++){
+        for(double i=7.5; i<=10.0; i+=0.25){
             System.out.println(i);
         }
         for(double rate = 1.0; rate<=5.0; rate++){
