@@ -8,7 +8,7 @@ public class ForLoop {
 //            System.out.println(calculateInterest(10000.0, rate));
 //        }
         challenge(50);
-
+        challenge(50.0);
 
     }
     public static double calculateInterest(double amount, double interestRate){
