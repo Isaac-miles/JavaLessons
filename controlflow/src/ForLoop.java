@@ -33,7 +33,7 @@ public class ForLoop {
 
             if(isPrime(i)){
                 count++;
-                System.out.println(i + "is a prime number"+ count + "were found");
+                System.out.println(i + "is a prime number");
             }
         }
         return count;
