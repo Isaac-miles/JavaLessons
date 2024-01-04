@@ -33,6 +33,7 @@ public class WhileLoops {
             sum += (number%10);
             number = number/10;
         }
+        sum+=number;
         return sum;
     }
 }
