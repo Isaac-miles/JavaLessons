@@ -7,10 +7,8 @@ public class ForLoop {
 //        for(double rate = 1.0; rate<=5.0; rate++){
 //            System.out.println(calculateInterest(10000.0, rate));
 //        }
+        challenge(50);
 
-        System.out.println("1 is "+ (isPrime(1)? "": "Not ") +"a prime number");
-        System.out.println("2 is "+ (isPrime(2)? "": "Not ") +"a prime number");
-        System.out.println("8 is "+ (isPrime(8)? "": "Not ") +"a prime number");
 
     }
     public static double calculateInterest(double amount, double interestRate){
@@ -20,12 +18,24 @@ public class ForLoop {
         if(wholeNumber<=2){
             return (wholeNumber==2);
         }
-        for(int divisor=2; divisor < wholeNumber;divisor++){
+        for(int divisor=2; divisor <= wholeNumber/2;divisor++){
             if(wholeNumber%divisor==0){
                 return false;
             }
 
         }
         return  true;
+    }
+    public static int challenge(int number){
+        int count =0;
+        for(int i=0; i<number;i++){
+            if(count ==3) break;
+
+            if(isPrime(i)){
+                count++;
+                System.out.println(i + "is a prime number"+ count + "were found");
+            }
+        }
+        return count;
     }
 }
