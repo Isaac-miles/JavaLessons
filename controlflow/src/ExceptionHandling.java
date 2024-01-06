@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ExceptionHandling {
     public static void main(String[] args) {
 
@@ -16,6 +18,8 @@ public class ExceptionHandling {
         return "";
     }
     public static String getInputFromScanner(int currentYear){
+        Scanner scanner = new Scanner(System.in);
+
         return "";
     }
 }
