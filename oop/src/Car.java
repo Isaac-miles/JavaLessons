@@ -5,6 +5,26 @@ public class Car {
     private int door;
     private boolean convertible;
 
+    public String getMake(){
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getDoor() {
+        return door;
+    }
+
+    public boolean isConvertible() {
+        return convertible;
+    }
+
     public void describeCar(){
         System.out.println(door + "-Door "+
                 color+" "+
@@ -12,7 +32,5 @@ public class Car {
                 model+" "+
                 (convertible? "Convertible":""));
     }
-    public void setMake(String make){
-        make = make;
-    }
+
 }
