@@ -19,7 +19,8 @@ public class ExceptionHandling {
     }
     public static String getInputFromScanner(int currentYear){
         Scanner scanner = new Scanner(System.in);
-
-        return "";
+        System.out.println("What year were you born ?");
+        int year = scanner.nextInt();
+        return ("you are " + (currentYear - year)+" years old");
     }
 }
