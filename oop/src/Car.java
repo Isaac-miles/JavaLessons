@@ -12,5 +12,7 @@ public class Car {
                 model+" "+
                 (convertible? "Convertible":""));
     }
-
+    public void setMake(String make){
+        make = make;
+    }
 }
