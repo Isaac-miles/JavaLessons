@@ -28,6 +28,23 @@ public class Car {
     public void setMake(String make){
         this.make = make;
     }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setDoor(int door) {
+        this.door = door;
+    }
+
+    public void setConvertible(boolean convertible) {
+        this.convertible = convertible;
+    }
+
     public void describeCar(){
         System.out.println(door + "-Door "+
                 color+" "+
