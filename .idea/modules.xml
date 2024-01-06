@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaLessons.iml" filepath="$PROJECT_DIR$/.idea/JavaLessons.iml" />
       <module fileurl="file://$PROJECT_DIR$/controlflow/controlflow.iml" filepath="$PROJECT_DIR$/controlflow/controlflow.iml" />
       <module fileurl="file://$PROJECT_DIR$/methods/methods.iml" filepath="$PROJECT_DIR$/methods/methods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/oop.iml" filepath="$PROJECT_DIR$/oop/oop.iml" />
     </modules>
   </component>
 </project>
