@@ -26,6 +26,8 @@ public class Car {
     }
 
     public void setMake(String make){
+        if(make==null) make = "unknown";
+        String maker = make.toLowerCase();
         this.make = make;
     }
 
