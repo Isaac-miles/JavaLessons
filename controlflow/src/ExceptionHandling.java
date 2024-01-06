@@ -24,11 +24,14 @@ public class ExceptionHandling {
         boolean  validDob = false;
         int age = 0;
         do{
-            System.out.println("Enter a valid Year of birth");
-            age = checkData(currentYear,scanner.nextLine());
-            validDob = age >= 0;
-            System.out.println(age);
-            System.out.println(validDob);
+            try {
+                System.out.println("Enter a valid Year of birth");
+                age = checkData(currentYear,scanner.nextLine());
+                validDob = age >= 0;
+            }catch (NumberFormatException e){
+                System.out.println("Characters not allowed");
+            }
+
         }while (!validDob);
 
         return ("you are " + age+" years old");
