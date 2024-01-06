@@ -23,4 +23,13 @@ public class ExceptionHandling {
         int year = scanner.nextInt();
         return ("you are " + (currentYear - year)+" years old");
     }
+
+    public static int checkData(int currentYear, String dateOfBirth){
+        int dob = Integer.parseInt(dateOfBirth);
+        int minYear = currentYear - 125;
+        if((dob < minYear) || (dob>minYear)){
+            return -1;
+        }
+        return  (currentYear - dob);
+    }
 }
