@@ -20,6 +20,9 @@ public class WhileLoops {
         System.out.println("The sum of the digits in number is "+ sumDigitChallenge(1234));
 
         // reading inputs
+        int currentYear = 2024;
+        System.out.println(getInputFromConsole(currentYear));
+        System.out.println(getInputFromScanner(currentYear));
 
     }
 
