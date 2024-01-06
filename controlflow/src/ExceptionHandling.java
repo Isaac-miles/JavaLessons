@@ -26,16 +26,18 @@ public class ExceptionHandling {
         do{
             System.out.println("Enter a valid Year of birth");
             age = checkData(currentYear,scanner.nextLine());
-            validDob = age > 0;
+            validDob = age >= 0;
+            System.out.println(age);
+            System.out.println(validDob);
         }while (!validDob);
 
-        return ("you are " + (currentYear - age)+" years old");
+        return ("you are " + age+" years old");
     }
 
     public static int checkData(int currentYear, String dateOfBirth){
         int dob = Integer.parseInt(dateOfBirth);
         int minYear = currentYear - 125;
-        if((dob < minYear) || (dob>minYear)){
+        if((dob < minYear) || (dob>currentYear)){
             return -1;
         }
         return  (currentYear - dob);
