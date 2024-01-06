@@ -20,6 +20,9 @@ public class ExceptionHandling {
     public static String getInputFromScanner(int currentYear){
         Scanner scanner = new Scanner(System.in);
         System.out.println("What year were you born ?");
+        boolean  validDob = false;
+        int age = 0;
+
         int year = scanner.nextInt();
         return ("you are " + (currentYear - year)+" years old");
     }
