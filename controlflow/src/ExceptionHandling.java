@@ -20,11 +20,16 @@ public class ExceptionHandling {
     public static String getInputFromScanner(int currentYear){
         Scanner scanner = new Scanner(System.in);
         System.out.println("What year were you born ?");
+
         boolean  validDob = false;
         int age = 0;
+        do{
+            System.out.println("Enter a valid Year of birth");
+            age = checkData(currentYear,scanner.nextLine());
+            validDob = age > 0;
+        }while (!validDob);
 
-        int year = scanner.nextInt();
-        return ("you are " + (currentYear - year)+" years old");
+        return ("you are " + (currentYear - age)+" years old");
     }
 
     public static int checkData(int currentYear, String dateOfBirth){
