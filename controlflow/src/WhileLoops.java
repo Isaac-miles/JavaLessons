@@ -40,4 +40,8 @@ public class WhileLoops {
         return sum;
 
     }
+
+    public static String getInputFromConsole(int currentYear){
+        return "";
+    }
 }
