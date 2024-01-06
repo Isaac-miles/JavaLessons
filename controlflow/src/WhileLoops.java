@@ -18,6 +18,9 @@ public class WhileLoops {
         System.out.println("Total even numbers " + evenCount);
 
         System.out.println("The sum of the digits in number is "+ sumDigitChallenge(1234));
+
+        // reading inputs
+
     }
 
 
@@ -35,5 +38,6 @@ public class WhileLoops {
         }
         sum+=number;
         return sum;
+
     }
 }
