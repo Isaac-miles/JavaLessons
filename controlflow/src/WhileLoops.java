@@ -44,4 +44,7 @@ public class WhileLoops {
     public static String getInputFromConsole(int currentYear){
         return "";
     }
+    public static String getInputFromScanner(int currentYear){
+        return "";
+    }
 }
