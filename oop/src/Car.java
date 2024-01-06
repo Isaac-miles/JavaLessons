@@ -30,9 +30,7 @@ public class Car {
         String maker = make.toLowerCase();
         switch (maker){
             case "toyota","honda","tesla" -> this.make = make;
-            default -> {
-                this.make = "unsupported make";
-            }
+            default -> this.make = "unsupported make";
         }
 //        this.make = make;
     }
