@@ -3,8 +3,11 @@ public class ExceptionHandling {
 
         // reading inputs
         int currentYear = 2024;
-        System.out.println(getInputFromConsole(currentYear));
-        System.out.println(getInputFromScanner(currentYear));
+        try {
+            System.out.println(getInputFromConsole(currentYear));
+        }catch (NullPointerException e){
+              System.out.println(getInputFromScanner(currentYear));
+        }
 
     }
     public static String getInputFromConsole(int currentYear){
