@@ -16,6 +16,14 @@ public class Account {
         this.customerName = customerName;
         this.customerPhone = customerPhone;
     }
+
+    public Account(String customerName, String customerEmail, String customerPhone) {
+        this("1054", 100.50,customerName,customerEmail,customerPhone);
+//        this.customerName = customerName;
+//        this.customerEmail = customerEmail;
+//        this.customerPhone = customerPhone;
+    }
+
     public void depositFunds(double depositAmount){
         balance += depositAmount;
         System.out.println("Deposit of NGN "+ depositAmount+". new balance = "+ balance);
