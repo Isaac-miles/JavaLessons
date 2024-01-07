@@ -4,7 +4,9 @@ public class Account {
     private String customerName;
     private String customerEmail;
     private String customerPhone;
+    public Account(){
 
+    }
     public void depositFunds(double depositAmount){
         balance += depositAmount;
         System.out.println("Deposit of NGN "+ depositAmount+". new balance = "+ balance);
