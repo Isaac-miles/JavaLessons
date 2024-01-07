@@ -12,7 +12,14 @@ public class Account {
     public String getNumber() {
         return number;
     }
-
+    public void withdrawFunds(double withdrawAmount){
+        if(balance - withdrawAmount < 0){
+            System.out.println("Insufficient funds, balance = " + balance);
+        }else {
+            balance -= withdrawAmount;
+            System.out.println("withdrawal of " + withdrawAmount+" was successful, new balance = "+ balance);
+        }
+    }
     public void setNumber(String number) {
         this.number = number;
     }
