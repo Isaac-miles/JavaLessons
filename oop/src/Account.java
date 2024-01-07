@@ -7,13 +7,4 @@ public class Account {
 
 
 
-
-//    public void describeCar(){
-//        System.out.println(door + "-Door "+
-//                color+" "+
-//                make+" "+
-//                model+" "+
-//                (convertible? "Convertible":""));
-//    }
-
 }
