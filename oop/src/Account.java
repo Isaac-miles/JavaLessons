@@ -5,6 +5,7 @@ public class Account {
     private String customerEmail;
     private String customerPhone;
     public Account(){
+        this("1368", 2.0, "Isaac", "isaac@gmail","07067");
         System.out.println("!rst constructor");
     }
     public Account(String number, double balance, String customerName, String customerEmail, String customerPhone){
