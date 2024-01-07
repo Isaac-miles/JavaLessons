@@ -7,5 +7,8 @@ public class Main {
     account.depositFunds(200.0);
     account.withdrawFunds(67.0);
     account.depositFunds(89);
+
+    Account accountB = new Account("Tim","tim@gmail", "4923");
+
     }
 }
