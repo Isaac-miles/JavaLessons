@@ -5,6 +5,7 @@ public class Account {
     private String customerEmail;
     private String customerPhone;
     public Account(){
+    //constructor chaining,calling another constructor within the class, constructor overloading or chaining?
         this("1368", 2.0, "Isaac", "isaac@gmail","07067");
         System.out.println("!rst constructor");
     }
