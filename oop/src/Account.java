@@ -7,7 +7,7 @@ public class Account {
 
     public void depositFunds(double depositAmount){
         balance += depositAmount;
-
+        System.out.println("Deposit of NGN "+ depositAmount+". new balance = "+ balance);
     }
     public String getNumber() {
         return number;
