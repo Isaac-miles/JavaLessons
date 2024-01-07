@@ -5,7 +5,14 @@ public class Account {
     private String customerEmail;
     private String customerPhone;
     public Account(){
-
+        System.out.println("!rst constructor");
+    }
+    public Account(String number, double balance, String customerName, String customerEmail, String customerPhone){
+        this.number = number;
+        this.balance = balance;
+        this.customerEmail = customerEmail;
+        this.customerName = customerName;
+        this.customerPhone = customerPhone;
     }
     public void depositFunds(double depositAmount){
         balance += depositAmount;
