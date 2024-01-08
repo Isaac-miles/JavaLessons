@@ -1,8 +1,11 @@
 public class AnimalInheritance {
-    private String type;
+    protected String type;
     private String size;
     private double weight;
 
+    public AnimalInheritance(){
+
+    }
     public AnimalInheritance(String type, String size, double weight) {
         this.type = type;
         this.size = size;
