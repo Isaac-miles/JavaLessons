@@ -13,7 +13,7 @@ public class Main {
 
         //for Pojo
         for (int i = 1; i < 5 ; i++) {
-            PojoStudent miles = new PojoStudent(
+            POStudents miles = new POStudents(
                     "csc01"+i,
                     switch (i){
                         case 1 ->"josi";
@@ -26,5 +26,16 @@ public class Main {
                     "Python class");
             System.out.println(miles);
         }
+        PojoStudent pojoStudent =  new PojoStudent("csc2014", "Agnes","05-10-2005", "java masterclass");
+        POStudents recordStudent = new POStudents("csc2013", "Alao","05-10-2000", "java masterclass");
+
+        System.out.println(recordStudent);
+        System.out.println(pojoStudent);
+
+        pojoStudent.setClassList(pojoStudent.getClassList()+ " Java OOP Exam 201");
+
+        System.out.println(pojoStudent.getName() + " is taken " + pojoStudent.getClassList());
+        System.out.println(recordStudent.name() + " is taken " + recordStudent.classList());
+
     }
 }
