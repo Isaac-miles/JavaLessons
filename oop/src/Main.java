@@ -51,11 +51,11 @@ public class Main {
         doAnimalStuff(wolf, "slow");
 
         Fish titus = new Fish("titus", 1,2,3);
-        doAnimalStuff(titus, "200m");
+        doAnimalStuff(titus, "fast");
     }
     public static void doAnimalStuff(AnimalInheritance animal, String speed){
         animal.makeNoise();
-        animal.move("30km");
+        animal.move(" "+speed);
         System.out.println(animal);
         System.out.println("____--------");
     }
