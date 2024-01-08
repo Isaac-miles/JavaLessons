@@ -11,4 +11,14 @@ public class PojoStudent {
         this.dateOfBirth = dateOfBirth;
         this.classList = classList;
     }
+
+    @Override
+    public String toString() {
+        return "PojoStudent{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", classList='" + classList + '\'' +
+                '}';
+    }
 }
