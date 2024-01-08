@@ -24,6 +24,7 @@ public class Main {
                     },
                     "15-01-2010",
                     "Python class");
+            System.out.println(miles);
         }
     }
 }
