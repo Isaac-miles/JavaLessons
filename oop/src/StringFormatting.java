@@ -18,6 +18,13 @@ public class StringFormatting {
         System.out.println(textblock);
 
         int age = 35;
-        System.out.printf("your age is %d", age);
+        System.out.printf("your age is %d%n", age);
+        int yearOfBirth = 2023 - age;
+        System.out.printf("Age = %d, Birth year = %d%n", age, yearOfBirth);
+        System.out.printf("your age is %.2f%n", (float)age);
+
+        for(int i = 1; i<=10000; i*=10){
+
+        }
     }
 }
