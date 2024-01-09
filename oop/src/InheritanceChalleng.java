@@ -25,3 +25,12 @@ class Worker{
                 '}';
     }
 }
+class Employee extends Worker{
+    private long employeeId;
+    private String hireDate;
+    public Employee(String name, String endDate, Long employeeId, String hireDate) {
+        super(name, "2-2-200", endDate);
+        this.employeeId = employeeId;
+        this.hireDate = hireDate;
+    }
+}
