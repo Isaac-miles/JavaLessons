@@ -84,7 +84,7 @@ class SalariedEmployee extends Employee{
     }
     @Override
     public double collectPay(){
-        return  (int) annualSalary /26 ;
+        return  (double) (int) annualSalary /26 ;
     }
 
 }
