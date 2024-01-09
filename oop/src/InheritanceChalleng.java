@@ -4,7 +4,7 @@ public class InheritanceChalleng {
         System.out.println(miles.getAge());
         System.out.println(miles);
 
-        SalariedEmployee joe = new SalariedEmployee("joe","23-06-2022", "12-02-2010",1000.0);
+        SalariedEmployee joe = new SalariedEmployee("joe","23-06-2022", "12-02-2010",35000);
         System.out.println(joe);
         System.out.println("joe's $ = " + joe.collectPay());
         joe.retired();
@@ -25,14 +25,14 @@ class Worker{
         this.dob = dob;
     }
     public int getAge(){
-        int currentyear = 2024;
+        int currentYear = 2024;
         int birthYear = Integer.parseInt(dob.substring(6));
-        return currentyear - birthYear;
+        return currentYear - birthYear;
     }
     public double collectPay(){
         return 10.0;
     }
-    public void terinate(String endDate){
+    public void terminate(String endDate){
         this.endDate = endDate;
     }
 
@@ -81,13 +81,27 @@ class SalariedEmployee extends Employee{
     }
 
     public void retired(){
-     terinate("09-01-2024");
+     terminate("09-01-2024");
      isRetired = true;
     }
     @Override
     public double collectPay(){
         double paycheck = annualSalary /26;
         return isRetired? 0.9 * paycheck : paycheck;
+    }
+
+}
+
+class HourlyEmployee extends Employee{
+    private double hourlyPayRate;
+
+    public HourlyEmployee(String name, String dob, String hireDate, double hourlyPayRate) {
+        super(name, dob, hireDate);
+        this.hourlyPayRate = hourlyPayRate;
+    }
+    @Override
+    public double collectPay(){
+        return 40*hourlyPayRate;
     }
 
 }
