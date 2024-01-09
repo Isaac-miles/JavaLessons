@@ -31,6 +31,6 @@ public class StringFormatting {
         System.out.println(formattedString);
 
         formattedString = "your age is %d".formatted(age);
-//        System.out.println(formattedString);
+        System.out.println(formattedString);
     }
 }
