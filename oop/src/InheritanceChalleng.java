@@ -1,25 +1,36 @@
 public class InheritanceChalleng {
     public static void main(String[] args) {
-    Worker work = new Worker("miles","12-02-2010","15-11-2019");
-        System.out.println(work);
+    Employee miles = new Employee("miles", "10-10-1996","10-11-2021");
+        System.out.println(miles.getAge());
+        System.out.println(miles);
+
+        Employee joe = new Employee("joe","23-06-2022", "12-02-2010");
+        System.out.println(joe);
     }
+
+
 }
 
 class Worker{
-    private String name;
+    protected String name;
     private String dob;
-    private String endDate;
+    protected String endDate;
 
-    public Worker(String name, String dob, String endDate) {
+    public Worker(){}
+    public Worker(String name, String dob) {
         this.name = name;
         this.dob = dob;
-        this.endDate = endDate;
     }
     public int getAge(){
-        return 23;
+        int currentyear = 2024;
+        int birthYear = Integer.parseInt(dob.substring(6));
+        return currentyear - birthYear;
     }
     public double collectPay(){
         return 10.0;
+    }
+    public void terinate(String endDate){
+        this.endDate = endDate;
     }
 
     @Override
@@ -34,24 +45,42 @@ class Worker{
 class Employee extends Worker{
     private long employeeId;
     private String hireDate;
-    public Employee(String name, String endDate, Long employeeId, String hireDate) {
-        super(name, "2-2-200", endDate);
-        this.employeeId = employeeId;
+    private static int employeeNo = 1;
+    public Employee(String name, String dob, String hireDate) {
+        super(name, dob);
+        this.employeeId = employeeNo++;
         this.hireDate = hireDate;
     }
 
     @Override
     public String toString() {
-        return "your employee Id is "+employeeId + "hired "+ hireDate;
+        return "Employee{" +
+                "employeeId=" + employeeId +
+                ", hireDate='" + hireDate + '\'' +
+                "} " + super.toString();
     }
 }
-class SalariedEmployee extends Worker{
+class SalariedEmployee extends Employee{
     double annualSalary;
     boolean isRetired;
-    public SalariedEmployee(String name, String dob, String endDate, double annualSalary, boolean isRetired) {
-        super(name, "15-02-97", endDate);
+
+    public SalariedEmployee(String name, String dob, String hireDate, double annualSalary) {
+        super(name, dob, hireDate);
         this.annualSalary = annualSalary;
-        this.isRetired =isRetired;
+    }
+
+    @Override
+    public String toString() {
+        return "SalariedEmployee{" +
+                "annualSalary=" + annualSalary +
+                ", isRetired=" + isRetired +
+                "} " + super.toString();
+    }
+
+    public void retired(){
+        if(isRetired){
+            System.out.println(name + "retired" + endDate );
+        }
     }
 
 }
