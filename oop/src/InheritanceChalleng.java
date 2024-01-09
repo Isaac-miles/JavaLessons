@@ -15,6 +15,12 @@ class Worker{
         this.dob = dob;
         this.endDate = endDate;
     }
+    public int getAge(){
+        return 23;
+    }
+    public double collectPay(){
+        return 10.0;
+    }
 
     @Override
     public String toString() {
@@ -33,4 +39,19 @@ class Employee extends Worker{
         this.employeeId = employeeId;
         this.hireDate = hireDate;
     }
+
+    @Override
+    public String toString() {
+        return "your employee Id is "+employeeId + "hired "+ hireDate;
+    }
+}
+class SalariedEmployee extends Worker{
+    double annualSalary;
+    boolean isRetired;
+    public SalariedEmployee(String name, String dob, String endDate, double annualSalary, boolean isRetired) {
+        super(name, "15-02-97", endDate);
+        this.annualSalary = annualSalary;
+        this.isRetired =isRetired;
+    }
+
 }
