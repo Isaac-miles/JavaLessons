@@ -6,6 +6,7 @@ public class InheritanceChalleng {
 
         SalariedEmployee joe = new SalariedEmployee("joe","23-06-2022", "12-02-2010",1000.0);
         System.out.println(joe);
+        System.out.println("joe's $ = " + joe.collectPay());
     }
 
 
@@ -78,9 +79,12 @@ class SalariedEmployee extends Employee{
     }
 
     public void retired(){
-        if(isRetired){
-            System.out.println(name + "retired" + endDate );
-        }
+     terinate("09-01-2024");
+     isRetired = true;
+    }
+    @Override
+    public double collectPay(){
+        return  (int) annualSalary /26 ;
     }
 
 }
