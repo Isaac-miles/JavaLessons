@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class StringFormatting {
     public static void main(String[] args) {
@@ -23,7 +24,13 @@ public class StringFormatting {
         System.out.printf("your age is %.2f%n", (float)age);
 
         for(int i = 1; i<=10000; i*=10){
-            System.out.printf("Printing %d %n", i);
+            System.out.printf("Printing %6d %n", i);
         }
+        //string also has the above capability
+        String formattedString = String.format("your age is %d", age);
+        System.out.println(formattedString);
+
+        formattedString = "your age is %d".formatted(age);
+        System.out.println(formattedString);
     }
 }
