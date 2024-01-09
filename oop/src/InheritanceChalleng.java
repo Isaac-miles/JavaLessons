@@ -7,6 +7,8 @@ public class InheritanceChalleng {
         SalariedEmployee joe = new SalariedEmployee("joe","23-06-2022", "12-02-2010",1000.0);
         System.out.println(joe);
         System.out.println("joe's $ = " + joe.collectPay());
+        joe.retired();
+        System.out.println("Joe's pension check = $ "+ joe.collectPay());
     }
 
 
