@@ -16,5 +16,8 @@ public class StringFormatting {
                  • Sub point
                 """;
         System.out.println(textblock);
+
+        int age = 35;
+        System.out.printf("your age is %d", age);
     }
 }
