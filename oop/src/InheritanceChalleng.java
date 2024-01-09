@@ -4,7 +4,7 @@ public class InheritanceChalleng {
         System.out.println(miles.getAge());
         System.out.println(miles);
 
-        Employee joe = new Employee("joe","23-06-2022", "12-02-2010");
+        SalariedEmployee joe = new SalariedEmployee("joe","23-06-2022", "12-02-2010",1000.0);
         System.out.println(joe);
     }
 
