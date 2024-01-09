@@ -9,6 +9,11 @@ public class InheritanceChalleng {
         System.out.println("joe's $ = " + joe.collectPay());
         joe.retired();
         System.out.println("Joe's pension check = $ "+ joe.collectPay());
+        HourlyEmployee joy = new HourlyEmployee("Joy","09-07-2000","10-03-2024",15.0);
+        System.out.println(joy);
+        System.out.println("joy's paycheck = $  "+joy.collectPay());
+        System.out.println("joy's holiday = $  "+joy.getDoublePay());
+
     }
 
 
@@ -103,5 +108,7 @@ class HourlyEmployee extends Employee{
     public double collectPay(){
         return 40*hourlyPayRate;
     }
-
+    public double getDoublePay(){
+        return 2* collectPay();
+    }
 }
