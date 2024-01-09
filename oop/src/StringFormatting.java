@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class StringFormatting {
     public static void main(String[] args) {
         //insert a tab character \t
@@ -5,7 +7,14 @@ public class StringFormatting {
         //insert a double quote character \"
         //insert a backslash character
 
-        String bulletIt = "Print a bulleted list:"+"\u2022 first point"+"\u2022 Sub Point";
+        String bulletIt = "Print a bulleted list:\n"+"\t• first point"+"\t\t• Sub Point ";
         System.out.println(bulletIt);
+        //using text block
+        String textblock = """
+                Print a Bulleted List:
+                • First point
+                 • Sub point
+                """;
+        System.out.println(textblock);
     }
 }
