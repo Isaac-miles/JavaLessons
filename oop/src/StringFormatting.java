@@ -1,4 +1,3 @@
-import java.awt.*;
 
 public class StringFormatting {
     public static void main(String[] args) {
@@ -10,12 +9,12 @@ public class StringFormatting {
         String bulletIt = "Print a bulleted list:\n"+"\t• first point"+"\t\t• Sub Point ";
         System.out.println(bulletIt);
         //using text block
-        String textblock = """
+        String textBlock = """
                 Print a Bulleted List:
                 • First point
                  • Sub point
                 """;
-        System.out.println(textblock);
+        System.out.println(textBlock);
 
         int age = 35;
         System.out.printf("your age is %d%n", age);
@@ -24,7 +23,7 @@ public class StringFormatting {
         System.out.printf("your age is %.2f%n", (float)age);
 
         for(int i = 1; i<=10000; i*=10){
-
+            System.out.printf("Printing %d %n", i);
         }
     }
 }
