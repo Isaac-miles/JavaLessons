@@ -35,6 +35,21 @@ public class StringFormatting {
 
         //string inspection methods
         printInformation("Hello miles");
+        printInformation("");
+        printInformation("\t \n");
+        String helloWorld = "Hello world";
+        System.out.printf("index of r = %d %n",helloWorld.indexOf("r"));
+        System.out.printf("index of world = %d %n",helloWorld.indexOf("world"));
+
+        System.out.printf("index of l = %d %n",helloWorld.indexOf("l"));
+        System.out.printf("index of l = %d %n",helloWorld.lastIndexOf("l"));
+
+        System.out.printf("index of l = %d %n",helloWorld.indexOf("l",3));
+        System.out.printf("index of l = %d %n",helloWorld.lastIndexOf("l",8));
+
+        //string comparison methods
+        String helloWorldLower = helloWorld.toLowerCase();
+
     }
 
     public static void printInformation(String string){
@@ -42,6 +57,10 @@ public class StringFormatting {
         System.out.printf("Length = %d %n", length);
         if(string.isEmpty()){
             System.out.println("string is empty ");
+            return;
+        }
+        if(string.isBlank()){
+            System.out.println("string is blank ");
             return;
         }
         System.out.printf("First char = %c %n", string.charAt(0));
