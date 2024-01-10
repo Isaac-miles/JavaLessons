@@ -10,8 +10,9 @@ public class StringManipulation {
         theStringBuilder(helloWorldBuilder);
 
         StringBuilder emptyStart = new StringBuilder();
+        emptyStart.append("a".repeat(17));
         StringBuilder emptyStart32 = new StringBuilder(32);
-
+        emptyStart32.append("b".repeat(17));
         theStringBuilder(emptyStart);
         theStringBuilder(emptyStart32);
     }
@@ -56,6 +57,7 @@ public class StringManipulation {
     public static void theStringBuilder(StringBuilder builder){
         System.out.println("String = "+ builder);
         System.out.println("length = "+ builder.length());
+        System.out.println("capacity = "+ builder.capacity());
     }
     public static void theStringBuilder(String builder){
         System.out.println("String = "+ builder);
