@@ -32,5 +32,14 @@ public class StringFormatting {
 
         formattedString = "your age is %d".formatted(age);
         System.out.println(formattedString);
+
+        //string inspection methods
+        printInformation("Hello miles");
+    }
+
+    public static void printInformation(String string){
+        int length = string.length();
+        System.out.printf("Length = %d %n", length);
+        System.out.printf("First char = %c %n", string.charAt(0));
     }
 }
