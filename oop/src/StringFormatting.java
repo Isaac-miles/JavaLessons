@@ -16,7 +16,7 @@ public class StringFormatting {
                 """;
         System.out.println(textBlock);
 
-        int age = 35;
+        int age = 26;
         System.out.printf("your age is %d%n", age);
         int yearOfBirth = 2023 - age;
         System.out.printf("Age = %d, Birth year = %d%n", age, yearOfBirth);
