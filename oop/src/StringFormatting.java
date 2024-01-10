@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class StringFormatting {
     public static void main(String[] args) {
@@ -49,6 +48,12 @@ public class StringFormatting {
 
         //string comparison methods
         String helloWorldLower = helloWorld.toLowerCase();
+        if(helloWorld.equals(helloWorldLower)){
+            System.out.println("values match exactly ");
+        }
+        if(helloWorld.equalsIgnoreCase(helloWorldLower)){
+            System.out.println("value match ignoring case");
+        }
 
     }
 
