@@ -54,15 +54,15 @@ public class StringFormatting {
         if(helloWorld.equalsIgnoreCase(helloWorldLower)){
             System.out.println("value match ignoring case");
         }
-//        if(helloWorld.startsWith("Hello")){
-//            System.out.println("string started with hello");
-//        }
-//        if(helloWorld.endsWith("world")){
-//            System.out.println("string ends with world");
-//        }
-//        if(helloWorld.contains("world")){
-//            System.out.println("string contains world");
-//        }
+        if(helloWorld.startsWith("Hello")){
+            System.out.println("string started with hello");
+        }
+        if(helloWorld.endsWith("world")){
+            System.out.println("string ends with world");
+        }
+        if(helloWorld.contains("world")){
+            System.out.println("string contains world");
+        }
         if(helloWorld.contentEquals("Hello world")){
             System.out.println("values matches exactly");
         }
