@@ -1,5 +1,14 @@
 public class StringManipulation {
     public static void main(String[] args) {
+//        StringManipulations();
+        String hello = "hello";
+        StringBuilder helloWorldBuilder = new StringBuilder("hello" + " world");
+        hello.concat("world");
+        theStringBuilder(helloWorldBuilder);
+    }
+
+
+    public static void StringManipulations(){
         String dob = "25-11-1996";
         int startIndex = dob.indexOf("1996");
         System.out.println("stringIndex = " +startIndex);
@@ -33,5 +42,10 @@ public class StringManipulation {
 
         System.out.println("    ABC\n".repeat(3).indent(-2));
         System.out.println("-".repeat(20));
+    }
+
+    public static void theStringBuilder(StringBuilder builder){
+        System.out.println("String = "+ builder);
+        System.out.println("length = "+ builder.length());
     }
 }
