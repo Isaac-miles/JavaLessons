@@ -3,8 +3,17 @@ public class StringManipulation {
 //        StringManipulations();
         String hello = "hello";
         StringBuilder helloWorldBuilder = new StringBuilder("hello" + " world");
-        hello.concat("world");
+        hello.concat("world Isaac");
+        helloWorldBuilder.append("Isaac");
+
+        theStringBuilder(hello);
         theStringBuilder(helloWorldBuilder);
+
+        StringBuilder emptyStart = new StringBuilder();
+        StringBuilder emptyStart32 = new StringBuilder(32);
+
+        theStringBuilder(emptyStart);
+        theStringBuilder(emptyStart32);
     }
 
 
@@ -45,6 +54,10 @@ public class StringManipulation {
     }
 
     public static void theStringBuilder(StringBuilder builder){
+        System.out.println("String = "+ builder);
+        System.out.println("length = "+ builder.length());
+    }
+    public static void theStringBuilder(String builder){
         System.out.println("String = "+ builder);
         System.out.println("length = "+ builder.length());
     }
