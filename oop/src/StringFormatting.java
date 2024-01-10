@@ -63,6 +63,9 @@ public class StringFormatting {
 //        if(helloWorld.contains("world")){
 //            System.out.println("string contains world");
 //        }
+        if(helloWorld.contentEquals("Hello world")){
+            System.out.println("values matches exactly");
+        }
 
     }
 
