@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class StringManipulation {
     public static void main(String[] args) {
 //        StringManipulations();
@@ -15,6 +17,15 @@ public class StringManipulation {
         emptyStart32.append("b".repeat(17));
         theStringBuilder(emptyStart);
         theStringBuilder(emptyStart32);
+
+        StringBuilder builder = new StringBuilder("hello" + " world");
+        builder.append(" Isaac");
+        builder.deleteCharAt(10).insert(10,'x');
+        System.out.println("builder = " + builder);
+        builder.replace(10,11, "d");
+        System.out.println(builder);
+        builder.reverse().setLength(7);
+        System.out.println(builder);
     }
 
 
