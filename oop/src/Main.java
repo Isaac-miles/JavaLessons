@@ -54,7 +54,7 @@ public class Main {
         doAnimalStuff(titus, "fast");
     }
     public static void doAnimalStuff(AnimalInheritance animal, String speed){
-//        animal.makeNoise();
+        animal.makeNoise();
         animal.move(" "+speed);
         System.out.println(animal);
         System.out.println("____--------");
