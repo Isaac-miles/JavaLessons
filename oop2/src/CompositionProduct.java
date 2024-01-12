@@ -10,3 +10,23 @@ public class CompositionProduct {
         this.manufacturer = manufacturer;
     }
 }
+
+class Monitor extends CompositionProduct{
+
+    public Monitor(String model, String manufacturer) {
+        super(model, manufacturer);
+    }
+}
+
+class MotherBoard extends CompositionProduct{
+
+    public MotherBoard(String model, String manufacturer) {
+        super(model, manufacturer);
+    }
+}
+class ComputerCase extends CompositionProduct{
+
+    public ComputerCase(String model, String manufacturer) {
+        super(model, manufacturer);
+    }
+}
