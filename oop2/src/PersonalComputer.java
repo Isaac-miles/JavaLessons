@@ -9,4 +9,16 @@ public class PersonalComputer extends CompositionProduct{
         this.monitor = monitor;
         this.motherBoard = motherBoard;
     }
+
+    public ComputerCase getComputerCase() {
+        return computerCase;
+    }
+
+    public Monitor getMonitor() {
+        return monitor;
+    }
+
+    public MotherBoard getMotherBoard() {
+        return motherBoard;
+    }
 }
