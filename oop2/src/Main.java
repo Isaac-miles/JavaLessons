@@ -7,8 +7,9 @@ public class Main {
         MotherBoard theMotherBoard = new MotherBoard("BJ-200", "Asus",4,6,"v6");
 
         PersonalComputer thePC = new PersonalComputer("200","Dell",theCase,theMonitor,theMotherBoard);
-        thePC.getMonitor().drawPixelAt(10,10,"black");
-        thePC.getMotherBoard().loadProgram("Ios");
-        thePC.getComputerCase().pressPowerButton();
+//        thePC.getMonitor().drawPixelAt(10,10,"black");
+//        thePC.getMotherBoard().loadProgram("Ios");
+//        thePC.getComputerCase().pressPowerButton();
+        thePC.powerUp();
     }
 }

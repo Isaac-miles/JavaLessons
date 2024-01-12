@@ -9,6 +9,13 @@ public class PersonalComputer extends CompositionProduct{
         this.monitor = monitor;
         this.motherBoard = motherBoard;
     }
+    private void drawLogo(){
+        monitor.drawPixelAt(15,30,"green");
+    }
+    public void powerUp(){
+        computerCase.pressPowerButton();
+        drawLogo();
+    }
 
 //    public ComputerCase getComputerCase() {
 //        return computerCase;
