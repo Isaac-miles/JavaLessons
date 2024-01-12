@@ -10,6 +10,6 @@ public class Main {
 //        thePC.getMonitor().drawPixelAt(10,10,"black");
 //        thePC.getMotherBoard().loadProgram("Ios");
 //        thePC.getComputerCase().pressPowerButton();
-//        thePC.powerUp();
+        thePC.powerUp();
     }
 }
