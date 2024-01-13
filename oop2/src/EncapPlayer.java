@@ -1,13 +1,13 @@
-public class encapPlayer {
+public class EncapPlayer {
     private String name;
     private int health;
     private String weapon;
 
-    public encapPlayer(String name) {
+    public EncapPlayer(String name) {
         this(name, 100,"Axe");
     }
 
-    public encapPlayer(String name, int health, String weapon) {
+    public EncapPlayer(String name, int health, String weapon) {
         this.name = name;
         if(health <=0){
             this.health = 1;

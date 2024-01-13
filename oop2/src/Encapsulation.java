@@ -8,9 +8,10 @@ public class Encapsulation {
         player.loseHealth(10);
         System.out.printf("Remaining health = %d %n", player.healthRemaining());
         player.loseHealth(11);
-        System.out.printf("Remaining health = %d", player.healthRemaining());
+        System.out.printf("Remaining health = %d %n", player.healthRemaining());
 
         //encapsulated player class.
-        en
+        EncapPlayer player1 = new EncapPlayer("niles");
+        System.out.println("Initial health is "+ player1.healthRemaining());
     }
 }
