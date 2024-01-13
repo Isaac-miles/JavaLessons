@@ -1,4 +1,4 @@
-public class EncapPlayers {
+public class nonEncapPlayers {
     public String name;
     public int health;
     public String weapon;
