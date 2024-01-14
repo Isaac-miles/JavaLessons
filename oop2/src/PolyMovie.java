@@ -47,7 +47,6 @@ class Comedy extends PolyMovie{
     }
 }
 class ScienceFiction extends PolyMovie{
-
     public ScienceFiction(String title) {
         super(title);
     }
