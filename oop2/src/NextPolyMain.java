@@ -17,5 +17,7 @@ public class NextPolyMain {
 
         var plane = new Comedy("title");
         plane.watchComedy();
+
+        Object unknownObject = PolyMovie.getMovie("C","Airplane");
     }
 }
