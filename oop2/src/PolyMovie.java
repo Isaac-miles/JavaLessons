@@ -6,10 +6,10 @@ public class PolyMovie {
     }
     public void watchMovie(){
         String instanceType = this.getClass().getSimpleName();
-        System.out.println(title + " is a "+ instanceType + "film");
+        System.out.println(title + " is a "+ instanceType + " film");
     }
     public  static PolyMovie getMovie(String type, String title){
-           return switch (title.toUpperCase().charAt(0)){
+           return switch (type.toUpperCase().charAt(0)){
                 case 'A'-> new Adventure(title);
                 case 'C'-> new Comedy(title);
                 case 'S'-> new ScienceFiction(title);
