@@ -11,7 +11,7 @@ public class PolyMovie {
     public  static PolyMovie getMovie(String type, String title){
            return switch (title.toUpperCase().charAt(0)){
                 case 'A'-> new Adventure(title);
-                case 'C'-> new Commedy(title);
+                case 'C'-> new Comedy(title);
                 case 'S'-> new ScienceFiction(title);
                 default -> new PolyMovie(title);
             };
@@ -29,9 +29,9 @@ class Adventure extends PolyMovie{
         System.out.printf(".. %s%n".repeat(3),"pleasant Scene","Scary Music","Something Bad Happens");
     }
 }
-class Commedy extends PolyMovie{
+class Comedy extends PolyMovie{
 
-    public Commedy(String title) {
+    public Comedy(String title) {
         super(title);
     }
     @Override
