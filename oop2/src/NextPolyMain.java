@@ -12,6 +12,7 @@ public class NextPolyMain {
         Comedy comedyMovie = (Comedy) comedy;
         comedyMovie.watchComedy(); //doesn't compile
 
+        //this is feasible because of polymorphism.
         var airplane = PolyMovie.getMovie("c", "snakes in the plane");
         airplane.watchMovie();
 
