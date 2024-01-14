@@ -22,3 +22,14 @@ class Adventure extends PolyMovie{
         System.out.printf(".. %s%n".repeat(3),"pleasant Scene","Scary Music","Something Bad Happens");
     }
 }
+class Commedy extends PolyMovie{
+
+    public Commedy(String title) {
+        super(title);
+    }
+    @Override
+    public void watchMovie(){
+        super.watchMovie();
+        System.out.printf(".. %s%n".repeat(3),"Something funny happens","Scary Music","Something Bad Happens");
+    }
+}
