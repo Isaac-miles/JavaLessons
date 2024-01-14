@@ -6,6 +6,18 @@ public class PolyMovie {
     }
     public void watchMovie(){
         String instanceType = this.getClass().getSimpleName();
-        System.out.println(title + "is a "+ instanceType + "film");
+        System.out.println(title + " is a "+ instanceType + "film");
+    }
+
+}
+
+class Adventure extends PolyMovie{
+
+    public Adventure(String title) {
+        super(title);
+    }
+    @Override
+    public void watchMovie(){
+        super.watchMovie();
     }
 }
