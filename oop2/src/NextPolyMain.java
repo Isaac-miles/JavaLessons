@@ -18,6 +18,11 @@ public class NextPolyMain {
         var plane = new Comedy("title");
         plane.watchComedy();
 
+        //how to test a compile time object
         Object unknownObject = PolyMovie.getMovie("C","Airplane");
+        if (unknownObject.getClass().getSimpleName() == "Comedy"){
+            Comedy c = (Comedy) unknownObject;
+            c.watchComedy();
+        }
     }
 }
