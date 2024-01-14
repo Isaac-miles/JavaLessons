@@ -19,5 +19,6 @@ class Adventure extends PolyMovie{
     @Override
     public void watchMovie(){
         super.watchMovie();
+        System.out.printf(".. %s%n".repeat(3),"pleasant Scene","Scary Music","Something Bad Happens");
     }
 }
