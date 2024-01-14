@@ -20,9 +20,11 @@ public class NextPolyMain {
 
         //how to test a compile time object
         Object unknownObject = PolyMovie.getMovie("C","Airplane");
-        if (unknownObject.getClass().getSimpleName() == "Comedy"){
+        if (unknownObject.getClass().getSimpleName().equals("Comedy")){
             Comedy c = (Comedy) unknownObject;
             c.watchComedy();
+        } else if (unknownObject instanceof Adventure) {
+            ((Adventure) unknownObject).watchAdventure();
         }
     }
 }
