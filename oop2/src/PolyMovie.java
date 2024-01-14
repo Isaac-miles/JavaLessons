@@ -10,7 +10,7 @@ public class PolyMovie {
     }
     public  static PolyMovie getMovie(String type, String title){
            return switch (title.toUpperCase().charAt(0)){
-                case 'A'->new Adventure(title);
+                case 'A'-> new Adventure(title);
                 case 'C'-> new Commedy(title);
                 case 'S'-> new ScienceFiction(title);
                 default -> new PolyMovie(title);
