@@ -10,8 +10,12 @@ public class NextPolyMain {
 
         Object comedy = PolyMovie.getMovie("c", "Snakes on the plane");
         Comedy comedyMovie = (Comedy) comedy;
-        comedyMovie.watchComedy();
+        comedyMovie.watchComedy(); //doesn't compile
 
         var airplane = PolyMovie.getMovie("c", "snakes in the plane");
+        airplane.watchMovie();
+
+        var plane = new Comedy("title");
+        plane.watchComedy();
     }
 }
