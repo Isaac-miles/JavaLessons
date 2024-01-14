@@ -8,7 +8,14 @@ public class PolyMovie {
         String instanceType = this.getClass().getSimpleName();
         System.out.println(title + " is a "+ instanceType + "film");
     }
-
+    public  static PolyMovie getMovie(String type, String title){
+           return switch (title.toUpperCase().charAt(0)){
+                case 'A'->new Adventure(title);
+                case 'C'-> new Commedy(title);
+                case 'S'-> new ScienceFiction(title);
+                default -> new PolyMovie(title);
+            };
+    }
 }
 
 class Adventure extends PolyMovie{
