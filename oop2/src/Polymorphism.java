@@ -14,6 +14,10 @@ public class Polymorphism {
             if("Qq".contains((type))){
                 break;
             }
+            System.out.println("Enter movie title ");
+            String title = scanner.nextLine();
+            PolyMovie movie = PolyMovie.getMovie(type, title);
+            movie.watchMovie();
         }
     }
 }
