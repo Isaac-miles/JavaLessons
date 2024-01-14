@@ -6,5 +6,6 @@ public class PolyMovie {
     }
     public void watchMovie(){
         String instanceType = this.getClass().getSimpleName();
+        System.out.println(title + "is a "+ instanceType + "film");
     }
 }
