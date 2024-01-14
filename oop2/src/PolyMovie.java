@@ -28,6 +28,9 @@ class Adventure extends PolyMovie{
         super.watchMovie();
         System.out.printf(".. %s%n".repeat(3),"pleasant Scene","Scary Music","Something Bad Happens");
     }
+    public void watchAdventure(){
+        System.out.println("watching an adventure");
+    }
 }
 class Comedy extends PolyMovie{
 
@@ -39,6 +42,9 @@ class Comedy extends PolyMovie{
         super.watchMovie();
         System.out.printf(".. %s%n".repeat(3),"Something funny happens","Loving scenes","Happy Ending");
     }
+    public void watchComedy(){
+        System.out.println("watching a comedy");
+    }
 }
 class ScienceFiction extends PolyMovie{
 
@@ -49,5 +55,8 @@ class ScienceFiction extends PolyMovie{
     public void watchMovie(){
         super.watchMovie();
         System.out.printf(".. %s%n".repeat(3),"Barry does strange things","Barry chases creatures","Planet explodes");
+    }
+    public void watchScienceFiction(){
+        System.out.println("watching a science fiction");
     }
 }
