@@ -30,6 +30,17 @@ class Commedy extends PolyMovie{
     @Override
     public void watchMovie(){
         super.watchMovie();
-        System.out.printf(".. %s%n".repeat(3),"Something funny happens","Scary Music","Something Bad Happens");
+        System.out.printf(".. %s%n".repeat(3),"Something funny happens","Loving scenes","Happy Ending");
+    }
+}
+class ScienceFiction extends PolyMovie{
+
+    public ScienceFiction(String title) {
+        super(title);
+    }
+    @Override
+    public void watchMovie(){
+        super.watchMovie();
+        System.out.printf(".. %s%n".repeat(3),"Barry does strange things","Barry chases creatures","Planet explodes");
     }
 }
