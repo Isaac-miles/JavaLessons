@@ -14,6 +14,9 @@ public class Burger extends Item{
 
     @Override
     public double getAdjustedPrice() {
-        return getBasePrice()+ ((extra1==null? 0:extra1.getAdjustedPrice()));
+        return getBasePrice()+
+                ((extra1==null) ? 0 : extra1.getAdjustedPrice()) +
+                ((extra2==null)? 0 : extra2.getAdjustedPrice()) +
+                ((extra3==null)? 0 : extra3.getAdjustedPrice());
     }
 }
