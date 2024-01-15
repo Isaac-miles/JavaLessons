@@ -9,4 +9,12 @@ public class Item {
         this.name = name.toUpperCase();
         this.price = price;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getBasePrice() {
+        return price;
+    }
 }
