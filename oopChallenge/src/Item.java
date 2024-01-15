@@ -20,4 +20,11 @@ public class Item {
     public double getBasePrice() {
         return price;
     }
+    public double getAdjustedPrice(){
+        return switch (size){
+            case "SMALL" ->getBasePrice()-0.5;
+            case "LARGE" ->getBasePrice()+1;
+            default -> getBasePrice();
+        };
+    }
 }
