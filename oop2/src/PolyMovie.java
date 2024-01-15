@@ -35,7 +35,7 @@ class Adventure extends PolyMovie{
 class Comedy extends PolyMovie{
 
     public Comedy(String title) {
-        super(title);
+//        super(title);
     }
     @Override
     public void watchMovie(){
