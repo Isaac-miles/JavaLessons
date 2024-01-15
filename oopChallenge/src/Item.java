@@ -32,6 +32,9 @@ public class Item {
         this.size = size;
     }
     public static void printItem(String name, double price){
-
+        System.out.printf("%20s:%6.2f%n", name, price);
+    }
+    public void printItem(){
+       printItem(getName(), getAdjustedPrice());
     }
 }
