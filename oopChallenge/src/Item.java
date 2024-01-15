@@ -27,4 +27,11 @@ public class Item {
             default -> getBasePrice();
         };
     }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+    public static void printItem(String name, double price){
+
+    }
 }
