@@ -40,7 +40,7 @@ class Comedy extends PolyMovie{
     @Override
     public void watchMovie(){
         super.watchMovie();
-        System.out.printf(".. %s%n".repeat(3),"Something funny happens","Loving scenes","Happy Ending");
+//        System.out.printf(".. %s%n".repeat(3),"Something funny happens","Loving scenes","Happy Ending");
     }
     public void watchComedy(){
         System.out.println("watching a comedy");
