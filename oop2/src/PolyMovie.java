@@ -43,7 +43,7 @@ class Comedy extends PolyMovie{
         System.out.printf(".. %s%n".repeat(3),"Something funny happens","Loving scenes","Happy Ending");
     }
     public void watchComedy(){
-        System.out.println("watching a comedy");
+//        System.out.println("watching a comedy");
     }
 }
 class ScienceFiction extends PolyMovie{
