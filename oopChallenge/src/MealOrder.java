@@ -6,7 +6,12 @@ public class MealOrder {
         this("regular","coke", "fires");
     }
     public MealOrder(String burgerType, String drinkType,String sideType){
-        this.burger = new Burger(burgerType,4.0);
+        if(burgerType.equalsIgnoreCase("deluxe")){
+            this.burger = new DeluxBurger(burgerType,8.5);
+        }else {
+            this.burger = new Burger(burgerType,4.0);
+
+        }
         this.drink = new Item("drink",drinkType,1.0);
         this.side = new Item("side",sideType,1.50);
     }
