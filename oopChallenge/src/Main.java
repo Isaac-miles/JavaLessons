@@ -18,9 +18,14 @@ public class Main {
 //        regularMeal.setDrinkSize("LARGE");
 //        regularMeal.printItemizedList();
 
-        MealOrder secondMeal = new MealOrder("turkey", "sprite","chips");
-        secondMeal.addBurgerToppings("ugwu","HAM","CHEESE");
-        secondMeal.setDrinkSize("SMALL");
-        secondMeal.printItemizedList();
+//        MealOrder secondMeal = new MealOrder("turkey", "sprite","chips");
+//        secondMeal.addBurgerToppings("ugwu","HAM","CHEESE");
+//        secondMeal.setDrinkSize("SMALL");
+//        secondMeal.printItemizedList();
+
+        MealOrder deluxeMeal = new MealOrder("deluxe","fanta","nuts");
+        deluxeMeal.addBurgerToppings("AVOCADO","CHEESE","LEAF","MAYO","LETTUCE");
+        deluxeMeal.setDrinkSize("SMALL");
+        deluxeMeal.printItemizedList();
     }
 }

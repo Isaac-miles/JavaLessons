@@ -37,6 +37,13 @@ public class MealOrder {
     public void addBurgerToppings(String extra1, String extra2, String extra3){
         burger.addToppings(extra1,extra2,extra3);
     }
+    public void addBurgerToppings(String extra1, String extra2, String extra3,String extra4, String extra5){
+        if(burger instanceof DeluxBurger db){
+            db.addToppings(extra1,extra2,extra3,extra4,extra5);
+        }else {
+        burger.addToppings(extra1,extra2,extra3);
+        }
+    }
     public void setDrinkSize(String size){
         drink.setSize(size);
     }
