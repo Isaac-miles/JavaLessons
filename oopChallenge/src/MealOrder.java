@@ -16,12 +16,20 @@ public class MealOrder {
         this.side = new Item("side",sideType,1.50);
     }
     public double getTotalPrice(){
+        if(burger instanceof DeluxBurger){
+            return burger.getAdjustedPrice();
+        }
         return side.getAdjustedPrice()+ drink.getAdjustedPrice()+ burger.getAdjustedPrice();
     }
     public void printItemizedList(){
         burger.printItem();
+        if(burger instanceof DeluxBurger){
+            Item.printItem(drink.getName(),0);
+            Item.printItem(side.getName(),0);
+        }else{
         drink.printItem();
         side.printItem();
+        }
         System.out.println("_".repeat(27));
         Item.printItem("TOTAL PRICE", getTotalPrice());
     }
