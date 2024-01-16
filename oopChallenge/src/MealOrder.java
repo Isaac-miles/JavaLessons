@@ -10,4 +10,15 @@ public class MealOrder {
         this.drink = new Item("drink",drinkType,1.0);
         this.side = new Item("side",sideType,1.50);
     }
+    public double getTotalPrice(){
+        return side.getAdjustedPrice()+ drink.getAdjustedPrice()+ burger.getAdjustedPrice();
+    }
+    public void printItemizedList(){
+        burger.printItem();
+        drink.printItem();
+        side.printItem();
+        System.out.println("_".repeat(30));
+        Item.printItem("TOTAL PRICE", getTotalPrice());
+    }
+
 }
