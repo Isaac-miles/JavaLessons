@@ -10,8 +10,10 @@ public class Main {
 //     Item avocado = new Item("TOPPING", "avocado",1.4);
 //     avocado.printItem();
 
-        Burger burger = new Burger("regular", 4.0);
-        burger.addToppings("BACON","CHEESE","MAYO");
-        burger.printItem();
+//        Burger burger = new Burger("regular", 4.0);
+//        burger.addToppings("BACON","CHEESE","MAYO");
+//        burger.printItem();
+        MealOrder regularMeal = new MealOrder();
+        regularMeal.printItemizedList();
     }
 }
