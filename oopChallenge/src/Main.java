@@ -13,7 +13,14 @@ public class Main {
 //        Burger burger = new Burger("regular", 4.0);
 //        burger.addToppings("BACON","CHEESE","MAYO");
 //        burger.printItem();
-        MealOrder regularMeal = new MealOrder();
-        regularMeal.printItemizedList();
+//        MealOrder regularMeal = new MealOrder();
+//        regularMeal.addBurgerToppings("BACON","CHEESE","HAM");
+//        regularMeal.setDrinkSize("LARGE");
+//        regularMeal.printItemizedList();
+
+        MealOrder secondMeal = new MealOrder("turkey", "sprite","chips");
+        secondMeal.addBurgerToppings("ugwu","HAM","CHEESE");
+        secondMeal.setDrinkSize("SMALL");
+        secondMeal.printItemizedList();
     }
 }
