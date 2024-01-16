@@ -46,4 +46,10 @@ public class Burger extends Item{
         }
     }
 
+    @Override
+    public void printItem() {
+        printItemizedList();
+        System.out.println("-".repeat(27));
+        super.printItem();
+    }
 }
