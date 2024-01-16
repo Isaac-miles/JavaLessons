@@ -4,8 +4,8 @@ package dev.zico;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        int[] myIntArray = new int[]{1,2,3,4,5};
+        int[] myIntArray = {1,2,3,4,5};
         myIntArray[4] = 50;
-        System.out.println(myIntArray[2]);
+        System.out.println(myIntArray.length);
     }
 }
