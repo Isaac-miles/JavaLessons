@@ -25,5 +25,13 @@ public class Main {
         System.out.println(Arrays.toString(newArray));
 
         Object objectVariable = newArray;
+        if(objectVariable instanceof int[]){
+            System.out.println("objectVariable is an int array");
+        }
+        //not a good practice but just to shwo arrays can have different types of element
+        Object[] objectArray = new Object[3];
+        objectArray[0] ="Hello";
+        objectArray[1] = new StringBuilder("world");
+        objectArray[2] = newArray;
     }
 }
