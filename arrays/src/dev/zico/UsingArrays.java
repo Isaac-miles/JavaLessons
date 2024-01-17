@@ -22,9 +22,15 @@ public class UsingArrays {
         int[] fourthArray = Arrays.copyOf(thirdArray, thirdArray.length); //creates a new array
         System.out.println(Arrays.toString(fourthArray));
         Arrays.sort(fourthArray);
-        System.out.println(Arrays.toString(thirdArray));
-        System.out.println(Arrays.toString(fourthArray));
+//        System.out.println(Arrays.toString(thirdArray));
+//        System.out.println(Arrays.toString(fourthArray));
 
+        //what if the length of the copied  array is greater than
+        int[] smallArray = Arrays.copyOf(thirdArray, 5);
+        System.out.println(Arrays.toString(smallArray));
+
+        int[] largeArray = Arrays.copyOf(thirdArray, 15);
+        System.out.println(Arrays.toString(largeArray));
 
     }
     private static int[] getRandomArrays(int len){
