@@ -22,6 +22,7 @@ public class ArrayChallenge {
         return  newArray;
     }
     private static int[] sortInteger(int[] array){
+        System.out.println(Arrays.toString(array));
         int[] sortedArray = Arrays.copyOf(array, array.length);
         boolean flag = true;
         int temp;
@@ -32,6 +33,7 @@ public class ArrayChallenge {
                     temp = sortedArray[i];
                     sortedArray[i]= sortedArray[i+1];
                     sortedArray[i+1] = temp;
+                    System.out.println("----> "+ Arrays.toString(sortedArray));
                 }
             }
         }
