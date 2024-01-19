@@ -8,7 +8,7 @@ public class ArrayChallenge {
         int[] unsortedArray = generateRandomArray(10);
         System.out.println("before sorting" + Arrays.toString(unsortedArray));
 
-        int[] sortedArray = sortInteger(new int[]{7,30,35});
+        int[] sortedArray = sortIntArray(new int[]{7,30,35});
         System.out.println("after sorting" + Arrays.toString(sortedArray));
 
     }
@@ -29,7 +29,7 @@ public class ArrayChallenge {
         while (flag){
             flag = false;
             for(int i =0; i<sortedArray.length-1; i++){
-                if(sortedArray[i]< sortedArray[i+1]){
+                if(sortedArray[i] > sortedArray[i+1]){
                     temp = sortedArray[i];
                     sortedArray[i]= sortedArray[i+1];
                     sortedArray[i+1] = temp;
