@@ -6,7 +6,14 @@ public class ArrayChalleng2 {
     public static void main(String[] args) {
 
     }
+    public static int[] getInteger(int capacity){
 
+    }
+    public static void printArray(int[] array){
+        for(int i=0;i<array.length;i++){
+            System.out.printf("Element %d contents %d%n", i, array[i]);
+        }
+    }
     private static int[] sortIntArray(int[] array) {
         System.out.println("Before sorting " + Arrays.toString(array));
         int[] sortedArray = Arrays.copyOf(array, array.length);
