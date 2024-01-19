@@ -1,13 +1,19 @@
 package dev.zico;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class ArrayChalleng2 {
     public static void main(String[] args) {
 
     }
     public static int[] getInteger(int capacity){
+        Scanner scanner = new Scanner(System.in);
         int[] array = new int[capacity];
+        System.out.printf("Enter %d integer values:r", capacity);
+        for(int j=0;j<array.length; j++){
+            array[j] =
+        }
     }
     public static void printArray(int[] array){
         for(int i=0;i<array.length;i++){
