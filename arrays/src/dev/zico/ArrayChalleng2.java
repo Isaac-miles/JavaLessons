@@ -12,8 +12,9 @@ public class ArrayChalleng2 {
         int[] array = new int[capacity];
         System.out.printf("Enter %d integer values:r", capacity);
         for(int j=0;j<array.length; j++){
-            array[j] =
+            array[j] = scanner.nextInt();
         }
+        return array;
     }
     public static void printArray(int[] array){
         for(int i=0;i<array.length;i++){
