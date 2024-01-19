@@ -12,7 +12,7 @@ public class ArrayChalleng2 {
     public static int[] getInteger(int capacity){
         Scanner scanner = new Scanner(System.in);
         int[] array = new int[capacity];
-        System.out.printf("Enter %d integer values:r", capacity);
+        System.out.println("Enter "+ capacity + " integer values: \r" );
         for(int j=0;j<array.length; j++){
             array[j] = scanner.nextInt();
         }
