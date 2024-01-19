@@ -61,7 +61,7 @@ public class ArrayChallenge {
             }
         }
 
-//        System.out.println("After sorting " + Arrays.toString(sortedArray));
+        System.out.println("After sorting " + Arrays.toString(sortedArray));
         return sortedArray;
     }
 }
