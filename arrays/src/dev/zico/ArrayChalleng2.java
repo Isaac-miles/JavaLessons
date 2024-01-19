@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class ArrayChalleng2 {
     public static void main(String[] args) {
-
+       int[] array = getInteger(5);
+       int[] sortedArrays = sortIntArray(array);
+       printArray(sortedArrays);
     }
     public static int[] getInteger(int capacity){
         Scanner scanner = new Scanner(System.in);
