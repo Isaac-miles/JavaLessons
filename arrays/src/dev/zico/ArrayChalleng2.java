@@ -7,7 +7,7 @@ public class ArrayChalleng2 {
 
     }
     public static int[] getInteger(int capacity){
-
+        int[] array = new int[capacity];
     }
     public static void printArray(int[] array){
         for(int i=0;i<array.length;i++){
