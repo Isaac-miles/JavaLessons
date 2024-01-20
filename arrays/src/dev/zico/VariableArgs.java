@@ -6,7 +6,9 @@ public class VariableArgs {
     }
 
     public static void printText(String[] texts){
-
+        for(String text : texts){
+            System.out.println(text);
+        }
     }
 
 }
