@@ -11,6 +11,8 @@ public class ArrayReference {
         System.out.println("MyIntArray" + Arrays.toString(anotherArray));
         anotherArray[0] = 10;
 
+        System.out.println("MyIntArray" + Arrays.toString(myIntArray));
+        System.out.println("MyIntArray" + Arrays.toString(anotherArray));
 
     }
 }
