@@ -1,6 +1,8 @@
 package dev.zico;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class MoreLists {
@@ -45,6 +47,15 @@ public class MoreLists {
         System.out.println(groceries);
         System.out.println("groceries empty = "+ groceries.isEmpty());
 
-        groceries.addAll(List.of("apples","milk","mustard"));
+        groceries.addAll(List.of("apples","milk","mustard","cheese"));
+        groceries.addAll(Arrays.asList("eggs","beans","rice"));
+        System.out.println(groceries);
+        groceries.sort(Comparator.naturalOrder());
+        System.out.println(groceries);
+        groceries.sort(Comparator.reverseOrder());
+        System.out.println(groceries);
+
+        var grocerArray = groceries.toArray(new String[groceries.size()]); //let's say you want to pass your data as array to methods that only accepts arrays instrad of lists
+        System.out.println(Arrays.toString(grocerArray));
     }
 }
