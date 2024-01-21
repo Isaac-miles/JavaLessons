@@ -9,6 +9,6 @@ public class MoreLists {
         List<String> list = List.of(items);
         System.out.println(list);
         System.out.println(list.getClass().getName());
-//        list.add("yam");
+//        list.add("yam"); throws an exception
     }
 }
