@@ -7,6 +7,10 @@ record GroceryItem(String name,String type, int count){
     public GroceryItem(String name){
         this(name,"todo",1);
     }
+    @Override
+    public String toString(){
+        return String.format("%d %s in %s", count,name,type);
+    }
 }
 
 public class Main {
@@ -24,6 +28,11 @@ public class Main {
         ArrayList<GroceryItem> objectListGood = new ArrayList<>(); //type checking
 //        objectListGood.add("his"); //compile type checking and won't compile
         objectListGood.add(new GroceryItem("milk"));
+        objectListGood.add(new GroceryItem("orange"));
+        objectListGood.add(new GroceryItem("butter","PRODUCE",4));
+        objectListGood.set(0,new GroceryItem("rice","PROTEIN", 2));
+        objectListGood.remove(1);
 
+        System.out.println(objectListGood);
     }
 }
