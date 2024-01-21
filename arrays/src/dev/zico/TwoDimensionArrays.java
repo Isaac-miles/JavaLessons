@@ -16,5 +16,12 @@ public class TwoDimensionArrays {
             }
             System.out.println();
         }
+        //using enhanced for loop
+        for (int[] innerArray : array2) {
+            for (int j = 0; j < innerArray.length; j++) {
+                System.out.println(innerArray[j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
