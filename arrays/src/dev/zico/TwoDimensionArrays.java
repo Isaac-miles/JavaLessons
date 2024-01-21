@@ -38,5 +38,13 @@ public class TwoDimensionArrays {
         };
         System.out.println(Arrays.deepToString(anyArray));
 
+        anyArray[2] = new int[2][2][2];
+        System.out.println(Arrays.deepToString(anyArray));
+
+        for(Object element:anyArray){
+            System.out.println("Element type = "+ element.getClass().getSimpleName());
+            System.out.println("Element toString() = "+element);
+            System.out.println(Arrays.deepToString((Object[]) element));
+        }
     }
 }
