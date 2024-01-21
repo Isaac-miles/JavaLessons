@@ -25,5 +25,6 @@ public class TwoDimensionArrays {
 //            System.out.println();
 //        }
         System.out.println(Arrays.deepToString(array2));
+        array2[1] = new int[]{10,20,30};
     }
 }
