@@ -46,5 +46,6 @@ public class TwoDimensionArrays {
             System.out.println("Element toString() = "+element);
             System.out.println(Arrays.deepToString((Object[]) element));
         }
+        //when using arrays stick to strict typed, to avoid anything being pass to array element as the above method is not ideal
     }
 }
