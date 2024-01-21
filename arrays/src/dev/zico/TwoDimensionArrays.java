@@ -27,5 +27,16 @@ public class TwoDimensionArrays {
         System.out.println(Arrays.deepToString(array2));
         array2[2] = new int[]{10,20,30};
         System.out.println(Arrays.deepToString(array2));
+
+        Object[] anyArray = new Object[3];
+        System.out.println(Arrays.toString(anyArray));
+        anyArray[0] = new String[] {"a","b","c"};
+        System.out.println(Arrays.deepToString(anyArray));
+
+        anyArray[1] = new String[][]{
+                {"1","2"},{"3","4","5"},{"6","7","8","9"}
+        };
+        System.out.println(Arrays.deepToString(anyArray));
+
     }
 }
