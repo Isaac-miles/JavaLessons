@@ -17,8 +17,13 @@ public class Main {
         todoItems[2] = "5 oranges";
         //anyone who expects every element in this array to be arrayed will have a problem processing this data
         System.out.println(Arrays.toString(todoItems));
-        ArrayList objectList = new ArrayList();
-        objectList.add(new GroceryItem("milk"));
-        objectList.add("yogurt");
+        ArrayList objectListBad = new ArrayList(); //no type checking, a bad way of initializing
+        objectListBad.add(new GroceryItem("milk"));
+        objectListBad.add("yogurt");
+
+        ArrayList<GroceryItem> objectListGood = new ArrayList<>(); //type checking
+//        objectListGood.add("his"); //compile type checking and won't compile
+        objectListGood.add(new GroceryItem("milk"));
+
     }
 }
