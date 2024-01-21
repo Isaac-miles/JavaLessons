@@ -14,6 +14,7 @@ public class Main {
         todoItems[0] = new GroceryItem("buy flakes");
         todoItems[1] = new GroceryItem("cake", "food", 6);
         todoItems[2] = "5 oranges";
+        //anyone who expects every element in this array to be arrayed will have a problem processing this data
         System.out.println(Arrays.toString(todoItems));
     }
 }
