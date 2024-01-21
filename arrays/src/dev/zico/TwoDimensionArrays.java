@@ -12,16 +12,17 @@ public class TwoDimensionArrays {
 //        for (int i = 0; i <array2.length; i++) {
 //            var innerArray = array2[i];
 //            for (int j = 0; j < innerArray.length; j++) {
-//                System.out.println(array2[i][j]+" ");
+//                System.out.print(array2[i][j]+" ");
 //            }
 //            System.out.println();
 //        }
         //using enhanced for loop
-        for (int[] innerArray : array2) {
-            for (int i : innerArray) {
-                System.out.println(i + " ");
-            }
-            System.out.println();
-        }
+//        for (var outer : array2) {
+//            for (var i : outer) {
+//                System.out.print(i + " ");
+//            }
+//            System.out.println();
+//        }
+        System.out.println(Arrays.deepToString(array2));
     }
 }
