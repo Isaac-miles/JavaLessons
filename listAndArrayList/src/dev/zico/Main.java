@@ -1,5 +1,6 @@
 package dev.zico;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 record GroceryItem(String name,String type, int count){
@@ -16,5 +17,8 @@ public class Main {
         todoItems[2] = "5 oranges";
         //anyone who expects every element in this array to be arrayed will have a problem processing this data
         System.out.println(Arrays.toString(todoItems));
+        ArrayList objectList = new ArrayList();
+        objectList.add(new GroceryItem("milk"));
+        objectList.add("yogurt");
     }
 }
