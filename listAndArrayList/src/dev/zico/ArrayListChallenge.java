@@ -2,7 +2,6 @@ package dev.zico;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.Scanner;
 
 public class ArrayListChallenge {
@@ -25,7 +24,13 @@ public class ArrayListChallenge {
     private static void addItems(ArrayList<String> groceries){
         System.out.println("Add item(s) [separated by comma]:");
         String[] items = scanner.nextLine().split(",");
-        groceries.addAll(List.of(items));
+        for(String i:groceries){
+            String trimmed = i.trim();
+            if(!groceries.contains(trimmed)){
+                groceries.add(trimmed);
+
+            }
+        }
     }
     private  static void printActions(){
         String textBlock = """
