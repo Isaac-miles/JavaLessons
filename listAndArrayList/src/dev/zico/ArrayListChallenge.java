@@ -5,6 +5,14 @@ import java.util.Scanner;
 public class ArrayListChallenge {
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        boolean flag = true;
+        while(flag){
+            printActions();
+            switch (Integer.parseInt(scanner.next())){
+
+                default -> flag = false;
+            }
+        }
 
     }
     private  static void printActions(){
