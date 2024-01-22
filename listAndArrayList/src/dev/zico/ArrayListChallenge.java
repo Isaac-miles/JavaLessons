@@ -13,17 +13,16 @@ public class ArrayListChallenge {
 
         while(flag){
             printActions();
-            switch (Integer.parseInt(scanner.next())){
-                case 0 ->{
-
-                }
+            switch (Integer.parseInt(scanner.nextLine())){
+                case 1 ->addItems(groceries);
                 default -> flag = false;
             }
+            groceries.sort(Comparator.naturalOrder());
+            System.out.println(groceries);
         }
-        groceries.sort(Comparator.naturalOrder());
-        System.out.println(groceries);
+
     }
-    private static void addItem(ArrayList<String> groceries){
+    private static void addItems(ArrayList<String> groceries){
         System.out.println("Add item(s) [separated by comma]:");
         String[] items = scanner.nextLine().split(",");
         groceries.addAll(List.of(items));
