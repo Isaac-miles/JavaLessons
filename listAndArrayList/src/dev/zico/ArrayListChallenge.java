@@ -1,11 +1,15 @@
 package dev.zico;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class ArrayListChallenge {
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         boolean flag = true;
+        ArrayList<String> groceries = new ArrayList<>();
+
         while(flag){
             printActions();
             switch (Integer.parseInt(scanner.next())){
@@ -13,7 +17,8 @@ public class ArrayListChallenge {
                 default -> flag = false;
             }
         }
-
+        groceries.sort(Comparator.naturalOrder());
+        System.out.println(groceries);
     }
     private  static void printActions(){
         String textBlock = """
