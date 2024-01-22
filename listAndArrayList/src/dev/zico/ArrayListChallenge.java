@@ -2,10 +2,11 @@ package dev.zico;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
 
 public class ArrayListChallenge {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         boolean flag = true;
         ArrayList<String> groceries = new ArrayList<>();
@@ -23,8 +24,9 @@ public class ArrayListChallenge {
         System.out.println(groceries);
     }
     private static void addItem(ArrayList<String> groceries){
-        System.out.println("Add item(s) [separate items by coma]:");
-
+        System.out.println("Add item(s) [separated by comma]:");
+        String[] items = scanner.nextLine().split(",");
+        groceries.addAll(List.of(items));
     }
     private  static void printActions(){
         String textBlock = """
