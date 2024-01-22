@@ -7,4 +7,9 @@ public class ArrayListChallenge {
     public static void main(String[] args) {
 
     }
+    private  static void printActions(){
+        String textBlock = """
+                """;
+        System.out.println(textBlock + " ");
+    }
 }
