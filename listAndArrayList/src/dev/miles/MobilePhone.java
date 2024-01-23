@@ -26,6 +26,11 @@ public class MobilePhone {
     private String myNumber;
     private ArrayList<Contact> myContact;
 
+    public static void main(String[] args) {
+        Contact myContact = new Contact("miles","07030991936");
+
+    }
+
     public MobilePhone(String myNumber, ArrayList<Contact> myContact) {
         this.myNumber = myNumber;
         this.myContact = myContact;
@@ -50,7 +55,22 @@ public class MobilePhone {
             return true;
         }else return false;
     }
-
+//    private int findContact(String contactName){
+//
+//        for(Contact contact:myContact){
+//
+//        }
+//        return myContact.indexOf(contactName);
+//    }
+//    public Contact queryContact(String name){
+//       ArrayList<String> contactNames = new ArrayList<>();
+//        for(Contact contact:myContact){
+//
+//           String[] contactName = contact.getName().split(",");
+//           contactNames.addAll(List.of(contactName));
+//        }
+//
+//    }
     private int findContact(Contact contact){
        return myContact.indexOf(contact);
     }
