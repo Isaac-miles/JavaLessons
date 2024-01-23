@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,6 +10,18 @@ class ArrayListChallenge{
 
     public static void main(String[] args) {
         ArrayList<String> listItems = new ArrayList<>();
+        boolean flag = true;
+        while (flag){
+            printMessage();
+            switch (Integer.parseInt(scanner.nextLine())){
+                case 1->addItems(listItems);
+                default -> flag = false;
+            }
+            System.out.println(listItems);
+            listItems.sort(Comparator.naturalOrder());
+            System.out.println("After sorting " + listItems);
+
+        }
 
 
     }
@@ -18,6 +31,7 @@ class ArrayListChallenge{
                 0-to shutdown
                 1-to add item(s) to list (comma delimited list)
                 2-to remove any item(s) (comma delimited list)
+                Enter a number for which action you want to do:
                 """;
         System.out.println(actions+ " ");
     }
