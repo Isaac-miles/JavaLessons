@@ -1,7 +1,6 @@
 package dev.zico;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 class ArrayListChallenge{
@@ -19,10 +18,10 @@ class ArrayListChallenge{
                 1-to add item(s) to list (comma delimited list)
                 2-to remove any item(s) (comma delimited list)
                 """;
-        System.out.println(" "+ actions);
+        System.out.println(actions+ " ");
     }
     private static void addItems(ArrayList<String> listItems){
-        System.out.println("ENTER A NUMBER FOR WHICH YOU WANT TO DO");
-        List<String> items = new ArrayList<>();
+        System.out.println("Add item(s) [separated by comma]:");
+        String[] items = scanner.nextLine().split(",");
     }
 }
