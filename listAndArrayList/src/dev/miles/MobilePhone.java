@@ -42,7 +42,14 @@ public class MobilePhone {
             return true;
         }else return false;
     }
-
+    public boolean removeContact(Contact contact){
+        int findContact = findContact(contact);
+        if(findContact>=0){
+            myContact.remove(contact);
+            System.out.println("contact removed successfully");
+            return true;
+        }else return false;
+    }
 
     private int findContact(Contact contact){
        return myContact.indexOf(contact);
