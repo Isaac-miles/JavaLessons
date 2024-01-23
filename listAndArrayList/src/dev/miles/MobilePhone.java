@@ -1,8 +1,8 @@
 package dev.miles;
 
 class Contact{
-    private String name;
-    private String phoneNumber;
+    private final String name;
+    private final String phoneNumber;
     public Contact(String name, String phoneNumber){
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -15,8 +15,14 @@ class Contact{
     public String getPhoneNumber() {
         return phoneNumber;
     }
+    public static Contact createContact(String name, String phoneNumber){
+        return new Contact(name.trim(),phoneNumber.trim());
+    }
 }
+
 public class MobilePhone {
+    private String myNumber;
+
 
 }
 
