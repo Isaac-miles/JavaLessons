@@ -21,7 +21,7 @@ class Contact{
 }
 
 public class MobilePhone {
-    private String myNumber;
+//    private String myNumber;
 
 
 }
