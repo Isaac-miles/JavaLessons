@@ -14,6 +14,7 @@ class ArrayListChallenge{
             printMessage();
             switch (Integer.parseInt(scanner.nextLine())){
                 case 1->addItems(listItems);
+                case 2->remove(listItems);
                 default -> flag = false;
             }
             System.out.println(listItems);
@@ -37,6 +38,19 @@ class ArrayListChallenge{
     private static void addItems(ArrayList<String> listItems){
         System.out.println("Add item(s) [separated by comma]:");
         String[] items = scanner.nextLine().split(",");
+        for(String item:items){
+            String trimmedItem = item.trim();
+            listItems.add(trimmedItem);
+        }
+//        listItems.addAll(List.of(items)); this method is not efficient
+    }
+    private static void remove(ArrayList<String> listItems){
+        System.out.println("Add remove(s) [separated by comma]:");
+        String[] items = scanner.nextLine().split(",");
+        for(String item:items){
+            String trimmedItem = item.trim();
+            listItems.remove(trimmedItem);
+        }
 //        listItems.addAll(List.of(items)); this method is not efficient
     }
 }
