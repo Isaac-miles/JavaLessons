@@ -9,6 +9,7 @@ class ArrayListChallenge{
     public static void main(String[] args) {
         ArrayList<String> listItems = new ArrayList<>();
 
+
     }
     private static void printMessage(){
         String actions = """
@@ -18,5 +19,8 @@ class ArrayListChallenge{
                 2-to remove any item(s) (comma delimited list)
                 """;
         System.out.println(" "+ actions);
+    }
+    private static void addItems(ArrayList<String> listItems){
+
     }
 }
