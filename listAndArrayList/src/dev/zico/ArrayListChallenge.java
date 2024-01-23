@@ -11,6 +11,12 @@ class ArrayListChallenge{
 
     }
     private static void printMessage(){
-
+        String actions = """
+                Available actions
+                0-to shutdown
+                1-to add item(s) to list (comma delimited list)
+                2-to remove any item(s) (comma delimited list)
+                """;
+        System.out.println(" "+ actions);
     }
 }
