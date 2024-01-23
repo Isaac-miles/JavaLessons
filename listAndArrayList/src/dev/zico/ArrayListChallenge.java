@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 class ArrayListChallenge{
@@ -23,5 +24,6 @@ class ArrayListChallenge{
     private static void addItems(ArrayList<String> listItems){
         System.out.println("Add item(s) [separated by comma]:");
         String[] items = scanner.nextLine().split(",");
+        listItems.addAll(List.of(items));
     }
 }
