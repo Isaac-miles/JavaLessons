@@ -1,5 +1,7 @@
 package dev.miles;
 
+import java.util.ArrayList;
+
 class Contact{
     private final String name;
     private final String phoneNumber;
@@ -22,6 +24,7 @@ class Contact{
 
 public class MobilePhone {
     private String myNumber;
+    ArrayList<Contact> myContact;
 
 
 }
