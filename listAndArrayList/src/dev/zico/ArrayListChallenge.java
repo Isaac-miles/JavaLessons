@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 class ArrayListChallenge{
@@ -21,6 +22,7 @@ class ArrayListChallenge{
         System.out.println(" "+ actions);
     }
     private static void addItems(ArrayList<String> listItems){
-
+        System.out.println("ENTER A NUMBER FOR WHICH YOU WANT TO DO");
+        List<String> items = new ArrayList<>();
     }
 }
