@@ -14,7 +14,7 @@ public class LinkedListChallenge {
         LinkedList<Place> placesToVisit = new LinkedList<>();
         Place lagos = new Place("lagosBeach", 122);
         addPlace(placesToVisit,lagos);
-        addPlace(placesToVisit,lagos);
+        addPlace(placesToVisit,new Place("plateau",1223));
 
         System.out.println(placesToVisit);
     }
@@ -29,7 +29,14 @@ public class LinkedListChallenge {
                 return;
             }
         }
-
+        int matchedIndex = 0;
+        for(var listPlace:list){
+            if(place.distance() < listPlace.distance()){
+                list.add(matchedIndex,place);
+                return;
+            }
+            matchedIndex++;
+        }
         list.add(place);
     }
 }
