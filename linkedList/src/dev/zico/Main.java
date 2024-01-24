@@ -109,9 +109,12 @@ public class Main {
         }
         //using hasNext for the next loop won't work because the above loop has updated hasnext value to false instead use..
         while (iterator.hasPrevious()){
-            System.out.println(iterator);
+            System.out.println(iterator.previous());
         }
         System.out.println(list);
+        var iterator2 = list.listIterator(3);
+        System.out.println(iterator2.previous());
+
     }
     private static void testIterator2(LinkedList<String> list){
         //            System.out.println(iterator.next());
