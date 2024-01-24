@@ -44,12 +44,24 @@ public class LinkedListChallenge {
             switch (menuItem){
                 case "F":
                     System.out.println("User wants to go forward");
+                    if(!forward){ //reversing direction
+                        forward = true;
+                        if(iterator.hasNext()){
+                            iterator.next(); //adjust  position forward
+                        }
+                    }
                     if (iterator.hasNext()){
                         System.out.println(iterator.next());
                     }
                     break;
                 case "B":
                     System.out.println("User wants to go backward");
+                    if(forward){ //reversing direction
+                        forward = false;
+                        if(iterator.hasPrevious()){
+                            iterator.previous(); //adjust  position forward
+                        }
+                    }
                     if (iterator.hasPrevious()){
                         System.out.println(iterator.previous());
                     }
