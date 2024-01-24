@@ -32,7 +32,6 @@ public class MobilePhone {
         this.myContacts = new ArrayList<Contact>();
     }
 
-
     public boolean addNewContact(Contact contact){
         int value = findContact(contact.getName());
         if(value >=0){
@@ -82,8 +81,14 @@ public class MobilePhone {
     private int findContact(Contact contact){
        return myContacts.indexOf(contact);
     }
+    private Contact queryContact(String name){
+        int position = findContact(name);
+        if(position>=0){
+            return this.myContacts.get(position);
+        }
+        return null;
+    }
     public void printContact(){
-
         for (Contact contact : myContacts){
             System.out.printf("contact List%n %d.->%s%n", myContacts.indexOf(contact)+1, contact.getName());
         }
