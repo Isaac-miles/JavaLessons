@@ -29,19 +29,30 @@ public class LinkedListChallenge {
 
         printMenus();
         while (!quiteLoop){
-            if(!iterator.hasNext()){
+            if(!iterator.hasPrevious()){
                 System.out.println("Originating : "+iterator.next());
                 forward = true;
             }
+            if(!iterator.hasNext()){
+                System.out.println("final : "+iterator.previous());
+                forward = false;
+            }
+
             System.out.println("Enter value");
             String menuItem = scanner.nextLine().toUpperCase().substring(0,1);
 
             switch (menuItem){
                 case "F":
                     System.out.println("User wants to go forward");
+                    if (iterator.hasNext()){
+                        System.out.println(iterator.next());
+                    }
                     break;
                 case "B":
                     System.out.println("User wants to go backward");
+                    if (iterator.hasPrevious()){
+                        System.out.println(iterator.previous());
+                    }
                     break;
                 case "M":
                     printMenus();
