@@ -2,7 +2,13 @@ package dev.zico;
 
 import java.util.LinkedList;
 
-record Place(String name, int distance){}
+record Place(String name, int distance){
+    @Override
+    public String toString() {
+        return String.format("%s (%d)", name, distance);
+    }
+}
+
 public class LinkedListChallenge {
     public static void main(String[] args) {
         LinkedList<Place> placesToVisit = new LinkedList<>();
