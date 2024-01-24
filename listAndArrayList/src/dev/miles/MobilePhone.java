@@ -8,6 +8,7 @@ class Contact{
     public Contact(String name, String phoneNumber){
         this.name = name;
         this.phoneNumber = phoneNumber;
+        createContact(name,phoneNumber);
     }
 
     public String getName() {
@@ -24,17 +25,13 @@ class Contact{
 
 public class MobilePhone {
     private String myNumber;
-    private ArrayList<Contact> myContact;
+    private ArrayList<Contact> myContacts;
 
-    public static void main(String[] args) {
-        Contact myContact = new Contact("miles","07030991936");
-
-    }
-
-    public MobilePhone(String myNumber, ArrayList<Contact> myContact) {
+    public MobilePhone(String myNumber, ArrayList<Contact> myContacts) {
         this.myNumber = myNumber;
-        this.myContact = myContact;
+        this.myContacts = myContacts;
     }
+
     public boolean addNewContact(Contact contact){
         int value = findContact(contact);
         return value >= 0;
@@ -43,14 +40,14 @@ public class MobilePhone {
         int contactIndex = findContact(oldContact);
         if(contactIndex>=0){
             System.out.println("contact exists and updated");
-            myContact.set(contactIndex,newContact);
+            myContacts.set(contactIndex,newContact);
             return true;
         }else return false;
     }
     public boolean removeContact(Contact contact){
         int findContact = findContact(contact);
         if(findContact>=0){
-            myContact.remove(contact);
+            myContacts.remove(contact);
             System.out.println("contact removed successfully");
             return true;
         }else return false;
@@ -72,12 +69,12 @@ public class MobilePhone {
 //
 //    }
     private int findContact(Contact contact){
-       return myContact.indexOf(contact);
+       return myContacts.indexOf(contact);
     }
     public void printContact(){
 
-        for (Contact contact :myContact){
-            System.out.printf("contact List%n %d.->%s%n",myContact.indexOf(contact)+1, contact.getName());
+        for (Contact contact : myContacts){
+            System.out.printf("contact List%n %d.->%s%n", myContacts.indexOf(contact)+1, contact.getName());
         }
     }
 }
