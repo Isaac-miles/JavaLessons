@@ -15,8 +15,11 @@ public class Main {
 //        removeElement(placesToVisit);
 //        System.out.println(placesToVisit);
 //        getElement(placesToVisit);
-         printElements3(placesToVisit);
+//         printElements3(placesToVisit);
         System.out.println(placesToVisit);
+        testIterator(placesToVisit);
+//        testIterator2(placesToVisit);
+
 
     }
     public static void addMore(LinkedList<String> list){
@@ -97,10 +100,22 @@ public class Main {
 
     }
     private static void testIterator(LinkedList<String> list){
-        var iterator = list.iterator();
+        var iterator = list.listIterator();
         while (iterator.hasNext()){
-            System.out.println(iterator.next());
+//            System.out.println(iterator.next());
+            if(iterator.next().equals("lagos")){
+                iterator.add("jos");
+            }
         }
+        //using hasNext for the next loop won't work because the above loop has updated hasnext value to false instead use..
+        while (iterator.hasPrevious()){
+            System.out.println(iterator);
+        }
+        System.out.println(list);
+    }
+    private static void testIterator2(LinkedList<String> list){
+        //            System.out.println(iterator.next());
+        list.removeIf(s -> s.equals("lagos"));
         System.out.println(list);
     }
 }
