@@ -97,6 +97,10 @@ public class Main {
 
     }
     private static void testIterator(LinkedList<String> list){
-
+        var iterator = list.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        System.out.println(list);
     }
 }
