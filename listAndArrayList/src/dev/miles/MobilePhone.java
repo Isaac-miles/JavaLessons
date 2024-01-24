@@ -2,26 +2,6 @@ package dev.miles;
 
 import java.util.ArrayList;
 
-class Contact{
-    private final String name;
-    private final String phoneNumber;
-    public Contact(String name, String phoneNumber){
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        createContact(name,phoneNumber);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-    public static Contact createContact(String name, String phoneNumber){
-        return new Contact(name.trim(),phoneNumber.trim());
-    }
-}
 
 public class MobilePhone {
     private String myNumber;
@@ -89,8 +69,10 @@ public class MobilePhone {
         return null;
     }
     public void printContact(){
-        for (Contact contact : myContacts){
-            System.out.printf("contact List%n %d.->%s%n", myContacts.indexOf(contact)+1, contact.getName());
+
+
+        for (Contact contact : this.myContacts){
+            System.out.printf("contact List%n %d.%s ->%s", this.myContacts.indexOf(contact)+1, contact.getName(),contact.getPhoneNumber());
         }
     }
 }
