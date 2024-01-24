@@ -17,11 +17,10 @@ public class LinkedListChallenge {
         addPlace(placesToVisit,new Place("plateau",970));
         addPlace(placesToVisit,new Place("abuja",900));
         addPlace(placesToVisit,new Place("Yobe",1023));
+
         placesToVisit.addFirst(new Place("Edo",0));
-
-
-
         System.out.println(placesToVisit);
+
     }
     private static void addPlace(LinkedList<Place> list, Place place){
         if(list.contains(place)){
@@ -43,5 +42,14 @@ public class LinkedListChallenge {
             matchedIndex++;
         }
         list.add(place);
+    }
+    private static void printMenus(){
+        System.out.println("""
+                Available actions (select word or letter):
+                (F)orward
+                (B)ackwards
+                (L)ist places
+                (M)enu
+                (Q)uit """);
     }
 }
