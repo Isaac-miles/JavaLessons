@@ -11,7 +11,10 @@ public class Main {
         System.out.println(placesToVisit);
         addMore(placesToVisit);
         System.out.println(placesToVisit);
-        removeElement(placesToVisit);
+//        removeElement(placesToVisit);
+//        System.out.println(placesToVisit);
+//        getElement(placesToVisit);
+         printElements(placesToVisit);
         System.out.println(placesToVisit);
 
     }
@@ -44,5 +47,28 @@ public class Main {
         System.out.println(list);
 
     }
+    public static void getElement(LinkedList<String> list){
+        System.out.println("retrieved element = "+ list.get(4));
+        System.out.println("first element = "+ list.getFirst());
+        System.out.println("first last = "+ list.getLast());
+        System.out.println("lagos position = "+ list.indexOf("lagos"));
+        System.out.println("sydney position = "+ list.lastIndexOf("sydney"));
 
+        //Queue retrievals
+        System.out.println("Element from element " + list.element());
+
+        //stack retrievals
+        System.out.println("Element from peek " + list.peek());
+        System.out.println("Element from peek first " + list.peekFirst());
+        System.out.println("Element from peek last " + list.peekLast());
+
+    }
+    public static void printElements(LinkedList<String> list){
+        System.out.println("Trip starts at "+ list.getFirst());
+        for(int i=1;i<list.size();i++){
+            System.out.println("--> From: "+list.get(i-1) + " to "+list.get(i));
+        }
+        System.out.println("Trip ends at "+ list.getLast());
+
+    }
 }
