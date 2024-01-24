@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.util.LinkedList;
+import java.util.Scanner;
 
 record Place(String name, int distance){
     @Override
@@ -20,6 +21,11 @@ public class LinkedListChallenge {
 
         placesToVisit.addFirst(new Place("Edo",0));
         System.out.println(placesToVisit);
+
+        var iterator = placesToVisit.listIterator();
+        Scanner scanner = new Scanner(System.in);
+        boolean quiteLoop = false;
+        boolean forward = true;
 
     }
     private static void addPlace(LinkedList<Place> list, Place place){
