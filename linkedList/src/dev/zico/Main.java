@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class Main {
 //        removeElement(placesToVisit);
 //        System.out.println(placesToVisit);
 //        getElement(placesToVisit);
-         printElements(placesToVisit);
+         printElements3(placesToVisit);
         System.out.println(placesToVisit);
 
     }
@@ -69,6 +70,33 @@ public class Main {
             System.out.println("--> From: "+list.get(i-1) + " to "+list.get(i));
         }
         System.out.println("Trip ends at "+ list.getLast());
+
+    }
+    public static void printElements2(LinkedList<String> list){
+        System.out.println("Trip starts at "+ list.getFirst());
+        String prevCity = list.getFirst();
+       for(String city:list){
+           System.out.println("--->From: "+ prevCity+ " to "+city);
+           prevCity = city;
+       }
+        System.out.println("Trip ends at "+ list.getLast());
+
+    }
+    public static void printElements3(LinkedList<String> list){
+        System.out.println("Trip starts at "+ list.getFirst());
+        String prevCity = list.getFirst();
+
+        ListIterator<String> iterator = list.listIterator(1);
+
+        while(iterator.hasNext()){
+            var city = iterator.next();
+            System.out.println("--->From: "+ prevCity+ " to "+city);
+            prevCity = city;
+        }
+        System.out.println("Trip ends at "+ list.getLast());
+
+    }
+    private static void testIterator(LinkedList<String> list){
 
     }
 }
