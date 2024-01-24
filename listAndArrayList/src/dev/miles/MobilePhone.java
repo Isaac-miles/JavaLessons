@@ -35,7 +35,8 @@ public class MobilePhone {
     }
     public boolean removeContact(Contact contact){
         int foundContact = findContact(contact);
-        if(foundContact>=0){
+        System.out.println("found contact to delete"+ foundContact);
+        if(foundContact !=-1){
             myContacts.remove(foundContact);
             System.out.println(contact.getName()+" was deleted successfully");
             return true;
@@ -45,17 +46,17 @@ public class MobilePhone {
         }
     }
     private int findContact(String contactName){
-//        for(Contact contact:myContacts){
-//            if(contact.getName().equals(contactName)){
-//                return myContacts.indexOf(contact);
-//            }
-//        }
-        for(int i=0; i<myContacts.size();i++){
-            Contact contact = myContacts.get(i);
+        for(Contact contact:myContacts){
             if(contact.getName().equals(contactName)){
-                return i;
+                return myContacts.indexOf(contact);
             }
         }
+//        for(int i=0; i<myContacts.size();i++){
+//            Contact contact = myContacts.get(i);
+//            if(contact.getName().equals(contactName)){
+//                return i;
+//            }
+//        }
         return -1;
     }
     private int findContact(Contact contact){
