@@ -72,7 +72,7 @@ public class MobilePhone {
 
 
         for (Contact contact : this.myContacts){
-            System.out.printf("contact List%n %d.%s ->%s", this.myContacts.indexOf(contact)+1, contact.getName(),contact.getPhoneNumber());
+            System.out.printf("contact List:%n %d.%s -> %s", this.myContacts.indexOf(contact)+1, contact.getName(),contact.getPhoneNumber());
         }
     }
 }
