@@ -27,6 +27,15 @@ public class LinkedListChallenge {
         boolean quiteLoop = false;
         boolean forward = true;
 
+        printMenus();
+        while (!quiteLoop){
+            System.out.println("Enter value");
+            String menuItem = scanner.nextLine().toUpperCase().substring(0,1);
+
+            switch (menuItem){
+
+            }
+        }
     }
     private static void addPlace(LinkedList<Place> list, Place place){
         if(list.contains(place)){
