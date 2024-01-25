@@ -31,5 +31,12 @@ class Bank{
         System.out.printf("Customer (%s) wasn't found %n", customerName);
         return null;
     }
+    public void addNewCustomers(String customerName, double initialDeposit){
+        if(getCustomer(customerName) == null){
+            Customer customer = new Customer(customerName,initialDeposit);
+            customers.add(customer);
+            System.out.println("New Customer added: "+ customer);
+        }
+    }
 
 }
