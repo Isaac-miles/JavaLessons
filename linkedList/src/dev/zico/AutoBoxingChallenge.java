@@ -51,5 +51,18 @@ class Bank{
             System.out.println("New Customer added: "+ customer);
         }
     }
-
+    public void addTransaction(String name,double transactionAmount){
+        Customer customer = getCustomer(name);
+        if(customer !=null){
+            customer.transactions().add(transactionAmount);
+        }
+    }
+    public void printStatement(String customerName){
+        Customer customer = getCustomer(customerName);
+        if(customer == null){
+            return;
+        }
+        System.out.println("_".repeat(27));
+        System.out.println("Customer Name: " + customer.name());
+    }
 }
