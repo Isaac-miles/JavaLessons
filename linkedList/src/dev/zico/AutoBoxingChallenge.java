@@ -64,5 +64,9 @@ class Bank{
         }
         System.out.println("_".repeat(27));
         System.out.println("Customer Name: " + customer.name());
+        System.out.println("Transactions: ");
+        for(double tran: customer.transactions()){
+            System.out.printf("NGN%10.2f (%s)%n", tran,tran <0? "debit":"credit");
+        }
     }
 }
