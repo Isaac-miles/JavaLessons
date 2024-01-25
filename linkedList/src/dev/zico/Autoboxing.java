@@ -18,6 +18,6 @@ public class Autoboxing {
         return Double.valueOf(100.0);
     }
     private static Double getDoubleLiteralPrimitive(){
-        return 100.0;
+//        return 100.0;
     }
 }
