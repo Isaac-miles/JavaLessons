@@ -2,6 +2,7 @@ package dev.zico;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Autoboxing {
     public static void main(String[] args) {
@@ -26,9 +27,11 @@ public class Autoboxing {
         System.out.println(Arrays.toString(characterArray));
 
         var ourList = getList(1,2,3,4,5);
+        var ourList1 = List.of(1, 2, 3, 4, 5); //can also be done with list.of
+
         System.out.println(ourList);
     }
-    private static ArrayList<Integer> getList(int... varargs){
+    private static ArrayList<Integer> getList(Integer... varargs){
         ArrayList<Integer> aList = new ArrayList<>();
         for (int i:varargs){
             aList.add(i);
