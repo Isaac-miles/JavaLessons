@@ -1,5 +1,7 @@
 package dev.zico;
 
+import java.util.Arrays;
+
 public class Autoboxing {
     public static void main(String[] args) {
         Integer boxedInt = Integer.valueOf(15); //preferred but necessary
@@ -11,13 +13,17 @@ public class Autoboxing {
         int autoUnboxed = autoBox;
         System.out.println(autoBox.getClass().getName());
 
-        Double resultBoxed = getDoubleObject(); //java compiler automatically boxing it because its being assign to a java.lan.Double class
-        double resultUnboxed = getDoubleLiteralPrimitive(); //same as this auto unboxing
+        Double resultBoxed = getDoubleLiteralPrimitive(); //java compiler automatically boxing it because its being assign to a java.lan.Double class
+        double resultUnboxed = getDoubleObject(); //same as this auto unboxing
+
+        Integer[] wrapperArray = new Integer[5];
+        wrapperArray[0] = 10;
+        System.out.println(Arrays.toString(wrapperArray));
     }
     private static Double getDoubleObject(){
         return Double.valueOf(100.0);
     }
-    private static Double getDoubleLiteralPrimitive(){
+    private static double getDoubleLiteralPrimitive(){
         return 100.0;
     }
 }
