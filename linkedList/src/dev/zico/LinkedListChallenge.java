@@ -77,6 +77,7 @@ public class LinkedListChallenge {
                     break;
             }
         }
+
     }
     private static void addPlace(LinkedList<Place> list, Place place){
         if(list.contains(place)){
