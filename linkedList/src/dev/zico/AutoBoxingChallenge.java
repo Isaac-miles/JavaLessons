@@ -12,6 +12,10 @@ public class AutoBoxingChallenge {
     public static void main(String[] args) {
         Customer bob = new Customer("Bob S", 100);
         System.out.println(bob);
+
+        Bank bank = new Bank("Fidelity");
+        bank.addNewCustomers("Isaac", 1000);
+        System.out.println(bank);
     }
 }
 
@@ -22,6 +26,15 @@ class Bank{
     public Bank(String name){
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "name='" + name + '\'' +
+                ", customers=" + customers +
+                '}';
+    }
+
     private Customer getCustomer(String customerName){
         for(var customer : customers){
             if(customer.name().equalsIgnoreCase(customerName)){
