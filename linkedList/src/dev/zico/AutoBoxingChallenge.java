@@ -14,8 +14,14 @@ public class AutoBoxingChallenge {
         System.out.println(bob);
 
         Bank bank = new Bank("Fidelity");
-        bank.addNewCustomers("Isaac", 1000);
+        bank.addNewCustomers("Isaac", 100);
         System.out.println(bank);
+
+        bank.addTransaction("Isaac", -92.7);
+        bank.addTransaction("Isaac", 60.59);
+        bank.addNewCustomers("Bob S",50.0);
+        bank.printStatement("Isaac");
+        bank.printStatement("Bob S");
     }
 }
 
