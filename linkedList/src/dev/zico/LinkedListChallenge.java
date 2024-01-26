@@ -91,7 +91,7 @@ public class LinkedListChallenge {
             }
         }
         int matchedIndex = 0;
-        for(Place listPlace:list){
+        for(var listPlace:list){
             if(place.distance() < listPlace.distance()){
                 list.add(matchedIndex,place);
                 return;
