@@ -27,7 +27,7 @@ public class LinkedListChallenge {
         boolean quiteLoop = false;
         boolean forward = true;
 
-        printMenus();
+//        printMenus();
         while (!quiteLoop){
             if(!iterator.hasPrevious()){
                 System.out.println("Originating : "+iterator.next());
