@@ -10,12 +10,14 @@ record CustomerA(String name, ArrayList<Double> transactions){
 }
 public class AutoBoxChallenge {
     public static void main(String[] args) {
-        CustomerA Isaac = new CustomerA("Isaac", 100);
+        CustomerA isaac = new CustomerA("Isaac", 100);
 //        System.out.println(Isaac);
         Bankk accessBank = new Bankk("Access Bank");
         Bankk bank = new Bankk("uba");
-        accessBank.addNewCustomer("Isaac", 200);
-        accessBank.addNewCustomer("Isaac", 100);
+        bank.addNewCustomer(isaac);
+        bank.addNewCustomer(isaac);
+//        accessBank.addNewCustomer("Isaac", 200);
+//        accessBank.addNewCustomer("Isaac", 100);
 //        accessBank.addTransactions("Isaac", -10);
 //        accessBank.printTransactions("isaac");
 //        System.out.println(accessBank);
