@@ -48,16 +48,16 @@ class Bankk{
         System.out.printf("Customer (%s) wasn't found %n", customerName);
         return null;
     }
-    public void addNewCustomer(CustomerA newCustomer){
-        CustomerA findCus = findCustomer(newCustomer.name());
+    public void addNewCustomer(String customerName,  double initialDeposit){
+        CustomerA findCus = findCustomer(customerName);
         System.out.println(">".repeat(10) + findCus);
 
        if(findCus == null){
-           customers.add(newCustomer);
-           System.out.println(newCustomer+ " has been added successfully");
+           customers.add(new CustomerA(customerName,initialDeposit));
+           System.out.println(customerName+ " has been added successfully");
            return;
        }
-        System.out.println("Customer already exists " + newCustomer);
+        System.out.println("Customer already exists " + customerName);
     }
 
     public void addTransactions(String customerName, double transaction){
