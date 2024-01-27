@@ -16,8 +16,8 @@ public class AutoBoxChallenge {
 //        System.out.println(Isaac);
         Bankk accessBank = new Bankk("Access Bank");
         Bankk bank = new Bankk("uba");
-        bank.addNewCustomer(isaac);
-        bank.addNewCustomer(zico);
+        bank.addNewCustomer("Isaac", 75.9);
+        bank.addNewCustomer("Zico", 30.4);
 //        accessBank.addNewCustomer("Isaac", 200);
 //        accessBank.addNewCustomer("Isaac", 100);
 //        accessBank.addTransactions("isaac", -10);
@@ -52,28 +52,8 @@ class Bankk{
         System.out.printf("Customer (%s) wasn't found %n", customerName);
         return null;
     }
-    public void addNewCustomer(CustomerA newCustomer){
-        CustomerA foundCustomer = findCustomer(newCustomer.name());
-        System.out.println("right here "+ newCustomer.name());
-        if(foundCustomer == null){
-            customers.add(newCustomer);
-            System.out.println(newCustomer.name()+" added successfully");
-            return;
-        }
-        System.out.println(newCustomer.name()+" already exists");
-    }
 
-    public void addNewCustomers(CustomerA newCustomer){
-        CustomerA findCus = findCustomer(newCustomer.name());
-        System.out.println(">".repeat(10) + findCus);
 
-        if(findCus == null){
-            customers.add(newCustomer);
-            System.out.println(newCustomer+ " has been added successfully");
-            return;
-        }
-        System.out.println("Customer already exists " + newCustomer);
-    }
     public void addNewCustomer(String customerName,  double initialDeposit){
         CustomerA findCus = findCustomer(customerName);
         System.out.println(">".repeat(10) + findCus);
