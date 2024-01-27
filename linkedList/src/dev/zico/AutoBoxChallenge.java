@@ -22,6 +22,8 @@ public class AutoBoxChallenge {
         bank.addTransactions("isaac", -50);
 
         bank.printTransactions("zico");
+        bank.printTransactions("Isaac");
+
 //        System.out.println(bank);
 
     }
@@ -82,9 +84,12 @@ class Bankk{
             System.out.println("customer with transactions not found "+ customerName);
             return;
         }
+        System.out.println("__".repeat(20));
+        System.out.println("Customer Name: " + findCus.name());
+        System.out.println("Transactions: ");
+
         for(var tran: findCus.transactions()){
-            System.out.println("__".repeat(30));
-            System.out.printf("%s%n %10.2f (%s)", findCus.name(),tran, tran<0?"debit":"credit");
+            System.out.printf(" NGN  %10.2f (%s)%n",tran, tran<0?"debit":"credit");
         }
     }
 }
