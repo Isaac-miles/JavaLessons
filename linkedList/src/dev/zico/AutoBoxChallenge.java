@@ -12,6 +12,7 @@ public class AutoBoxChallenge {
     public static void main(String[] args) {
         Customer Isaac = new Customer("Isaac", 100);
 //        System.out.println(Isaac);
+
     }
 
 class Bank{
@@ -55,7 +56,8 @@ class Bank{
                 System.out.println("customer with transactions not found "+ customerName);
             }
             for(var tran: findCus.transactions()){
-                System.out.printf("");
+                System.out.println("__".repeat(30));
+                System.out.printf("%s%n %10.2f (%s)", findCus.name(),tran, tran<0?"debit":"credit");
 
             }
     }
