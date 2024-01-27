@@ -69,7 +69,7 @@ class Bankk{
             System.out.println(transaction+ " Transaction added successfully");
             return;
         }
-        System.out.println("customer not found "+ findCus);
+        System.out.println("customer not found "+ customerName);
     }
 
     public void printTransactions(String customerName){
