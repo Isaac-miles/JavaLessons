@@ -21,7 +21,8 @@ public class AutoBoxChallenge {
         bank.addTransactions("Zico", -20);
         bank.addTransactions("isaac", -50);
 
-        System.out.println(bank);
+        bank.printTransactions("zico");
+//        System.out.println(bank);
 
     }
 }
@@ -84,7 +85,6 @@ class Bankk{
         for(var tran: findCus.transactions()){
             System.out.println("__".repeat(30));
             System.out.printf("%s%n %10.2f (%s)", findCus.name(),tran, tran<0?"debit":"credit");
-
         }
     }
 }
