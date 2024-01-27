@@ -21,6 +21,43 @@ class Bank{
         public Bank(String name){
             this.name = name.toUpperCase();
         }
+    private Customer findCustomer(String customerName){
+          for(var customer:customers){
+              if(customer.name().equalsIgnoreCase(customerName)){
+                  return customer;
+              }
+          }
 
+            return null;
+    }
+    private void addNewCustomer(Customer newCustomer){
+            Customer findCus = findCustomer(newCustomer.name());
+          for(var customer: customers){
+              if(findCus == null){
+                  customers.add(newCustomer);
+              }
+          }
+        System.out.println("Customer already exists " + newCustomer);
+    }
+
+    private  void addTransactions(String customerName, double transaction){
+            Customer findCus = findCustomer(customerName);
+            if (findCus !=null){
+                findCus.transactions().add(transaction);
+            }
+        System.out.println("customer not found "+ findCus);
+    }
+
+    public void printTransactions(String customerName){
+            Customer findCus = findCustomer(customerName);
+
+            if(findCus == null){
+                System.out.println("customer with transactions not found "+ customerName);
+            }
+            for(var tran: findCus.transactions()){
+                System.out.printf("");
+
+            }
+    }
 }
 }
