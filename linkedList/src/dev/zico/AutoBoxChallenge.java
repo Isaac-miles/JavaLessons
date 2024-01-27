@@ -45,7 +45,6 @@ class Bankk{
     }
 
     private CustomerA findCustomer(String customerName){
-        System.out.println(customers);
         for(var customer:customers){
             if(customer.name().equalsIgnoreCase(customerName)){
                 return customer;
@@ -84,12 +83,12 @@ class Bankk{
             System.out.println("customer with transactions not found "+ customerName);
             return;
         }
-        System.out.println("__".repeat(20));
+        System.out.println("__".repeat(15));
         System.out.println("Customer Name: " + findCus.name());
         System.out.println("Transactions: ");
 
         for(var tran: findCus.transactions()){
-            System.out.printf(" NGN  %10.2f (%s)%n",tran, tran<0?"debit":"credit");
+            System.out.printf("NGN%10.2f (%s)%n",tran, tran<0?"debit":"credit");
         }
     }
 }
