@@ -19,6 +19,8 @@ public class AutoBoxChallenge {
         bank.addNewCustomer("Isaac", 75.9);
         bank.addNewCustomer("Zico", 30.4);
         bank.addTransactions("Zico", -20);
+        bank.addTransactions("isaac", -50);
+
 //        System.out.println(accessBank);
 
     }
