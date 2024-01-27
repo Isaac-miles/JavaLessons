@@ -15,8 +15,8 @@ public class AutoBoxChallenge {
         Bankk accessBank = new Bankk("Access Bank");
         accessBank.addNewCustomer(Isaac);
         accessBank.addTransactions("isaac", -10);
-        accessBank.printTransactions("isaac");
-        System.out.println(accessBank);
+//        accessBank.printTransactions("isaac");
+//        System.out.println(accessBank);
     }
 }
 class Bankk{
@@ -41,7 +41,7 @@ class Bankk{
                 return customer;
             }
         }
-
+        System.out.printf("Customer (%s) wasn't found %n", customerName);
         return null;
     }
     public void addNewCustomer(CustomerA newCustomer){
@@ -50,6 +50,8 @@ class Bankk{
 
        if(findCus == null){
            customers.add(newCustomer);
+           System.out.println(newCustomer+ " has been added successfully");
+           return;
        }
         System.out.println("Customer already exists " + newCustomer);
     }
