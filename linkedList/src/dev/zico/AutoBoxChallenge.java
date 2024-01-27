@@ -66,6 +66,8 @@ class Bankk{
         CustomerA findCus = findCustomer(customerName);
         if (findCus !=null){
             findCus.transactions().add(transaction);
+            System.out.println(transaction+ " Transaction added successfully");
+            return;
         }
         System.out.println("customer not found "+ findCus);
     }
