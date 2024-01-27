@@ -13,10 +13,12 @@ public class AutoBoxChallenge {
         CustomerA Isaac = new CustomerA("Isaac", 100);
 //        System.out.println(Isaac);
         Bankk accessBank = new Bankk("Access Bank");
+        Bankk bank = new Bankk("uba");
         accessBank.addNewCustomer(Isaac);
-        accessBank.addTransactions("isaac", -10);
-//        accessBank.printTransactions("isaac");
+        accessBank.addTransactions("Isaac", -10);
+        accessBank.printTransactions("isaac");
 //        System.out.println(accessBank);
+
     }
 }
 class Bankk{
@@ -36,6 +38,7 @@ class Bankk{
     }
 
     private CustomerA findCustomer(String customerName){
+        System.out.println(customers);
         for(var customer:customers){
             if(customer.name().equalsIgnoreCase(customerName)){
                 return customer;
@@ -56,7 +59,7 @@ class Bankk{
         System.out.println("Customer already exists " + newCustomer);
     }
 
-    public   void addTransactions(String customerName, double transaction){
+    public void addTransactions(String customerName, double transaction){
         CustomerA findCus = findCustomer(customerName);
         if (findCus !=null){
             findCus.transactions().add(transaction);
