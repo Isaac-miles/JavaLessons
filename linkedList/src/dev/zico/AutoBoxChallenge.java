@@ -14,8 +14,8 @@ public class AutoBoxChallenge {
 //        System.out.println(Isaac);
         Bankk accessBank = new Bankk("Access Bank");
         Bankk bank = new Bankk("uba");
-        accessBank.addNewCustomer("miles", 200);
-        accessBank.addNewCustomer("miles", 100);
+        accessBank.addNewCustomer("Isaac", 200);
+        accessBank.addNewCustomer("Isaac", 100);
 //        accessBank.addTransactions("Isaac", -10);
 //        accessBank.printTransactions("isaac");
 //        System.out.println(accessBank);
