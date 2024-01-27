@@ -25,6 +25,15 @@ class Bankk{
     public Bankk(String name){
         this.name = name.toUpperCase();
     }
+
+    @Override
+    public String toString() {
+        return "Bankk{" +
+                "name='" + name + '\'' +
+                ", customers=" + customers +
+                '}';
+    }
+
     private CustomerA findCustomer(String customerName){
         for(var customer:customers){
             if(customer.name().equalsIgnoreCase(customerName)){
@@ -57,6 +66,7 @@ class Bankk{
 
         if(findCus == null){
             System.out.println("customer with transactions not found "+ customerName);
+            return;
         }
         for(var tran: findCus.transactions()){
             System.out.println("__".repeat(30));
