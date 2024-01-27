@@ -16,6 +16,7 @@ public class AutoBoxChallenge {
         accessBank.addNewCustomer(Isaac);
         accessBank.addTransactions("Isaac", -10);
         accessBank.printTransactions("Isaac");
+        System.out.println(accessBank);
     }
 }
 class Bankk{
