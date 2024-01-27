@@ -15,8 +15,9 @@ public class AutoBoxChallenge {
         Bankk accessBank = new Bankk("Access Bank");
         Bankk bank = new Bankk("uba");
         accessBank.addNewCustomer(Isaac);
-        accessBank.addTransactions("Isaac", -10);
-        accessBank.printTransactions("isaac");
+        accessBank.addNewCustomer(Isaac);
+//        accessBank.addTransactions("Isaac", -10);
+//        accessBank.printTransactions("isaac");
 //        System.out.println(accessBank);
 
     }
