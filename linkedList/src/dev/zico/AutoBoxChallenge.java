@@ -56,7 +56,32 @@ class Bankk{
         if(foundCustomer == null){
             customers.add(newCustomer);
             System.out.println(newCustomer.name()+" added successfully");
+            return;
         }
+        System.out.println(newCustomer.name()+" already exists");
+    }
+
+    public void addNewCustomers(CustomerA newCustomer){
+        CustomerA findCus = findCustomer(newCustomer.name());
+        System.out.println(">".repeat(10) + findCus);
+
+        if(findCus == null){
+            customers.add(newCustomer);
+            System.out.println(newCustomer+ " has been added successfully");
+            return;
+        }
+        System.out.println("Customer already exists " + newCustomer);
+    }
+    public void addNewCustomer(String customerName,  double initialDeposit){
+        CustomerA findCus = findCustomer(customerName);
+        System.out.println(">".repeat(10) + findCus);
+
+        if(findCus == null){
+            customers.add(new CustomerA(customerName,initialDeposit));
+            System.out.println(customerName+ " has been added successfully");
+            return;
+        }
+        System.out.println("Customer already exists " + customerName);
     }
     public void addTransactions(String customerName, double transaction){
         CustomerA findCus = findCustomer(customerName);
