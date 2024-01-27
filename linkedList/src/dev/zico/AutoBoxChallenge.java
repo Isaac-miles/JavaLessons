@@ -14,8 +14,8 @@ public class AutoBoxChallenge {
 //        System.out.println(Isaac);
         Bankk accessBank = new Bankk("Access Bank");
         accessBank.addNewCustomer(Isaac);
-        accessBank.addTransactions("Isaac", -10);
-        accessBank.printTransactions("Isaac");
+        accessBank.addTransactions("isaac", -10);
+        accessBank.printTransactions("isaac");
         System.out.println(accessBank);
     }
 }
@@ -46,11 +46,11 @@ class Bankk{
     }
     public void addNewCustomer(CustomerA newCustomer){
         CustomerA findCus = findCustomer(newCustomer.name());
-        for(var customer: customers){
-            if(findCus == null){
-                customers.add(newCustomer);
-            }
-        }
+        System.out.println(">".repeat(10) + findCus);
+
+       if(findCus == null){
+           customers.add(newCustomer);
+       }
         System.out.println("Customer already exists " + newCustomer);
     }
 
