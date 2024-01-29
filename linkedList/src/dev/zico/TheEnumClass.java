@@ -9,10 +9,11 @@ public class TheEnumClass {
 
         for (int i = 0; i <10; i++) {
             weekdays = getRandomDay();
-            System.out.printf("Name is %s, Ordinal Value = %d%n",weekdays.name(), weekdays.ordinal());
-            if(weekdays==EnumTypeExample.FRI){
-                System.out.println("TGIF");
-            }
+//            System.out.printf("Name is %s, Ordinal Value = %d%n",weekdays.name(), weekdays.ordinal());
+//            if(weekdays==EnumTypeExample.FRI){
+//                System.out.println("TGIF");
+//            }
+            switchDayOfWeek(weekdays);
         }
     }
     public static void switchDayOfWeek(EnumTypeExample weekDay){
@@ -21,7 +22,7 @@ public class TheEnumClass {
             case FRI -> System.out.println("Friday is day" + weekDayInteger);
             case SUN -> System.out.println("Sunday is day"+ weekDayInteger);
             default -> System.out.println(weekDay.name().charAt(0)+weekDay.name().substring(1)
-                    .toLowerCase()+" day is Day"+ weekDayInteger);
+                    .toLowerCase()+" day is Day "+ weekDayInteger);
         }
     }
     public static EnumTypeExample getRandomDay(){
