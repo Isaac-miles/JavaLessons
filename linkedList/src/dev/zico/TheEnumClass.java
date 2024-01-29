@@ -7,7 +7,12 @@ public class TheEnumClass {
         EnumTypeExample weekdays = EnumTypeExample.WED;
         System.out.println(weekdays);
 
-        System.out.printf("Name is %s, Ordinal Value = %d%n",weekdays.name(), weekdays.ordinal());
+        for (int i = 0; i <10; i++) {
+            weekdays = getRandomDay();
+            System.out.printf("Name is %s, Ordinal Value = %d%n",weekdays.name(), weekdays.ordinal());
+
+        }
+
 
     }
     public static EnumTypeExample getRandomDay(){
