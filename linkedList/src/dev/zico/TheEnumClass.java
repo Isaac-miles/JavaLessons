@@ -15,6 +15,9 @@ public class TheEnumClass {
 //            }
             switchDayOfWeek(weekdays);
         }
+        for(Toppings top: Toppings.values()){
+            System.out.println(top.name()+" : " +top.getPrice());
+        }
     }
     public static void switchDayOfWeek(EnumTypeExample weekDay){
         int weekDayInteger = weekDay.ordinal()+1;
