@@ -16,6 +16,7 @@ public class TheEnumClass {
         }
     }
     public static void switchDayOfWeek(EnumTypeExample weekDay){
+        int weekDayInteger = weekDay.ordinal()+1;
 
     }
     public static EnumTypeExample getRandomDay(){
