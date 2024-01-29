@@ -14,7 +14,8 @@ public class TheEnumClass {
                 System.out.println("TGIF");
             }
         }
-
+    }
+    public static void switchDayOfWeek(EnumTypeExample weekDay){
 
     }
     public static EnumTypeExample getRandomDay(){
