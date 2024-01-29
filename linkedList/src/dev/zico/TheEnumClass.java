@@ -19,6 +19,7 @@ public class TheEnumClass {
         int weekDayInteger = weekDay.ordinal()+1;
         switch (weekDay){
             case FRI -> System.out.println("Friday is day" + weekDayInteger);
+            case SUN -> System.out.println("Sunday is day"+ weekDayInteger);
         }
     }
     public static EnumTypeExample getRandomDay(){
