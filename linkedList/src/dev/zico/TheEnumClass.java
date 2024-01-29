@@ -10,7 +10,9 @@ public class TheEnumClass {
         for (int i = 0; i <10; i++) {
             weekdays = getRandomDay();
             System.out.printf("Name is %s, Ordinal Value = %d%n",weekdays.name(), weekdays.ordinal());
-
+            if(weekdays==EnumTypeExample.FRI){
+                System.out.println("TGIF");
+            }
         }
 
 
