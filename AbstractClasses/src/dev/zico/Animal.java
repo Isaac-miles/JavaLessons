@@ -10,4 +10,6 @@ public abstract class Animal {
         this.size = size;
         this.weight = weight;
     }
+    public abstract void move(String speed);
+
 }
