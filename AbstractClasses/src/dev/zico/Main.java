@@ -14,9 +14,16 @@ public class Main {
         animals.add(new  Fish("Goldfish","big", 200));
         animals.add(new Fish("Titus","medium",150));
         animals.add((new Dog("Pug","small",10)));
+        animals.add((new Horse("Royal","big",250)));
 
         for(Animal animal:animals){
             doAnimalStuffs(animal);
+//            if(animal.getClass().getSimpleName().equals("Horse")){
+//                ((Horse) animal).shedHair();
+//            }
+            if (animal instanceof Mammal currentMammal){
+                currentMammal.shedHair();
+            }
         }
     }
     private static void doAnimalStuffs(Animal animal){
