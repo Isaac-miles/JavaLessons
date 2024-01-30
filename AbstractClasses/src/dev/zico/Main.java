@@ -8,8 +8,16 @@ public class Main {
     dog.makeNoise();
 
     doAnimalStuffs(dog);
-        ArrayList<Animal> abimals = new ArrayList<>();
+        ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(dog);
+        animals.add(new Dog("German shepard","small",25));
+        animals.add(new  Fish("Goldfish","big", 200));
+        animals.add(new Fish("Titus","medium",150));
+        animals.add((new Dog("Pug","small",10)));
 
+        for(Animal animal:animals){
+            doAnimalStuffs(animal);
+        }
     }
     private static void doAnimalStuffs(Animal animal){
         animal.makeNoise();
