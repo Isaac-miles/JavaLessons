@@ -12,10 +12,6 @@ abstract class Mammal extends Animal{
         System.out.println(speed.equals("slow")? "walking":"runs");
     }
 
-//    @Override
-//    public void makeNoise() {
-//
-//    }
     public abstract void shedHair();
 }
 public abstract class Animal {

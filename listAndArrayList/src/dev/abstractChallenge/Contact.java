@@ -1,4 +1,4 @@
-package dev.miles;
+package dev.abstractChallenge;
 
 public class Contact{
     private final String name;
