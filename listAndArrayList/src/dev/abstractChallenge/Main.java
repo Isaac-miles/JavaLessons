@@ -1,4 +1,4 @@
-package dev.miles;
+package dev.abstractChallenge;
 
 public class Main {
     public static void main(String[] args) {
