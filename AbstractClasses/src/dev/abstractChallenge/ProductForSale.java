@@ -11,6 +11,8 @@ public  abstract class ProductForSale {
         this.description = description;
     }
 
-
+    public double getSalesPrice(int qty){
+        return  qty * price;
+    }
 
 }
