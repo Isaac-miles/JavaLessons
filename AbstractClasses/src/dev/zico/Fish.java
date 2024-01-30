@@ -17,10 +17,10 @@ public  class Fish extends Animal{
 
     @Override
     public void makeNoise() {
-        if(type.equalsIgnoreCase("wolf")){
-            System.out.print(" Howling ");
+        if(type.equalsIgnoreCase("Goldfish")){
+            System.out.print(" swish ");
         }else {
-            System.out.print(" woof! ");
+            System.out.print(" splash! ");
         }
     }
 
