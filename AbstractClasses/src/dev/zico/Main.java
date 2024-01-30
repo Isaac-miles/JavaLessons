@@ -18,9 +18,6 @@ public class Main {
 
         for(Animal animal:animals){
             doAnimalStuffs(animal);
-//            if(animal.getClass().getSimpleName().equals("Horse")){
-//                ((Horse) animal).shedHair();
-//            }
             if (animal instanceof Mammal currentMammal){
                 currentMammal.shedHair();
             }
