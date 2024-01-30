@@ -8,15 +8,19 @@ public  class Dog extends Animal{
 
     @Override
     public void move(String speed) {
-
+        if(speed.equals("slow")){
+            System.out.println(type + " Running");
+        }else {
+            System.out.println(type +  " running");
+        }
     }
 
     @Override
     public void makeNoise() {
         if(type.equalsIgnoreCase("wolf")){
-            System.out.println("Howling");
+            System.out.print("Howling");
         }else {
-            System.out.println("woof!");
+            System.out.print("woof!");
         }
     }
 
