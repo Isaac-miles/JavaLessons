@@ -18,9 +18,9 @@ public  class Dog extends Animal{
     @Override
     public void makeNoise() {
         if(type.equalsIgnoreCase("wolf")){
-            System.out.print("Howling");
+            System.out.print(" Howling ");
         }else {
-            System.out.print("woof!");
+            System.out.print(" woof! ");
         }
     }
 
