@@ -5,6 +5,18 @@ abstract class Mammal extends Animal{
     public Mammal(String type, String size, double weight) {
         super(type, size, weight);
     }
+
+    @Override
+    public void move(String speed) {
+        System.out.println(getExplicitType()+" ");
+        System.out.println(speed.equals("slow")? "walking":"runs");
+    }
+
+//    @Override
+//    public void makeNoise() {
+//
+//    }
+    public abstract void shedHair();
 }
 public abstract class Animal {
     protected String type;
