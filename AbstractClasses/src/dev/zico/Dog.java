@@ -19,8 +19,5 @@ public  class Dog extends Animal{
             System.out.println("woof!");
         }
     }
-    private static void doAnimalStuffs(Animal animal){
-        animal.makeNoise();
-        animal.move("fast");
-    }
+
 }
