@@ -5,4 +5,12 @@ public  abstract class ProductForSale {
     protected double price;
     protected String description;
 
+    public ProductForSale(String type,double price, String description){
+        this.type = type;
+        this.price = price;
+        this.description = description;
+    }
+
+
+
 }
