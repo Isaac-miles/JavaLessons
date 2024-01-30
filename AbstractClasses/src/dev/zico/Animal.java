@@ -1,7 +1,7 @@
 package dev.zico;
 
 abstract class Mammal extends Animal{
-
+//an abstract class that extends another abstract class has some flexibility, it can implement some all or none of its parent class
     public Mammal(String type, String size, double weight) {
         super(type, size, weight);
     }
