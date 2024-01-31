@@ -1,5 +1,8 @@
 package dev.zico;
 
+record DragonFly(String name, String type){
+
+};
 
 class Satellite implements OrbitEarth{
 
