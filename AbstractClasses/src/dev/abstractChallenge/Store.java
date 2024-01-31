@@ -9,6 +9,10 @@ public class Store {
         storeProducts.add(new ArtObject("NFT", 150,"An epic art of wonders"));
         storeProducts.add(new ArtObject("Nature painting", 170,"Nature at it's best"));
         listProducts();
+        System.out.println("\nOrder 1");
+        var order1 = new ArrayList<OrderItem>();
+        addItemToOrder(order1,0,2);
+        addItemToOrder(order1,1,1);
     }
     public static void listProducts(){
         for(var item:storeProducts){
