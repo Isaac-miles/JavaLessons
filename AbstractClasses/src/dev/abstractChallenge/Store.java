@@ -9,4 +9,10 @@ public class Store {
         storeProducts.add(new ArtObject("Nature painting", 170,"Nature at it's best"));
 
     }
+    public static void listProducts(){
+        for(var item:storeProducts){
+            System.out.println("_".repeat(27));
+            item.showDetails();
+        }
+    }
 }
