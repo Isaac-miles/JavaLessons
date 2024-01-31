@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -28,7 +29,7 @@ public class Main {
         System.out.printf("the truck traveled %.2f km or %.2f miles%n",kmsTraveled,milesTraveled);
 
         //using abstracted reference type which is preferred referred to as coding into an interface
-        ArrayList<FlightEnabled> fliers = new ArrayList<>(); //remember an array list uses the list interface type!!
+        LinkedList<FlightEnabled> fliers = new LinkedList<>(); //remember an array list uses the list interface type!!
         fliers.add(bird);
         List<FlightEnabled> betterFliers = new ArrayList<>(); // this is preferred
         betterFliers.add(bird);
@@ -37,7 +38,12 @@ public class Main {
         flyFliers(fliers);
         landFliers(fliers);
 
-
+        //here the code won't compile because our method parameters are specific to the arrayList type, but do they
+        //really need to be? or let's say LinkedList, to demonstrate coding into an interface, change all the method
+        //parameter type to an interface type list
+        triggerFliers(betterFliers);
+        flyFliers(betterFliers);
+        landFliers(betterFliers);
 
     }
     private static void inFlightBound(FlightEnabled flier){
@@ -49,17 +55,17 @@ public class Main {
         flier.land();
     }
 
-    private static void triggerFliers(ArrayList<FlightEnabled> fliers){
+    private static void triggerFliers(List<FlightEnabled> fliers){
         for(var flier:fliers){
             flier.takeOff();
         }
     }
-    private static void flyFliers(ArrayList<FlightEnabled> fliers){
+    private static void flyFliers(List<FlightEnabled> fliers){
         for(var flier:fliers){
             flier.fly();
         }
     }
-    private static void landFliers(ArrayList<FlightEnabled> fliers){
+    private static void landFliers(List<FlightEnabled> fliers){
         for(var flier:fliers){
             flier.land();
         }
