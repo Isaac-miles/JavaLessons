@@ -19,6 +19,10 @@ public class Main {
 
        Trackable truck = new Truck();
        truck.track();
+
+       double kmsTraveled = 100;
+       double milesTraveled = kmsTraveled * FlightEnabled.KM_TO_MILES;
+        System.out.printf("the truck traveled %.2f km or %.2f miles%n",kmsTraveled,milesTraveled);
     }
     private static void inFlightBound(FlightEnabled flier){
         flier.takeOff();
