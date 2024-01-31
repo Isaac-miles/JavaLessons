@@ -15,7 +15,7 @@ public  abstract class ProductForSale {
         return  qty * price;
     }
     public void printPricedItem(int qty){
-        System.out.printf("%2d qty at NGN%8.2f each, %-15s %-35s %n", qty,price,type,description);
+        System.out.printf("%2d qty at NGN%8.2f each, %-30s %-30s %n", qty,price,type,description);
     }
     public abstract void showDetails();
 
