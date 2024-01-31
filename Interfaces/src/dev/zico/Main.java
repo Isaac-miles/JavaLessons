@@ -32,6 +32,7 @@ public class Main {
         fliers.add(bird);
         List<FlightEnabled> betterFliers = new ArrayList<>(); // this is preferred
         betterFliers.add(bird);
+        //let's add methods that demonstrates why the second option is better
 
     }
     private static void inFlightBound(FlightEnabled flier){
