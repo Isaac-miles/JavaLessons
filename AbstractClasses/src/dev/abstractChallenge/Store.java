@@ -24,7 +24,6 @@ public class Store {
         for(var item:order){
             item.product().printPricedItem(item.qty());
             salesTotal +=item.product().getSalesPrice(item.qty());
-
         }
         System.out.printf("Sales Total = NGN%6.2f", salesTotal);
     }
