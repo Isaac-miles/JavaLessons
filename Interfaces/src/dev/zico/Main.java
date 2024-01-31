@@ -8,7 +8,7 @@ public class Main {
         Trackable tracked = bird;
 
         animal.move();
-//        flier.move(); this doen't compile because both flightEnabled and trackable doesn't have the move method
-//        tracked.move()
+//        flier.move(); this doesn't compile because both flightEnabled and trackable doesn't have the move method
+//        tracked.move() and the type you use i.e the variable declared type determines which method you call in your code
     }
 }
