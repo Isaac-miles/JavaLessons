@@ -13,6 +13,7 @@ public class Store {
         var order1 = new ArrayList<OrderItem>();
         addItemToOrder(order1,0,2);
         addItemToOrder(order1,1,1);
+        printOrder(order1);
     }
     public static void listProducts(){
         for(var item:storeProducts){
