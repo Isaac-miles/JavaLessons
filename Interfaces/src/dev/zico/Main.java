@@ -33,6 +33,11 @@ public class Main {
         List<FlightEnabled> betterFliers = new ArrayList<>(); // this is preferred
         betterFliers.add(bird);
         //let's add methods that demonstrates why the second option is better
+        triggerFliers(fliers);
+        flyFliers(fliers);
+        landFliers(fliers);
+
+
 
     }
     private static void inFlightBound(FlightEnabled flier){
@@ -42,5 +47,21 @@ public class Main {
             tracked.track();
         }
         flier.land();
+    }
+
+    private static void triggerFliers(ArrayList<FlightEnabled> fliers){
+        for(var flier:fliers){
+            flier.takeOff();
+        }
+    }
+    private static void flyFliers(ArrayList<FlightEnabled> fliers){
+        for(var flier:fliers){
+            flier.fly();
+        }
+    }
+    private static void landFliers(ArrayList<FlightEnabled> fliers){
+        for(var flier:fliers){
+            flier.land();
+        }
     }
 }
