@@ -7,11 +7,11 @@ public class Store {
     public static void main(String[] args) {
         storeProducts.add(new ArtObject("NFT", 150,"An epic art of wonders"));
         storeProducts.add(new ArtObject("Nature painting", 170,"Nature at it's best"));
-
+        listProducts();
     }
     public static void listProducts(){
         for(var item:storeProducts){
-            System.out.println("_".repeat(27));
+            System.out.println("_".repeat(35));
             item.showDetails();
         }
     }
