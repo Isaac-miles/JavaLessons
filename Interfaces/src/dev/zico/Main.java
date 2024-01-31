@@ -27,7 +27,7 @@ public class Main {
        double milesTraveled = kmsTraveled * FlightEnabled.KM_TO_MILES;
         System.out.printf("the truck traveled %.2f km or %.2f miles%n",kmsTraveled,milesTraveled);
 
-        //using abstracted refrence type which is preferred
+        //using abstracted reference type which is preferred referred to as coding into an interface
         ArrayList<FlightEnabled> fliers = new ArrayList<>(); //remember an array list uses the list interface type!!
         fliers.add(bird);
         List<FlightEnabled> betterFliers = new ArrayList<>(); // this is preferred
