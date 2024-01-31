@@ -10,5 +10,9 @@ public class Main {
         animal.move();
 //        flier.move(); this doesn't compile because both flightEnabled and trackable doesn't have the move method
 //        tracked.move() and the type you use i.e the variable declared type determines which method you call in your code
+
+        flier.fly();
+        tracked.track();;
+        flier.land();
     }
 }
