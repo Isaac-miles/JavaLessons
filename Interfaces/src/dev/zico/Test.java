@@ -4,6 +4,7 @@ public class Test {
     public static void main(String[] args) {
         inFlightBound(new Jet());
 //        OrbitEarth.log("Testing Cameras "+new Satellite());
+        orbit(new Satellite());
     }
     private static void inFlightBound(FlightEnabled flier){
         flier.takeOff();

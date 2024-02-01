@@ -64,6 +64,10 @@ interface OrbitEarth extends FlightEnabled{
         var today = new java.util.Date();
         System.out.println(today + " : " + description);
     }
+    private void logStage(FlightStates states,String desc){
+        desc = states+ " : "+ desc;
+        log(desc);
+    }
 }
 interface FlightEnabled{
     double MILES_TO_KM = 1.60934;
