@@ -22,4 +22,10 @@ public class Jet implements FlightEnabled,Trackable{
         System.out.println(getClass().getSimpleName()+ " coordinates are being tracked");
 
     }
+
+    @Override
+    public FlightStates transition(FlightStates state) {
+        System.out.println(getClass().getSimpleName()+ " transitioning");
+        return FlightStates.CRUISE;
+    }
 }
