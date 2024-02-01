@@ -60,7 +60,7 @@ interface FlightEnabled{
     void land();
     void fly();
     default FlightStates transition(FlightStates state){
-        System.out.println("Transition not implemented on "+this.getClass().getName());
+        System.out.println("Transition not implemented on "+ getClass().getName());
         return null;
     }
 }
