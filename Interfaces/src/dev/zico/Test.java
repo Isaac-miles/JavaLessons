@@ -18,6 +18,6 @@ public class Test {
     private static void orbit(OrbitEarth spaceship){
         spaceship.takeOff();
         spaceship.fly();
-//        spaceship.land();
+        spaceship.land();
     }
 }
