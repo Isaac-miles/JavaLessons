@@ -26,6 +26,7 @@ public class Jet implements FlightEnabled,Trackable{
     @Override
     public FlightStates transition(FlightStates state) {
         System.out.println(getClass().getSimpleName()+ " transitioning");
-        return FlightStates.CRUISE;
+//        return FlightStates.CRUISE;
+        return FlightEnabled.super.transition(state);
     }
 }

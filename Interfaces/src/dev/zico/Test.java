@@ -6,7 +6,7 @@ public class Test {
     }
     private static void inFlightBound(FlightEnabled flier){
         flier.takeOff();
-        flier.transition(FlightStates.LAUNCH);
+        flier.transition(FlightStates.GROUNDED);
         flier.fly();
         if (flier instanceof Trackable tracked){
             tracked.track();
