@@ -2,7 +2,8 @@ package dev.zico;
 
 import java.util.Arrays;
 
-enum FlightStates implements Trackable{GROUNDED,LAUNCH,CRUISE,DATA_COLLECTION;
+enum FlightStates implements Trackable{
+    GROUNDED,LAUNCH,CRUISE,DATA_COLLECTION;
 
     @Override
     public void track() {
@@ -13,7 +14,6 @@ enum FlightStates implements Trackable{GROUNDED,LAUNCH,CRUISE,DATA_COLLECTION;
     public  FlightStates getNextStage(){
         FlightStates[] allStages = values();
         System.out.println("allStages values "+ Arrays.toString(allStages));
-        System.out.println("the ordinal expression results "+(ordinal()+1) % allStages.length);
         return allStages[(ordinal()+1) % allStages.length];
     }
 }
@@ -60,6 +60,10 @@ class Satellite implements OrbitEarth{
 
 interface OrbitEarth extends FlightEnabled{
     void achieveOrbit();
+    static void log(String description){
+        var today = new java.util.Date();
+        System.out.println(today + " : " + description);
+    }
 }
 interface FlightEnabled{
     double MILES_TO_KM = 1.60934;
