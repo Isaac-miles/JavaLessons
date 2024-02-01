@@ -39,7 +39,7 @@ class Satellite implements OrbitEarth{
     FlightStates states = FlightStates.GROUNDED;
     @Override
     public void achieveOrbit() {
-        System.out.println("orbit achieved");
+        transition("orbit achieved");
     }
 
     @Override
