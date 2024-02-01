@@ -1,5 +1,7 @@
 package dev.zico;
 
+import java.util.Arrays;
+
 enum FlightStates implements Trackable{GROUNDED,LAUNCH,CRUISE,DATA_COLLECTION;
 
     @Override
@@ -7,6 +9,12 @@ enum FlightStates implements Trackable{GROUNDED,LAUNCH,CRUISE,DATA_COLLECTION;
         if(this !=GROUNDED){
             System.out.println("Monitoring "+ this);
         }
+    }
+    public  FlightStates getNextStage(){
+        FlightStates[] allStages = values();
+        System.out.println("allStages values "+ Arrays.toString(allStages));
+        System.out.println("the ordinal expression results "+(ordinal()+1) % allStages.length);
+        return allStages[(ordinal()+1) % allStages.length];
     }
 }
 record DragonFly(String name, String type)implements FlightEnabled{
@@ -60,8 +68,11 @@ interface FlightEnabled{
     void land();
     void fly();
     default FlightStates transition(FlightStates state){
-        System.out.println("Transition not implemented on "+ getClass().getName());
-        return null;
+//        System.out.println("Transition not implemented on "+ getClass().getName());
+//        return null;
+        FlightStates nextStage = state.getNextStage();
+        System.out.println("Transitioning from "+ state+ " to "+nextStage);
+        return nextStage;
     }
 }
 interface Trackable{
