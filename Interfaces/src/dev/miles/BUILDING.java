@@ -11,12 +11,12 @@ public class BUILDING implements Mappable{
 
     @Override
     public String getLabel() {
-        return null;
+        return name+" ("+usage + " )";
     }
 
     @Override
     public Geometry getShape() {
-        return null;
+        return Geometry.POINT;
     }
 
     @Override
