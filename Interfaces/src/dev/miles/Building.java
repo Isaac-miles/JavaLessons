@@ -29,6 +29,12 @@ public class Building implements Mappable{
           default -> Color.BLACK+" "+PointMarker.CIRCLE;
        };
     }
+
+    @Override
+    public String toJSON() {
+        return Mappable.super.toJSON()+ """
+                ,"name": "%s", "usage": "%s"\s""".formatted(name,usage);
+    }
 }
 
 enum UsageType {ENTERTAINMENT, GOVERNMENT, RESIDENTIAL, SPORTS}
