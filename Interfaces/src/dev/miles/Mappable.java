@@ -22,3 +22,6 @@ public interface Mappable {
 }
 
 enum Geometry{LINE,POINT,POLYGON}
+enum Color {BLACK,BLUE,GREEN,ORANGE,RED}
+enum PointMarker{CIRCLE,PUSH_PIN,STAR,SQUARE,TRIANGLE}
+enum LineMarker{DASHED,DOTTED,SOLID}
