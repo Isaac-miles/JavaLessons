@@ -1,10 +1,10 @@
 package dev.miles;
 
-public class BUILDING implements Mappable{
+public class Building implements Mappable{
     private String name;
     private  UsageType usage;
 
-    public BUILDING(String name, UsageType usage) {
+    public Building(String name, UsageType usage) {
         this.name = name;
         this.usage = usage;
     }
