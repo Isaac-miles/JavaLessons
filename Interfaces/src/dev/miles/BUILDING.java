@@ -21,7 +21,13 @@ public class BUILDING implements Mappable{
 
     @Override
     public String getMarker() {
-        return null;
+      return switch (usage){
+          case ENTERTAINMENT -> Color.GREEN+ " "+PointMarker.TRIANGLE;
+          case GOVERNMENT -> Color.RED+ " "+ PointMarker.STAR;
+          case RESIDENTIAL -> Color.BLUE+" "+PointMarker.PUSH_PIN;
+          case SPORTS -> Color.ORANGE+" "+PointMarker.CIRCLE;
+          default -> Color.BLACK+" "+PointMarker.CIRCLE;
+       };
     }
 }
 
