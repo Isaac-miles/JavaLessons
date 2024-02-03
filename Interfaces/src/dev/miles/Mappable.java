@@ -17,7 +17,7 @@ public interface Mappable {
         System.out.println(JSON_PROPERTY.formatted(mappable.toJSON()));
     }
     static void mapIt1(Mappable mappable){
-        System.out.printf((JSON_PROPERTY) + "%n", mappable.toJSON());
+        System.out.printf((JSON_PROPERTY) , mappable.toJSON());
     }
 }
 
