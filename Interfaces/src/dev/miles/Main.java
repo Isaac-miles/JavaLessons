@@ -11,6 +11,9 @@ public class Main {
         mappables.add(new Building("Aso rock",UsageType.GOVERNMENT));
         mappables.add(new Building("Tesling Balogun Stadium",UsageType.SPORTS));
 
+        mappables.add(new UtilityLine("University Uni AbJ",UtilityType.FIBER_OPTIC));
+        mappables.add(new UtilityLine("Pool Party",UtilityType.WATER));
+
         for(var m:mappables){
             Mappable.mapIt(m);
         }
