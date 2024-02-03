@@ -11,7 +11,7 @@ public class Building implements Mappable{
 
     @Override
     public String getLabel() {
-        return name+" ("+usage + " )";
+        return name+" ("+usage + ")";
     }
 
     @Override
