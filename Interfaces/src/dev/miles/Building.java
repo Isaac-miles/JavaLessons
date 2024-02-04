@@ -6,7 +6,7 @@ public class Building implements Mappable{
 
     public Building(String name, UsageType usage) {
         this.name = name;
-//        this.usage = usage;
+        this.usage = usage;
     }
 
     @Override
