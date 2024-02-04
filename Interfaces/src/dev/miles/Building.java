@@ -9,10 +9,10 @@ public class Building implements Mappable{
         this.usage = usage;
     }
 
-    @Override
-    public String getLabel() {
-        return name+" ("+usage + ")";
-    }
+//    @Override
+//    public String getLabel() {
+//        return name+" ("+usage + ")";
+//    }
 
     @Override
     public Geometry getShape() {
