@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         BaseBallTeam lakers = new BaseBallTeam("Lakers");
         BaseBallTeam olandos = new BaseBallTeam("Olandos");
+        scoreResult(lakers,5,olandos,4);
     }
     public static void scoreResult(BaseBallTeam team1, int t1_score,
                                    BaseBallTeam team2, int t2_score){
