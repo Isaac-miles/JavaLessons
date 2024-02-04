@@ -22,4 +22,16 @@ public class BaseBallTeam {
         System.out.println(teamName+ " Lakes:");
         System.out.println(teamMembers);
     }
+
+    public int rankin(){
+        return (totalLosses * 2) + totalTies +1;
+    }
+    public String setScore(int ourScore, int theirScore){
+        String message = "lose to";
+        if(ourScore > theirScore){
+            totalWins++;
+            message = "beat";
+        }
+        return message;
+    }
 }
