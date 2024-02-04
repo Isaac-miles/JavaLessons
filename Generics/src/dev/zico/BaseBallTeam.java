@@ -23,7 +23,7 @@ public class BaseBallTeam {
         System.out.println(teamMembers);
     }
 
-    public int rankin(){
+    public int ranking(){
         return (totalLosses * 2) + totalTies +1;
     }
     public String setScore(int ourScore, int theirScore){
@@ -38,5 +38,10 @@ public class BaseBallTeam {
             totalLosses++;
         }
         return message;
+    }
+
+    @Override
+    public String toString() {
+        return teamName + " (Ranked "+ranking()+ " )";
     }
 }
