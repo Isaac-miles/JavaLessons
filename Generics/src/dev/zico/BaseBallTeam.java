@@ -18,4 +18,8 @@ public class BaseBallTeam {
             teamMembers.add(player);
         }
     }
+    public void listTeamMembers(){
+        System.out.println(teamName+ " Lakes:");
+        System.out.println(teamMembers);
+    }
 }
