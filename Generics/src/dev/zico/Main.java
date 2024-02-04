@@ -5,6 +5,10 @@ public class Main {
         BaseBallTeam lakers = new BaseBallTeam("Lakers");
         BaseBallTeam olandos = new BaseBallTeam("Olandos");
         scoreResult(lakers,5,olandos,4);
+
+        lakers.addTeamMember(new BaseBallPlayer("Kobi","Attacker"));
+        olandos.addTeamMember(new BaseBallPlayer("Mosh", "defender"));
+        olandos.listTeamMembers();
     }
     public static void scoreResult(BaseBallTeam team1, int t1_score,
                                    BaseBallTeam team2, int t2_score){
