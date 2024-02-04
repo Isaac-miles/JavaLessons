@@ -16,7 +16,7 @@ public class Building implements Mappable{
 
     @Override
     public Geometry getShape() {
-        return Geometry.POINT;
+//        return Geometry.POINT;
     }
 
     @Override
