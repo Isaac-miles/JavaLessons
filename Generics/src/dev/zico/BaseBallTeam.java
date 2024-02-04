@@ -10,4 +10,12 @@ public class BaseBallTeam {
     private int totalLosses = 0;
     private int totalTies = 0;
 
+    public BaseBallTeam(String teamName) {
+        this.teamName = teamName;
+    }
+    public void addTeamMember(BaseBallPlayer player){
+        if(!teamMembers.contains(player)){
+            teamMembers.add(player);
+        }
+    }
 }
