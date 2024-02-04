@@ -5,3 +5,5 @@ public class Main {
 
     }
 }
+
+record BaseBallPlayer(String name, String position){}
