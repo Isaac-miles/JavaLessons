@@ -31,6 +31,11 @@ public class BaseBallTeam {
         if(ourScore > theirScore){
             totalWins++;
             message = "beat";
+        } else if (ourScore == theirScore) {
+            totalTies++;
+            message = "tied";
+        }else {
+            totalLosses++;
         }
         return message;
     }
