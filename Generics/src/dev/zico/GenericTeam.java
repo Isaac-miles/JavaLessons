@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GenericTeam <T>{
     private String teamName;
-    private List<Player> teamMembers = new ArrayList<>();
+    private List<T> teamMembers = new ArrayList<>();
     private int totalWins = 0;
     private int totalLosses = 0;
     private int totalTies = 0;
@@ -13,7 +13,7 @@ public class GenericTeam <T>{
     public GenericTeam(String teamName) {
         this.teamName = teamName;
     }
-    public void addTeamMember(Player player){
+    public void addTeamMember(T player){
         if(!teamMembers.contains(player)){
             teamMembers.add(player);
         }
