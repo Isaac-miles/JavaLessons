@@ -11,21 +11,27 @@ public class Main {
         scoreResult(lakers2,5,olandos2,4);
 
 
-        GenericTeam lakers = new GenericTeam("Lakers");
-        GenericTeam olandos = new GenericTeam("Olandos");
+        GenericTeam<BaseBallPlayer> lakers = new GenericTeam<>("Lakers");
+        GenericTeam<BaseBallPlayer> olandos = new GenericTeam<>("Olandos");
 //        scoreResult(lakers,5,olandos,4);
 
         lakers.addTeamMember(new BaseBallPlayer("Kobi","Attacker"));
         olandos.addTeamMember(new BaseBallPlayer("Mosh", "defender"));
-        olandos.listTeamMembers();
-
-        SportTeam afa = new SportTeam("Ajaokuata");
-        var baron = new FootballPlayer("Baron","CDM");
-        afa.addTeamMember(baron);
 
         var ronald = new BaseBallPlayer("ronald","GK");
-        afa.addTeamMember(ronald); //No type checking as it allowed us to add both base and football player
+        lakers.addTeamMember(ronald); //No type checking as it allowed us to add both base and football player
+        olandos.listTeamMembers();
+        olandos.listTeamMembers();
+
+        SportTeam afa1 = new SportTeam("Ajaokuata");
+        GenericTeam<FootballPlayer> afa = new GenericTeam<>("Ajaokuata");
+
+        var baron = new FootballPlayer("Baron","CDM");
+        afa.addTeamMember(baron);
+        var simeon = new FootballPlayer("Simeon Ochani","Attacker");
+        afa.addTeamMember(simeon);
         afa.listTeamMembers();
+
 
     }
     public static void scoreResult(BaseBallTeam team1, int t1_score,
