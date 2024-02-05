@@ -9,5 +9,13 @@ public class Main {
         };
         Layer<Park> parkLayer = new Layer<>(nationalNGParks);
         parkLayer.renderLayer();
+
+        var majorNGRivers = new River[]{
+                new River("Niger","10.204, -92.201","33.12, -87.212", "13.203, -22.2923"),
+                new River("Benue","10.204, -92.201","33.12, -87.212", "13.203, -22.2923"),
+        };
+        Layer<River> riverLayer= new Layer<>(majorNGRivers);
+        riverLayer.addElements(new River("Port","10.204, -92.201","33.12, -87.212", "13.203, -22.2923"));
+        riverLayer.renderLayer();
     }
 }
