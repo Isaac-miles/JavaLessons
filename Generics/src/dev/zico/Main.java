@@ -17,7 +17,11 @@ public class Main {
         SportTeam afa = new SportTeam("Ajaokuata");
         var baron = new FootballPlayer("Baron","CDM");
         afa.addTeamMember(baron);
+
+        var ronald = new BaseBallPlayer("ronald","GK");
+        afa.addTeamMember(ronald); //No type checking as it allowed us to add both base and football player
         afa.listTeamMembers();
+
     }
     public static void scoreResult(BaseBallTeam team1, int t1_score,
                                    BaseBallTeam team2, int t2_score){
