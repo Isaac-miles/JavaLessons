@@ -20,7 +20,9 @@ public class GenericTeam <T > {
     }
     public void listTeamMembers(){
         System.out.println(teamName+ " Lakes:");
-        System.out.println(teamMembers);
+        for(T t: teamMembers){
+            System.out.println(t);
+        }
     }
 
     public int ranking(){
