@@ -6,8 +6,13 @@ public class Main {
         BaseBallTeam olandos1 = new BaseBallTeam("Olandos");
         scoreResult(lakers1,5,olandos1,4);
 
-        SportTeam lakers = new SportTeam("Lakers");
-        SportTeam olandos = new SportTeam("Olandos");
+        BaseBallTeam lakers2 = new BaseBallTeam("Lakers");
+        BaseBallTeam olandos2 = new BaseBallTeam("Olandos");
+        scoreResult(lakers2,5,olandos2,4);
+
+
+        GenericTeam lakers = new GenericTeam("Lakers");
+        GenericTeam olandos = new GenericTeam("Olandos");
 //        scoreResult(lakers,5,olandos,4);
 
         lakers.addTeamMember(new BaseBallPlayer("Kobi","Attacker"));
