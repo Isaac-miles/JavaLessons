@@ -45,7 +45,8 @@ public class Main {
 //        GenericTeam<int> miles = new GenericTeam<int>("Miles"); this doesn't compile
         //luckily autoboxing comes into play
 
-        GenericTeam<Integer> miles = new GenericTeam<>("Miles");
+        GenericTeam<Integer> miles = new GenericTeam<>("Miles Integer");
+
 
     }
     public static void scoreResult(BaseBallTeam team1, int t1_score,
