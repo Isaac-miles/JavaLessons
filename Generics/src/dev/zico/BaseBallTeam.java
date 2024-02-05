@@ -45,3 +45,5 @@ public class BaseBallTeam {
         return teamName + " (Ranked "+ranking()+ " )";
     }
 }
+
+interface Player{}
