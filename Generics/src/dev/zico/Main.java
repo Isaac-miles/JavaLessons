@@ -24,7 +24,7 @@ public class Main {
         olandos.listTeamMembers();
 
         SportTeam afa1 = new SportTeam("Ajaokuata");
-        GenericTeam<FootballPlayer,Affiliation> afa = new GenericTeam<>("Ajaokuata");
+        GenericTeam<FootballPlayer,String> afa = new GenericTeam<>("Ajaokuata","Dangbala");
 
         var baron = new FootballPlayer("Baron","CDM");
         afa.addTeamMember(baron);
