@@ -2,6 +2,7 @@ package dev.zico;
 
 public class Main {
     public static void main(String[] args) {
+        var edy = new Affiliation("Edo","state","NG");
         BaseBallTeam lakers1 = new BaseBallTeam("Lakers");
         BaseBallTeam olandos1 = new BaseBallTeam("Olandos");
         scoreResult(lakers1,5,olandos1,4);
@@ -11,8 +12,8 @@ public class Main {
         scoreResult(lakers2,5,olandos2,4);
 
 
-        GenericTeam<BaseBallPlayer> lakers = new GenericTeam<>("Lakers");
-        GenericTeam<BaseBallPlayer> olandos = new GenericTeam<>("Olandos");
+        GenericTeam<BaseBallPlayer, Affiliation> lakers = new GenericTeam<>("Lakers",edy);
+        GenericTeam<BaseBallPlayer, Affiliation> olandos = new GenericTeam<>("Olandos",edy);
 //        scoreResult(lakers,5,olandos,4);
 
         lakers.addTeamMember(new BaseBallPlayer("Kobi","Attacker"));
@@ -21,10 +22,9 @@ public class Main {
         var ronald = new BaseBallPlayer("ronald","GK");
         lakers.addTeamMember(ronald); //No type checking as it allowed us to add both base and football player
         olandos.listTeamMembers();
-        olandos.listTeamMembers();
 
         SportTeam afa1 = new SportTeam("Ajaokuata");
-        GenericTeam<FootballPlayer> afa = new GenericTeam<>("Ajaokuata");
+        GenericTeam<FootballPlayer,Affiliation> afa = new GenericTeam<>("Ajaokuata");
 
         var baron = new FootballPlayer("Baron","CDM");
         afa.addTeamMember(baron);
@@ -32,7 +32,7 @@ public class Main {
         afa.addTeamMember(simeon);
         afa.listTeamMembers();
 
-        var coldStone = new GenericTeam<VollyBallPlayer>("Cold Stone");
+        var coldStone = new GenericTeam<VollyBallPlayer,Affiliation>("Cold Stone",edy);
         coldStone.addTeamMember(new VollyBallPlayer("Isaac", "CM"));
         coldStone.listTeamMembers();
         scoreResult(coldStone,1,coldStone,2);
