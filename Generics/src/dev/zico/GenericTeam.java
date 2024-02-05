@@ -3,23 +3,32 @@ package dev.zico;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenericTeam <T extends Player> {
+public class GenericTeam <T extends Player, S > {
     private String teamName;
     private List<T> teamMembers = new ArrayList<>();
     private int totalWins = 0;
     private int totalLosses = 0;
     private int totalTies = 0;
+    private S affiliation;
+
 
     public GenericTeam(String teamName) {
         this.teamName = teamName;
     }
+
+    public GenericTeam(String teamName, S affiliation) {
+        this.teamName = teamName;
+        this.affiliation = affiliation;
+    }
+
     public void addTeamMember(T player){
         if(!teamMembers.contains(player)){
             teamMembers.add(player);
         }
     }
     public void listTeamMembers(){
-        System.out.println(teamName+ " Lakes:");
+        System.out.print(teamName+ " Lakes:");
+        System.out.println(affiliation== null ? "" : "AFFILIATION: "+affiliation);
         for(T t: teamMembers){
             System.out.println(t.name());
         }
@@ -45,5 +54,12 @@ public class GenericTeam <T extends Player> {
     @Override
     public String toString() {
         return teamName + " (Ranked "+ranking()+ " )";
+    }
+}
+
+record Affiliation(String name, String type, String countryCode){
+    @Override
+    public String toString() {
+        return name + " ("+type + " in "+countryCode+" )";
     }
 }
