@@ -32,6 +32,20 @@ public class Main {
         afa.addTeamMember(simeon);
         afa.listTeamMembers();
 
+        GenericTeam<String> isaac = new GenericTeam<>("Zixco Fc");
+        isaac.addTeamMember("Isaac");
+        isaac.listTeamMembers();
+
+        var coldStone = new GenericTeam<String>("Cold Stone");
+        coldStone.addTeamMember("I miles");
+        coldStone.listTeamMembers();
+        scoreResult(coldStone,1,isaac,2);
+
+        //generics can't be used with primitive types
+//        GenericTeam<int> miles = new GenericTeam<int>("Miles"); this doesn't compile
+        //luckily autoboxing comes into play
+
+        GenericTeam<Integer> miles = new GenericTeam<>("Miles");
 
     }
     public static void scoreResult(BaseBallTeam team1, int t1_score,
