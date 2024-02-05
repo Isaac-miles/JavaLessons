@@ -1,9 +1,9 @@
 package dev.challenge;
 
-public class Part extends Point{
+public class Park extends Point{
     private String name;
 
-    public Part(String name,String location) {
+    public Park(String name, String location) {
         super(location);
         this.name = name;
     }
