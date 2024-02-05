@@ -46,4 +46,6 @@ public class BaseBallTeam {
     }
 }
 
-interface Player{}
+interface Player{
+    String name();
+}
