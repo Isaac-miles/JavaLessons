@@ -3,7 +3,7 @@ package dev.zico;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenericTeam <T extends Player> {
+public class GenericTeam <T > {
     private String teamName;
     private List<T> teamMembers = new ArrayList<>();
     private int totalWins = 0;
