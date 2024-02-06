@@ -1,8 +1,10 @@
 package dev.model;
 
+import dev.util.QueryItem;
+
 import java.util.Random;
 
-public class Student {
+public class Student implements QueryItem {
     Random random = new Random();
     private String name;
     private String course;
@@ -23,5 +25,16 @@ public class Student {
 
     public int getYearStarted() {
         return yearStarted;
+    }
+
+    @Override
+    public boolean matchFieldValues(String fieldName, String value) {
+        String fName = fieldName.toUpperCase();
+        return switch (fName){
+            case "NAME"-> name.equalsIgnoreCase(value);
+            case "COURSE"->course.equalsIgnoreCase(value);
+            case "YEARSTARTED"->yearStarted==(Integer.parseInt(value));
+            default -> false;
+        };
     }
 }
