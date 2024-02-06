@@ -30,8 +30,9 @@ public class Main {
                 new StoreEmployee(109,"Rose",2018,"Cold ice")
         ));
         //using a local variable to access the nested inner non-static class
-        var genericEmployee = new StoreEmployee();
-        var comparator = genericEmployee.new StoreComparator<>();
+//        var genericEmployee = new StoreEmployee();
+//        var comparator = genericEmployee.new StoreComparator<>();
+        var comparator = new StoreEmployee().new StoreComparator<>();
         storeEmployees.sort(comparator);
         for(StoreEmployee e:storeEmployees){
             System.out.println(e);
