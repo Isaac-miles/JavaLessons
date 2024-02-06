@@ -8,6 +8,15 @@ public class StoreEmployee extends Employee {
     public StoreEmployee() {
     }
 
+    public StoreEmployee(int employeeId, String name, int yearStarted, String store) {
+        super(employeeId, name, yearStarted);
+        this.store = store;
+    }
+
+    @Override
+    public String toString() {
+        return "%-8s %s".formatted(store,super.toString());
+    }
 
     public  class StoreComparator<T extends StoreEmployee> implements Comparator<StoreEmployee>{
 
