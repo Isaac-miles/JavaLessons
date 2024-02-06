@@ -1,5 +1,5 @@
 package dev.util;
 
 public interface QueryItem {
-    public boolean matchFieldValues(String fieldName, String value);
+     boolean matchFieldValues(String fieldName, String value);
 }
