@@ -27,9 +27,11 @@ public class Main {
                 new StoreEmployee(106,"Eddy",2015,"Ice spice"),
                 new StoreEmployee(107,"Biggie",2016,"Chicken spice"),
                 new StoreEmployee(108,"Helen",2017,"The spice"),
-                new StoreEmployee(109,"Rose",2018,"cold ice")
+                new StoreEmployee(109,"Rose",2018,"Cold ice")
         ));
-        var comparator = new Employee.EmployeeComparator<>();
+        //using a local variable to access the nested inner non-static class
+        var genericEmployee = new StoreEmployee();
+        var comparator = genericEmployee.new StoreComparator<>();
         storeEmployees.sort(comparator);
         for(StoreEmployee e:storeEmployees){
             System.out.println(e);
