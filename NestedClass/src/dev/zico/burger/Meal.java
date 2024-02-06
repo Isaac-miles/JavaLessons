@@ -7,6 +7,12 @@ public class Meal {
         private String type;
         private double price;
 
+        public Item(String name, String type) {
+            this(name,type,0);
+            this.name = name;
+            this.type = type;
+        }
+
         public Item(String name, String type, double price) {
             this.name = name;
             this.type = type;
