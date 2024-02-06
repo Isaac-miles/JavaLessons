@@ -5,6 +5,10 @@ import java.util.Comparator;
 public class StoreEmployee extends Employee {
     private String store;
 
+    public StoreEmployee() {
+    }
+
+
     public  class StoreComparator<T extends StoreEmployee> implements Comparator<StoreEmployee>{
 
         @Override
