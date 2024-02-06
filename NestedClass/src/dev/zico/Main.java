@@ -1,6 +1,7 @@
 package dev.zico;
 
 import dev.miles.Employee;
+import dev.miles.StoreEmployee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,17 @@ public class Main {
         employees.sort(new Employee.EmployeeComparator<>("yearStarted").reversed());
 
         for(Employee e: employees){
+            System.out.println(e);
+        }
+
+        System.out.println("Store Members");
+        List<StoreEmployee> storeEmployees = new ArrayList<>(List.of(
+                new StoreEmployee(106,"Eddy",2015,"Ice spice"),
+                new StoreEmployee(107,"Biggie",2016,"Chicken spice"),
+                new StoreEmployee(108,"Helen",2017,"The spice"),
+                new StoreEmployee(109,"Rose",2018,"cold ice")
+        ));
+        for(StoreEmployee e:storeEmployees){
             System.out.println(e);
         }
     }
