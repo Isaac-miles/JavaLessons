@@ -3,11 +3,25 @@ package dev.miles;
 import java.util.Comparator;
 
 public class Employee {
+    //creating a satic nested class
     public static class EmployeeComparator<T extends Employee> implements Comparator<Employee> {
+
+        private String sortType;
+
+        public EmployeeComparator() {
+            this("name");
+        }
+
+        public EmployeeComparator(String sortType) {
+            this.sortType = sortType;
+        }
+
         @Override
         public int compare(Employee o1, Employee o2) {
+            if(sortType.equalsIgnoreCase("yearStarted")){
             return o1.yearStarted - o2.yearStarted;
-//        return o1.getName().compareTo(o2.getName());
+            }
+        return o1.name.compareTo(o2.name);
         }
     }
 
