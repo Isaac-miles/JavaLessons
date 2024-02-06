@@ -1,7 +1,5 @@
 package dev.challenge2;
 
-import dev.util.QueryItem;
-
 import java.util.Random;
 
 public class Student implements QueryItem, Comparable<Student> {
