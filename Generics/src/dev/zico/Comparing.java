@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Comparing {
     public static void main(String[] args) {
@@ -28,14 +29,23 @@ public class Comparing {
         Arrays.sort(students);
         System.out.println(Arrays.toString(students));
 
+        System.out.println("result = "+ miles.compareTo(new Student("MILES")));
     }
 }
 
-class Student implements Comparable{
+class Student implements Comparable<Student>{
+    private static int LAST_ID = 1000;
+    private static Random random = new Random();
+
     String name;
+
+    private int id;
+    protected double gpa;
 
     public Student(String name) {
         this.name = name;
+        id = LAST_ID++;
+
     }
 
     @Override
@@ -44,8 +54,13 @@ class Student implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        Student other = (Student) o;
-        return name.compareTo(other.name);
+    public int compareTo(Student o) {
+        return name.compareTo(o.name);
     }
+//    @Override
+//    public int compareTo(Object o) {
+//        Student other = (Student) o;
+//        return name.compareTo(other.name);
+//    }
+
 }
