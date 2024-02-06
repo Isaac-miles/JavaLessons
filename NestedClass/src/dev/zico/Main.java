@@ -29,6 +29,8 @@ public class Main {
                 new StoreEmployee(108,"Helen",2017,"The spice"),
                 new StoreEmployee(109,"Rose",2018,"cold ice")
         ));
+        var comparator = new Employee.EmployeeComparator<>();
+        storeEmployees.sort(comparator);
         for(StoreEmployee e:storeEmployees){
             System.out.println(e);
         }
