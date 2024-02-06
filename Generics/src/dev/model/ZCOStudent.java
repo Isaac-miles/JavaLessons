@@ -1,8 +1,7 @@
 package dev.model;
 
 import java.util.Random;
-
-public class ZCOStudent {
+public class ZCOStudent extends Student{
     Random random = new Random();
     private double percentComplete;
     public ZCOStudent(){
