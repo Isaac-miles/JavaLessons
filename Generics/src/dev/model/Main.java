@@ -1,5 +1,6 @@
 package dev.model;
 
+import dev.util.QueryItem;
 import dev.util.QueryList;
 
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ public class Main {
         //another way without specifying the type of list argument
 //        var students2018 = QueryList.<Student>getMatches(new ArrayList<>(),"yearstarted","2019");
 
+//          QueryList<Employee> employeeList = new QueryList<>(); here it flags it that employee is out of bound
     }
 
     public static void printMoreList(List<? extends Student> students){
@@ -79,4 +81,13 @@ public class Main {
 //        System.out.println();
 //    }
 
+}
+
+//this is to test the upper bound on queryitem interface
+record Employee(String name) implements QueryItem{
+
+    @Override
+    public boolean matchFieldValues(String fieldName, String value) {
+        return false;
+    }
 }
