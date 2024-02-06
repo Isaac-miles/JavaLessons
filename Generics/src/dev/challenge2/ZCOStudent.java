@@ -1,10 +1,8 @@
 package dev.challenge2;
 
-import dev.model.Student;
-
 import java.util.Random;
 
-public class ZCOStudent extends Student {
+public class ZCOStudent extends Student{
     Random random = new Random();
     private double percentComplete;
     public ZCOStudent(){
@@ -19,4 +17,13 @@ public class ZCOStudent extends Student {
     public double getPercentComplete() {
         return percentComplete;
     }
+
+    @Override
+    public boolean matchFieldValues(String fieldName, String value) {
+        if(fieldName.equalsIgnoreCase("percentComplete")){
+            return percentComplete <= Integer.parseInt(value);
+        }
+        return super.matchFieldValues(fieldName, value);
+    }
+
 }
