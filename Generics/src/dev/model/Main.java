@@ -26,8 +26,14 @@ public class Main {
         testList(new ArrayList<Integer>(List.of(1,2,3)));
 
         var queryList = new QueryList<>(zcostudents);
-        var matches =queryList.getMatches("Yearstarted","2019");
+        var matches =queryList.getMatches("course","C++");
         printMoreList(matches);
+
+        var students2019 = QueryList.getMatches(students,"yearstarted","2019");
+        printMoreList(students2019);
+
+        //another way without specifying the type of list argument
+//        var students2018 = QueryList.<Student>getMatches(new ArrayList<>(),"yearstarted","2019");
 
     }
 
