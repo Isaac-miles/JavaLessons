@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Comparing {
@@ -68,5 +69,12 @@ class Student implements Comparable<Student>{
 //        Student other = (Student) o;
 //        return name.compareTo(other.name);
 //    }
+}
 
+class StudentGPAComparator implements Comparator<Student>{
+
+    @Override
+    public int compare(Student o1, Student o2) {
+        return  (o1.gpa + o1.name).compareTo(o2.gpa+o2.name);
+    }
 }
