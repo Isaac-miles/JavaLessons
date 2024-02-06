@@ -4,14 +4,18 @@ import dev.util.QueryItem;
 
 import java.util.Random;
 
-public class Student implements QueryItem {
+public class Student implements QueryItem, Comparable<Student> {
     Random random = new Random();
+
+    private static int LAST_ID= 1_000;
+    private int studentId;
     private String name;
     private String course;
     private int yearStarted;
     private static String[] firstNames = {"Ann","Bill","Amos","John","Miles"};
     private static String[] courses = {"C", "C++","Java"};
     public Student(){
+        studentId = LAST_ID++;
         int lastNameIndex = random.nextInt(65,91);
         name = firstNames[random.nextInt(5)]+" "+(char) lastNameIndex;
         course = courses[random.nextInt(3)];
@@ -20,7 +24,7 @@ public class Student implements QueryItem {
 
     @Override
     public String toString() {
-        return "%-15s %-15s %d".formatted(name,course,yearStarted);
+        return "%d %-15s %-15s %d".formatted(studentId,name,course,yearStarted);
     }
 
     public int getYearStarted() {
@@ -37,4 +41,11 @@ public class Student implements QueryItem {
             default -> false;
         };
     }
+
+    @Override
+    public int compareTo(Student o) {
+        return Integer.compare(studentId, o.studentId);
+    }
+
+
 }
