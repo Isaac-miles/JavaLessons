@@ -1,7 +1,9 @@
 package dev.zico.burger;
 
 public class Meal {
-
+    private Item burger;
+    private Item drink;
+    private Item side;
     private class Item{
         private String name;
         private String type;
