@@ -32,7 +32,7 @@ public class Comparing {
 
         System.out.println("result = "+ miles.compareTo(new Student("MILES")));
         Comparator<Student> gpaSorter = new StudentGPAComparator();
-        Arrays.sort(students, gpaSorter);
+        Arrays.sort(students, gpaSorter.reversed());
         System.out.println(Arrays.toString(students));
     }
 }
