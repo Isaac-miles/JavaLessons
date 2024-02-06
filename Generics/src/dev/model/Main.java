@@ -1,5 +1,7 @@
 package dev.model;
 
+import dev.util.QueryList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +24,10 @@ public class Main {
 
         testList(new ArrayList<String>(List.of("Josiah","Joy","Isaac")));
         testList(new ArrayList<Integer>(List.of(1,2,3)));
+
+        var queryList = new QueryList<>(zcostudents);
+        var matches =queryList.getMatches("Yearstarted","2019");
+        printMoreList(matches);
 
     }
 
