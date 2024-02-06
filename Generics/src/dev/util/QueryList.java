@@ -5,7 +5,7 @@ import dev.model.Student;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QueryList <T extends Student & QueryItem>{
+public class QueryList <T extends Student & QueryItem >{
     private List<T> items;
     public QueryList(List<T> items){
         this.items = items;
