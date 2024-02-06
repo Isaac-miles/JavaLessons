@@ -1,15 +1,15 @@
 package dev.challenge2;
 
-import dev.model.Student;
-import dev.util.QueryItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class QueryList<T extends Student & dev.util.QueryItem> extends ArrayList<T>{
+public class QueryList<T extends Student & QueryItem> extends ArrayList<T> {
 //    private List<T> items;
 
-    public QueryList(){}
+    public QueryList(){
+
+    }
     public QueryList(List<T> items){
         super(items);
 //        this.items = items;
