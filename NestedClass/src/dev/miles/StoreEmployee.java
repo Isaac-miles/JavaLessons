@@ -15,7 +15,7 @@ public class StoreEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "%-8s %s".formatted(store,super.toString());
+        return "%-10s%s".formatted(store,super.toString());
     }
 
     public  class StoreComparator<T extends StoreEmployee> implements Comparator<StoreEmployee>{
