@@ -15,4 +15,13 @@ public class Student {
         course = courses[random.nextInt(3)];
         yearStarted = random.nextInt(2019,2024);
     }
+
+    @Override
+    public String toString() {
+        return "%-15s %-15s %d".formatted(name,course,yearStarted);
+    }
+
+    public int getYearStarted() {
+        return yearStarted;
+    }
 }
