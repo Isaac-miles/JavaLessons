@@ -50,13 +50,19 @@ class Student implements Comparable<Student>{
 
     @Override
     public String toString() {
-        return name;
+        return "%d - %s (%.2f)".formatted(id,name,gpa);
     }
-
     @Override
     public int compareTo(Student o) {
-        return name.compareTo(o.name);
+        return Integer.valueOf(id).compareTo(Integer.valueOf(o.id));
     }
+
+    //used for comparable example
+//    @Override
+//    public int compareTo(Student o) {
+//        return name.compareTo(o.name);
+//    }
+    //default comparable interfaced used raw
 //    @Override
 //    public int compareTo(Object o) {
 //        Student other = (Student) o;
