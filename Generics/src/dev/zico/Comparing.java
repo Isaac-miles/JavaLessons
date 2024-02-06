@@ -45,7 +45,7 @@ class Student implements Comparable<Student>{
     public Student(String name) {
         this.name = name;
         id = LAST_ID++;
-
+        gpa = random.nextDouble(1.0, 5.0);
     }
 
     @Override
