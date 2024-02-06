@@ -18,5 +18,10 @@ public class Meal {
             this.type = type;
             this.price = price;
         }
+
+        @Override
+        public String toString() {
+            return "%10s%15s NGN%.2f".formatted(type,name,price);
+        }
     }
 }
