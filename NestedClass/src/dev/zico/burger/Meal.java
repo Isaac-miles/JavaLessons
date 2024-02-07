@@ -30,6 +30,9 @@ public class Meal {
     public String toString() {
         return "%s%n%s%n%s%n%26s NGN%.2f".formatted(burger,drink,side,"Total Due",getTotal());
     }
+    public void addToppings(String ...selectedToppings){
+        burger.addToppings(selectedToppings);
+    }
 
     private class Item{
         private String name;
@@ -77,7 +80,11 @@ public class Meal {
             super(name,"burger",5.0);
         }
         public double getPrice(){
-              return super.price;
+              double total = price;
+              for(Item topping : toppings){
+                  total += topping.price;
+              }
+              return total;
         }
 
         private void addToppings(String ...selectedToppings){
@@ -85,6 +92,15 @@ public class Meal {
                 Extra topping = Extra.valueOf(selectedTopping.toUpperCase());
                 toppings.add(new Item(topping.name(),"Topping",topping.getPrice()));
             }
+        }
+        @Override
+        public String toString(){
+              StringBuilder itemized = new StringBuilder(super.toString());
+              for(Item topping:toppings){
+                  itemized.append("\n");
+                  itemized.append(topping);
+              }
+              return itemized.toString();
         }
     }
 }
