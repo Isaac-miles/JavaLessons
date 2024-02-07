@@ -1,6 +1,7 @@
 package dev.zico.burger;
 
 public class Meal {
+    private double base = 5.0;
     private Item burger;
     private Item drink;
     private Item side;
@@ -10,7 +11,7 @@ public class Meal {
         private double price;
 
         public Item(String name, String type) {
-            this(name,type,0);
+            this(name,type,type.equalsIgnoreCase("burger") ? base : 0);
             this.name = name;
             this.type = type;
         }
