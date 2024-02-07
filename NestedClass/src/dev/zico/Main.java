@@ -47,6 +47,8 @@ public class Main {
     public static void addPigLatinName(List<? extends StoreEmployee> list){
 
         class DecoratedEmployee extends StoreEmployee implements Comparable<DecoratedEmployee>{
+            String lastName = "Piggy";
+
             private String pigLatinName;
             private Employee originalInstance;
 
