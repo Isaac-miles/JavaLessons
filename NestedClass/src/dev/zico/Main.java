@@ -56,7 +56,14 @@ public class Main {
             }
         }
         List<DecoratedEmployee> newList = new ArrayList<>(list.size());
-
+        for(var employee : list){
+            String name = employee.getName();
+            String pigLatin = name.substring(1)+name.charAt(0)+"ay";
+            newList.add(new DecoratedEmployee(pigLatin, employee));
+        }
+        for(var dEmployee : newList){
+            System.out.println(dEmployee);
+        }
     }
 
 }
