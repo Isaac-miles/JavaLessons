@@ -80,7 +80,7 @@ public class Meal {
             super(name,"burger",5.0);
         }
         public double getPrice(){
-              double total = price;
+              double total = super.price;
               for(Item topping : toppings){
                   total += topping.price;
               }
