@@ -5,6 +5,13 @@ public class Meal {
     private Item burger;
     private Item drink;
     private Item side;
+
+    public Meal(){
+        burger = new Item("regular","burger");
+        drink = new Item("coke","drink",1.5);
+        System.out.println(drink.name);
+        side = new Item("fries","side",2.0);
+    }
     private class Item{
         private String name;
         private String type;
