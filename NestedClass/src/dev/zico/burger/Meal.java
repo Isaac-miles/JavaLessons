@@ -81,6 +81,7 @@ public class Meal {
         }
         public double getPrice(){
               double total = super.price;
+            System.out.println("based toppig from super "+ total);
               for(Item topping : toppings){
                   total += topping.price;
               }
