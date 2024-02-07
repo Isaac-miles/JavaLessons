@@ -51,9 +51,6 @@ public class RunMethods {
             }
         });
 
-
-
-
     }
     public static <T> void sortIt(List<T> list, Comparator<? super T> comparator){
         System.out.println("Sorting with comparator: " + comparator.toString());
