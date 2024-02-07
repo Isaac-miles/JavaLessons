@@ -6,7 +6,7 @@ public class Store {
         meal.addToppings("Cheese","Mayo","ketchup","Smoove");
         System.out.println(meal);
 
-        Meal NGRegularMeal = new Meal(1_450);
+        Meal NGRegularMeal = new Meal(0.98);
         System.out.println(NGRegularMeal);
     }
 }
