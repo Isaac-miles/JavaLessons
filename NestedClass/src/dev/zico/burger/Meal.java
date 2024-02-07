@@ -58,9 +58,21 @@ public class Meal {
     }
 
     private class Burger extends Item{
-        private enum Extra{AVOCADO,BACON,CHEESE,KETCHUP,MAYO,MUSTARD,PICKLES}
+        private enum Extra{AVOCADO,BACON,CHEESE,KETCHUP,MAYO,MUSTARD,PICKLES;
+
+            private double getPrice(){
+                return switch(this){
+                    case BACON -> 1.0;
+                    case MAYO -> 0.5;
+                    case CHEESE,KETCHUP -> 1.5;
+                    case AVOCADO,MUSTARD,PICKLES -> 2.0;
+                    default -> 0;
+                };
+            }
+        }
 
         private List<Item> toppings = new ArrayList<>();
+
           Burger(String name){
             super(name,"burger",5.0);
         }
@@ -69,7 +81,10 @@ public class Meal {
         }
 
         private void addToppings(String ...selectedToppings){
-
+            for(String selectedTopping:selectedToppings){
+                Extra topping = Extra.valueOf(selectedTopping.toUpperCase());
+                toppings.add(new Item(topping.name(),"Topping",topping.getPrice()));
+            }
         }
     }
 }
