@@ -2,6 +2,7 @@ package dev.zico;
 
 import dev.miles.Employee;
 import dev.miles.StoreEmployee;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,11 +38,15 @@ public class Main {
         for(StoreEmployee e:storeEmployees){
             System.out.println(e);
         }
+
+        System.out.println("With Pig Latin Names");
+        addPigLatinName(storeEmployees);
+
     }
 
     public static void addPigLatinName(List<? extends StoreEmployee> list){
 
-        class DecoratedEmployee extends StoreEmployee{
+        class DecoratedEmployee extends StoreEmployee implements Comparable<DecoratedEmployee>{
             private String pigLatinName;
             private Employee originalInstance;
 
@@ -54,6 +59,11 @@ public class Main {
             public String toString() {
                 return originalInstance.toString() + " "+pigLatinName;
             }
+
+            @Override
+            public int compareTo(@NotNull DecoratedEmployee o) {
+                return pigLatinName.compareTo(o.pigLatinName);
+            }
         }
         List<DecoratedEmployee> newList = new ArrayList<>(list.size());
         for(var employee : list){
@@ -61,6 +71,7 @@ public class Main {
             String pigLatin = name.substring(1)+name.charAt(0)+"ay";
             newList.add(new DecoratedEmployee(pigLatin, employee));
         }
+        newList.sort(null);
         for(var dEmployee : newList){
             System.out.println(dEmployee);
         }
