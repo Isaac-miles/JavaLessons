@@ -3,6 +3,7 @@ package dev.challenge;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -34,5 +35,19 @@ public class Main {
                 return "%s has been an employee for %d years".formatted(fullName, yearsWorked);
             }
         }
+        List<MyEmployee> list = new ArrayList<>();
+        for(Employee employee: eList){
+            list.add(new MyEmployee(employee));
+        }
+        var comparator = new Comparator<MyEmployee>(){
+
+            @Override
+            public int compare(MyEmployee o1, MyEmployee o2) {
+               if(sortField.equals("name")){
+                return o1.fullName.compareTo(o2.fullName);
+               }
+               return o1.yearsWorked - o2.yearsWorked;
+            }
+        };
     }
 }
