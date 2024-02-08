@@ -9,12 +9,16 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Employee e1 = new Employee("Mini","Mouse","01/02/2015");
-        Employee e2 = new Employee("Miki","Den","01/02/2015");
-        Employee e3 = new Employee("Vicky","Ala","01/02/2015");
-        Employee e4 = new Employee("Jon","Doe","01/02/2015");
-        Employee e5 = new Employee("Van","Vicker","01/02/2015");
+        Employee e2 = new Employee("Miki","Den","01/02/2016");
+        Employee e3 = new Employee("Vicky","Ala","01/02/2017");
+        Employee e4 = new Employee("Jon","Doe","01/02/2018");
+        Employee e5 = new Employee("Van","Vicker","01/02/2019");
 
         List<Employee> list = new ArrayList<>(Arrays.asList(e1,e2,e3,e4,e5));
+        printOrderedList(list,"name");
+        System.out.println();
+        printOrderedList(list,"year");
+
     }
     public static void printOrderedList(List<Employee> eList,String sortField){
         int currentYear = LocalDate.now().getYear();
@@ -49,5 +53,9 @@ public class Main {
                return o1.yearsWorked - o2.yearsWorked;
             }
         };
+        list.sort(comparator);
+        for(MyEmployee myEmployee: list){
+            System.out.println(myEmployee);
+        }
     }
 }
