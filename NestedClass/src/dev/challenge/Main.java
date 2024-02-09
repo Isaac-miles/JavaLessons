@@ -36,7 +36,7 @@ public class Main {
 
             @Override
             public String toString() {
-                return "%s has been an employee for %d years".formatted(fullName, yearsWorked);
+//                return "%s has been an employee for %d years".formatted(fullName, yearsWorked);
             }
         }
         List<MyEmployee> list = new ArrayList<>();
