@@ -15,7 +15,7 @@ public class Main {
         Employee e5 = new Employee("Van","Vicker","01/02/2019");
 
         List<Employee> list = new ArrayList<>(Arrays.asList(e1,e2,e3,e4,e5));
-        printOrderedList(list,"name");
+//        printOrderedList(list,"name");
         System.out.println();
         printOrderedList(list,"year");
 
