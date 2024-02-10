@@ -53,13 +53,7 @@ public class Main {
                return o1.yearsWorked - o2.yearsWorked;
             }
         };
-var myComparator = new Comparator<MyEmployee>() {
-    @Override
-    public int compare(MyEmployee o1, MyEmployee o2) {
-        return 0;
-    }
-}
-        list.sort(comparator);
+      list.sort(comparator);
         for(MyEmployee myEmployee: list){
             System.out.println(myEmployee);
         }
