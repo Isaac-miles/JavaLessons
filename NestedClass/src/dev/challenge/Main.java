@@ -53,6 +53,7 @@ public class Main {
                return o1.yearsWorked - o2.yearsWorked;
             }
         };
+
         list.sort(comparator);
         for(MyEmployee myEmployee: list){
             System.out.println(myEmployee);
