@@ -55,7 +55,7 @@ public class Main {
         };
       list.sort(comparator);
         for(MyEmployee myEmployee: list){
-            System.out.println(myEmployee);
+//            System.out.println(myEmployee);
         }
     }
 }
