@@ -48,7 +48,7 @@ public class Main {
             @Override
             public int compare(MyEmployee o1, MyEmployee o2) {
                if(sortField.equals("name")){
-                return o1.fullName.compareTo(o2.fullName);
+//                return o1.fullName.compareTo(o2.fullName);
                }
                return o1.yearsWorked - o2.yearsWorked;
             }
