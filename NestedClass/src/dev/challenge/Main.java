@@ -41,7 +41,7 @@ public class Main {
         }
         List<MyEmployee> list = new ArrayList<>();
         for(Employee employee: eList){
-//            list.add(new MyEmployee(employee));
+            list.add(new MyEmployee(employee));
         }
         var comparator = new Comparator<MyEmployee>(){
 
