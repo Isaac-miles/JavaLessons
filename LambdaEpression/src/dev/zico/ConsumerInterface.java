@@ -9,6 +9,9 @@ public class ConsumerInterface {
                 "Mick","Zico","John","Bravo","Alpha"
         ));
 
-        list.forEach((s)-> System.out.println(s));
+        list.forEach(s-> {
+            char first = s.charAt(0);
+            System.out.println(first+" means "+ s);
+        });
     }
 }
