@@ -29,5 +29,20 @@ public class Main {
         people.sort((o1, o2) -> o1.lastName.compareTo(o2.lastName));
         System.out.println(people);
 
+        interface EhancedComparator<T> extends Comparator<T>{
+            int secondLevel(T o1, T o2);
+        }
+        var comparatorMixed = new EhancedComparator<Person>(){
+
+            @Override
+            public int compare(Person o1, Person o2) {
+                return 0;
+            }
+
+            @Override
+            public int secondLevel(Person o1, Person o2) {
+                return 0;
+            }
+        };
     }
 }
