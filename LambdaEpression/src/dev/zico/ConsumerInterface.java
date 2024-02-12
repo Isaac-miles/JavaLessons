@@ -15,4 +15,9 @@ public class ConsumerInterface {
             System.out.println(prefix + " "+  first+" means "+ s);
         });
     }
+    public static <T> T calculator(Operations<T> function, T value1, T value2){
+        T result = function.operate(value1,value2);
+        System.out.println("Result of operation: " + result);
+        return result;
+    }
 }
