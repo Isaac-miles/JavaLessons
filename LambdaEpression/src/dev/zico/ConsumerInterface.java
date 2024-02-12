@@ -9,9 +9,10 @@ public class ConsumerInterface {
                 "Mick","Z ico","John","Bravo","Alpha"
         ));
 
+        String prefix = "Ninja";
         list.forEach(s-> {
             char first = s.charAt(0);
-            System.out.println(first+" means "+ s);
+            System.out.println(prefix + " "+  first+" means "+ s);
         });
     }
 }
