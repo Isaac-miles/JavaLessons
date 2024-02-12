@@ -12,10 +12,11 @@ public class Main {
     }
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>(Arrays.asList(
-                new Person("Miles","Davies"),
-                new Main.Person("Davies","Isaac"),
-                new Person("Helen", "Bright"),
-                new Person("Charlie", "Brown")
+                new Person("Sally","Brown"),
+                new Main.Person("Peppermint","Patty"),
+                new Person("Lucy", "Van Pelt"),
+                new Person("Charlie", "Brown"),
+                new Person("Linus","Van Pelt")
                 ));
         //using anonymous class
         var comparatorLastname = new Comparator<Person>(){
