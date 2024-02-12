@@ -14,8 +14,12 @@ public class ConsumerInterface {
             char first = s.charAt(0);
             System.out.println(prefix + " "+  first+" means "+ s);
         });
+
+        int result = calculator((a,b)->a+b, 5,4);
+        int result1 = calculator((Integer a, Integer b)->a+b, 5,4);
+
     }
-    public static <T> T calculator(Operations<T> function, T value1, T value2){
+    public static  <T> T calculator(Operations<T> function, T value1, T value2){
         T result = function.operate(value1,value2);
         System.out.println("Result of operation: " + result);
         return result;
