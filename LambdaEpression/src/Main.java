@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -17,6 +18,11 @@ public class Main {
                 new Person("Charlie", "Brown")
                 ));
         //using anonymous class
-
+        var comparatorLastname = new Comparator<Person>(){
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.lastName.compareTo(o2.firstName);
+            }
+        };
     }
 }
