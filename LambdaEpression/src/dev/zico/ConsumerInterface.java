@@ -33,6 +33,9 @@ public class ConsumerInterface {
         BiConsumer<Double,Double> p1 = (lat,lon)-> System.out.printf("[lat:%.3f lon:%.3f]%n",lat,lon);
         var firstPoint = coords.get(0);
         processPoint(firstPoint[0],firstPoint[1],p1);
+
+        System.out.println("_".repeat(24));
+        coords.forEach(s->processPoint(s[0],s[1],p1));
     }
     //using java util
     public static  <T> T calculator(BinaryOperator<T> function, T value1, T value2){
