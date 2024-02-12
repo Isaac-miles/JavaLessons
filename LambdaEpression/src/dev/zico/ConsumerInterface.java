@@ -9,5 +9,6 @@ public class ConsumerInterface {
                 "Mick","Zico","John","Bravo","Alpha"
         ));
 
+        list.forEach((s)-> System.out.println(s));
     }
 }
