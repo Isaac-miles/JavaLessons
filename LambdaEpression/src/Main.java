@@ -36,12 +36,13 @@ public class Main {
 
             @Override
             public int compare(Person o1, Person o2) {
-                return 0;
+                int result = o1.lastName().compareTo(o2.lastName());
+                return (result==0? secondLevel(o1,o2): result);
             }
 
             @Override
             public int secondLevel(Person o1, Person o2) {
-                return 0;
+                return o1.firstName().compareTo(o2.firstName());
             }
         };
     }
