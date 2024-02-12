@@ -24,5 +24,9 @@ public class Main {
                 return o1.lastName.compareTo(o2.firstName);
             }
         };
+
+        people.sort(comparatorLastname);
+        System.out.println(people);
+
     }
 }
