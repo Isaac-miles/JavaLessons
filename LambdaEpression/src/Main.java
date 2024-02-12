@@ -45,5 +45,7 @@ public class Main {
                 return o1.firstName().compareTo(o2.firstName());
             }
         };
+        people.sort(comparatorMixed);
+        System.out.println(people);
     }
 }
