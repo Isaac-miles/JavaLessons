@@ -18,6 +18,7 @@ public class ConsumerInterface {
         int result = calculator((a,b)->a+b, 5,4);
         int result1 = calculator((Integer a, Integer b)->a+b, 5,4);
         var result2 = calculator((a, b)-> a / b, 5.5,4.5);
+        var result3 = calculator((a,b)->a.toUpperCase()+" "+ b.toUpperCase(),"Josiah"," Isaac");
 
 
     }
