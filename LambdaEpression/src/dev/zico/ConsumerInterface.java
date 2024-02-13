@@ -36,6 +36,18 @@ public class ConsumerInterface {
 
         System.out.println("_".repeat(24));
         coords.forEach(s->processPoint(s[0],s[1],p1));
+
+        list.removeIf(s->s.equalsIgnoreCase("bravo"));
+        System.out.println(list);
+
+        list.addAll(List.of("happy","earnest","committment"));
+        list.forEach(s-> System.out.println(s));
+
+        System.out.println("-".repeat(25));
+        list.removeIf(s->s.startsWith("com"));
+        list.forEach(s-> System.out.println(s));
+
+        list.replaceAll(s -> s.charAt(0)+" - "+s.toUpperCase());
     }
     //using java util
     public static  <T> T calculator(BinaryOperator<T> function, T value1, T value2){
