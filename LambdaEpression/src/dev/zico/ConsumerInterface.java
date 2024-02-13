@@ -48,6 +48,8 @@ public class ConsumerInterface {
         list.forEach(s-> System.out.println(s));
 
         list.replaceAll(s -> s.charAt(0)+" - "+s.toUpperCase());
+        System.out.println("_".repeat(25));
+        list.forEach(s -> System.out.println(s));
     }
     //using java util
     public static  <T> T calculator(BinaryOperator<T> function, T value1, T value2){
