@@ -50,6 +50,25 @@ public class ConsumerInterface {
         list.replaceAll(s -> s.charAt(0)+" - "+s.toUpperCase());
         System.out.println("_".repeat(25));
         list.forEach(s -> System.out.println(s));
+
+        String[] emptyStrings = new String[10];
+        Arrays.fill(emptyStrings,"-");
+        System.out.println(Arrays.toString(emptyStrings));
+
+        //the set all method unlike the replace all doesn't have access to the current element of an array but instead
+        //the current index of that array
+        Arrays.setAll(emptyStrings,(i)->""+(i+1)+". ");
+        System.out.println(Arrays.toString(emptyStrings));
+
+        Arrays.setAll(emptyStrings,(i)->""+(i+1)+". "
+        +switch (i){
+            case 0->"one";
+            case 1->"two";
+            case 2->"three";
+            default -> "";
+        });
+        System.out.println(Arrays.toString(emptyStrings));
+
     }
     //using java util
     public static  <T> T calculator(BinaryOperator<T> function, T value1, T value2){
