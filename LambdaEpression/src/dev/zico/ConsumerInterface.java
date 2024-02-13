@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
+import java.util.function.Supplier;
 
 public class ConsumerInterface {
     public static void main(String[] args) {
@@ -69,6 +70,7 @@ public class ConsumerInterface {
         });
         System.out.println(Arrays.toString(emptyStrings));
 
+        //The supplier lambder expression
     }
     //using java util
     public static  <T> T calculator(BinaryOperator<T> function, T value1, T value2){
@@ -86,5 +88,12 @@ public class ConsumerInterface {
         T result = function.operate(value1, value2);
         System.out.println("Result of operation: " + result);
         return result;
+    }
+    public static String[] randomlySelectedValues (int count, String[] values, Supplier<Integer> s){
+        String[] selectedValues = new String[count];
+        for (int i = 0; i < values.length; i++) {
+            selectedValues[i] = values[s.get()];
+        }
+        return selectedValues;
     }
 }
