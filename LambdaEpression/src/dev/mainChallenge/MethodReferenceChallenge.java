@@ -14,7 +14,8 @@ public class MethodReferenceChallenge {
                 String::toUpperCase,
                 s-> s +" "+ getRandomChar()+".",
                 s-> s + (" " + reverse(s, s.indexOf(" "))),
-                MethodReferenceChallenge::reverse
+                MethodReferenceChallenge::reverse,
+                String::new
 
         ));
         applyChanges(names,list);
