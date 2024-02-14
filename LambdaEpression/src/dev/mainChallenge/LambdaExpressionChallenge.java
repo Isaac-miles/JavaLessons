@@ -25,6 +25,8 @@ public class LambdaExpressionChallenge {
 
         List<String> newList = new ArrayList<>(List.of(names));
         newList.removeIf(s->s.substring(0,s.indexOf(" ")).equals(s.substring(s.lastIndexOf(" ")+1)));
+        System.out.println("------>Remove names where first equals last");
+        newList.forEach(s-> System.out.println(s));
 
     }
     public static char getRandomChar(char startChar, char endChar){
