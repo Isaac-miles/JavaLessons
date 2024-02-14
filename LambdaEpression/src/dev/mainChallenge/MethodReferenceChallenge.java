@@ -19,7 +19,8 @@ public class MethodReferenceChallenge {
                 MethodReferenceChallenge::reverse,
                 String::new,
                 String::valueOf,
-                miles::last
+                miles::last,
+                (new Person("Isaac"))::last
         ));
         applyChanges(names,list);
     }
