@@ -49,8 +49,11 @@ public class ChainingLambdas {
         Predicate<String> p4 = s->s.endsWith("o");
 
         Predicate<String> combine1 = p1.or(p2);
-        System.out.println("combined1 = "+ combine1);
+        System.out.println("combined1 = "+ combine1.test(name));
         Predicate<String> combine2 = p3.and(p4);
-        System.out.println("combine2 = "+ combine2);
+        System.out.println("combine2 = "+ combine2.test(name));
+
+        Predicate<String> combine3 = p3.and(p4).negate();
+        System.out.println("comnine3 = "+combine3.test(name));
     }
 }
