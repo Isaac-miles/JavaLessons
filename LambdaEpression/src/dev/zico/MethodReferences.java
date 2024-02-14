@@ -3,12 +3,13 @@ package dev.zico;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BinaryOperator;
+import java.util.function.Supplier;
 
-class plainOld{
+class PlainOld{
     private static int last_id = 1;
     private int id;
-    public plainOld() {
-        id= plainOld.last_id++;
+    public PlainOld() {
+        id= PlainOld.last_id++;
         System.out.println("Creating plainOld Object: id = "+ id);
     }
 }
@@ -22,6 +23,8 @@ public class MethodReferences {
         calculator(5,3, Integer::sum);
         calculator(2.4,7.5, Double::sum);
 
+        Supplier<PlainOld> reference1 = PlainOld::new;
+        reference1.get();
 
     }
 
