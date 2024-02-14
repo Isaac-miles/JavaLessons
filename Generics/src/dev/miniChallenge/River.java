@@ -1,4 +1,4 @@
-package dev.challenge;
+package dev.miniChallenge;
 
 public class River extends Line{
     private String name;

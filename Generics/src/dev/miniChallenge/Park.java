@@ -1,4 +1,4 @@
-package dev.challenge;
+package dev.miniChallenge;
 
 public class Park extends Point{
     private String name;
