@@ -10,12 +10,15 @@ public class MethodReferenceChallenge {
     private static final Random random = new Random();
     public static void main(String[] args) {
         String[] names = {"Anna","Bob","Cameron","Donald","Eva","Francis"};
+        Person miles =  new Person("Miles");
+
         List<UnaryOperator<String>> list = new ArrayList<>(List.of(
                 String::toUpperCase,
                 s-> s +" "+ getRandomChar()+".",
                 s-> s + (" " + reverse(s, s.indexOf(" "))),
                 MethodReferenceChallenge::reverse,
-                String::new
+                String::new,
+                String::valueOf
 
         ));
         applyChanges(names,list);
@@ -38,5 +41,10 @@ public class MethodReferenceChallenge {
     }
     private static String reverse(String s, int end){
         return new StringBuilder(s.substring(0,end)).reverse().toString();
+    }
+    private record Person(String first){
+        public String last(String s){
+            return first+" "+s.substring(0, s.indexOf(" "));
+        }
     }
 }
