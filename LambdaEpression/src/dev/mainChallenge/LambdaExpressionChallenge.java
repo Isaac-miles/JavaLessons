@@ -24,7 +24,15 @@ public class LambdaExpressionChallenge {
         Arrays.asList(names).forEach(s-> System.out.println(s));
 
         List<String> newList = new ArrayList<>(List.of(names));
-        newList.removeIf(s->s.substring(0,s.indexOf(" ")).equals(s.substring(s.lastIndexOf(" ")+1)));
+     //   newList.removeIf(s->s.substring(0,s.indexOf(" ")).equals(s.substring(s.lastIndexOf(" ")+1)));
+
+        //using multi line lambda expression
+        newList.removeIf(s-> {
+           String first = s.substring(0, s.indexOf(" ")) ;
+            String last = (s.substring(s.lastIndexOf(" ") + 1));
+            return first.equals(last);
+        });
+
         System.out.println("------>Remove names where first equals last");
         newList.forEach(s-> System.out.println(s));
 
