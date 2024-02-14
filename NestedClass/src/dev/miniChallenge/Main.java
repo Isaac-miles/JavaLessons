@@ -1,4 +1,4 @@
-package dev.challenge;
+package dev.miniChallenge;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
