@@ -18,8 +18,8 @@ public class MethodReferenceChallenge {
                 s-> s + (" " + reverse(s, s.indexOf(" "))),
                 MethodReferenceChallenge::reverse,
                 String::new,
-                String::valueOf
-
+                String::valueOf,
+                miles::last
         ));
         applyChanges(names,list);
     }
