@@ -3,8 +3,7 @@ package dev.zico;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.BinaryOperator;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 class PlainOld{
     private static int last_id = 1;
@@ -30,7 +29,28 @@ public class MethodReferences {
         PlainOld[] pojo1 = seedArray(PlainOld::new,5);
 
         calculator("Hello ","world",(s1,s2)->s1.concat(s2));
+        //the method reference requires a lambda expression with two arguments
         calculator("Hello ","world", String::concat);
+
+        BinaryOperator<String> b1 = String::concat;
+        BiFunction<String,String,String> b2 = String::concat;
+        UnaryOperator<String> u1 = String::toUpperCase;
+
+        System.out.println(b1.apply("Miles","Right"));
+        System.out.println(b2.apply("Miles","Right"));
+        System.out.println(u1.apply("Miles"));
+
+        //the string transform method which takes a string and a method with string as arguments
+        String result ="Hello".transform(u1);
+        System.out.println("result "+ result);
+
+        result = result.transform(String::toLowerCase);
+        System.out.println(result);
+
+        Function<String,Boolean>  fo = String::isEmpty;
+        boolean resultBoolean = result.transform(String::isEmpty);
+        System.out.println("Result = "+ resultBoolean);
+
 
     }
 
