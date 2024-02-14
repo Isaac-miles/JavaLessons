@@ -4,11 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BinaryOperator;
 
+class plainOld{
+    private static int last_id = 1;
+    private int id;
+    public plainOld() {
+        id= plainOld.last_id++;
+        System.out.println("Creating plainOld Object: id = "+ id);
+    }
+}
+
 public class MethodReferences {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>(List.of(
                 "Ann","Bob","Dave"));
         list.forEach(System.out::println);
+
+        calculator(5,3, Integer::sum);
+        calculator(2.4,7.5, Double::sum);
+
+
     }
 
     private static <T> void calculator(T v1, T v2, BinaryOperator<T> function){
