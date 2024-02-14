@@ -1,4 +1,4 @@
-package dev.challenge;
+package dev.miniChallenge;
 
 public class Main {
     public static void main(String[] args) {

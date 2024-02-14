@@ -1,4 +1,4 @@
-package dev.challenge;
+package dev.miniChallenge;
 
 import java.util.ArrayList;
 import java.util.List;
