@@ -45,6 +45,9 @@ public record Card(Suit suit, String face, int rank) {
         }
         return deck;
     }
+    public static void  printDeck(List<Card> deck){
+        printDeck(deck,"current Deck",4);
+    }
     public static void printDeck(List<Card> deck, String description, int rows){
         System.out.println("-------------------------------");
         if(description !=null){
@@ -55,7 +58,9 @@ public record Card(Suit suit, String face, int rank) {
             int startIndex = i*cardsInRow;
             int endIndex = startIndex + cardsInRow;
             deck.subList(startIndex,endIndex).forEach(c-> System.out.println(c+ " "));
+            System.out.println();
         }
 
     }
+
 }
