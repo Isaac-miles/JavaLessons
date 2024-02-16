@@ -42,5 +42,10 @@ public class Main {
        Collections.shuffle(deck);
        Card.printDeck(deck,"Shuffled Deck",4);
 
+        Collections.reverse(deck);
+        Card.printDeck(deck,"reversed Deck",4);
+
+        var sortingAlgorithm = Comparator.comparing(Card::rank)
+                .thenComparing(Card::suit);
     }
 }
