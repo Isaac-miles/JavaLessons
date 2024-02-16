@@ -103,6 +103,11 @@ public class Main {
         List<Card> copied = new ArrayList<>(deck.subList(0,13));
         Collections.rotate(copied,3);
         System.out.println("Unrotated "+deck.subList(0,13));
-        System.out.println("Rotated "+ copied);
+        System.out.println("Rotated "+3+ copied);
+
+        copied = new ArrayList<>(deck.subList(0,13));
+        Collections.rotate(copied,-3);
+        System.out.println("Unrotated "+deck.subList(0,13));
+        System.out.println("Rotated "+ -3+  copied);
     }
 }
