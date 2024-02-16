@@ -6,9 +6,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
         String[] names = {"Ann","Bob","Carol","David","Edna"};
-        list.addAll(Arrays.asList(names));
+        List<String> list = new ArrayList<>(Arrays.asList(names));
         System.out.println(list);
+
+        list.add("Fred");
+        list.addAll(Arrays.asList("Goerge","Gary","Grace"));
+        System.out.println(list.contains("miles"));
+        list.removeIf(s->s.endsWith("ce"));
     }
 }
