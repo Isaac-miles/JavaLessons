@@ -22,4 +22,12 @@ public record Card(Suit suit, String face, int rank) {
         System.out.println("Invalid Numeric card selected");
         return null;
     }
+    public static Card getFaceCard(Suit suit, char abbrev){
+        int charIndex = "JQKA".indexOf(abbrev);
+        if(charIndex > -1){
+            return new Card(suit,""+abbrev, charIndex+9);
+        }
+        System.out.println("Invalid Face card selected");
+        return null;
+    }
 }
