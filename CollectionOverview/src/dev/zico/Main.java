@@ -1,13 +1,13 @@
 package dev.zico;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
         String[] names = {"Ann","Bob","Carol","David","Edna"};
-        Collection<String> list = new ArrayList<>(Arrays.asList(names));
+        Collection<String> list = new TreeSet<>(Arrays.asList(names));
         System.out.println(list);
 
         list.add("Fred");
