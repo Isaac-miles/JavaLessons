@@ -112,7 +112,8 @@ public class Main {
 
         copied = new ArrayList<>(deck.subList(0,13));
         for(int i=0; i<copied.size()/2; i++){
-
+            Collections.swap(copied,i, copied.size()-1-i);
         }
+        System.out.println("Manual reverse :" + copied);
     }
 }
