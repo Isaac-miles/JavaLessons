@@ -24,5 +24,18 @@ public class Main {
         Card.printDeck(kingOfClubs,"kings of clubs",2);
 
         Collections.addAll(cards,cardArray);
+        Collections.addAll(cards,cardArray);
+
+        Card.printDeck(cards,"Card Collection with Aces added",1);
+
+        //using the copy,this replaces the total no of element in your cards, but throws an error if it has 0 elements
+        Collections.copy(cards,kingOfClubs);
+        Card.printDeck(cards,"Card Collection with kings copied",2);
+
+        //this method is a true copy and returns an unmodifiable list, if you need a modifiable copy of the list
+        //you make a call to the copyOf method and pass it to the lis constructor e.g addAll
+        cards = List.copyOf(kingOfClubs);
+        Card.printDeck(cards,"List Copy of Kings",1);
+
     }
 }
