@@ -50,5 +50,12 @@ public record Card(Suit suit, String face, int rank) {
         if(description !=null){
             System.out.println(description);
         }
+        int cardsInRow = deck.size()/rows;
+        for(int i=0;i<rows;i++){
+            int startIndex = i*cardsInRow;
+            int endIndex = startIndex + cardsInRow;
+            deck.subList(startIndex,endIndex).forEach(c-> System.out.println(c+ " "));
+        }
+
     }
 }
