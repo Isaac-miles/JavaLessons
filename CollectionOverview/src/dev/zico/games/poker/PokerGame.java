@@ -27,6 +27,7 @@ public class PokerGame {
 
         deal();
         System.out.println("-".repeat(30));
+        pokerHands.forEach(System.out::println);
     }
 
     private void deal(){
