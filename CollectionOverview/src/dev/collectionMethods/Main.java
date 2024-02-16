@@ -45,7 +45,12 @@ public class Main {
         Collections.reverse(deck);
         Card.printDeck(deck,"reversed Deck",4);
 
+//        var sortAlg = Comparator.<Card,Integer>comparing(card -> card.rank())
+//                .thenComparing(card -> card.suit());
+
         var sortingAlgorithm = Comparator.comparing(Card::rank)
                 .thenComparing(Card::suit);
+        Collections.sort(deck,sortingAlgorithm);
+        Card.printDeck(deck,"standard Deck sorted by rank,suit",13);
     }
 }
