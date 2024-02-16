@@ -18,5 +18,11 @@ public class Main {
 
         List<Card> acesOfHearts = Collections.nCopies(13,aceOfhearts);
         Card.printDeck(acesOfHearts,"Aces of hearts",2);
+
+        Card kingsOfClubs = Card.getFaceCard(Card.Suit.CLUB,'K');
+        List<Card> kingOfClubs = Collections.nCopies(13,kingsOfClubs);
+        Card.printDeck(kingOfClubs,"kings of clubs",2);
+
+        Collections.addAll(cards,cardArray);
     }
 }
