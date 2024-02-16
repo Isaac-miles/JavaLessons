@@ -96,5 +96,13 @@ public class Main {
         System.out.println("Best Card = "+ Collections.max(deck,sortingAlgorithm));
         System.out.println("Worst Card = "+ Collections.min(deck,sortingAlgorithm));
 
+        var sorBySuit = Comparator.comparing(Card::suit).thenComparing(Card::rank);
+        deck.sort(sorBySuit);
+        Card.printDeck(deck,"Sorted by suit,rank", 4);
+
+        List<Card> copied = new ArrayList<>(deck.subList(0,13));
+        Collections.rotate(copied,3);
+        System.out.println("Unrotated "+deck.subList(0,13));
+        System.out.println("Rotated "+ copied);
     }
 }
