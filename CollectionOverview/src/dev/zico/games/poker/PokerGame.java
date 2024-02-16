@@ -5,6 +5,7 @@ import dev.collectionMethods.Card;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class PokerGame {
 
@@ -23,7 +24,8 @@ public class PokerGame {
     public void startPlay(){
         Collections.shuffle(deck);
         Card.printDeck(deck);
-        Collections.rotate(deck,26);
+        int randomMiddle = new Random().nextInt(15,35);
+        Collections.rotate(deck,randomMiddle);
         Card.printDeck(deck);
     }
 }
