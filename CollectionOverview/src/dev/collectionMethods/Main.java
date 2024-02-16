@@ -63,6 +63,35 @@ public class Main {
         Card.printDeck(tens,"tens in deck", 1);
 
         int subListIndex = Collections.indexOfSubList(deck,tens);
-        System.out.println();
+        System.out.println("sublist index for tens = "+subListIndex);
+        System.out.println("Contains = "+ deck.containsAll(tens));
+
+        boolean disjoint = Collections.disjoint(deck,tens);
+        System.out.println("disjoint = "+ disjoint);
+
+        boolean disjoint2 = Collections.disjoint(tens,kings);
+        System.out.println("disjoint = "+ disjoint2);
+
+        deck.sort(sortingAlgorithm);
+        Card tenOfHearts = Card.getNumericCard(Card.Suit.HEART,10);
+        int foundIndex = Collections.binarySearch(deck,tenOfHearts,sortingAlgorithm);
+        System.out.println("found Index = " + foundIndex);
+        System.out.println("foundIndex = "+deck.indexOf(tenOfHearts));
+        System.out.println(deck.get(foundIndex));
+
+        Card tenOfClubs = Card.getNumericCard(Card.Suit.CLUB,10);
+        Collections.replaceAll(deck,tenOfClubs,tenOfHearts);
+        Card.printDeck(deck.subList(32,36),"Tens row",1);
+
+        Collections.replaceAll(deck,tenOfHearts,tenOfClubs);
+        Card.printDeck(deck.subList(32,36),"Tens row",1);
+
+        if(Collections.replaceAll(deck,tenOfClubs,tenOfHearts)){
+            System.out.println("Tens of hearts replaced with tens of clubs");
+        }else {
+            System.out.println("No tens of heart found in the list");
+        }
+
+        System.out.println("Ten of clubs cards = "+ Collections.frequency(deck,tenOfHearts));
     }
 }
