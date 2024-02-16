@@ -57,7 +57,7 @@ public record Card(Suit suit, String face, int rank) {
         for(int i=0;i<rows;i++){
             int startIndex = i*cardsInRow;
             int endIndex = startIndex + cardsInRow;
-            deck.subList(startIndex,endIndex).forEach(c-> System.out.println(c+ " "));
+            deck.subList(startIndex,endIndex).forEach(c-> System.out.print(c+ " "));
             System.out.println();
         }
 
