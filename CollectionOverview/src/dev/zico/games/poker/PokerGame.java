@@ -24,6 +24,9 @@ public class PokerGame {
         int randomMiddle = new Random().nextInt(15,35);
         Collections.rotate(deck,randomMiddle);
         Card.printDeck(deck);
+
+        deal();
+        System.out.println("-".repeat(30));
     }
 
     private void deal(){
