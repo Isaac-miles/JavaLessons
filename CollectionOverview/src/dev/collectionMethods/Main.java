@@ -109,5 +109,10 @@ public class Main {
         Collections.rotate(copied,-3);
         System.out.println("Unrotated "+deck.subList(0,13));
         System.out.println("Rotated "+ -3+  copied);
+
+        copied = new ArrayList<>(deck.subList(0,13));
+        for(int i=0; i<copied.size()/2; i++){
+
+        }
     }
 }
