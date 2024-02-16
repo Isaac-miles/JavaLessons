@@ -52,5 +52,17 @@ public class Main {
                 .thenComparing(Card::suit);
         Collections.sort(deck,sortingAlgorithm);
         Card.printDeck(deck,"standard Deck sorted by rank,suit",13);
+
+        Collections.reverse(deck);
+        Card.printDeck(deck,"reversed Deck sorted by rank,suit",13);
+
+        List<Card> kings = new ArrayList<>(deck.subList(4,8));
+        Card.printDeck(kings,"kings in deck", 1);
+
+        List<Card> tens = new ArrayList<>(deck.subList(16,20));
+        Card.printDeck(tens,"tens in deck", 1);
+
+        int subListIndex = Collections.indexOfSubList(deck,tens);
+        System.out.println();
     }
 }
