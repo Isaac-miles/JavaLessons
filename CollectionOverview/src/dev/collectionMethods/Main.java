@@ -4,8 +4,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<Card> deck = Card.getStandardDeck();
-//        Card.printDeck(deck);
+
         Card[] cardArray = new Card[13];
         Card aceOfhearts = Card.getFaceCard(Card.Suit.HEART,'A');
         Arrays.fill(cardArray,aceOfhearts);
@@ -36,6 +35,12 @@ public class Main {
         //you make a call to the copyOf method and pass it to the lis constructor e.g addAll
         cards = List.copyOf(kingOfClubs);
         Card.printDeck(cards,"List Copy of Kings",1);
+
+       List<Card> deck = Card.getStandardDeck();
+       Card.printDeck(deck);
+
+       Collections.shuffle(deck);
+       Card.printDeck(deck,"Shuffled Deck",4);
 
     }
 }
