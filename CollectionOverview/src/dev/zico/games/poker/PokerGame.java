@@ -25,6 +25,5 @@ public class PokerGame {
         Card.printDeck(deck);
         Collections.rotate(deck,26);
         Card.printDeck(deck);
-
     }
 }
