@@ -60,4 +60,12 @@ public class PokerHand {
             keepers.addAll(sub);
         }
     }
+    private void pickDiscards(){
+        List<Card> temp = new ArrayList<>(hand);
+        temp.removeAll(keepers);
+        int rankCards = keepers.size();
+        Collections.reverse(temp);
+        int index = 0;
+
+    }
 }
