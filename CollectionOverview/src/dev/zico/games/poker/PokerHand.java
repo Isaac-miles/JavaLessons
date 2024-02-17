@@ -59,6 +59,7 @@ public class PokerHand {
             List<Card> sub = hand.subList(start, last+1);
             keepers.addAll(sub);
         }
+        pickDiscards();
     }
     private void pickDiscards(){
         List<Card> temp = new ArrayList<>(hand);
