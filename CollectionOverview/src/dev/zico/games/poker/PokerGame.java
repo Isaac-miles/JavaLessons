@@ -3,6 +3,7 @@ package dev.zico.games.poker;
 import dev.collectionMethods.Card;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 public class PokerGame {
 
@@ -27,7 +28,16 @@ public class PokerGame {
 
         deal();
         System.out.println("-".repeat(30));
+        Consumer<PokerHand> checkHand = PokerHand::evalHand;
+
         pokerHands.forEach(System.out::println);
+
+        int carsDealt = playerCount * cardsInHand;
+        int cardsRemaining = deck.size() - carsDealt;
+
+         remainingCards = new ArrayList<>(Collections.nCopies(cardsRemaining,null));
+        remainingCards.replaceAll(c->deck.get(carsDealt+remainingCards.indexOf(c)));
+        Card.printDeck(remainingCards, "Remaining Cards", 2);
     }
 
     private void deal(){
