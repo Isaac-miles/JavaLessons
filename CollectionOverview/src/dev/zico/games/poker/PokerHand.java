@@ -66,6 +66,9 @@ public class PokerHand {
         int rankCards = keepers.size();
         Collections.reverse(temp);
         int index = 0;
-
+        for(Card c : temp){
+            if(index++ < 3 && (rankCards > 2 || c.rank()<9)) discards.add(c);
+            else keepers.add(c);
+        }
     }
 }
