@@ -13,5 +13,7 @@ public class Main {
 
         List<String> hellos = Arrays.asList(aText,bTest,ctest,dTesxt,eText);
         hellos.forEach(s-> System.out.println(s+": "+ s.hashCode()));
+
+
     }
 }
