@@ -19,5 +19,9 @@ public class Main {
         Set<String> mySet = new HashSet<>(hellos);
         System.out.println("mySet"+ mySet);
         System.out.println("# of elements = "+ mySet.size());
+
+        for(String setValue:mySet){
+            System.out.println();
+        }
     }
 }
