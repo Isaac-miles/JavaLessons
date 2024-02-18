@@ -30,7 +30,8 @@ public class Main {
         PlayingCard kingClubs = new PlayingCard("Clubs", "King");
         PlayingCard queenSpades = new PlayingCard("Spades", "Queen");
 
-        List<PlayingCard> cars = new ArrayList<>(Arrays.asList(aceHearts,kingClubs,queenSpades));
+        List<PlayingCard> cards = new ArrayList<>(List.of(aceHearts,kingClubs,queenSpades));
+        cards.forEach(s->System.out.println(s+ ": " + s.hashCode()));
 
     }
 }
