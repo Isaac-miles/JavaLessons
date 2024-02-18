@@ -1,9 +1,6 @@
 package dev.hashing;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,6 +30,7 @@ public class Main {
         PlayingCard kingClubs = new PlayingCard("Clubs", "King");
         PlayingCard queenSpades = new PlayingCard("Spades", "Queen");
 
+        List<PlayingCard> cars = new ArrayList<>(Arrays.asList(aceHearts,kingClubs,queenSpades));
 
     }
 }
