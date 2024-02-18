@@ -29,5 +29,10 @@ public class Main {
             }
             System.out.println(" ");
         }
+        PlayingCard aceHearts = new PlayingCard("Hearts","Ace");
+        PlayingCard kingClubs = new PlayingCard("Clubs", "King");
+        PlayingCard queenSpades = new PlayingCard("Spades", "Queen");
+
+
     }
 }
