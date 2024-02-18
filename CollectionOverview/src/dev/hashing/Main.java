@@ -1,7 +1,9 @@
 package dev.hashing;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +16,8 @@ public class Main {
         List<String> hellos = Arrays.asList(aText,bTest,ctest,dTesxt,eText);
         hellos.forEach(s-> System.out.println(s+": "+ s.hashCode()));
 
-
+        Set<String> mySet = new HashSet<>(hellos);
+        System.out.println("mySet"+ mySet);
+        System.out.println("# of elements = "+ mySet.size());
     }
 }
