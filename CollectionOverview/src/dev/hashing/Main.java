@@ -21,7 +21,13 @@ public class Main {
         System.out.println("# of elements = "+ mySet.size());
 
         for(String setValue:mySet){
-            System.out.println();
+            System.out.println(setValue+": ");
+            for (int i=0; i< hellos.size(); i++){
+                if(setValue==hellos.get(i)){
+                    System.out.println(i+", ");
+                }
+            }
+            System.out.println(" ");
         }
     }
 }
