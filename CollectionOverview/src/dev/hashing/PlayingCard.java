@@ -15,4 +15,5 @@ public class PlayingCard {
     public String toString() {
         return face + " of " + suit;
     }
+
 }
