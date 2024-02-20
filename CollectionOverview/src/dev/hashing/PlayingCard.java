@@ -13,7 +13,7 @@ public class PlayingCard {
 
     @Override
     public String toString() {
-        return face + " of " + suit;
+//        return face + " of " + suit;
     }
 
     @Override
