@@ -30,7 +30,7 @@ public class PlayingCard {
     @Override
     public int hashCode() {
         int result = suit.hashCode();
-//        result = 31 * result + face.hashCode();
+        result = 31 * result + face.hashCode();
         return result;
     }
 }
