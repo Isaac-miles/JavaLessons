@@ -18,6 +18,8 @@ public class Contact {
         this(name,null,phone);
     }
     public Contact(String name, String email,long phone){
-
+        if (email !=null){
+            emails.add(email);
+        }
     }
 }
