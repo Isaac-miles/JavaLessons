@@ -41,6 +41,8 @@ public class Contact {
         Contact newContact = new Contact(name);
         newContact.emails = new HashSet<>(this.emails);
         newContact.phones = new HashSet<>(this.phones);
+        newContact.emails.addAll(contact.phones);
+        newContact.phones.addAll(contact.phones);
         return newContact;
     }
 }
