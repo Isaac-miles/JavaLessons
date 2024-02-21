@@ -17,10 +17,10 @@ public class Main {
         printData("Phone contacts",phoneContacts);
         printData("Email Contact", emailContacts);
 
-        int index = emails.indexOf(new Contact("Nikky Jones"));
+        int index = emails.indexOf(new Contact("Helen Jones"));
 
         Contact imade = emails.get(index);
-        imade.addEmail("Hkm Music");
+        imade.addEmail("30bg Music");
         System.out.println(imade);
     }
     public static void printData(String header, Collection<Contact> contacts){
