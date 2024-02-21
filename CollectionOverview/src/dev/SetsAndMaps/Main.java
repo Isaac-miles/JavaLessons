@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
         List<Contact> emails =  ContactData.getData("email");
         List<Contact> phones =  ContactData.getData("phone");
-        printData("Phone List", phones);
-        printData("Email list", emails);
+//        printData("Phone List", phones);
+//        printData("Email list", emails);
 
         Set<Contact> emailContacts = new HashSet<>(emails);
         Set<Contact> phoneContacts = new HashSet<>(phones);
