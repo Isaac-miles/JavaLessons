@@ -64,7 +64,11 @@ public class Contact {
         String[] names = name.split(" ");
         String email = "%c%s@%s.com".formatted(name.charAt(0),names[names.length-1],
                 companyName.replaceAll(" ","").toLowerCase());
-        emails.add(email);
+       if(!emails.add(email)){
+           System.out.println(name + " already has email "+ email);
+       }else {
+           System.out.println(name+" now has email "+ email);
+       }
 
     }
 }
