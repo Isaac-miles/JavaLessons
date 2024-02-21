@@ -22,5 +22,6 @@ public class Contact {
         if (email !=null){
             emails.add(email);
         }
+
     }
 }
