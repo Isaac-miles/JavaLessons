@@ -33,9 +33,7 @@ public class ContactData {
         Scanner scanner = new Scanner(type.equals("phone")? phoneData:emailData);
         while (scanner.hasNext()){
             String[] data = scanner.nextLine().split(",");
-            System.out.println("data was split here"+ Arrays.toString(data));
             Arrays.asList(data).replaceAll(String::trim);
-            System.out.println("After it was replaced and trim"+ Arrays.toString(data));
             if(type.equals("phone")){
                 dataList.add(new Contact(data[0],Long.parseLong(data[1])));
             }else if(type.equals("email")){
