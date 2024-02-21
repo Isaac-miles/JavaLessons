@@ -1,6 +1,7 @@
 package dev.SetsAndMaps;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,6 +30,10 @@ public class ContactData {
     public static List<Contact> getData(String type){
         List<Contact> dataList = new ArrayList<>();
         Scanner scanner = new Scanner(type.equals("phone")? phoneData:emailData);
+        while (scanner.hasNext()){
+            String[] data = scanner.nextLine().split(",");
+            Arrays.asList(data).replaceAll(String::trim);
+        }
         return dataList;
     }
 }
