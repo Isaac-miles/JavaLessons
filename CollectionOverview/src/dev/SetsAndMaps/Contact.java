@@ -28,4 +28,8 @@ public class Contact {
             phones.add(p);
         }
     }
+
+    public String getName() {
+        return name;
+    }
 }
