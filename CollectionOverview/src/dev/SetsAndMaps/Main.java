@@ -1,9 +1,12 @@
 package dev.SetsAndMaps;
 
 import java.util.Collection;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        List<Contact> emails =  ContactData.getData("email");
+        List<Contact> phones =  ContactData.getData("phone");
 
     }
     public static void printData(String header, Collection<Contact> contacts){
