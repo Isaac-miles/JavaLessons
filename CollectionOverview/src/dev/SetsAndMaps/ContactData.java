@@ -19,7 +19,7 @@ public class ContactData {
             Johnson Drew, 09055903610
             """;
     private static final String emailData = """
-            Nikky Jones, nicky@gmail.com
+            Helen Jones, nicky@gmail.com
             Micky Brown, micky@gmail.com
             Livi Stingy, livith@yahoo.com
             Amos Calm, amos@google.com
