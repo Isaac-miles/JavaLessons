@@ -60,4 +60,8 @@ public class Contact {
     public int hashCode() {
         return 33 * getName().hashCode();
     }
+    public void addEmail(String companyName){
+        String[] names = name.split(" ");
+        String email = "%c%s@s.com".formatted(name.charAt(0),names[names.length-1]);
+    }
 }
