@@ -13,4 +13,7 @@ public class ContactData {
             Prince Dim, 05020993847
             Johnson Drew, 09055903610
             """;
+    private static final String emailData = """
+            
+            """;
 }
