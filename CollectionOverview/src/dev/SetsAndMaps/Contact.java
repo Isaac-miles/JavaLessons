@@ -1,7 +1,6 @@
 package dev.SetsAndMaps;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 public class Contact {
@@ -51,12 +50,14 @@ public class Contact {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Contact contact = (Contact) o;
-        return Objects.equals(getName(), contact.getName()) && Objects.equals(emails, contact.emails) && Objects.equals(phones, contact.phones);
+
+        return getName().equals(contact.getName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), emails, phones);
+        return 33 * getName().hashCode();
     }
 }
