@@ -21,8 +21,9 @@ public class Main {
 
         Contact imade = emails.get(index);
         imade.addEmail("30bg Music");
-        System.out.println(imade);
         imade.addEmail("30bg Music");
+        imade.replaceEmailIfExists("HJones@30bgmusic.com","HJones@30bgmusic.org");
+        System.out.println(imade);
 
     }
     public static void printData(String header, Collection<Contact> contacts){
