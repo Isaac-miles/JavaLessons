@@ -25,6 +25,7 @@ public class ContactData {
             Amos Calm, amos@google.com
             Isaac Brown, isaac@gmail.com
             Junior Dash, juniodahs@gmail.com
+             Micky Brown, brown@gmail.com
             """;
 
     public static List<Contact> getData(String type){
