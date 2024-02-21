@@ -17,7 +17,7 @@ public class Main {
         printData("Phone contacts",phoneContacts);
         printData("Email Contact", emailContacts);
 
-        int index = emails.indexOf(new Contact("Isaac All"));
+        int index = emails.indexOf(new Contact("Nikky Jones"));
 
         Contact imade = emails.get(index);
         imade.addEmail("Hkm Music");
