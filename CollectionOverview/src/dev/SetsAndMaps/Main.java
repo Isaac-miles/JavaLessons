@@ -17,6 +17,11 @@ public class Main {
         printData("Phone contacts",phoneContacts);
         printData("Email Contact", emailContacts);
 
+        int index = emails.indexOf(new Contact("Isaac All"));
+
+        Contact imade = emails.get(index);
+        imade.addEmail("Hkm Music");
+        System.out.println(imade);
     }
     public static void printData(String header, Collection<Contact> contacts){
         System.out.println("-".repeat(35));
