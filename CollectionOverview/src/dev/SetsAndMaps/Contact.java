@@ -32,4 +32,9 @@ public class Contact {
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return "%s: %s %s".formatted(name,emails,phones);
+    }
 }
