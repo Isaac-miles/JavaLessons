@@ -22,6 +22,8 @@ public class Main {
         Contact imade = emails.get(index);
         imade.addEmail("30bg Music");
         System.out.println(imade);
+        imade.addEmail("30bg Music");
+
     }
     public static void printData(String header, Collection<Contact> contacts){
         System.out.println("-".repeat(35));
