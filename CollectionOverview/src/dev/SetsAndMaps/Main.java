@@ -16,6 +16,7 @@ public class Main {
         Set<Contact> phoneContacts = new HashSet<>(phones);
         printData("Phone contacts",phoneContacts);
         printData("Email Contact", emailContacts);
+
     }
     public static void printData(String header, Collection<Contact> contacts){
         System.out.println("-".repeat(35));
