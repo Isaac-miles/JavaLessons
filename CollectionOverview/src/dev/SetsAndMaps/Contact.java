@@ -37,4 +37,10 @@ public class Contact {
     public String toString() {
         return "%s: %s %s".formatted(name,emails,phones);
     }
+    public Contact mergeContactData(Contact contact){
+        Contact newContact = new Contact(name);
+        newContact.emails = new HashSet<>(this.emails);
+        newContact.phones = new HashSet<>(this.phones);
+        return newContact;
+    }
 }
