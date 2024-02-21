@@ -1,5 +1,8 @@
 package dev.SetsAndMaps;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ContactData {
     private static final String phoneData = """
             Charles Okocha, 08023448294
@@ -21,4 +24,10 @@ public class ContactData {
             Isaac Brown, isaac@gmail.com
             Junior Dash, juniodahs@gmail.com
             """;
+
+    public static List<Contact> getData(String type){
+        List<Contact> dataList = new ArrayList<>();
+
+        return dataList;
+    }
 }
