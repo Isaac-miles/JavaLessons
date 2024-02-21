@@ -62,6 +62,9 @@ public class Contact {
     }
     public void addEmail(String companyName){
         String[] names = name.split(" ");
-        String email = "%c%s@s.com".formatted(name.charAt(0),names[names.length-1]);
+        String email = "%c%s@%s.com".formatted(name.charAt(0),names[names.length-1],
+                companyName.replaceAll(" ","").toLowerCase());
+        emails.add(email);
+
     }
 }
