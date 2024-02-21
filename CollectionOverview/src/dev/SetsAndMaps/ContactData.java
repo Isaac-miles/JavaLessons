@@ -2,6 +2,7 @@ package dev.SetsAndMaps;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ContactData {
     private static final String phoneData = """
@@ -27,7 +28,7 @@ public class ContactData {
 
     public static List<Contact> getData(String type){
         List<Contact> dataList = new ArrayList<>();
-
+        Scanner scanner = new Scanner(type.equals("phone")? phoneData:emailData);
         return dataList;
     }
 }
