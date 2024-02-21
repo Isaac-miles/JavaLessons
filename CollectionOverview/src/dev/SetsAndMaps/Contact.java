@@ -22,6 +22,10 @@ public class Contact {
         if (email !=null){
             emails.add(email);
         }
-
+        if (phone>0){
+            String p = String.valueOf(phone);
+            p = "(%s) %s-%s".formatted(p.substring(0,3),p.substring(3,6),p.substring(6));
+            phones.add(p);
+        }
     }
 }
