@@ -27,7 +27,7 @@ public class Main {
 
         Set<Contact> unionAB = new HashSet<>(emailContacts);
         unionAB.addAll(phoneContacts);
-        printData("(A\u222A B) union of emails (A) with phones (B)", unionAB);
+        printData("(A∪ B) union of emails (A) with phones (B)", unionAB);
 
     }
     public static void printData(String header, Collection<Contact> contacts){
