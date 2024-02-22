@@ -35,6 +35,10 @@ public class Main {
         intersectAB.retainAll(phoneContacts);
         printData("(A∩ B) union of emails (A) with phones (B)",intersectAB);
 
+        Set<Contact> intersectBA = new HashSet<>(phoneContacts);
+        intersectAB.retainAll(emailContacts);
+        printData("(B∩ A) union of emails (B) with phones (A)",intersectAB);
+
     }
     public static void printData(String header, Collection<Contact> contacts){
         System.out.println("-".repeat(35));
