@@ -72,4 +72,21 @@ public class Task {
         return "%-20s %-25s %-10s %-10s %s".formatted(project,description,priority,assignee,status);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Task task = (Task) o;
+
+        if (!getProject().equals(task.getProject())) return false;
+        return getDescription().equals(task.getDescription());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getProject().hashCode();
+        result = 31 * result + getDescription().hashCode();
+        return result;
+    }
 }
