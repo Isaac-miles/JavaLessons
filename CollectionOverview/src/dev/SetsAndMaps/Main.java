@@ -50,6 +50,10 @@ public class Main {
         Set<Contact> symetricDiff = new HashSet<>(AminusB);
         symetricDiff.addAll(BminusA);
         printData("Symmetric Difference: phones and emails", symetricDiff);
+
+        Set<Contact> symmetricDiff2 = new HashSet<>(unionAB);
+        symmetricDiff2.removeAll(intersectAB);
+        printData("Symmetric Difference: phones and emails", symmetricDiff2);
     }
     public static void printData(String header, Collection<Contact> contacts){
         System.out.println("-".repeat(35));
