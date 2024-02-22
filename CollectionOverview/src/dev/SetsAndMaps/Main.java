@@ -36,8 +36,12 @@ public class Main {
         printData("(A∩ B) union of emails (A) with phones (B)",intersectAB);
 
         Set<Contact> intersectBA = new HashSet<>(phoneContacts);
-        intersectAB.retainAll(emailContacts);
-        printData("(B∩ A) union of emails (B) with phones (A)",intersectAB);
+        intersectBA.retainAll(emailContacts);
+        printData("(B∩ A) union of emails (B) with phones (A)",intersectBA);
+
+        Set<Contact> AminusB = new HashSet<>(emailContacts);
+        AminusB.removeAll(phoneContacts);
+        printData("(A- B) emails (A) - phones (B)",AminusB);
 
     }
     public static void printData(String header, Collection<Contact> contacts){
