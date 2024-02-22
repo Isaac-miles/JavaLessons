@@ -25,9 +25,14 @@ public class Main {
         imade.replaceEmailIfExists("HJones@30bgmusic.com","HJones@30bgmusic.org");
         System.out.println(imade);
 
+        //the union of two sets is addAll
         Set<Contact> unionAB = new HashSet<>(emailContacts);
         unionAB.addAll(phoneContacts);
         printData("(A∪ B) union of emails (A) with phones (B)", unionAB);
+
+        //the intersect of sets is retainAll
+        Set<Contact> intersectAB = new HashSet<>(emailContacts);
+        intersectAB.retainAll(phoneContacts);
 
     }
     public static void printData(String header, Collection<Contact> contacts){
