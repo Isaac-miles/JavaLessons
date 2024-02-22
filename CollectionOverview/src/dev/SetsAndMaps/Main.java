@@ -25,6 +25,9 @@ public class Main {
         imade.replaceEmailIfExists("HJones@30bgmusic.com","HJones@30bgmusic.org");
         System.out.println(imade);
 
+        Set<Contact> unionAB = new HashSet<>();
+        unionAB.addAll(emailContacts);
+
     }
     public static void printData(String header, Collection<Contact> contacts){
         System.out.println("-".repeat(35));
