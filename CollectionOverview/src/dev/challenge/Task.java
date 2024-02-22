@@ -19,4 +19,9 @@ public class Task {
         this.status = status;
     }
 
+    public Task(String description, String assignee, Priority priority) {
+        this.description = description;
+        this.assignee = assignee;
+        this.priority = priority;
+    }
 }
