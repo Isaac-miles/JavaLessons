@@ -3,7 +3,7 @@ package dev.challenge;
 enum Priority{HIGH,MEDIUM,LOW}
 enum Status{IN_QUEUE,ASSIGNED,IN_PROGRESS}
 
-public class Task {
+public class Task implements Comparable<Task> {
 
     private String project;
     private String description;
@@ -88,5 +88,10 @@ public class Task {
         int result = getProject().hashCode();
         result = 31 * result + getDescription().hashCode();
         return result;
+    }
+
+    @Override
+    public int compareTo(Task o) {
+        return 0;
     }
 }
