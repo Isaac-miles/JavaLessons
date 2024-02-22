@@ -19,9 +19,11 @@ public class Task {
         this.status = status;
     }
 
-    public Task(String description, String assignee, Priority priority) {
-        this.description = description;
-        this.assignee = assignee;
-        this.priority = priority;
+    public Task(String project,String description, String assignee, Priority priority) {
+        this(project,description,assignee,priority,
+             assignee==null ? Status.IN_PROGRESS:Status.ASSIGNED);
+    }
+    public Task(String project,String description,  Priority priority) {
+        this(project,description,null,priority);
     }
 }
