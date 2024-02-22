@@ -1,5 +1,8 @@
 package dev.challenge;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class TaskData {
     private static String tasks = """
             Infrastructure; Logging, High 
@@ -12,7 +15,7 @@ public class TaskData {
             Data Design, Encryption Policy, High
             Data Access, Write Views, Low 
             Data Access, Set Up Users, Low
-             Data Access, Set Up Access Policy, Low
+            Data Access, Set Up Access Policy, Low
             """;
     private static String annsTask = """
            Infrastructure, Security, High, In Progress
@@ -35,5 +38,10 @@ public class TaskData {
             Data Design, Task Table, High
             Data Access, Write Views, Low
             """;
+    public static Set<Task> gettasks(String owner){
+        Set<Task> taskList = new HashSet<>();
+        String user = ("ann,bob,carol".contains(owner.toLowerCase())) ? owner:null;
 
+        return taskList;
+    }
 }
