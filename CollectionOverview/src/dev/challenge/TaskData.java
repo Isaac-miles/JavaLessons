@@ -42,6 +42,12 @@ public class TaskData {
         Set<Task> taskList = new HashSet<>();
         String user = ("ann,bob,carol".contains(owner.toLowerCase())) ? owner:null;
 
+        String selectedList = switch (owner.toLowerCase()){
+            case "ann"->annsTask;
+            case "bob"->bobsTask;
+            case "carol"->carolsTask;
+            default -> tasks;
+        };
         return taskList;
     }
 }
