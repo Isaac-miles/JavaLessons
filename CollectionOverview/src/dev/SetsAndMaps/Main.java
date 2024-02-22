@@ -43,6 +43,10 @@ public class Main {
         AminusB.removeAll(phoneContacts);
         printData("(A- B) emails (A) - phones (B)",AminusB);
 
+        Set<Contact> BminusA = new HashSet<>(emailContacts);
+        AminusB.removeAll(phoneContacts);
+        printData("(A- B) emails (A) - phones (B)",AminusB);
+
     }
     public static void printData(String header, Collection<Contact> contacts){
         System.out.println("-".repeat(35));
