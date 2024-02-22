@@ -33,6 +33,7 @@ public class Main {
         //the intersect of sets is retainAll
         Set<Contact> intersectAB = new HashSet<>(emailContacts);
         intersectAB.retainAll(phoneContacts);
+        printData("(A∩ B) union of emails (A) with phones (B)",intersectAB);
 
     }
     public static void printData(String header, Collection<Contact> contacts){
