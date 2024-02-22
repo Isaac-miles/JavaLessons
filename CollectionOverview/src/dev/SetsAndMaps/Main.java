@@ -30,6 +30,6 @@ public class Main {
         System.out.println("-".repeat(35));
         System.out.println(header);
         System.out.println("-".repeat(35));
-//        contacts.forEach(System.out::println);
+        contacts.forEach(System.out::println);
     }
 }
