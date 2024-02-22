@@ -45,7 +45,7 @@ public class Main {
 
         Set<Contact> BminusA = new HashSet<>(phoneContacts);
         AminusB.removeAll(emailContacts);
-        printData("(B- A) phones (B) - emails (A)",AminusB);
+        printData("(B- A) phones (B) - emails (A)",BminusA);
 
     }
     public static void printData(String header, Collection<Contact> contacts){
