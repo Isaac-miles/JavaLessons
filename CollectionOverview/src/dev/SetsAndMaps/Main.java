@@ -47,6 +47,9 @@ public class Main {
         AminusB.removeAll(emailContacts);
         printData("(B- A) phones (B) - emails (A)",BminusA);
 
+        Set<Contact> symetricDiff = new HashSet<>(AminusB);
+        symetricDiff.addAll(BminusA);
+        printData("Symmetric Difference: phones and emails", symetricDiff);
     }
     public static void printData(String header, Collection<Contact> contacts){
         System.out.println("-".repeat(35));
