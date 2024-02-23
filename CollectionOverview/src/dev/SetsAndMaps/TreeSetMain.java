@@ -40,6 +40,9 @@ public class TreeSetMain {
 
         NavigableSet<Contact> copiedSet = new TreeSet<>(fullset);
         System.out.println("First element = "+ copiedSet.pollFirst());
+        System.out.println("Last element = "+ copiedSet.pollLast());
+        copiedSet.forEach(System.out::println);
+        System.out.println("-------------------------------");
 
 
     }
