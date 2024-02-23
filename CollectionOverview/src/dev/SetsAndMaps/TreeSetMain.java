@@ -80,5 +80,8 @@ public class TreeSetMain {
         var tailSet = fullset.tailSet(marion);
         tailSet.forEach(System.out::println);
         System.out.println("-----------------------------");
+
+        Contact linus = new Contact("Linus Van Pelt");
+
     }
 }
