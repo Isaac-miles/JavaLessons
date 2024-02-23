@@ -33,7 +33,14 @@ public class TreeSetMain {
         Contact first = fullset.first();
         Contact last = fullset.last();
 
-        System.out.println();
+        System.out.println("-----------------------------");
+        System.out.printf("min = %s, first=%s %n",min.getName(),first.getName());
+        System.out.printf("max = %s, last=%s %n",max.getName(),last.getName());
+        System.out.println("------------------------------");
+
+        NavigableSet<Contact> copiedSet = new TreeSet<>(fullset);
+        System.out.println("First element = "+ copiedSet.pollFirst());
+
 
     }
 }
