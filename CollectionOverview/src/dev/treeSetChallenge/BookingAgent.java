@@ -5,9 +5,14 @@ public class BookingAgent {
         int rows = 10;
         int totalSeats = 100;
         Theatre lagosQuilox = new Theatre("Lagos Quilox",rows,totalSeats);
-        lagosQuilox.printSeatMap();
+//        lagosQuilox.printSeatMap();
 
         bookSeat(lagosQuilox,'A',3);
+        bookSeat(lagosQuilox,'A',3);
+
+        bookSeat(lagosQuilox,'C',2);
+        bookSeat(lagosQuilox,'C',11);
+        bookSeat(lagosQuilox,'M',3);
     }
 
     private static void bookSeat(Theatre theatre, char row, int seatNo){
@@ -16,7 +21,7 @@ public class BookingAgent {
             System.out.println("Congrats your reserve seat is "+ seat);
             theatre.printSeatMap();
         }else {
-            System.out.println("Sorry Unable to reserved the seat no requested");
+            System.out.println("Sorry Unable to reserve "+row+seatNo);
         }
     }
 }
