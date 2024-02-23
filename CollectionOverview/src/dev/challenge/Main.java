@@ -24,8 +24,8 @@ public class Main {
         Set<Task> missingTasks = getDifference(everyTask,tasks);
         sortAndPrint("Missing Tasks", missingTasks);
 
-        Set<Task> unasssignedTasks = getDifference(tasks,assignedTasks);
-        sortAndPrint("Unassigned Tasks", unasssignedTasks,sortByPriority);
+        Set<Task> unassignedTasks = getDifference(tasks,assignedTasks);
+        sortAndPrint("Unassigned Tasks", unassignedTasks,sortByPriority);
 
         Set<Task> overlap = getUnion(List.of(
                 getIntersect(annsTasks,bobsTasks),
