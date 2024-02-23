@@ -25,4 +25,8 @@ public class Theatre {
     private int seatsPerRow;
     private NavigableSet<Seat> seats;
 
+    public Theatre(String theatreName, int rows,int totalSeats) {
+        this.theatreName = theatreName;
+        this.seatsPerRow = totalSeats/rows;
+    }
 }
