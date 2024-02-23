@@ -7,8 +7,9 @@ public class Main {
         Set<Task> tasks = TaskData.gettasks("all");
         sortAndPrint("All Tasks", tasks);
 
+        Comparator<Task> sortByPriority = Comparator.comparing(Task::getPriority);
         Set<Task> annsTasks = TaskData.gettasks("Ann");
-        sortAndPrint("Anns Tasks", annsTasks);
+        sortAndPrint("Anns Tasks", annsTasks,sortByPriority);
     }
 
     private static void sortAndPrint(String header, Collection<Task> collection){
