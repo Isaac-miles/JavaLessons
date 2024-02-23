@@ -28,5 +28,12 @@ public class Main {
         list.sort(sorter);
         list.forEach(System.out::println);
     }
+    private static Set<Task> getUnion(List<Set<Task>> sets){
+        Set<Task> union = new HashSet<>();
+        for(var taskSet: sets){
+            union.addAll(taskSet);
+        }
+        return union;
+    }
 
 }
