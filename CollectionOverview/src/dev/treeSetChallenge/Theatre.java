@@ -1,9 +1,12 @@
 package dev.treeSetChallenge;
 
 import java.util.NavigableSet;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class Theatre {
+    private int ;
+
     class Seat implements Comparable<Seat>{
         private String seatNum;
         private boolean reserved;
@@ -46,5 +49,23 @@ public class Theatre {
             System.out.printf("%-8s%s",s.seatNum+((s.reserved)? "(●)":""),((index++ + 1)%seatsPerRow==0)? "\n":"");
         }
         System.out.println(separatorLine);
+    }
+    public String reserveSeat(char row, int seat){
+        Seat requestedSeat =  new Seat(row,seat);
+        Seat requested = seats.floor(requestedSeat);
+
+        if(requested==null || !requested.seatNum.equals(requestedSeat.seatNum)){
+            System.out.print("--> No such seat: "+ requestedSeat);
+            System.out.printf(": Seat must be between %s and %s%n",seats.first().seatNum,seats.last().seatNum);
+        }else {
+            if(!requested.reserved){
+                requested.reserved = true;
+                return requested.seatNum;
+            }else {
+                System.out.println("Seat's already reserved.");
+            }
+
+        }
+        return null;
     }
 }
