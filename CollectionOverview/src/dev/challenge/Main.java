@@ -40,5 +40,9 @@ public class Main {
         intersect.retainAll(b);
         return intersect;
     }
-
+    private static Set<Task> getDifference(Set<Task> a, Set<Task> b){
+        Set<Task> difference = new HashSet<>(a);
+        difference.removeAll(b);
+        return difference;
+    }
 }
