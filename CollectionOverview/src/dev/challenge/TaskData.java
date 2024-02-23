@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class TaskData {
     private static String tasks = """
-            Infrastructure; Logging, High 
+            Infrastructure, Logging, High 
             Infrastructure, DB Access, Medium
             Infrastructure, Security, High 
             Infrastructure, Password Policy, Medium
@@ -56,6 +56,7 @@ public class TaskData {
 
             Status status = (data.length<=3)? Status.IN_QUEUE:Status.valueOf(data[3].toUpperCase()
                     .replace(" ","_"));
+
 
             Priority priority = Priority.valueOf(data[2].toUpperCase());
             taskList.add(new Task(data[0],data[1],user,priority,status));
