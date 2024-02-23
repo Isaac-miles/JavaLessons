@@ -39,7 +39,7 @@ public class Theatre {
     }
     public void printSeatMap(){
         String separatorLine = "-".repeat(90);
-        System.out.printf("%1$s%n%2$s Seat Map%n%1$%n", separatorLine,theatreName);
+        System.out.printf("%1$s%n%2$s Seat Map%n%1$s%n", separatorLine,theatreName);
 
         int index = 0;
         for(Seat s: seats){
