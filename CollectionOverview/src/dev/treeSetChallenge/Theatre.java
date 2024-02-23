@@ -33,6 +33,7 @@ public class Theatre {
         seats = new TreeSet<>();
         for(int i =0; i< totalSeats;i++){
             char rowChar = (char) (i/seatsPerRow+(int) 'A');
+        int seatInRow = i % seatsPerRow + 1;
 
         }
     }
