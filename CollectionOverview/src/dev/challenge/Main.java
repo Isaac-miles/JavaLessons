@@ -35,5 +35,10 @@ public class Main {
         }
         return union;
     }
+    private static Set<Task> getIntersect(Set<Task> a, Set<Task> b){
+        Set<Task> intersect = new HashSet<>(a);
+        intersect.retainAll(b);
+        return intersect;
+    }
 
 }
