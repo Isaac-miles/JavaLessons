@@ -10,6 +10,13 @@ public class Main {
         Comparator<Task> sortByPriority = Comparator.comparing(Task::getPriority);
         Set<Task> annsTasks = TaskData.gettasks("Ann");
         sortAndPrint("Anns Tasks", annsTasks,sortByPriority);
+
+        Set<Task> bobsTasks = TaskData.gettasks("bob");
+        Set<Task> carolsTask = TaskData.gettasks("carol");
+        List<Set<Task>> sets = List.of(annsTasks,bobsTasks,carolsTask);
+
+        Set<Task> assignedTasks = getUnion(sets);
+        sortAndPrint("Assigned Tasks", assignedTasks);
     }
 
     private static void sortAndPrint(String header, Collection<Task> collection){
