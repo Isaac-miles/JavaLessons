@@ -1,6 +1,7 @@
 package dev.treeSetChallenge;
 
 import java.util.NavigableSet;
+import java.util.TreeSet;
 
 public class Theatre {
     class Seat implements Comparable<Seat>{
@@ -28,5 +29,11 @@ public class Theatre {
     public Theatre(String theatreName, int rows,int totalSeats) {
         this.theatreName = theatreName;
         this.seatsPerRow = totalSeats/rows;
+
+        seats = new TreeSet<>();
+        for(int i =0; i< totalSeats;i++){
+            char rowChar = (char) (i/seatsPerRow+(int) 'A');
+
+        }
     }
 }
