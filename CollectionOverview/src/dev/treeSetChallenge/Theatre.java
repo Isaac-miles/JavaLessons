@@ -4,7 +4,6 @@ import java.util.NavigableSet;
 import java.util.TreeSet;
 
 public class Theatre {
-//    private int ;
 
     class Seat implements Comparable<Seat>{
         private String seatNum;
