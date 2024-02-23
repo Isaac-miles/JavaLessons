@@ -1,9 +1,6 @@
 package dev.SetsAndMaps;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.NavigableSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class TreeSetMain {
     public static void main(String[] args) {
@@ -15,5 +12,17 @@ public class TreeSetMain {
         NavigableSet<Contact> sorted = new TreeSet<>(mySort);
         sorted.addAll(phones);
         sorted.forEach(System.out::println);
+
+        NavigableSet<String> justNames = new TreeSet<>();
+        phones.forEach(contact -> justNames.add(contact.getName()));
+        System.out.println(justNames);
+
+        NavigableSet<Contact> fullset = new TreeSet<>(sorted);
+        fullset.addAll(emails);
+        fullset.forEach(System.out::println);
+
+        List<Contact> fullList = new ArrayList<>(phones);
+        fullset.addAll(emails);
+        fullList.sort(sorted.comparator());
     }
 }
