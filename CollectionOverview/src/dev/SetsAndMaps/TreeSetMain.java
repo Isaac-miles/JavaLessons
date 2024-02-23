@@ -24,5 +24,16 @@ public class TreeSetMain {
         List<Contact> fullList = new ArrayList<>(phones);
         fullset.addAll(emails);
         fullList.sort(sorted.comparator());
+        System.out.println("---------------------------------");
+        fullList.forEach(System.out::println);
+
+        Contact min = Collections.min(fullset,fullset.comparator());
+        Contact max = Collections.max(fullset,fullset.comparator());
+
+        Contact first = fullset.first();
+        Contact last = fullset.last();
+
+        System.out.println();
+
     }
 }
