@@ -40,6 +40,8 @@ public class Main {
             overlapping.addAll(dupes);
         }
 
+        Comparator<Task> priorityNatural = sortByPriority.thenComparing(Comparator.naturalOrder());
+        sortAndPrint("Overlapping",overlapping,priorityNatural);
     }
 
     private static void sortAndPrint(String header, Collection<Task> collection){
