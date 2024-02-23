@@ -17,6 +17,15 @@ public class Main {
 
         Set<Task> assignedTasks = getUnion(sets);
         sortAndPrint("Assigned Tasks", assignedTasks);
+
+        Set<Task> everyTask = getUnion(List.of(tasks,assignedTasks));
+        sortAndPrint("The true all Tasks",everyTask);
+
+        Set<Task> missingTasks = getDifference(everyTask,tasks);
+        sortAndPrint("Missing Tasks", missingTasks);
+
+        Set<Task> unasssignedTasks = getDifference(tasks,assignedTasks);
+        sortAndPrint("Unassigned Tasks", unasssignedTasks,sortByPriority);
     }
 
     private static void sortAndPrint(String header, Collection<Task> collection){
