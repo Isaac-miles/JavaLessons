@@ -82,6 +82,7 @@ public class TreeSetMain {
         System.out.println("-----------------------------");
 
         Contact linus = new Contact("Linus Van Pelt");
-
+        var subset = fullset.subSet(linus,false,marion,true);
+        subset.forEach(System.out::println);
     }
 }
