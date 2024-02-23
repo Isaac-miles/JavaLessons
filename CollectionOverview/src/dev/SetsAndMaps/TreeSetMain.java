@@ -76,5 +76,9 @@ public class TreeSetMain {
         var headSet = fullset.headSet(marion);
         headSet.forEach(System.out::println);
         System.out.println("-----------------------------");
+
+        var tailSet = fullset.tailSet(marion);
+        tailSet.forEach(System.out::println);
+        System.out.println("-----------------------------");
     }
 }
