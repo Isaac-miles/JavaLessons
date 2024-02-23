@@ -9,6 +9,11 @@ public class Main {
     public static void main(String[] args) {
 
     }
+
+    private static void sortAndPrint(String header, Collection<Task> collection){
+        sortAndPrint(header,collection,null);
+    }
+
     private static void sortAndPrint(String header, Collection<Task> collection, Comparator<Task> sorter){
         String lineSeparator = "_".repeat(90);
         System.out.println(lineSeparator);
