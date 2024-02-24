@@ -25,6 +25,9 @@ public class BookingAgent {
         }
     }
     private static void bookSeats (Theatre theatre, int tickets, char minRow, char maxRow,int minSeat, int maxSeat){
-
+        var seats = theatre.reserveSeats(tickets,minRow,maxRow,minSeat,maxSeat);
+        if(seats !=null){
+            System.out.println("Congratulations! your reserved seats are "+ seats);
+        }
     }
 }
