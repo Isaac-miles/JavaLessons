@@ -74,11 +74,25 @@ public class Theatre {
             System.out.printf( "Invalid! %1$d seats between " +
                             "%2$c [%3$d-%4$d]-%5$c[%3$d-%4$d] Try again",
                     count, first, min, max, last);
+            System.out.printf(": Saet must be between %s and %s%n",seats.first().seatNum,seats.last().seatNum);
         }
          return result;
     }
     public Set<Seat> reserveSeats(int count, char minRow, char maxRow, int minSeat,int maxSeat){
         char lastValid = seats.last().seatNum.charAt(0);
         maxRow =(maxRow < lastValid)? maxRow :lastValid;
+
+        if(!validate(count,minRow,maxRow,minSeat,maxSeat)){
+            return null;
+        }
+        NavigableSet<Seat> selected = null;
+        for(char letter =minRow;letter <= maxRow; letter++){
+            NavigableSet<Seat> contiguous = seats.subSet(
+                    new Seat(letter,minSeat),true,
+                    new Seat(letter,maxSeat), true);
+
+
+        }
+
     }
 }
