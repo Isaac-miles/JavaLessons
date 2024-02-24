@@ -13,6 +13,8 @@ public class BookingAgent {
         bookSeat(lagosQuilox,'C',2);
         bookSeat(lagosQuilox,'C',11);
         bookSeat(lagosQuilox,'M',3);
+
+        bookSeats(lagosQuilox,4,'B',3,10);
     }
 
     private static void bookSeat(Theatre theatre, char row, int seatNo){
@@ -31,6 +33,7 @@ public class BookingAgent {
         var seats = theatre.reserveSeats(tickets,minRow,maxRow,minSeat,maxSeat);
         if(seats !=null){
             System.out.println("Congratulations! your reserved seats are "+ seats);
+            theatre.printSeatMap();
         }else {
             System.out.println("Sorry! No matching contiguous seats in rows: "+minRow +" - "+maxRow);
         }
