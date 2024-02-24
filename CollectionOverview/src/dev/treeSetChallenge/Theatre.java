@@ -69,6 +69,12 @@ public class Theatre {
     }
     private boolean validate(int count, char first, char last,int min,int max){
         boolean result =(min > 0 || seatsPerRow >=count || (max-min + 1)>=count);
+        result = result && seats.contains(new Seat(first,min));
+        if(!result){
+            System.out.printf( "Invalid! %1$d seats between " +
+                            "%2$c [%3$d-%4$d]-%5$c[%3$d-%4$d] Try again",
+                    count, first, min, max, last);
+        }
          return result;
     }
     public Set<Seat> reserveSeats(int count, char minRow, char maxRow, int minSeat,int maxSeat){
