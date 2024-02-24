@@ -21,7 +21,7 @@ public class BookingAgent {
             System.out.println("Congrats your reserve seat is "+ seat);
             theatre.printSeatMap();
         }else {
-            System.out.println("Sorry Unable to reserve "+row+seatNo);
+//            System.out.println("Sorry Unable to reserve "+row+seatNo);
         }
     }
 }
