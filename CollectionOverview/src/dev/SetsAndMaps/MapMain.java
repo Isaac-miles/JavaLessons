@@ -41,7 +41,7 @@ public class MapMain {
         }
         contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
 
-        System.out.println("--------------------------------------");
+        System.out.println("----------------------------------------------");
         contacts.clear();
         for(Contact contact:fullList){
             contacts.put(contact.getName(),contact);
