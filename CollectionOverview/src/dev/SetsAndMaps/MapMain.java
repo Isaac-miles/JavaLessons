@@ -60,6 +60,14 @@ public class MapMain {
 
         System.out.println("-------------------------------------------------");
         contacts.clear();
+        fullList.forEach(contact -> contacts.merge(contact.getName(),contact,
+                (prev, curr)->{
+                    Contact merged = prev.mergeContactData(curr);
+                    System.out.println("merged: "+ merged);
+                    return merged;
+                }
+                ));
+        contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
 
     }
 }
