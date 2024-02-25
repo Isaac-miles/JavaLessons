@@ -12,7 +12,7 @@ public class MapMain {
 
         List<Contact> fullList = new ArrayList<>(phones);
         fullList.addAll(emails);
-        fullList.forEach(System.out::println);
+//        fullList.forEach(System.out::println);
         System.out.println("--------------------------------------");
 
         Map<String, Contact> contacts = new HashMap<>();
