@@ -20,7 +20,7 @@ public class BookingAgent {
         bookSeats(lagosQuilox,4,'B','C',1,10);
         bookSeats(lagosQuilox,1,'B','C',1,1);
         bookSeats(lagosQuilox,4,'M','Z',1,10);
-//        bookSeats(lagosQuilox,10,'A','E',1,10);
+        bookSeats(lagosQuilox,10,'A','E',1,10);
 
 
     }
