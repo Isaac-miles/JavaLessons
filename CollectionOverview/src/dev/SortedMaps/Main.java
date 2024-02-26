@@ -16,6 +16,13 @@ public class Main {
         addPurchase("Joe Jones",jbc,110.50);
         addPurchase("Bill Brown",python,117.50);
 
+        addPurchase("Chuck Cheese",python,117.50);
+        addPurchase("Davey Jone",jbc,127.50);
+        addPurchase("Eva east",python,147.50);
+        addPurchase("Fred Forker",jbc,137.50);
+        addPurchase("Greg Brown",python,117.50);
+
+
         purchases.forEach((key,value)-> System.out.println(key+": "+value));
         System.out.println("-".repeat(30));
         students.forEach((key,value)-> System.out.println(key + ": "+value));
@@ -29,6 +36,8 @@ public class Main {
                     return list;
                     });
         }
+        datedPurchases.forEach((key,value)-> System.out.println(key + ": "+value));
+
     }
     private static void addPurchase(String name, Course course,double price){
         Student existingStudent = students.get(name);
@@ -39,7 +48,7 @@ public class Main {
             existingStudent.addCourse(course);
         }
 
-        int day = new Random().nextInt(1,5);
+        int day = new Random().nextInt(1,15);
         String key = course.courseId()+"_"+existingStudent.getId();
         int year = LocalDate.now().getYear();
         Purchase purchase = new Purchase(course.courseId(),existingStudent.getId(),price,year,day);
