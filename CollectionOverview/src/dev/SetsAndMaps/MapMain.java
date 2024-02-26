@@ -65,9 +65,17 @@ public class MapMain {
         contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
         System.out.println("-------------------------------------------------");
         for(String contactname: new String[]{"Robbing Hood", "Daffy Duck","Scrooge McDuck"}){
-            contacts.compute(contactname,(k,v)->new Contact(k));
+            contacts.computeIfAbsent(contactname,(k)->new Contact(k));
         }
         contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
+
+        System.out.println("-------------------------------------------------");
+        for(String contactname: new String[]{"Robbing Hood", "Daffy Duck","Scrooge McDuck"}){
+            contacts.computeIfPresent(contactname,(k,v)-> {
+                 v.addEmail("Fun Place"); return v;});
+        }
+        contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
+
 
     }
 }
