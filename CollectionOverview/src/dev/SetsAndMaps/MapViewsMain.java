@@ -37,5 +37,11 @@ public class MapViewsMain {
         ContactData.getData("phone").forEach(contact -> contacts.put(contact.getName(),contact));
         System.out.println(keysView);
 
+        var values = contacts.values();
+        values.forEach(System.out::println);
+
+        values.retainAll(ContactData.getData("email"));
+        System.out.println(keysView);
+        contacts.forEach((k,v)-> System.out.println(v));
     }
 }
