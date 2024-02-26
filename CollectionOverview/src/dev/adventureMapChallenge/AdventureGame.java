@@ -33,7 +33,10 @@ public class AdventureGame {
         for(String s: data.split("\\R")){
             String[] parts = s.split(",",3);
             Arrays.asList(parts).replaceAll(String::trim);
-
+            Map<Compass,String> nextPlaces = loadDirectionns(parts[2]);
+            Location location = new Location(parts[1],nextPlaces);
+            addventureMap.put(parts[0],location);
         }
+        addventureMap.forEach((k,v)-> System.out.printf("%s:%s%n",k,v));
     }
 }
