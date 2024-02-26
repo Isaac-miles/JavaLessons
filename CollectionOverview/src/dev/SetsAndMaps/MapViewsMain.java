@@ -43,5 +43,10 @@ public class MapViewsMain {
         values.retainAll(ContactData.getData("email"));
         System.out.println(keysView);
         contacts.forEach((k,v)-> System.out.println(v));
+
+        System.out.println("-".repeat(25));
+        List<Contact> list = new ArrayList<>(values);
+        list.sort(Comparator.comparing(Contact::getNameLastFirst));
+        list.forEach(c-> System.out.println(c.getNameLastFirst()+ ": "+c));
     }
 }
