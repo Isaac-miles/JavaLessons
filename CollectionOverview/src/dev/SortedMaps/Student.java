@@ -2,6 +2,7 @@ package dev.SortedMaps;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 record Course(String courseId,String name,String subject){}
@@ -23,5 +24,23 @@ public class Student {
     }
     public Student(String name, Course course) {
         this(name,new ArrayList<>(List.of(course)));
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+    public void addCourse(Course course){
+        courseList.add(course);
+    }
+
+    @Override
+    public String toString() {
+        String[] courseNames = new String[courseList.size()];
+        Arrays.setAll(courseNames,i->courseList.get(i).name());
+        return "[%d] : %s".formatted(id,String.join(", ",courseNames));
     }
 }
