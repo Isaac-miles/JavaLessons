@@ -1,9 +1,6 @@
 package dev.SetsAndMaps;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class MapViewsMain {
     public static void main(String[] args) {
@@ -28,5 +25,10 @@ public class MapViewsMain {
         copyOfKeys.remove("Livi Stingy");
         System.out.println(copyOfKeys);
         contacts.forEach((k,v)-> System.out.println(v));
+
+        keysView.retainAll(List.of("Livi Stingy","Charlse Okocha","Robin Hood", "Mickey Mouse"));
+        System.out.println(keysView);
+        contacts.forEach((k,v)-> System.out.println(v));
+
     }
 }
