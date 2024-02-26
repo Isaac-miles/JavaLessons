@@ -62,7 +62,10 @@ public class MapViewsMain {
         }
         var nodSet = contacts.entrySet();
         for(var node:nodSet){
+            System.out.println(nodSet.getClass().getName());
             if(!node.getKey().equals(node.getValue().getName())){
+                System.out.println(nodSet.getClass().getName());
+
                 System.out.println("Key doesn't match name: "+node.getKey()+": "+node.getValue());
             }
         }
