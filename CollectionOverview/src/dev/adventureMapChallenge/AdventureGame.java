@@ -1,5 +1,6 @@
 package dev.adventureMapChallenge;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +31,9 @@ public class AdventureGame {
     }
     private void loadLocations(String data){
         for(String s: data.split("\\R")){
-            String[] part = s.split(",",3);
+            String[] parts = s.split(",",3);
+            Arrays.asList(parts).replaceAll(String::trim);
+
         }
     }
 }
