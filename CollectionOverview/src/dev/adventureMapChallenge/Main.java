@@ -3,6 +3,6 @@ package dev.adventureMapChallenge;
 public class Main {
     public static void main(String[] args) {
         AdventureGame game = new AdventureGame();
-        game.play("road");
+        game.play("lake");
     }
 }
