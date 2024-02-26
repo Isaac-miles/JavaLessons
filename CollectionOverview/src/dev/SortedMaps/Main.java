@@ -13,6 +13,14 @@ public class Main {
         Course jbc = new Course("jbc101","Java Bi Functions","Java");
         Course python = new Course("pyt102","Python Master Class","Python");
 
+        addPurchase("Mary Martin",jbc,129.88);
+        addPurchase("Andy Martin",jbc,120.50);
+        addPurchase("Andy Martin",jbc,120.50);
+        addPurchase("Joe Jones",jbc,110.50);
+        addPurchase("Bill Brown",python,117.50);
+
+
+
     }
     private static void addPurchase(String name, Course course,double price){
         Student existingStudent = students.get(name);
