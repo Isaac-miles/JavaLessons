@@ -43,7 +43,7 @@ public class AdventureGame {
             Location location = new Location(parts[1],nextPlaces);
             addventureMap.put(parts[0],location);
         }
-        addventureMap.forEach((k,v)-> System.out.printf("%s:%s%n",k,v));
+//        addventureMap.forEach((k,v)-> System.out.printf("%s:%s%n",k,v));
     }
     private Map<Compass, String> loadDirections(String nextPlaces){
         Map<Compass, String> directions = new HashMap<>();
@@ -80,7 +80,9 @@ public class AdventureGame {
     }
     public void play(String location){
         if(addventureMap.containsKey(location)){
-
+            Location next = addventureMap.get(location);
+            lastPlace = location;
+            visit(next);
         }else {
             System.out.println(location + " is an invalid location");
         }
