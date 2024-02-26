@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        String myLocations = """
+                lake,at the edge of Lake Zico,E:ocean,W:forest,S:golf stream,N:market
+                ocean,on Zico's lake before a red sea,W:beach
+                cave,at the mouth of Zico's bath cave,E:ocean.W:forest,S:lake
+                """;
+
         AdventureGame game = new AdventureGame();
         game.play("lake");
         Scanner scanner = new Scanner(System.in);
