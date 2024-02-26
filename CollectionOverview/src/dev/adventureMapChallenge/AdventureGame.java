@@ -46,7 +46,8 @@ public class AdventureGame {
 
         nextSteps.replaceAll(String::trim);
         for(String nextPlace : nextSteps){
-
+            String[] splits = nextPlace.split(":");
+            Compass compass = Compass.valueOf(splits[0].trim());
         }
         return directions;
     }
