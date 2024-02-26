@@ -75,6 +75,15 @@ public class MapMain {
                  v.addEmail("Fun Place"); return v;});
         }
         contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
+        System.out.println("-------------------------------------------------");
+        contacts.replaceAll((k,v)->{
+            String newEmail = k.replaceAll(" ","")+"@funplace.com";
+            v.replaceEmailIfExists("isaac@gmail.com",newEmail);
+            return v;
+
+        });
+        contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
+
 
 
     }
