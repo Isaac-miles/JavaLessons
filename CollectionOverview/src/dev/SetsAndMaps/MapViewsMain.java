@@ -26,9 +26,16 @@ public class MapViewsMain {
         System.out.println(copyOfKeys);
         contacts.forEach((k,v)-> System.out.println(v));
 
-        keysView.retainAll(List.of("Livi Stingy","Charlse Okocha","Robin Hood", "Mickey Mouse"));
+        keysView.retainAll(List.of("Livi Stingy","Charlse Okocha","Robbin Hood", "Junior Dash"));
         System.out.println(keysView);
         contacts.forEach((k,v)-> System.out.println(v));
+
+        keysView.clear();
+        System.out.println(contacts);
+
+        ContactData.getData("email").forEach(contact -> contacts.put(contact.getName(),contact));
+        ContactData.getData("phone").forEach(contact -> contacts.put(contact.getName(),contact));
+        System.out.println(keysView);
 
     }
 }
