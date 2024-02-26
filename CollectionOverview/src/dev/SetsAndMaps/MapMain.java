@@ -63,6 +63,11 @@ public class MapMain {
         fullList.forEach(contact -> contacts.merge(contact.getName(),contact,
                 Contact::mergeContactData));
         contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
+        System.out.println("-------------------------------------------------");
+        for(String contactname: new String[]{"Robbing Hood", "Daffy Duck","Scrooge McDuck"}){
+            contacts.compute(contactname,(k,v)->new Contact(k));
+        }
+        contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
 
     }
 }
