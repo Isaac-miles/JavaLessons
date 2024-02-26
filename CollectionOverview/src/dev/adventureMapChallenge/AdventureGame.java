@@ -45,17 +45,19 @@ public class AdventureGame {
         }
         addventureMap.forEach((k,v)-> System.out.printf("%s:%s%n",k,v));
     }
-    private Map<Compass, String> loadDirections(String nextplaces){
+    private Map<Compass, String> loadDirections(String nextPlaces){
         Map<Compass, String> directions = new HashMap<>();
-        List<String> nextSteps = Arrays.asList(nextplaces.split(","));
-
+        List<String> nextSteps = Arrays.asList(nextPlaces.split(","));
         nextSteps.replaceAll(String::trim);
         for(String nextPlace : nextSteps){
             String[] splits = nextPlace.split(":");
-            Compass compass = Compass.valueOf(splits[0].trim());
+            Compass compass = Compass.valueOf(splits[0].trim().toUpperCase());
             String destination = splits[1].trim();
             directions.put(compass,destination);
         }
         return directions;
+    }
+    private void visit(Location location){
+
     }
 }
