@@ -1,10 +1,7 @@
 package dev.SortedMaps;
 
 import java.time.LocalDate;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.NavigableMap;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Main {
     private static Map<String,Purchase> purchases = new LinkedHashMap<>();
@@ -15,7 +12,7 @@ public class Main {
 
         addPurchase("Mary Martin",jbc,129.88);
         addPurchase("Andy Martin",jbc,120.50);
-        addPurchase("Andy Martin",jbc,120.50);
+        addPurchase("Andy Martin",python,120.50);
         addPurchase("Joe Jones",jbc,110.50);
         addPurchase("Bill Brown",python,117.50);
 
@@ -23,7 +20,15 @@ public class Main {
         System.out.println("-".repeat(30));
         students.forEach((key,value)-> System.out.println(key + ": "+value));
 
-
+        NavigableMap<LocalDate, List<Purchase>> datedPurchases = new TreeMap<>();
+        for(Purchase p: purchases.values()){
+            datedPurchases.compute(p.purchaseDate(),
+                    (date,plist)->{
+                    List<Purchase> list =(plist==null)? new ArrayList<>():plist;
+                    list.add(p);
+                    return list;
+                    });
+        }
     }
     private static void addPurchase(String name, Course course,double price){
         Student existingStudent = students.get(name);
@@ -34,7 +39,7 @@ public class Main {
             existingStudent.addCourse(course);
         }
 
-        int day = purchases.size()+1;
+        int day = new Random().nextInt(1,5);
         String key = course.courseId()+"_"+existingStudent.getId();
         int year = LocalDate.now().getYear();
         Purchase purchase = new Purchase(course.courseId(),existingStudent.getId(),price,year,day);
