@@ -10,7 +10,7 @@ public class Main {
                 cave,at the mouth of Zico's bath cave,E:ocean.W:forest,S:lake
                 """;
 
-        AdventureGame game = new AdventureGame();
+        AdventureGame game = new AdventureGame(myLocations);
         game.play("lake");
         Scanner scanner = new Scanner(System.in);
         while (true){
