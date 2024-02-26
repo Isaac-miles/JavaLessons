@@ -25,7 +25,9 @@ public class AdventureGame {
     private record Location(String description, Map<Compass, String> nextPlaces){}
     private String lastPlace;
     private  Map<String,Location> addventureMap = new HashMap<>();
-    public AdventureGame(){this(null);}
+    public AdventureGame(){
+        this(null);
+    }
 
     public AdventureGame(String customLocation) {
         loadLocations(GAME_LOCATIONS);
