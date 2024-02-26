@@ -83,5 +83,9 @@ public class MapMain {
         });
         contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
 
+        System.out.println("-------------------------------------------------");
+        Contact replaceContact = new Contact("Isaac All", "all@yahoo.com");
+        contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
+
     }
 }
