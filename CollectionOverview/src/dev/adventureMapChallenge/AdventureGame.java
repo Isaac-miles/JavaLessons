@@ -25,10 +25,13 @@ public class AdventureGame {
     private record Location(String description, Map<Compass, String> nextPlaces){}
     private String lastPlace;
     private  Map<String,Location> addventureMap = new HashMap<>();
-    public AdventureGame(){}
+    public AdventureGame(){this(null);}
 
     public AdventureGame(String customLocation) {
-        this.lastPlace = lastPlace;
+        loadLocations(GAME_LOCATIONS);
+        if(customLocation !=null){
+            loadLocations(customLocation);
+        }
     }
     private void loadLocations(String data){
         for(String s: data.split("\\R")){
