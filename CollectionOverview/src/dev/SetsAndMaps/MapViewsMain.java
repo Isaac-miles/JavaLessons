@@ -48,5 +48,11 @@ public class MapViewsMain {
         List<Contact> list = new ArrayList<>(values);
         list.sort(Comparator.comparing(Contact::getNameLastFirst));
         list.forEach(c-> System.out.println(c.getNameLastFirst()+ ": "+c));
+
+        System.out.println("-".repeat(25));
+        Contact first = list.get(0);
+        contacts.put(first.getNameLastFirst(),first);
+        values.forEach(System.out::println);
+        keysView.forEach(System.out::println);
     }
 }
