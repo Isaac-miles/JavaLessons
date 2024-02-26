@@ -80,11 +80,8 @@ public class MapMain {
             String newEmail = k.replaceAll(" ","")+"@funplace.com";
             v.replaceEmailIfExists("isaac@gmail.com",newEmail);
             return v;
-
         });
         contacts.forEach((k,v)-> System.out.println("key= "+k+", value= "+v));
-
-
 
     }
 }
