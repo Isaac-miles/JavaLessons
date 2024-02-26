@@ -25,5 +25,8 @@ public class MapViewsMain {
         System.out.println(keysView);
         contacts.forEach((k,v)-> System.out.println(v));
 
+        copyOfKeys.remove("Livi Stingy");
+        System.out.println(copyOfKeys);
+        contacts.forEach((k,v)-> System.out.println(v));
     }
 }
