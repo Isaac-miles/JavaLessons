@@ -19,6 +19,9 @@ public class Main {
         addPurchase("Joe Jones",jbc,110.50);
         addPurchase("Bill Brown",python,117.50);
 
+        purchases.forEach((key,value)-> System.out.println(key+": "+value));
+        System.out.println("-".repeat(30));
+        students.forEach((key,value)-> System.out.println(key + ": "+value));
 
 
     }
