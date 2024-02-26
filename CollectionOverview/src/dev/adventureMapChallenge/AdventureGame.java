@@ -66,4 +66,16 @@ public class AdventureGame {
         });
         System.out.print("Select your Compass (Q to quit) >> ");
     }
+    public void move(String direction){
+        var nextPlaces = addventureMap.get(lastPlace).nextPlaces;
+        String nextPlace = null;
+        if("ESNW".contains(direction)){
+            nextPlace = nextPlaces.get(Compass.valueOf(direction));
+            if (nextPlace !=null){
+
+            }else {
+                System.out.println("!! Invalid direction, try again!!");
+            }
+        }
+    }
 }
