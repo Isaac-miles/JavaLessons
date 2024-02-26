@@ -72,10 +72,17 @@ public class AdventureGame {
         if("ESNW".contains(direction)){
             nextPlace = nextPlaces.get(Compass.valueOf(direction));
             if (nextPlace !=null){
-
+                play(nextPlace);
             }else {
                 System.out.println("!! Invalid direction, try again!!");
             }
+        }
+    }
+    public void play(String location){
+        if(addventureMap.containsKey(location)){
+
+        }else {
+            System.out.println(location + " is an invalid location");
         }
     }
 }
