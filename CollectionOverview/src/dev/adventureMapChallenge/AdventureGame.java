@@ -2,6 +2,7 @@ package dev.adventureMapChallenge;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class AdventureGame {
@@ -33,10 +34,20 @@ public class AdventureGame {
         for(String s: data.split("\\R")){
             String[] parts = s.split(",",3);
             Arrays.asList(parts).replaceAll(String::trim);
-            Map<Compass,String> nextPlaces = loadDirectionns(parts[2]);
+            Map<Compass,String> nextPlaces = loadDirections(parts[2]);
             Location location = new Location(parts[1],nextPlaces);
             addventureMap.put(parts[0],location);
         }
         addventureMap.forEach((k,v)-> System.out.printf("%s:%s%n",k,v));
+    }
+    private Map<Compass, String> loadDirections(String nextplaces){
+        Map<Compass, String> directions = new HashMap<>();
+        List<String> nextSteps = Arrays.asList(nextplaces.split(","));
+
+        nextSteps.replaceAll(String::trim);
+        for(String nextPlace : nextSteps){
+
+        }
+        return directions;
     }
 }
