@@ -59,6 +59,9 @@ public class AdventureGame {
     }
     private void visit(Location location){
         System.out.printf("*** You are Standing %s *** %n",location.description);
+        System.out.println("\tFrom here,you can see: ");
+
+
         System.out.print("Select your Compass (Q to quit) >> ");
     }
 }
