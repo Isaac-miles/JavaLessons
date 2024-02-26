@@ -1,5 +1,6 @@
 package dev.adventureMapChallenge;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class AdventureGame {
@@ -19,7 +20,17 @@ public class AdventureGame {
             return directions[this.ordinal()];
         }
     }
-    private record Location(String description, Map<Compass, String> nextPlaces){
+    private record Location(String description, Map<Compass, String> nextPlaces){}
+    private String lastPlace;
+    private  Map<String,Location> addventureMap = new HashMap<>();
+    public AdventureGame(){}
 
+    public AdventureGame(String customLocation) {
+        this.lastPlace = lastPlace;
+    }
+    private void loadLocations(String data){
+        for(String s: data.split("\\R")){
+            String[] part = s.split(",",3);
+        }
     }
 }
