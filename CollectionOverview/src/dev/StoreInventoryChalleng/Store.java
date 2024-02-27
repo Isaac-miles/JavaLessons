@@ -40,6 +40,8 @@ public class Store {
                 new Product("BC88","coffee","value",Category.BEVERAGE),
                 new Product("BC99","tea","herbal",Category.BEVERAGE)
         ));
+        products.forEach(product -> inventory.put(product.sku(),new InventoryItem(product,
+               random.nextDouble(0,1.30),1000,5)));
     }
     private void stockAisles(){}
 }

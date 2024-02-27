@@ -8,7 +8,7 @@ public class InventoryItem {
     private int qtyReorder;
     private int qtyLow;
 
-    public InventoryItem(Product product, double price, int qtyTotal, int qtyReorder, int qtyLow) {
+    public InventoryItem(Product product, double price, int qtyTotal, int qtyLow) {
         this.product = product;
         this.price = price;
         this.qtyTotal = qtyTotal;
