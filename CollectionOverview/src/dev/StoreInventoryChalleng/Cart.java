@@ -27,6 +27,10 @@ public class Cart {
         return id;
     }
 
+    public Map<String, Integer> getProducts() {
+        return products;
+    }
+
     public LocalDate getCartDate() {
         return cartDate;
     }
