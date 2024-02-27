@@ -12,6 +12,9 @@ public class Store {
         Store myStore = new Store();
         myStore.stockStore();
         myStore.listInventory();
+
+        myStore.stockAisles();
+        myStore.listProductsByCategory();
     }
 
     private void manageStoreCarts(){}
@@ -21,7 +24,9 @@ public class Store {
     private void abandonCarts(){
     }
     private void listProductsByCategory(){
-
+        aisleInventory.keySet().forEach(k->{ System.out.println("------------\n"+k+"\n---------------");
+        aisleInventory.get(k).keySet().forEach(System.out::println);
+        });
     }
     private void stockStore(){
         inventory = new HashMap<>();
@@ -46,7 +51,17 @@ public class Store {
                random.nextDouble(0,1.30),1000,5)));
     }
     private void stockAisles(){
+        aisleInventory = new EnumMap<>(Category.class);
+        for(InventoryItem item:inventory.values()){
+            Category aisle = item.getProduct().category();
 
+            Map<String,InventoryItem> productMap = aisleInventory.get(aisle);
+            if(productMap == null){
+                productMap = new TreeMap<>();
+            }
+            productMap.put(item.getProduct().name(),item);
+            aisleInventory.putIfAbsent(aisle,productMap);
+        }
     }
 
     private void listInventory(){
