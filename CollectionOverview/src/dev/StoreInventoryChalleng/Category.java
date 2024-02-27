@@ -1,5 +1,5 @@
 package dev.StoreInventoryChalleng;
 
 public enum Category {
-    PRODUCE,DIARY,CEREAL,MEAT,BEVERAGE
+    PRODUCE,DAIRY,CEREAL,MEAT,BEVERAGE
 }
