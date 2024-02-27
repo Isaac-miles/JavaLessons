@@ -1,10 +1,11 @@
 package dev.StoreInventoryChalleng;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Cart {
-    enum CartType{PHYSICAL,VIRTUAL};
+    enum CartType{PHYSICAL,VIRTUAL}
     private static int lastId = 1;
     private int id;
     private LocalDate cartDate;
@@ -15,6 +16,7 @@ public class Cart {
         this.type = type;
         id = lastId++;
         cartDate = LocalDate.now().minusDays(days);
+        products = new HashMap<>();
     }
 
     public Cart(int id) {
