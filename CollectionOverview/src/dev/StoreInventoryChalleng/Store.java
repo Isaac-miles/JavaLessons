@@ -15,7 +15,9 @@ public class Store {
 
         myStore.stockAisles();
         myStore.listProductsByCategory();
+
         myStore.manageStoreCarts();
+        myStore.listProductsByCategory(false,true);
     }
 
     private void manageStoreCarts(){
@@ -23,7 +25,12 @@ public class Store {
         carts.add(cart1);
 
         InventoryItem item = aisleInventory.get(Category.PRODUCE).get("apple");
+        cart1.addItem(aisleInventory.get(Category.PRODUCE).get("pear"),5);
+        cart1.addItem(aisleInventory.get(Category.BEVERAGE).get("coffee"),1);
         cart1.addItem(item,6);
+        System.out.println(cart1);
+
+        cart1.removeItem(aisleInventory.get(Category.PRODUCE).get("pear"),2);
         System.out.println(cart1);
 
     }
@@ -33,8 +40,16 @@ public class Store {
     private void abandonCarts(){
     }
     private void listProductsByCategory(){
-        aisleInventory.keySet().forEach(k->{ System.out.println("------------\n"+k+"\n---------------");
-        aisleInventory.get(k).keySet().forEach(System.out::println);
+       listProductsByCategory(true,false);
+    }
+    private void listProductsByCategory(boolean includeHeader,boolean includeDetail){
+        aisleInventory.keySet().forEach(k->{
+            if(includeHeader) System.out.println("------------\n"+k+"\n---------------");
+            if(!includeDetail){
+            aisleInventory.get(k).keySet().forEach(System.out::println);
+            }else {
+                aisleInventory.get(k).values().forEach(System.out::println);
+            }
         });
     }
     private void stockStore(){
