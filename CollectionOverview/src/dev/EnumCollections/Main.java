@@ -1,9 +1,6 @@
 package dev.EnumCollections;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     enum WeekDay{SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY}
@@ -28,5 +25,16 @@ public class Main {
         anotherWay.removeAll(annsDaysSet);
         System.out.println("----------------------------------------");
         anotherWay.forEach(System.out::println);
+
+        Set<WeekDay> businessDays = EnumSet.range(WeekDay.MONDAY,WeekDay.FRIDAY);
+        System.out.println("----------------------------------------");
+        businessDays.forEach(System.out::println);
+
+        Map<WeekDay,String[]> employeeMap = new EnumMap<>(WeekDay.class);
+
+        employeeMap.put(WeekDay.FRIDAY,new String[]{"Ann","Mary","Bob"});
+        employeeMap.put(WeekDay.MONDAY,new String[]{"Mary","Bob"});
+        employeeMap.forEach((k,v)-> System.out.println(k+" : "+Arrays.toString(v)));
+
     }
 }
