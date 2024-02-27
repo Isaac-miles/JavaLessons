@@ -9,7 +9,9 @@ public class Store {
     private Map<Category, Map<String, InventoryItem>> aisleInventory;
 
     public static void main(String[] args) {
-
+        Store myStore = new Store();
+        myStore.stockStore();
+        myStore.listInventory();
     }
 
     private void manageStoreCarts(){}
@@ -43,5 +45,12 @@ public class Store {
         products.forEach(product -> inventory.put(product.sku(),new InventoryItem(product,
                random.nextDouble(0,1.30),1000,5)));
     }
-    private void stockAisles(){}
+    private void stockAisles(){
+
+    }
+
+    private void listInventory(){
+        System.out.println("-".repeat(30));
+        inventory.values().forEach(System.out::println);
+    }
 }
