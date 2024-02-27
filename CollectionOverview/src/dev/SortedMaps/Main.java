@@ -68,12 +68,22 @@ public class Main {
         var revsersed = datedPurchases.descendingMap();
 
         LocalDate firstDate = revsersed.firstKey();
-        var nextEntry = revsersed.firstEntry();
+//        var nextEntry = revsersed.firstEntry();
+        var nextEntry = revsersed.pollFirstEntry();
+
         while (nextEntry !=null){
             List<Purchase> lastDaysData = nextEntry.getValue();
             System.out.println(firstDate+" purchases : "+ lastDaysData.size());
-        }
 
+            LocalDate nextDate = revsersed.higherKey(firstDate);
+//            nextEntry = revsersed.higherEntry(firstDate);
+            nextEntry = revsersed.pollFirstEntry();
+
+            firstDate = nextDate;
+
+        }
+        System.out.println("-".repeat(20));
+        datedPurchases.forEach((key,value)-> System.out.println(key+": "+value));
     }
     private static void addPurchase(String name, Course course,double price){
         Student existingStudent = students.get(name);
