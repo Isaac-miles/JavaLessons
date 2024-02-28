@@ -1,4 +1,8 @@
 package consumer.specific;
 
-public class ChildClass {
+import dev.generic.BaseClass;
+
+public class ChildClass extends BaseClass {
+
+
 }
