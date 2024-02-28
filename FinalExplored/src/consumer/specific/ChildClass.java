@@ -8,10 +8,9 @@ public class ChildClass extends BaseClass {
         System.out.println("Some extra stuff happened");
         super.optionalMethod();
     }
+    public static void recommendedStatic(){
+        System.out.println("[Child.recommendedMethod]: Extra Way to Do it");
+        optionalStatic();
+    }
 
-//    @Override
-//    public void recommendedMethod() {
-//        System.out.println("[Child:recommendedMethod]: I will do things my way" );
-//        optionalMethod();
-//    }
 }

@@ -14,5 +14,16 @@ public class Main {
         childReferredToAsBase.recommendedMethod();
         System.out.println("-".repeat(20));
         child.recommendedMethod();
+
+        System.out.println("-".repeat(20));
+        parent.recommendedStatic();
+        System.out.println("-".repeat(20));
+        childReferredToAsBase.recommendedStatic();
+        System.out.println("-".repeat(20));
+        child.recommendedStatic();
+
+        System.out.println("-".repeat(20));
+        BaseClass.recommendedStatic();
+        ChildClass.recommendedStatic();
     }
 }
