@@ -36,7 +36,6 @@ public class Cart {
     }
     public void addItem(InventoryItem item,int qty){
         products.merge(item.getProduct().sku(),qty, Integer::sum);
-
         if(!item.reservedItem(qty)){
             System.out.println("Something went wrong, could not add item");
         }
