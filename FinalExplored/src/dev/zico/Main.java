@@ -29,7 +29,7 @@ public class Main {
         String xArgument = "This is all I've got to say about Section ";
         StringBuilder zArgument = new StringBuilder("Only saying this: Section ");
         doXYZ(xArgument,19,zArgument);
-//        System.out.println("After Method, xArgument: "+ xArgument);
+        System.out.println("After Method, xArgument: "+ xArgument);
         System.out.println("After Method, xArgument: "+ zArgument);
 
     }
