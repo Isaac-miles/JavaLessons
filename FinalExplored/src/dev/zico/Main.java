@@ -23,7 +23,7 @@ public class Main {
         child.recommendedStatic();
 
         System.out.println("-".repeat(20));
-        BaseClass.recommendedStatic();
+//        BaseClass.recommendedStatic();
         ChildClass.recommendedStatic();
 
         String xArgument = "This is all I've got to say about Section ";
