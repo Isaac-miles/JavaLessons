@@ -24,7 +24,7 @@ public class Main {
 
         System.out.println("-".repeat(20));
         BaseClass.recommendedStatic();
-        ChildClass.recommendedStatic();
+//        ChildClass.recommendedStatic();
 
         String xArgument = "This is all I've got to say about Section ";
         StringBuilder zArgument = new StringBuilder("Only saying this: Section ");
