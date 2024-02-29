@@ -35,7 +35,7 @@ public class Main {
     }
     private static void doXYZ(String x, int y, final StringBuilder z){
         final String c = x + y;
-//        System.out.println("c = "+c);
+        System.out.println("c = "+c);
         x = c;
         z.append(y);
 //        z = new StringBuilder()"This is a new reference"
