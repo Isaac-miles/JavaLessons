@@ -26,7 +26,13 @@ public class MainMailer {
         System.out.println(counts);
 
         StringBuilder annJones = new StringBuilder("Ann Jones");
+        System.out.println("There are "+ counts.get(annJones)+" records for  "+ annJones);
 
+        System.out.println("-------------------------------");
+        counts.forEach((k,v)-> System.out.println(k+" : "+v));
+
+        System.out.println("-------------------------------");
+        counts.keySet().forEach(k-> System.out.println(k+" : "+counts.get(k)));
     }
     private static List<StringBuilder> getNames(String[] names){
         List<StringBuilder> list = new ArrayList<>();
