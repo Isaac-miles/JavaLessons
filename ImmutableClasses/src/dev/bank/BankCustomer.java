@@ -1,6 +1,7 @@
 package dev.bank;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BankCustomer {
@@ -15,5 +16,20 @@ public class BankCustomer {
         this.customerId = lastCustomerId++;
         accounts.add(new BankAccount(BankAccount.AccountType.CHECKING,checkingAmount));
         accounts.add(new BankAccount(BankAccount.AccountType.SAVING,savingsAmount));
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<BankAccount> getAccounts() {
+        return accounts;
+    }
+
+    @Override
+    public String toString() {
+        String[] accountStrings = new String[accounts.size()];
+        Arrays.setAll(accountStrings, i ->accounts.get(i).toString());
+        return "Customer: %s (id:%015d)%n\t%s%n".formatted(name,customerId,String.join("\n\t",accountStrings));
     }
 }
