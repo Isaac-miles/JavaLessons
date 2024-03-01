@@ -2,11 +2,22 @@ package dev.zico;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class MainMailer {
     public static void main(String[] args) {
         String[] names = {"Ann Jones","Ann Jones Ph.D","Bob Jones M.D.","Carol Jones",
         "Ed Green Ph.D.", "Ed Green M.D.","Ed Black"};
+
+        List<StringBuilder> population = getNames(names);
+        Map<StringBuilder, Integer> counts = new TreeMap<>();
+        population.forEach(s->{
+            counts.merge(s,1, Integer::sum);
+        });
+        System.out.println(counts);
+        StringBuilder annJonesPhd = new StringBuilder("Ann Jones Ph.D");
+        System.out.println("There are "+ counts.get(annJonesPhd));
     }
     private static List<StringBuilder> getNames(String[] names){
         List<StringBuilder> list = new ArrayList<>();
