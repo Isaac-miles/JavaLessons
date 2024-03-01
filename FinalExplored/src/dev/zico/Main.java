@@ -2,6 +2,7 @@ package dev.zico;
 
 import consumer.specific.ChildClass;
 import dev.generic.BaseClass;
+import external.util.Logger;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,6 +33,8 @@ public class Main {
         System.out.println("After Method, xArgument: "+ xArgument);
         System.out.println("After Method, xArgument: "+ zArgument);
 
+        StringBuilder tracker = new StringBuilder("Step 1 is abc");
+        Logger.logToConsole(tracker);
     }
     private static void doXYZ(String x, int y, final StringBuilder z){
         final String c = x + y;
