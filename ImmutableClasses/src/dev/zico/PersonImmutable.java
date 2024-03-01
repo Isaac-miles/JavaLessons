@@ -18,9 +18,10 @@ public class PersonImmutable {
         this(name,dob,null);
     }
     protected PersonImmutable(PersonImmutable person){
-        this.name = person.name;
-        this.dob = person.dob;
-        this.kids = person.kids;
+//        this.name = person.name;
+//        this.dob = person.dob;
+//        this.kids = person.kids;
+        this(person.getName(), person.getDob(), person.getKids());
     }
 
     public String getName() {
@@ -32,7 +33,7 @@ public class PersonImmutable {
         return dob;
     }
 
-    public PersonImmutable[] getKids() {
+    public final PersonImmutable[] getKids() {
         return kids == null? null:Arrays.copyOf(kids,kids.length);
     }
 
