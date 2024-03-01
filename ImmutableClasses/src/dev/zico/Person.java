@@ -38,6 +38,7 @@ public class Person {
         if(kids !=null){
             String[] names = new String[kids.length];
             Arrays.setAll(names,i->names[i]=kids[i]==null? "":kids[i].name);
+            kidstring = String.join(", "+name);
         }
         return name+", dob =  "+ dob+ ", kids = "+kidstring;
     }
