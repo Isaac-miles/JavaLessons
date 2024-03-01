@@ -51,7 +51,7 @@ public class MainMailer {
             for(String suffix: new String[]{"Ph.D","M.D"}){
                 int startIndex = -1;
                 if((startIndex = name.indexOf(suffix))> -1){
-                    name.replace(startIndex -1,startIndex + suffix.length(),"");
+//                    name.replace(startIndex -1,startIndex + suffix.length(),"");
                 }
             }
             newList.add(name);
