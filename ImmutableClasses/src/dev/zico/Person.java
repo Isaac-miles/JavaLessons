@@ -29,4 +29,13 @@ public class Person {
     public void setKids(Person[] kids) {
         this.kids = kids;
     }
+
+    @Override
+    public String toString() {
+        String kidstring = "n/a";
+        if(kids !=null){
+            String[] names = new String[kids.length];
+        }
+        return name+", dob =  "+ dob+ ", kids = "+kidstring;
+    }
 }
