@@ -37,9 +37,9 @@ public class Person {
         String kidstring = "n/a";
         if(kids !=null){
             String[] names = new String[kids.length];
-            Arrays.setAll(names,i->names[i]=kids[i]==null? "":kids[i].name);
-            kidstring = String.join(", "+ Arrays.toString(names));
+            Arrays.setAll(names,i->names[i]=kids[i]==null ? "":kids[i].name);
+            kidstring = String.join(", ", Arrays.toString(names));
         }
-        return name+", dob =  "+ dob+ ", kids = "+kidstring;
+        return name+", dob =  "+ dob+ ", kids = "+ kidstring;
     }
 }

@@ -14,5 +14,10 @@ public class Main {
         john.setDob("04/02/1990");
         john.setKids(new Person[]{jane,jim,joe});
         System.out.println(john);
+
+        john.setName("Jacob");
+        john.setKids(new Person[]{new Person(), new Person()});
+        System.out.println(john);
+
     }
 }
