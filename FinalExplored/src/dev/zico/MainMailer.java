@@ -17,10 +17,16 @@ public class MainMailer {
         });
         System.out.println(counts);
         StringBuilder annJonesPhd = new StringBuilder("Ann Jones Ph.D");
-        System.out.println("There are "+ counts.get(annJonesPhd));
+        System.out.println("There are "+ counts.get(annJonesPhd)+"records for  "+ annJonesPhd);
 
         List<StringBuilder> cleanedNames = standardizeNames(population);
         System.out.println(cleanedNames);
+
+        System.out.println("There are "+ counts.get(annJonesPhd)+" records for  "+ annJonesPhd);
+        System.out.println(counts);
+
+        StringBuilder annJones = new StringBuilder("Ann Jones");
+
     }
     private static List<StringBuilder> getNames(String[] names){
         List<StringBuilder> list = new ArrayList<>();
