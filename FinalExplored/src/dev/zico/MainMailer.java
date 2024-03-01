@@ -18,6 +18,9 @@ public class MainMailer {
         System.out.println(counts);
         StringBuilder annJonesPhd = new StringBuilder("Ann Jones Ph.D");
         System.out.println("There are "+ counts.get(annJonesPhd));
+
+        List<StringBuilder> cleanedNames = standardizeNames(population);
+        System.out.println(cleanedNames);
     }
     private static List<StringBuilder> getNames(String[] names){
         List<StringBuilder> list = new ArrayList<>();
@@ -27,6 +30,19 @@ public class MainMailer {
                 list.add(new StringBuilder(name));
             }
             index++;
+        }
+        return list;
+    }
+    private static List<StringBuilder> standardizeNames(List<StringBuilder> list){
+        List<StringBuilder> newList = new ArrayList<>();
+        for (var name:list){
+            for(String suffix: new String[]{"Ph.D","M.D"}){
+                int startIndex = -1;
+                if((startIndex = name.indexOf(suffix))> -1){
+                    name.replace(startIndex -1,startIndex + suffix.length(),"");
+                }
+            }
+            newList.add(name);
         }
         return list;
     }
