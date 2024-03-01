@@ -20,9 +20,13 @@ public class Main {
         Person jane = new Person("Jane","01/04/1964",null);
         Person jill = new Person("Jill","01/05/1965",new Person[]{joe,jim});
 
-        Person[] persons = {jane,jack,joe,jill,jim};
-        Person[] personCopy = Arrays.copyOf(persons,persons.length); //shallow copy
+        Person[] persons = {joe,jim,jack,jane,jill};
+//        Person[] personCopy = Arrays.copyOf(persons,persons.length); //shallow copy
+        Person[] personCopy = new Person[5];
 
+        var jillsKids = personCopy[4].kids();
+        jillsKids[1] = jane;
+        System.out.println(Arrays.toString(jillsKids));
         for(int i =0;i<5;i++){
             if(persons[i]== personCopy[i]){
                 System.out.println("Equal References "+ persons[i]);
