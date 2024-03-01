@@ -1,5 +1,7 @@
 package dev.zico;
 
+import java.util.Arrays;
+
 public class Person {
 
     private String name;
@@ -35,6 +37,7 @@ public class Person {
         String kidstring = "n/a";
         if(kids !=null){
             String[] names = new String[kids.length];
+            Arrays.setAll(names,i->names[i]=kids[i]==null? "":kids[i].name);
         }
         return name+", dob =  "+ dob+ ", kids = "+kidstring;
     }
