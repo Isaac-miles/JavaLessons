@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/CollectionOverview/CollectionOverview.iml" filepath="$PROJECT_DIR$/CollectionOverview/CollectionOverview.iml" />
       <module fileurl="file://$PROJECT_DIR$/FinalExplored/FinalExplored.iml" filepath="$PROJECT_DIR$/FinalExplored/FinalExplored.iml" />
       <module fileurl="file://$PROJECT_DIR$/Generics/Generics.iml" filepath="$PROJECT_DIR$/Generics/Generics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImmutableClasses/ImmutableClasses.iml" filepath="$PROJECT_DIR$/ImmutableClasses/ImmutableClasses.iml" />
       <module fileurl="file://$PROJECT_DIR$/Interfaces/Interfaces.iml" filepath="$PROJECT_DIR$/Interfaces/Interfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaLessons.iml" filepath="$PROJECT_DIR$/.idea/JavaLessons.iml" />
       <module fileurl="file://$PROJECT_DIR$/LambdaEpression/LambdaEpression.iml" filepath="$PROJECT_DIR$/LambdaEpression/LambdaEpression.iml" />
