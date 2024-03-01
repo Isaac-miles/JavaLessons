@@ -35,6 +35,9 @@ public class Main {
 
         StringBuilder tracker = new StringBuilder("Step 1 is abc");
         Logger.logToConsole(tracker);
+        tracker.append(", Step 2 is xyz.");
+        Logger.logToConsole(tracker);
+        System.out.println("After logging, tracker = "+ tracker);
     }
     private static void doXYZ(String x, int y, final StringBuilder z){
         final String c = x + y;
