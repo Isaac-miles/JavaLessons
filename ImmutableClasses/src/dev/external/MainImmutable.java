@@ -12,7 +12,6 @@ public class MainImmutable {
         PersonImmutable john = new PersonImmutable("John","05/05/1900",johnsKids);
         System.out.println(john);
 
-
         PersonImmutable[] kids = john.getKids();
         kids[0] = jim;
         kids[1] = new PersonImmutable("Ann","03/12/2015");
