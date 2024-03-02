@@ -12,5 +12,8 @@ public class Bank {
         this.routingNumber = routingNumber;
         customers = new HashMap<>();
     }
+    public BankCustomer getCustomer(String id){
+        return customers.get(id);
+    }
 
 }
