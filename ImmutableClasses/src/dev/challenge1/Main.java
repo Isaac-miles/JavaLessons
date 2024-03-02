@@ -1,5 +1,6 @@
 package dev.challenge1;
 
+import dev.bank.Bank;
 import dev.bank.BankAccount;
 import dev.bank.BankCustomer;
 
@@ -11,8 +12,11 @@ public class Main {
 //        System.out.println(account);
 //        BankCustomer joe = new BankCustomer("Joe",500.0,1000.0);
 //        System.out.println(joe);
+        Bank fidelityBank = new Bank(65606002);
+        fidelityBank.addCustomer("Joe",500.0,2000.0);
 
-         BankCustomer joe = null;
+         BankCustomer joe = fidelityBank.getCustomer("000000010000000");
+        System.out.println(joe);
         List<BankAccount> accounts = joe.getAccounts();
         accounts.clear();
         System.out.println(joe);
