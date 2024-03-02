@@ -25,6 +25,10 @@ public class BankAccount {
         return balance;
     }
 
+    public Map<Long, Transaction> getTransactions() {
+        return Map.copyOf(transactions);
+    }
+
     @Override
     public String toString() {
         return "%s $%.2f".formatted(accountType,balance);
