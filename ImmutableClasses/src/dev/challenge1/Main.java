@@ -26,5 +26,17 @@ public class Main {
         var transactions = checking.getTransactions();
         transactions.forEach((k,v)-> System.out.println(k+": "+v));
 
+        System.out.println("-".repeat(30));
+        for(var tx:transactions.values()){
+            tx.setAmount(2);
+            tx.setCustomerId(2);
+        }
+        transactions.forEach((k,v)-> System.out.println(k+": "+v));
+        System.out.println("-".repeat(30));
+        joe.getAccount(BankAccount.AccountType.CHECKING).getTransactions()
+                .forEach((k,v)-> System.out.println(k+": "+v));
+        //you shouldn't be able to modify the returned transactions
+//        transactions.put(3L,new Transaction(1,1,Integer.parseInt(joe.getCustomerId()),100));
+
     }
 }
