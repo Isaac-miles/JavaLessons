@@ -30,9 +30,7 @@ public class Main {
         }
 
         var jillsKids = personsCopy[4].kids();
-        System.out.println(jillsKids);
         jillsKids[1] = jane;
-        System.out.println(Arrays.toString(jillsKids));
         for(int i =0;i<5;i++){
             if(persons[i]== personsCopy[i]){
                 System.out.println("Equal References "+ persons[i]);
