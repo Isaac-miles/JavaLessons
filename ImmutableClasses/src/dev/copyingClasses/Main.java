@@ -22,13 +22,17 @@ public class Main {
 
         Person[] persons = {joe,jim,jack,jane,jill};
 //        Person[] personCopy = Arrays.copyOf(persons,persons.length); //shallow copy
-        Person[] personCopy = new Person[5];
+        Person[] personsCopy = new Person[5];
+        for(int i =0;i<5; i++){
 
-        var jillsKids = personCopy[4].kids();
+        }
+
+        var jillsKids = personsCopy[4].kids();
+        System.out.println(jillsKids);
         jillsKids[1] = jane;
         System.out.println(Arrays.toString(jillsKids));
         for(int i =0;i<5;i++){
-            if(persons[i]== personCopy[i]){
+            if(persons[i]== personsCopy[i]){
                 System.out.println("Equal References "+ persons[i]);
             }
         }
