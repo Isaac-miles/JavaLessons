@@ -1,10 +1,16 @@
 package dev.bank;
 
+import dev.dto.Transaction;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class BankAccount {
     public enum AccountType{CHECKING,SAVING}
 
     private final AccountType accountType;
-    private final double balance;
+    private double balance;
+    private final Map<Long, Transaction> transactions = new LinkedHashMap<>();
 
      BankAccount(AccountType accountType, double balance) {
         this.accountType = accountType;
