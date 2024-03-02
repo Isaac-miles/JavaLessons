@@ -29,6 +29,7 @@ public class Bank {
                 System.out.println("Insufficient funds");
             }else {
                 account.commitTransaction(routingNumber,lastTransactionId,id,amount);
+                return true;
             }
         }else {
             System.out.println("Invalid customer id");
