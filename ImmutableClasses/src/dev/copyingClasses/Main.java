@@ -28,9 +28,7 @@ public class Main {
 //        Person[] personCopy = Arrays.copyOf(persons,persons.length); //shallow copy
         Person[] personsCopy = new Person[5];
         for(int i =0;i<5; i++){
-            Person current = persons[i];
-            var kids = current.kids() == null ? null :Arrays.copyOf(current.kids(),current.kids().length);
-            personsCopy[i] = new Person(current.name(),current.dob(),kids);
+            personsCopy[i] = new Person(persons[i]);
         }
 
         var jillsKids = personsCopy[4].kids();
