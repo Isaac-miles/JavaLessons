@@ -18,10 +18,13 @@ public class Main {
         if(fidelityBank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,50)){
             System.out.println(joe);
         };
-        if(fidelityBank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,-650)){
+        if(fidelityBank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,-550)){
             System.out.println(joe);
         };
 
+        BankAccount checking  = joe.getAccount(BankAccount.AccountType.CHECKING);
+        var transactions = checking.getTransactions();
+        transactions.forEach((k,v)-> System.out.println(k+": "+v));
 
     }
 }
