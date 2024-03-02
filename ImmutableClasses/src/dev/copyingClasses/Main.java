@@ -38,5 +38,7 @@ public class Main {
             }
         }
         System.out.println(persons[4]);
+        System.out.println(personsCopy[4]);
+
     }
 }
