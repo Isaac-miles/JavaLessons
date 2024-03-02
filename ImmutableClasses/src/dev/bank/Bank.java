@@ -25,6 +25,11 @@ public class Bank {
         BankCustomer customer = customers.get(id);
         if(customer != null){
             BankAccount account = customer.getAccount(accountType);
+            if((account.getBalance() + amount) < 0){
+                System.out.println("Insufficient funds");
+            }else {
+                account.commitTransaction(routingNumber,lastTransactionId,id,amount);
+            }
         }else {
             System.out.println("Invalid customer id");
         }
