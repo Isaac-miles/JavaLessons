@@ -23,7 +23,11 @@ public class Bank {
 
     public boolean doTransaction(String id,BankAccount.AccountType accountType,double amount){
         BankCustomer customer = customers.get(id);
-
+        if(customer != null){
+            BankAccount account = customer.getAccount(accountType);
+        }else {
+            System.out.println("Invalid customer id");
+        }
         return false;
     }
 }
