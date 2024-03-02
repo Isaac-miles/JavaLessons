@@ -18,6 +18,9 @@ public class Main {
         if(fidelityBank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,50)){
             System.out.println(joe);
         };
+        if(fidelityBank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,-650)){
+            System.out.println(joe);
+        };
 
 
     }
