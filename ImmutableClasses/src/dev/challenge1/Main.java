@@ -1,6 +1,7 @@
 package dev.challenge1;
 
 import dev.bank.Bank;
+import dev.bank.BankAccount;
 import dev.bank.BankCustomer;
 
 public class Main {
@@ -14,6 +15,9 @@ public class Main {
 
          BankCustomer joe = fidelityBank.getCustomer("000000010000000");
         System.out.println(joe);
+        if(fidelityBank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,50)){
+            System.out.println(joe);
+        };
 
 
     }
