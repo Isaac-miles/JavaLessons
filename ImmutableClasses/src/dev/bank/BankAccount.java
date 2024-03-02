@@ -33,4 +33,7 @@ public class BankAccount {
     public String toString() {
         return "%s $%.2f".formatted(accountType,balance);
     }
+    void commitTransaction(int routingNumber,long transactionId,String customerId,double amount){
+
+    }
 }
