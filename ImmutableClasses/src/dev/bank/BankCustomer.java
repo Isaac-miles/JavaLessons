@@ -29,7 +29,14 @@ public class BankCustomer {
     public List<BankAccount> getAccounts() {
         return List.copyOf(accounts);
     }
-
+    public BankAccount getAccount(BankAccount.AccountType type){
+        for(var account : accounts){
+            if(account.getAccountType()==type){
+                return account;
+            }
+        }
+        return null;
+    }
     @Override
     public String toString() {
         String[] accountStrings = new String[accounts.size()];
