@@ -34,6 +34,7 @@ public class BankAccount {
         return "%s $%.2f".formatted(accountType,balance);
     }
     void commitTransaction(int routingNumber,long transactionId,String customerId,double amount){
-
+        balance += amount;
+        transactions.put(transactionId,new Transaction(routingNumber,transactionId,Integer.parseInt(customerId),amount));
     }
 }
