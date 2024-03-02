@@ -25,11 +25,14 @@ public class Main {
         Person jill = new Person("Jill","01/05/1965",new Person[]{joe,jim});
 
         Person[] persons = {joe,jim,jack,jane,jill};
+        Person[] personsCopy = persons.clone();
 //        Person[] personCopy = Arrays.copyOf(persons,persons.length); //shallow copy
-        Person[] personsCopy = new Person[5];
-        for(int i =0;i<5; i++){
-            personsCopy[i] = new Person(persons[i]);
-        }
+        //Below method is deep copy
+//        Person[] personsCopy = new Person[5];
+//        for(int i =0;i<5; i++){
+//            personsCopy[i] = new Person(persons[i]);
+//        }
+//        Arrays.setAll(personsCopy,i->new Person(personsCopy[i]));
 
         var jillsKids = personsCopy[4].kids();
         jillsKids[1] = jane;
