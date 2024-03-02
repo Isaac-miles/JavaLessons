@@ -27,11 +27,12 @@ public class Main {
         transactions.forEach((k,v)-> System.out.println(k+": "+v));
 
         System.out.println("-".repeat(30));
-        for(var tx:transactions.values()){
-            tx.setAmount(2);
-            tx.setCustomerId(2);
-        }
-        transactions.forEach((k,v)-> System.out.println(k+": "+v));
+//        for(var tx:transactions.values()){
+//            tx.setAmount(2);
+//            tx.setCustomerId(2);
+//        }
+//        transactions.forEach((k,v)-> System.out.println(k+": "+v));
+        joe.getAccount(BankAccount.AccountType.CHECKING).getTransactions().clear();
         System.out.println("-".repeat(30));
         joe.getAccount(BankAccount.AccountType.CHECKING).getTransactions()
                 .forEach((k,v)-> System.out.println(k+": "+v));
