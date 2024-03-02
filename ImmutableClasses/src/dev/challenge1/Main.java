@@ -1,10 +1,7 @@
 package dev.challenge1;
 
 import dev.bank.Bank;
-import dev.bank.BankAccount;
 import dev.bank.BankCustomer;
-
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,9 +14,7 @@ public class Main {
 
          BankCustomer joe = fidelityBank.getCustomer("000000010000000");
         System.out.println(joe);
-        List<BankAccount> accounts = joe.getAccounts();
-        accounts.clear();
-        System.out.println(joe);
+
 
     }
 }
