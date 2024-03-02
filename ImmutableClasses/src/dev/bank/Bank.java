@@ -16,4 +16,14 @@ public class Bank {
         return customers.get(id);
     }
 
+    public void addCustomer (String name, double checkingInitialDeposit,double savingsInitialDeposit){
+        BankCustomer customer = new BankCustomer(name,checkingInitialDeposit,savingsInitialDeposit);
+        customers.put(customer.getCustomerId(),customer);
+    }
+
+    public boolean doTransaction(String id,BankAccount.AccountType accountType,double amount){
+        BankCustomer customer = customers.get(id);
+
+        return false;
+    }
 }
