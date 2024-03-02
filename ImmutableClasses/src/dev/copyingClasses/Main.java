@@ -37,5 +37,6 @@ public class Main {
                 System.out.println("Equal References "+ persons[i]);
             }
         }
+        System.out.println(persons[4]);
     }
 }
