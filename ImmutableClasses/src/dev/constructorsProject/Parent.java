@@ -8,7 +8,21 @@ public class Parent {
     {
         name = "John Doe";
         dob = "01/01/1900";
+        System.out.println("In parent Initializer");
+
     }
+
+    public Parent() {
+        System.out.println("the parent no args constructor");
+
+    }
+
+    public Parent(String name, String dob) {
+//        this.name = name;
+//        this.dob = dob;
+        System.out.println("In parent Constructor");
+    }
+
     public String getName() {
         return name;
     }
