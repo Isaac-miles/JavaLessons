@@ -19,4 +19,9 @@ public class Parent {
     public void setDob(String dob) {
         this.dob = dob;
     }
+
+    @Override
+    public String toString() {
+        return "name = " + name +'\'' +", dob = "+ dob +'\'' ;
+    }
 }
