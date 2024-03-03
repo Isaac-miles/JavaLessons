@@ -34,6 +34,6 @@ public class Parent {
 
     @Override
     public String toString() {
-        return "name = " + name +'\'' +", dob = "+ dob +'\'' ;
+        return getClass().getSimpleName()+": Name = " + name +'\'' +", dob = "+ dob +'\'' ;
     }
 }
