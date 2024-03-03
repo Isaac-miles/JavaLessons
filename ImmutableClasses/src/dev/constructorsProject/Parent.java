@@ -3,6 +3,7 @@ package dev.constructorsProject;
 public class Parent {
     private final String name;
     private final String dob;
+    protected final int siblings;
 
     //this is an instance initializer
     {
@@ -16,9 +17,10 @@ public class Parent {
 //
 //    }
 
-    public Parent(String name, String dob) {
+    public Parent(String name, String dob,int siblings) {
         this.name = name;
         this.dob = dob;
+        this.siblings = siblings;
         System.out.println("In parent Constructor");
     }
 
