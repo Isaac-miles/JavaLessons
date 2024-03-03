@@ -6,20 +6,19 @@ public class Parent {
 
     //this is an instance initializer
     {
-        name = "John Doe";
-        dob = "01/01/1900";
+//        name = "John Doe";
+//        dob = "01/01/1900";
         System.out.println("In parent Initializer");
-
     }
 
-    public Parent() {
-        System.out.println("the parent no args constructor");
-
-    }
+//    public Parent() {
+//        System.out.println("the parent no args constructor");
+//
+//    }
 
     public Parent(String name, String dob) {
-//        this.name = name;
-//        this.dob = dob;
+        this.name = name;
+        this.dob = dob;
         System.out.println("In parent Constructor");
     }
 
