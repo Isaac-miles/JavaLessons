@@ -6,6 +6,9 @@ public enum Generation {
     GEN_X,
     BABY_BOOMER,
     SILENT_GENERATION,
-    GREATEST_GENERATION
+    GREATEST_GENERATION;
 
+    Generation() {
+        System.out.println(this);
+    }
 }
