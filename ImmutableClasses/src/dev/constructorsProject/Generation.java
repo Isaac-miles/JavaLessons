@@ -1,7 +1,13 @@
 package dev.constructorsProject;
 
+import java.time.LocalDate;
+
 public enum Generation {
-    GEN_Z(2001,2025),
+    GEN_Z{
+        {
+            System.out.println("Special for the Gen z");
+        }
+    },
     MILLENNIAL(1981,200),
     GEN_X(1965,1980),
     BABY_BOOMER(1946,1964),
@@ -10,6 +16,10 @@ public enum Generation {
 
     private final int startYear;
     private final  int endYear;
+
+    Generation() {
+        this(2001, LocalDate.now().getYear());
+    }
 
     Generation(int startYear, int endYear) {
         this.startYear = startYear;
