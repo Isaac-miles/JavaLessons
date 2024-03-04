@@ -13,6 +13,8 @@ public class Main {
 
         Person joeyZaza = new Person(joe);
         System.out.println(joe);
+
+        Generation g = Generation.BABY_BOOMER;
     }
 
 
