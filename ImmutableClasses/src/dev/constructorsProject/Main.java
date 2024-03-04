@@ -8,6 +8,6 @@ public class Main {
         Child child = new Child();
         System.out.println(parent);
         System.out.println(child);
-
+        Person joe = new Person("Joe","01-10-1950");
     }
 }
