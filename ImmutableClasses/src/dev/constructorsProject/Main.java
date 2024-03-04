@@ -10,5 +10,9 @@ public class Main {
         System.out.println(child);
         Person joe = new Person("Joe","01-10-1950");
         System.out.println(joe);
+
+        Person joeyZaza = new Person(joe);
+        System.out.println(joe);
     }
+
 }
