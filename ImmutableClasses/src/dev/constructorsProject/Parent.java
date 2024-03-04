@@ -1,6 +1,9 @@
 package dev.constructorsProject;
 
 public class Parent {
+    static {
+        System.out.println("Parent Static Initializers and parent class is being constructed");
+    }
     private final String name;
     private final String dob;
     protected final int siblings;
