@@ -12,7 +12,7 @@ public class Main {
         System.out.println(joe);
 
         Person joeyZaza = new Person(joe);
-//        System.out.println(joe);
+        System.out.println(joe);
 
 //        Generation g = Generation.BABY_BOOMER;
     }
