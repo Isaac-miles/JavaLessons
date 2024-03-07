@@ -11,7 +11,7 @@ public enum Generation {
     MILLENNIAL(1981,200),
     GEN_X(1965,1980),
     BABY_BOOMER(1946,1964),
-//    SILENT_GENERATION(1927,1945),
+    SILENT_GENERATION(1927,1945),
     GREATEST_GENERATION(1901,1926);
 
     private final int startYear;
