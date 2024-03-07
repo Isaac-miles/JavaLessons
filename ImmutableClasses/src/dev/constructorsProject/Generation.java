@@ -17,9 +17,9 @@ public enum Generation {
     private final int startYear;
     private final  int endYear;
 
-    Generation() {
-        this(2001, LocalDate.now().getYear());
-    }
+//    Generation() {
+//        this(2001, LocalDate.now().getYear());
+//    }
 
     Generation(int startYear, int endYear) {
         this.startYear = startYear;
