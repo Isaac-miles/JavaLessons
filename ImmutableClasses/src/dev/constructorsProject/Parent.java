@@ -24,7 +24,7 @@ public class Parent {
         this.name = name;
         this.dob = dob;
         this.siblings = siblings;
-//        System.out.println("In parent Constructor");
+        System.out.println("In parent Constructor");
     }
 
     public String getName() {
