@@ -40,4 +40,7 @@ public abstract class Game<T extends Player> {
     protected final T getPlayer(int playerIndex){
         return players.get(playerIndex);
     }
+    public boolean executeGameAction(int player, GameAction action){
+        return action.action().test(player);
+    }
 }
