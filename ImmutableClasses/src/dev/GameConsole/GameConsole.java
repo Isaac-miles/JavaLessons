@@ -15,4 +15,8 @@ public class GameConsole<T extends Game<? extends Player>> {
         System.out.printf("Welcome to %s, %s!%n".formatted(game.getGameName(),name));
         return game.addPlayer(name);
     }
+    public void playGame(int playerIndex){
+        boolean done = false;
+
+    }
 }
