@@ -37,4 +37,7 @@ public abstract class Game<T extends Player> {
         }
         return -1;
     }
+    protected final T getPlayer(int playerIndex){
+        return players.get(playerIndex);
+    }
 }
