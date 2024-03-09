@@ -8,4 +8,11 @@ public class GameConsole<T extends Game<? extends Player>> {
     public GameConsole(T game){
         this.game = game;
     }
+    public int addPlayer(){
+        System.out.println("Enter your playing na,e: ");
+        String name  = scanner.nextLine();
+
+        System.out.printf("Welcome to %s, %s!%n".formatted(game.getGameName(),name));
+        return game.addPlayer(name);
+    }
 }
