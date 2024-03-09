@@ -41,6 +41,7 @@ public abstract class Game<T extends Player> {
         return players.get(playerIndex);
     }
     public boolean executeGameAction(int player, GameAction action){
+        //return the predicate action with text, and pass an int player because of auto unboxing
         return action.action().test(player);
     }
 }
