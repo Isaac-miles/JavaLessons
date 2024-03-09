@@ -17,6 +17,8 @@ public class GameConsole<T extends Game<? extends Player>> {
     }
     public void playGame(int playerIndex){
         boolean done = false;
-
+        while (!done){
+            var gameActions = game.getGameActions(playerIndex);
+        }
     }
 }
