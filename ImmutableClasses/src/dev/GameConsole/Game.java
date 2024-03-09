@@ -20,4 +20,6 @@ public abstract class Game<T extends Player> {
     public Map<Character, GameAction> getStandardActions() {
         return standardActions;
     }
+    public abstract T createNewPlayer(String name);
+
 }
