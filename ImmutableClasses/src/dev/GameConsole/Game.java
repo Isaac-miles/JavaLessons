@@ -13,8 +13,11 @@ public abstract class Game<T extends Player> {
         this.gameName = gameName;
     }
 
-    public Game(String gameName, Map<Character, GameAction> standardActions) {
-        this.gameName = gameName;
-        this.standardActions = standardActions;
+    public String getGameName() {
+        return gameName;
+    }
+
+    public Map<Character, GameAction> getStandardActions() {
+        return standardActions;
     }
 }
