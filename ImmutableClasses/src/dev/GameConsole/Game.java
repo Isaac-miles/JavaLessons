@@ -20,10 +20,21 @@ public abstract class Game<T extends Player> {
 
     public Map<Character, GameAction> getStandardActions() {
         if(standardActions==null){
-            standardActions = new LinkedHashMap<>(Map.of());
+            standardActions = new LinkedHashMap<>(Map.of(
+                    'I',new GameAction('I',"Print Player Info",i->printPlayer(i)),
+                'Q', new GameAction('Q',"Quit Game",i->this::quitGame);
+            ));
         }
         return standardActions;
     }
     public abstract T createNewPlayer(String name);
     public abstract Map<Character,GameAction> getGameActions(int playerIndex);
+    final int addPlayer(String name){
+        T player = createNewPlayer(name);
+        if(player !=null){
+            players.add(player);
+            return players.size()-1;
+        }
+        return -1;
+    }
 }
