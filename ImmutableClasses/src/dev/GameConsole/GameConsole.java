@@ -28,7 +28,13 @@ public class GameConsole<T extends Game<? extends Player>> {
 
             char nextMove = scanner.nextLine().toUpperCase().charAt(0);
             GameAction gameAction = gameActions.get(nextMove);
-
+            if(gameAction !=null){
+                System.out.println("-".repeat(30));
+                done = game.executeGameAction(playerIndex,gameAction);
+                if(!done){
+                    System.out.println("-".repeat(30));
+                }
+            }
         }
     }
 }
