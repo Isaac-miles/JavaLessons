@@ -51,7 +51,7 @@ public abstract class Game<T extends Player> {
     }
     public boolean quitGame(int playerIndex){
         Player player = players.get(playerIndex);
-//        System.out.println("Sorry to see you go, "+player.name());
+        System.out.println("Sorry to see you go, "+player.name());
         return true;
     }
 }
