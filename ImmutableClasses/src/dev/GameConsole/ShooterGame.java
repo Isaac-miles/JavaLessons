@@ -27,6 +27,7 @@ public class ShooterGame extends Game<Shooter>{
         return getPlayer(playerIndex).findPrize();
     }
     public boolean useWeapon(int playerIndex){
+        System.out.println("the player index recieved "+ playerIndex);
         return getPlayer(playerIndex).useWeapon("pistol");
     }
 }
