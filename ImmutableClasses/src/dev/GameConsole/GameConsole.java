@@ -19,6 +19,12 @@ public class GameConsole<T extends Game<? extends Player>> {
         boolean done = false;
         while (!done){
             var gameActions = game.getGameActions(playerIndex);
+            System.out.println("Select from one of the following Actions: ");
+            for(char c : gameActions.keySet()){
+                String prompt = gameActions.get(c).prompt();
+                System.out.println("\t" + prompt + " ("+c+")");
+
+            }
         }
     }
 }
