@@ -22,7 +22,7 @@ public abstract class Game<T extends Player> {
         if(standardActions==null){
             standardActions = new LinkedHashMap<>(Map.of(
                     'I',new GameAction('I',"Print Player Info", this::printPlayer),
-                'Q', new GameAction('Q',"Quit Game",this::printPlayer)
+                'Q', new GameAction('Q',"Quit Game",this::quitGame)
             ));
         };
         return standardActions;
