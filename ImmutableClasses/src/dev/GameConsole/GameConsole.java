@@ -23,8 +23,9 @@ public class GameConsole<T extends Game<? extends Player>> {
             for(char c : gameActions.keySet()){
                 String prompt = gameActions.get(c).prompt();
                 System.out.println("\t" + prompt + " ("+c+")");
-
             }
+            System.out.println("Enter Next Action: ");
+
         }
     }
 }
