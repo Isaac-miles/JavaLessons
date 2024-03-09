@@ -26,6 +26,8 @@ public class GameConsole<T extends Game<? extends Player>> {
             }
             System.out.println("Enter Next Action: ");
 
+            char nextMove = scanner.nextLine().toUpperCase().charAt(0);
+
         }
     }
 }
