@@ -21,10 +21,10 @@ public abstract class Game<T extends Player> {
     public Map<Character, GameAction> getStandardActions() {
         if(standardActions==null){
             standardActions = new LinkedHashMap<>(Map.of(
-                    'I',new GameAction('I',"Print Player Info",i->printPlayer(i)),
-                'Q', new GameAction('Q',"Quit Game",i->this::quitGame);
+                    'I',new GameAction('I',"Print Player Info", this::printPlayer),
+                'Q', new GameAction('Q',"Quit Game",this::printPlayer)
             ));
-        }
+        };
         return standardActions;
     }
     public abstract T createNewPlayer(String name);
@@ -48,5 +48,10 @@ public abstract class Game<T extends Player> {
         Player player = players.get(playerIndex);
         System.out.println(player);
         return false;
+    }
+    public boolean quitGame(int playerIndex){
+        Player player = players.get(playerIndex);
+        System.out.println("Sorry to see you go, "+player.name());
+        return true;
     }
 }
