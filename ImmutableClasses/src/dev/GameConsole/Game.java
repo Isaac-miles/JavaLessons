@@ -21,5 +21,5 @@ public abstract class Game<T extends Player> {
         return standardActions;
     }
     public abstract T createNewPlayer(String name);
-
+    public abstract Map<Character,GameAction> getGameActions(int playerIndex);
 }
