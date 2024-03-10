@@ -9,7 +9,7 @@ public class GameConsole<T extends Game<? extends Player>> {
         this.game = game;
     }
     public int addPlayer(){
-        System.out.println("Enter your playing name: ");
+//        System.out.println("Enter your playing name: ");
         String name  = scanner.nextLine();
 
         System.out.printf("Welcome to %s, %s!%n".formatted(game.getGameName(),name));
