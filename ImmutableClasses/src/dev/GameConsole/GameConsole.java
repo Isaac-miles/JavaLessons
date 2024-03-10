@@ -22,7 +22,7 @@ public class GameConsole<T extends Game<? extends Player>> {
             System.out.println("Select from one of the following Actions: ");
             for(char c : gameActions.keySet()){
                 String prompt = gameActions.get(c).prompt();
-                System.out.println("\t" + prompt + " ("+c+")");
+//                System.out.println("\t" + prompt + " ("+c+")");
             }
             System.out.println("Enter Next Action: ");
 
