@@ -6,7 +6,7 @@ public record Shooter(String name)implements Player {
         return false;
     }
     boolean useWeapon(String weapon){
-//        System.out.println("You Shot your "+weapon);
+        System.out.println("You Shot your "+weapon);
         return false;
     }
 }
