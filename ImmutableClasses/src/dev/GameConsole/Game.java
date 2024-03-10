@@ -21,7 +21,7 @@ public abstract class Game<T extends Player> {
     public Map<Character, GameAction> getStandardActions() {
         if(standardActions==null){
             standardActions = new LinkedHashMap<>(Map.of(
-                    'I',new GameAction('I',"Print Player Info", this::printPlayer),
+//                    'I',new GameAction('I',"Print Player Info", this::printPlayer),
                 'Q', new GameAction('Q',"Quit Game",this::quitGame)
             ));
         };
