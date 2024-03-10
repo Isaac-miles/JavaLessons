@@ -24,7 +24,7 @@ public class GameConsole<T extends Game<? extends Player>> {
                 String prompt = gameActions.get(c).prompt();
                 System.out.println("\t" + prompt + " ("+c+")");
             }
-//            System.out.println("Enter Next Action: ");
+            System.out.println("Enter Next Action: ");
 
             char nextMove = scanner.nextLine().toUpperCase().charAt(0);
             GameAction gameAction = gameActions.get(nextMove);
