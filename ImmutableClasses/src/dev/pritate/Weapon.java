@@ -22,4 +22,13 @@ public enum Weapon {
     public int getHitPoints() {
         return hitPoints;
     }
+
+    public static  Weapon getWeaponByChar(char firstInitial){
+        for(Weapon w: values()){
+            if(w.name().charAt(0)== firstInitial){
+                return w;
+            }
+        }
+        return values()[0];
+    }
 }
