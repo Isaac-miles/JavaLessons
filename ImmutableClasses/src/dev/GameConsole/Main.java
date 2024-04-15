@@ -5,6 +5,5 @@ public class Main {
         var console = new GameConsole<>(new ShooterGame("The Shootout Game"));
         int playerIndex = console.addPlayer();
         console.playGame(playerIndex);
-        GameConsole con = new GameConsole<>(new ShooterGame("the wounded game"));
     }
 }
