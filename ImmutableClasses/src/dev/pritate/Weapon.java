@@ -1,5 +1,9 @@
 package dev.pritate;
 
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
+
 public enum Weapon {
 
     KNIFE(0,10),
@@ -30,5 +34,10 @@ public enum Weapon {
             }
         }
         return values()[0];
+    }
+    public static List<Weapon> getWeaponsByLevel(int levelOfPlay){
+        List<Weapon> weapons = new ArrayList<>(EnumSet.allOf(Weapon.class));
+        weapons.removeIf(weapon -> (weapon.minLevel > levelOfPlay));
+        return weapons;
     }
 }
