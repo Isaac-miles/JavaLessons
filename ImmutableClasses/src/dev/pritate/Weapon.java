@@ -14,4 +14,12 @@ public enum Weapon {
         this.minLevel = minLevel;
         this.hitPoints = hitPoints;
     }
+
+    public int getMinLevel() {
+        return minLevel;
+    }
+
+    public int getHitPoints() {
+        return hitPoints;
+    }
 }
