@@ -30,7 +30,7 @@ public enum Weapon {
     public static  Weapon getWeaponByChar(char firstInitial){
         for(Weapon w: values()){
             if(w.name().charAt(0)== firstInitial){
-//                return w;
+                return w;
             }
         }
         return values()[0];
