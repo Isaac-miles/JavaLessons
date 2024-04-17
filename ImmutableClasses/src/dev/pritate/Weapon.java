@@ -20,7 +20,7 @@ public enum Weapon {
     }
 
     public int getMinLevel() {
-        return minLevel;
+//        return minLevel;
     }
 
     public int getHitPoints() {
