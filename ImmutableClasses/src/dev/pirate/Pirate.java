@@ -18,7 +18,12 @@ public class Pirate implements Player {
     }
     //---------------instance initializer
     {
-        gameData = new HashMap<>(Map.of());
+        gameData = new HashMap<>(Map.of(
+                "health",100,
+                "score",0,
+                "level",0,
+                "townIndex",0
+        ));
     }
 
 
