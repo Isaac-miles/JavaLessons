@@ -2,10 +2,7 @@ package dev.pirate;
 
 import dev.GameConsole.Player;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Pirate implements Player {
     private final String name;
@@ -71,6 +68,9 @@ public class Pirate implements Player {
 
     @Override
     public String toString() {
-        return "Pirate{}";
+        var current = ((LinkedList<String>) townsVisited).getLast();
+        String[] simpleNames = new String[townsVisited.size()];
+        Arrays.setAll(simpleNames, i->townsVisited.get(i).split(",")[0]);
+        return "---> "+ current+ " "+ gameData + "\n\ttownsVisited="+Arrays.toString(simpleNames);
     }
 }
