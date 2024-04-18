@@ -11,5 +11,7 @@ public class Main {
         Weapon weapon = Weapon.getWeaponByChar('P');
         System.out.println("Weapon = "+ weapon + ", hitPoints=" + weapon.getHitPoints()+ ", minLevel="+weapon.getMinLevel());
 
+        var list  = Weapon.getWeaponsByLevel(1);
+        list.forEach(System.out::println);
     }
 }
