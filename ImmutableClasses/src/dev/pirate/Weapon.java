@@ -1,4 +1,4 @@
-package dev.pritate;
+package dev.pirate;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
