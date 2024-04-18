@@ -38,6 +38,10 @@ public class Pirate implements Player {
         return gameData.get(name);
     }
 
+    private void setValue(String name, int value){
+        gameData.put(name, value);
+    }
+
     @Override
     public String name() {
         return name;
