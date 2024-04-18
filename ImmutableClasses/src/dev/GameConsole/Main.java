@@ -1,6 +1,6 @@
 package dev.GameConsole;
 
-import dev.pritate.Weapon;
+import dev.pirate.Weapon;
 
 public class Main {
     public static void main(String[] args) {
