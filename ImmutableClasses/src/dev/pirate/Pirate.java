@@ -41,6 +41,9 @@ public class Pirate implements Player {
     private void setValue(String name, int value){
         gameData.put(name, value);
     }
+    private void adjustValue(String name, int adj){
+        gameData.compute(name,(k,v)-> v  += adj);
+    }
 
     @Override
     public String name() {
