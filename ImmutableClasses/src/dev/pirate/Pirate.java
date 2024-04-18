@@ -34,6 +34,10 @@ public class Pirate implements Player {
         this.currentWeapon = currentWeapon;
     }
 
+    int value(String name){
+        return gameData.get(name);
+    }
+
     @Override
     public String name() {
         return name;
