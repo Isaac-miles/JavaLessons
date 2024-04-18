@@ -50,6 +50,12 @@ public class Pirate implements Player {
         health = (health < 0) ? 0:((health > 100)? 100 : health);
         setValue("health", health);
     }
+    boolean useWeapon(){
+        System.out.println("Used the "+ currentWeapon);
+        return false;
+    }
+
+
     @Override
     public String name() {
         return name;
