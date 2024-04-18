@@ -45,7 +45,10 @@ public class Pirate implements Player {
         gameData.compute(name,(k,v)-> v  += adj);
     }
     private void adjusthealth(int adj){
-
+        int health = value("health");
+        health +=adj;
+        health = (health < 0) ? 0:((health > 100)? 100 : health);
+        setValue("health", health);
     }
     @Override
     public String name() {
