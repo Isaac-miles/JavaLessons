@@ -44,7 +44,9 @@ public class Pirate implements Player {
     private void adjustValue(String name, int adj){
         gameData.compute(name,(k,v)-> v  += adj);
     }
+    private void adjusthealth(int adj){
 
+    }
     @Override
     public String name() {
         return name;
