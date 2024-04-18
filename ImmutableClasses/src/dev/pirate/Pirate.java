@@ -68,4 +68,9 @@ public class Pirate implements Player {
     public String name() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return "Pirate{}";
+    }
 }
