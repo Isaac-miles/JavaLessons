@@ -26,6 +26,13 @@ public class Pirate implements Player {
         ));
     }
 
+    public Weapon getCurrentWeapon() {
+        return currentWeapon;
+    }
+
+     void setCurrentWeapon(Weapon currentWeapon) {
+        this.currentWeapon = currentWeapon;
+    }
 
     @Override
     public String name() {
