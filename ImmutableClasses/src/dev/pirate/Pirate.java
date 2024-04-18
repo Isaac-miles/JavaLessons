@@ -24,6 +24,7 @@ public class Pirate implements Player {
                 "level",0,
                 "townIndex",0
         ));
+        visitTown();
     }
 
     public Weapon getCurrentWeapon() {
@@ -54,7 +55,14 @@ public class Pirate implements Player {
         System.out.println("Used the "+ currentWeapon);
         return false;
     }
-
+    boolean visitTown(){
+        String town = "My Town, somewhere";
+        if(town != null){
+            townsVisited.add(town);
+            return false;
+        }
+        return true;
+    }
 
     @Override
     public String name() {
