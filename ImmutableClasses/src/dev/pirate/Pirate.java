@@ -42,7 +42,7 @@ public class Pirate implements Player {
     private void adjustValue(String name, int adj){
         gameData.compute(name,(k,v)-> v  += adj);
     }
-    private void adjusthealth(int adj){
+    private void adjustHealth(int adj){
         int health = value("health");
         health +=adj;
         health = (health < 0) ? 0:((health > 100)? 100 : health);
