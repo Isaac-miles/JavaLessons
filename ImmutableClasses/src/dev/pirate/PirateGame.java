@@ -38,6 +38,11 @@ public class PirateGame extends Game<Pirate> {
         return null;
     }
     private static void loadData(){
-
+        //level 1 towns
+        levelMap.add(new ArrayList<>(List.of(
+                "Bridgetown, barbados",
+                "Fitts Village, Barbados",
+                "Holetown, Barbados"
+        )));
     }
 }
