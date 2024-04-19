@@ -21,6 +21,7 @@ public class Main {
 
         PirateGame.getTowns(0).forEach(System.out::println);
         System.out.println("-".repeat(30));
+        PirateGame.getTowns(1).forEach(System.out::println);
 
     }
 }
