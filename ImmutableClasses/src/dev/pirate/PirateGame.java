@@ -22,6 +22,8 @@ public class PirateGame extends Game<Pirate> {
         }
         System.out.println("Finished loading data");
     }
+
+
     public PirateGame(String gameName) {
         super(gameName);
     }
@@ -34,5 +36,8 @@ public class PirateGame extends Game<Pirate> {
     @Override
     public Map<Character, GameAction> getGameActions(int playerIndex) {
         return null;
+    }
+    private static void loadData(){
+
     }
 }
