@@ -38,7 +38,10 @@ public class PirateGame extends Game<Pirate> {
         List<Weapon> weapons = Weapon.getWeaponsByLevel(pirate.value("level"));
 
         Map <Character, GameAction> map = new LinkedHashMap<>();
-        for(Weapon weapon: weapons)
+        for(Weapon weapon: weapons){
+            char init = weapon.name().charAt(0);
+            map.put(init, new GameAction(init,"Use "+ weapon, this::useWeapon));
+        }
         return map;
     }
     private static void loadData(){
