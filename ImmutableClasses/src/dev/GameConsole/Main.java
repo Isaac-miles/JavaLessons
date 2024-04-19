@@ -1,6 +1,7 @@
 package dev.GameConsole;
 
 import dev.pirate.Pirate;
+import dev.pirate.PirateGame;
 import dev.pirate.Weapon;
 
 public class Main {
@@ -17,5 +18,9 @@ public class Main {
 
         Pirate tim = new Pirate("Tim");
         System.out.println(tim);
+
+        PirateGame.getTowns(0).forEach(System.out::println);
+        System.out.println("-".repeat(30));
+
     }
 }
