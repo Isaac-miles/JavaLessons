@@ -44,5 +44,12 @@ public class PirateGame extends Game<Pirate> {
                 "Fitts Village, Barbados",
                 "Holetown, Barbados"
         )));
+
+        //level 2 towns
+        levelMap.add(new ArrayList<>(List.of(
+                "Fort-de-France, Martinique",
+                "Saint-Anne , Martinique",
+                "Le Vauclin, Martinique"
+        )));
     }
 }
