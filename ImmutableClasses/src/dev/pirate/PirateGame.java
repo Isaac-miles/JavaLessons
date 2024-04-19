@@ -3,6 +3,7 @@ package dev.pirate;
 import dev.GameConsole.Game;
 import dev.GameConsole.GameAction;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,7 @@ public class PirateGame extends Game<Pirate> {
 
     //------------------------static initializer------
     static {
+        levelMap = new ArrayList<>();
 
     }
     public PirateGame(String gameName) {
