@@ -58,4 +58,8 @@ public class PirateGame extends Game<Pirate> {
         }
         return null;
     }
+
+    private boolean useWeapon(int playerIndex){
+        return getPlayer(playerIndex).useWeapon();
+    }
 }
