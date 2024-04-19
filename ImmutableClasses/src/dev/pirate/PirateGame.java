@@ -14,7 +14,12 @@ public class PirateGame extends Game<Pirate> {
     //------------------------static initializer------
     static {
         levelMap = new ArrayList<>();
+        System.out.println("loading data...");
+        loadData();
 
+        if(levelMap.size()==0){
+
+        }
     }
     public PirateGame(String gameName) {
         super(gameName);
