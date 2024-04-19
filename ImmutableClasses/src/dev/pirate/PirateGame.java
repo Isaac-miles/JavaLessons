@@ -6,9 +6,13 @@ import dev.GameConsole.GameAction;
 import java.util.Map;
 
 public class PirateGame extends Game<Pirate> {
+    public PirateGame(String gameName) {
+        super(gameName);
+    }
+
     @Override
     public Pirate createNewPlayer(String name) {
-        return null;
+        return new Pirate(name);
     }
 
     @Override
