@@ -42,6 +42,7 @@ public class PirateGame extends Game<Pirate> {
             char init = weapon.name().charAt(0);
             map.put(init, new GameAction(init,"Use "+ weapon, this::useWeapon));
         }
+        map.putAll(getStandardActions());
         return map;
     }
     private static void loadData(){
