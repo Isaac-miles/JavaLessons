@@ -3,9 +3,7 @@ package dev.pirate;
 import dev.GameConsole.Game;
 import dev.GameConsole.GameAction;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PirateGame extends Game<Pirate> {
 
@@ -35,7 +33,11 @@ public class PirateGame extends Game<Pirate> {
 
     @Override
     public Map<Character, GameAction> getGameActions(int playerIndex) {
-        return null;
+        Pirate pirate = getPlayer(playerIndex);
+        System.out.println(pirate);
+        Map <Character, GameAction> map = new LinkedHashMap<>();
+
+        return map;
     }
     private static void loadData(){
         //level 1 towns
@@ -65,6 +67,7 @@ public class PirateGame extends Game<Pirate> {
 
     @Override
     public boolean executeGameAction(int player, GameAction action) {
+        getPlayer(player).setCurrentWeapon(Weapon.getWeaponByChar(action.key()));
         return super.executeGameAction(player, action);
     }
 }
