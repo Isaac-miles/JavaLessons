@@ -53,7 +53,9 @@ public class Pirate implements Player {
         return false;
     }
     boolean visitTown(){
-        String town = "My Town, somewhere";
+        List<String> levelTowns = PirateGame.getTowns(value("level"));
+        if(levelTowns == null) return true;
+        String town = levelTowns.get(value("townIndex"));
         if(town != null){
             townsVisited.add(town);
             return false;
