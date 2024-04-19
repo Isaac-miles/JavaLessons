@@ -18,8 +18,9 @@ public class PirateGame extends Game<Pirate> {
         loadData();
 
         if(levelMap.size()==0){
-
+            throw new RuntimeException("Could not load data, try later");
         }
+        System.out.println("Finished loading data");
     }
     public PirateGame(String gameName) {
         super(gameName);
