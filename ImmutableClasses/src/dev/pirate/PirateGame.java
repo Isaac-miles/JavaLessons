@@ -52,4 +52,10 @@ public class PirateGame extends Game<Pirate> {
                 "Le Vauclin, Martinique"
         )));
     }
+    public static List<String> getTowns(int level){
+        if(level <= (levelMap.size() - 1)){
+            return levelMap.get(level);
+        }
+        return null;
+    }
 }
