@@ -35,8 +35,10 @@ public class PirateGame extends Game<Pirate> {
     public Map<Character, GameAction> getGameActions(int playerIndex) {
         Pirate pirate = getPlayer(playerIndex);
         System.out.println(pirate);
-        Map <Character, GameAction> map = new LinkedHashMap<>();
+        List<Weapon> weapons = Weapon.getWeaponsByLevel(pirate.value("level"));
 
+        Map <Character, GameAction> map = new LinkedHashMap<>();
+        for(Weapon weapon: weapons)
         return map;
     }
     private static void loadData(){
