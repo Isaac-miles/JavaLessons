@@ -2,10 +2,10 @@ package dev.GameConsole;
 
 import java.util.Scanner;
 
-public class GameConsole<T extends Game<? extends Player>> {
+public final class GameConsole<T extends Game<? extends Player>> {
     private final T game;
     private static final Scanner scanner = new Scanner(System.in);
-    protected GameConsole(T game){
+    public GameConsole(T game){
         this.game = game;
     }
     public int addPlayer(){
