@@ -83,6 +83,7 @@ public class Pirate implements Player {
             System.out.println("leveling up! Bonus: 500 points!");
             adjustValue("score",500);
             adjustValue("level",1);
+            setValue("townIndex",0);
         }
         return visitTown();
     }
