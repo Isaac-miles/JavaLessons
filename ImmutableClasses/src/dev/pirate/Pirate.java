@@ -84,6 +84,8 @@ public class Pirate implements Player {
             adjustValue("score",500);
             adjustValue("level",1);
             setValue("townIndex",0);
+        }else {
+
         }
         return visitTown();
     }
