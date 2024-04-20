@@ -82,6 +82,7 @@ public class Pirate implements Player {
         if(townIndex >=(towns.size()-1)){
             System.out.println("leveling up! Bonus: 500 points!");
             adjustValue("score",500);
+            adjustValue("level",1);
         }
         return visitTown();
     }
