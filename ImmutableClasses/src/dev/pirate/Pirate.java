@@ -85,7 +85,8 @@ public class Pirate implements Player {
             adjustValue("level",1);
             setValue("townIndex",0);
         }else {
-
+            System.out.println("Sailing to next town! Bonus: 50 points!");
+            adjustValue("score",50);
         }
         return visitTown();
     }
