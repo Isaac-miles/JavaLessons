@@ -75,4 +75,7 @@ public class Pirate implements Player {
         Arrays.setAll(simpleNames, i->townsVisited.get(i).split(",")[0]);
         return "---> "+ current+ " "+ gameData + "\n\ttownsVisited="+Arrays.toString(simpleNames);
     }
+    private boolean visitNextTown(){
+        int townIndex = value("townIndex");
+    }
 }
