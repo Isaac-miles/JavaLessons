@@ -80,7 +80,8 @@ public class Pirate implements Player {
         var towns = PirateGame.getTowns(value("level"));
         if(towns == null) return true;
         if(townIndex >=(towns.size()-1)){
-
+            System.out.println("leveling up! Bonus: 500 points!");
+            adjustValue("score",500);
         }
         return visitTown();
     }
