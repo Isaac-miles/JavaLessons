@@ -50,7 +50,7 @@ public class Pirate implements Player {
     }
     boolean useWeapon(){
         System.out.println("Used the "+ currentWeapon);
-        return false;
+        return visitNextTown();
     }
     boolean visitTown(){
         List<String> levelTowns = PirateGame.getTowns(value("level"));
