@@ -79,6 +79,9 @@ public class Pirate implements Player {
         int townIndex = value("townIndex");
         var towns = PirateGame.getTowns(value("level"));
         if(towns == null) return true;
+        if(townIndex >=(towns.size()-1)){
+
+        }
         return visitTown();
     }
 }
