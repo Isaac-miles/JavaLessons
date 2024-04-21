@@ -27,7 +27,7 @@ public final class ShooterGame extends SealedGame<Shooter>{
         return getPlayer(playerIndex).findPrize();
     }
     public boolean useWeapon(int playerIndex){
-        System.out.println("the player index recieved "+ playerIndex);
+        System.out.println("the player index received "+ playerIndex);
         return getPlayer(playerIndex).useWeapon("pistol");
     }
 }
