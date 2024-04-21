@@ -1,6 +1,6 @@
 package dev.zico;
 
-import dev.GameConsole.GameConsole;
+import dev.zico.GameConsole.GameConsole;
 import dev.pirate.PirateGame;//  class SpecialGameConsole<T extends Game<? extends Player>> extends GameConsole<Game<? extends Player>> {
 //
 //    public SpecialGameConsole(Game<? extends Player> game) {
