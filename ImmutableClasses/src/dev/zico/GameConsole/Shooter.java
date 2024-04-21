@@ -1,4 +1,4 @@
-package dev.GameConsole;
+package dev.zico.GameConsole;
 
 public record Shooter(String name)implements Player {
     boolean findPrize(){
