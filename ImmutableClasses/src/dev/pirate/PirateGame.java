@@ -1,7 +1,7 @@
 package dev.pirate;
 
-import dev.GameConsole.Game;
-import dev.GameConsole.GameAction;
+import dev.zico.GameConsole.Game;
+import dev.zico.GameConsole.GameAction;
 
 import java.util.*;
 
