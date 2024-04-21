@@ -1,4 +1,4 @@
-package dev.GameConsole;
+package dev.zico.GameConsole;
 
 import dev.pirate.Pirate;
 import dev.pirate.PirateGame;
