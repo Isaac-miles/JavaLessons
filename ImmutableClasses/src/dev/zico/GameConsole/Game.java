@@ -1,4 +1,4 @@
-package dev.GameConsole;
+package dev.zico.GameConsole;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
