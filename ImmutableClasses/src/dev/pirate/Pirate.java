@@ -1,6 +1,6 @@
 package dev.pirate;
 
-import dev.GameConsole.Player;
+import dev.zico.GameConsole.Player;
 
 import java.util.*;
 
