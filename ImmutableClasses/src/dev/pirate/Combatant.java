@@ -12,6 +12,14 @@ public abstract class Combatant implements Player {
     public Combatant(String name){
         this.name = name;
     }
+
+    public Combatant(String name, Map<String, Integer> gameData) {
+        this.name = name;
+        if(gameData !=null){
+            this.gameData.putAll(gameData);
+        }
+    }
+
     //---------------instance initializer
     {
         gameData = new HashMap<>(Map.of(
