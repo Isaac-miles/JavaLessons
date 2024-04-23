@@ -13,4 +13,7 @@ public enum Loot {
         this.worth = worth;
     }
 
+    public int getWorth() {
+        return worth;
+    }
 }
