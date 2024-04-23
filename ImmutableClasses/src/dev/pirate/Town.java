@@ -22,7 +22,6 @@ public record Town(String name, String island, int level,
 
         }
     }
-
     public Town(String name, String island, int level) {
         this(name, island, level, null, null, null);
     }
@@ -33,4 +32,8 @@ public record Town(String name, String island, int level,
         return list.subList(0,size);
     }
 
+    @Override
+    public String toString(){
+        return  name + ", "+island;
+    }
 }
