@@ -68,5 +68,7 @@ public abstract class Combatant implements Player {
     public String toString(){
         return name;
     }
-
+    public String information(){
+        return name+ " "+gameData;
+    }
 }
