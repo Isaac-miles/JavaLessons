@@ -22,6 +22,11 @@ public record Town(String name, String island, int level,
 
         }
     }
+
+    public Town(String name, String island, int level) {
+        this(name, island, level, null, null, null);
+    }
+
     private <T> List<T> randomReduced(List<T> list, int size){
 
         Collections.shuffle(list);
