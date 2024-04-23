@@ -1,4 +1,4 @@
 package dev.zico.sealed;
 
-public interface BetterInterface extends SealedInterface{
+public non-sealed interface BetterInterface extends SealedInterface{
 }
