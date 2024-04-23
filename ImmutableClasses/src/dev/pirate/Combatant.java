@@ -4,7 +4,7 @@ import dev.zico.GameConsole.Player;
 
 import java.util.*;
 
-public sealed abstract class Combatant implements Player permits Islander, Pirate {
+public sealed abstract class Combatant implements Player permits Islander, Pirate, Soldier {
     private final String name;
     private final Map<String,Integer> gameData;
     private Weapon currentWeapon;
@@ -65,8 +65,6 @@ public sealed abstract class Combatant implements Player permits Islander, Pirat
         }
         return (opponent.value("health")<=0);
     }
-
-
     @Override
     public String name() {
         return name;
