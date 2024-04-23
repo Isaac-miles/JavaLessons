@@ -28,7 +28,7 @@ public abstract class Combatant implements Player {
         ));
     }
 
-    public Weapon getCurrentWeapon() {
+    protected Weapon getCurrentWeapon() {
         return currentWeapon;
     }
 
@@ -40,13 +40,13 @@ public abstract class Combatant implements Player {
         return gameData.get(name);
     }
 
-    private void setValue(String name, int value){
+    protected void setValue(String name, int value){
         gameData.put(name, value);
     }
-    private void adjustValue(String name, int adj){
+    protected void adjustValue(String name, int adj){
         gameData.compute(name,(k,v)-> v  += adj);
     }
-    private void adjustHealth(int adj){
+    protected void adjustHealth(int adj){
         int health = value("health");
         health +=adj;
         health = (health < 0) ? 0:((health > 100)? 100 : health);
