@@ -4,7 +4,7 @@ import dev.zico.GameConsole.Player;
 
 import java.util.*;
 
-public sealed abstract class Combatant implements Player permits Pirate {
+public sealed abstract class Combatant implements Player permits Islander, Pirate {
     private final String name;
     private final Map<String,Integer> gameData;
     private Weapon currentWeapon;
