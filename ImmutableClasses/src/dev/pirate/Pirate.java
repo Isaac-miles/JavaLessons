@@ -8,7 +8,7 @@ import java.util.Map;
 public final class Pirate extends Combatant {
     private final List<Town> townsVisited = new LinkedList<Town>();
     private List<Loot> loot;
-    private List<Combatant> opponent;
+    private List<Combatant> opponents;
     private List<Feature> features;
 
     public Pirate(String name){
@@ -26,6 +26,9 @@ public final class Pirate extends Combatant {
         Town town = levelTowns.get(value("townIndex"));
         if(town != null){
             townsVisited.add(town);
+            loot = town.loot();
+            opponents = town.opponents();
+            features = town.features();
             return false;
         }
         return true;
