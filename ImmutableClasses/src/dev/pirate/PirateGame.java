@@ -38,10 +38,17 @@ public class PirateGame extends Game<Pirate> {
         List<Weapon> weapons = Weapon.getWeaponsByLevel(pirate.value("level"));
 
         Map <Character, GameAction> map = new LinkedHashMap<>();
-        for(Weapon weapon: weapons){
-            char init = weapon.name().charAt(0);
-            map.put(init, new GameAction(init,"Use "+ weapon, this::useWeapon));
+        if(pirate.hasOpponents()){
+            for(Weapon weapon: weapons){
+                char init = weapon.name().charAt(0);
+                map.put(init, new GameAction(init,"Use "+ weapon, this::useWeapon));
+            }
         }
+        map.put('F',new GameAction('F',"Find Loot", this::findLoot));
+        if(pirate.hasExperience()){
+            map.put('X',new GameAction('X',"Experience Town Feature",this::experienceFeature));
+        }
+
         map.putAll(getStandardActions());
         return map;
     }
