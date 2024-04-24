@@ -32,9 +32,9 @@ public final class Pirate extends Combatant {
     }
 
     public String information() {
-        var current = ((LinkedList<String>) townsVisited).getLast();
+        var current = ((LinkedList<Town>) townsVisited).getLast();
         String[] simpleNames = new String[townsVisited.size()];
-        Arrays.setAll(simpleNames, i->townsVisited.get(i).split(",")[0]);
+        Arrays.setAll(simpleNames, i->townsVisited.get(i).name());
         return "---> "+ current+ "\n"+ super.information() + "\n\ttownsVisited="+Arrays.toString(simpleNames);
     }
     private boolean visitNextTown(){
