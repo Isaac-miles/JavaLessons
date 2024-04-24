@@ -82,4 +82,7 @@ public class PirateGame extends Game<Pirate> {
         System.out.println(getPlayer(playerIndex).information());
         return false;
     }
+    private boolean findLoot(int playerIndex){
+        return getPlayer(playerIndex).findLoot();
+    }
 }
