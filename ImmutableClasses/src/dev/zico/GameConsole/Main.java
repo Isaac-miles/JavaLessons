@@ -2,7 +2,6 @@ package dev.zico.GameConsole;
 
 import dev.pirate.Pirate;
 import dev.pirate.PirateGame;
-import dev.pirate.Town;
 import dev.pirate.Weapon;
 
 public class Main {
@@ -24,9 +23,6 @@ public class Main {
         System.out.println("-".repeat(30));
         PirateGame.getTowns(1).forEach(System.out::println);
 
-        Town bridgeTown = new Town("Bridgetown","Barbados",0);
-        System.out.println(bridgeTown);
-        System.out.println(bridgeTown.information());
 
 //        var console = new GameConsole<>(new PirateGame("The Pirate Game"));
 //        int playerIndex = console.addPlayer();
