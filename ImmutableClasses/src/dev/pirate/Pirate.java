@@ -46,6 +46,18 @@ public final class Pirate extends Combatant {
         Arrays.setAll(simpleNames, i->townsVisited.get(i).name());
         return "---> "+ current+ "\n"+ super.information() + "\n\ttownsVisited="+Arrays.toString(simpleNames);
     }
+    boolean findLoot(){
+        if(loot.size() > 0){
+            Loot item = loot.remove(0);
+            System.out.println("Found "+item+ "!");
+            adjustValue("score", item.getWorth());
+            System.out.println(name()+" 's score is now "+ value("score"));
+        }
+        if (loot.size() == 0){
+            return visitNextTown();
+        }
+        return false;
+    }
     private boolean visitNextTown(){
         int townIndex = value("townIndex");
         List<Town> towns = PirateGame.getTowns(value("level"));
