@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public final class Pirate extends Combatant {
-    private final List<String> townsVisited = new LinkedList<>();
+    private final List<Town> townsVisited = new LinkedList<Town>();
     private List<Loot> loot;
     private List<Combatant> opponent;
     private List<Feature> features;
@@ -21,9 +21,9 @@ public final class Pirate extends Combatant {
         return visitNextTown();
     }
     boolean visitTown(){
-        List<String> levelTowns = PirateGame.getTowns(value("level"));
+        List<Town> levelTowns = PirateGame.getTowns(value("level"));
         if(levelTowns == null) return true;
-        String town = levelTowns.get(value("townIndex"));
+        Town town = levelTowns.get(value("townIndex"));
         if(town != null){
             townsVisited.add(town);
             return false;
@@ -39,7 +39,7 @@ public final class Pirate extends Combatant {
     }
     private boolean visitNextTown(){
         int townIndex = value("townIndex");
-        var towns = PirateGame.getTowns(value("level"));
+        List<Town> towns = PirateGame.getTowns(value("level"));
         if(towns == null) return true;
         if(townIndex >= (towns.size()-1)){
             System.out.println("leveling up! Bonus: 500 points!");
