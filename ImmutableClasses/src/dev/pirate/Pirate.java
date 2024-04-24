@@ -36,6 +36,9 @@ public final class Pirate extends Combatant {
     boolean hasExperience(){
         return (features !=null && features.size() > 0);
     }
+    boolean hasOpponents(){
+        return (opponents !=null && opponents.size() > 0);
+    }
 
     public String information() {
         var current = ((LinkedList<Town>) townsVisited).getLast();
