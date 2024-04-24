@@ -7,7 +7,7 @@ import java.util.*;
 
 public class PirateGame extends Game<Pirate> {
 
-    private static final List<List<String>> levelMap;
+    private static final List<List<Town>> levelMap;
 
     //------------------------static initializer------
     static {
@@ -47,20 +47,20 @@ public class PirateGame extends Game<Pirate> {
     }
     private static void loadData(){
         //level 1 towns
-        levelMap.add(new ArrayList<>(List.of(
-                "Bridgetown, barbados",
-                "Fitts Village, Barbados",
-                "Holetown, Barbados"
+        levelMap.add(new ArrayList<Town>(List.of(
+                new Town("Bridgetown","barbados",0),
+                new Town("Fitts Village","Barbados",0 ),
+                new Town("Holetown","Barbados",0)
         )));
 
         //level 2 towns
-        levelMap.add(new ArrayList<>(List.of(
-                "Fort-de-France, Martinique",
-                "Saint-Anne , Martinique",
-                "Le Vauclin, Martinique"
+        levelMap.add(new ArrayList<Town>(List.of(
+                new Town( "Fort-de-France", "Martinique", 1),
+                new Town( "Saint-Anne", "Martinique",1),
+                new Town("Le Vauclin", "Martinique",1)
         )));
     }
-    public static List<String> getTowns(int level){
+    public static List<Town> getTowns(int level){
         if(level <= (levelMap.size() - 1)){
             return levelMap.get(level);
         }
