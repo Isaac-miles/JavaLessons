@@ -85,4 +85,7 @@ public class PirateGame extends Game<Pirate> {
     private boolean findLoot(int playerIndex){
         return getPlayer(playerIndex).findLoot();
     }
+    private boolean experienceFeature(int playerIndex){
+        return getPlayer(playerIndex).experienceFeature();
+    }
 }
