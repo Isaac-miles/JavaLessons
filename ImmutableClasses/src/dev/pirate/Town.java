@@ -45,4 +45,7 @@ public record Town(String name, String island, int level,
     public List<Combatant> opponents(){
         return (opponents==null)? null : new ArrayList<>(opponents);
     }
+    public List<Feature> features(){
+        return (features == null)? null : new ArrayList<>(features);
+    }
 }
