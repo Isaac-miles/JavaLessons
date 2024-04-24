@@ -42,4 +42,7 @@ public record Town(String name, String island, int level,
     public List<Loot> loot(){
         return (loot ==null) ? null: new ArrayList<>(loot);
     }
+    public List<Combatant> opponents(){
+        return (opponents==null)? null : new ArrayList<>(opponents);
+    }
 }
