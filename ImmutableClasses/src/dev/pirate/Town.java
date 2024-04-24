@@ -39,4 +39,7 @@ public record Town(String name, String island, int level,
     public String information(){
         return "Town: "+this + "\n\tloot= " +loot + "\n\tfeatures="+features+"\n\toppenents="+opponents;
     }
+    public List<Loot> loot(){
+        return (loot ==null) ? null: new ArrayList<>(loot);
+    }
 }
