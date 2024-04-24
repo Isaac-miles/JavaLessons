@@ -33,6 +33,9 @@ public final class Pirate extends Combatant {
         }
         return true;
     }
+    boolean hasExperience(){
+        return (features !=null && features.size() > 0);
+    }
 
     public String information() {
         var current = ((LinkedList<Town>) townsVisited).getLast();
