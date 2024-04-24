@@ -1,9 +1,6 @@
 package dev.pirate;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public final class Pirate extends Combatant {
     private final List<Town> townsVisited = new LinkedList<Town>();
@@ -17,8 +14,20 @@ public final class Pirate extends Combatant {
     }
 
     boolean useWeapon(){
-        System.out.println("Used the "+ super.getCurrentWeapon());
-        return visitNextTown();
+        int count = opponents.size();
+        if(count > 0){
+            int opponentIndex = count-1;
+            if(count>1){
+                opponentIndex = new Random().nextInt(count+1);
+            }
+            Combatant combatant = opponents.get(opponentIndex);
+            if(super.useWeapon(combatant)){
+                opponents.remove(opponentIndex);
+            }else {
+                return combatant.useWeapon(this);
+            }
+        }
+        return false;
     }
     boolean visitTown(){
         List<Town> levelTowns = PirateGame.getTowns(value("level"));
