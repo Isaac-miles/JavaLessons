@@ -36,4 +36,7 @@ public record Town(String name, String island, int level,
     public String toString(){
         return  name + ", "+island;
     }
+    public String information(){
+        return "Town: "+this + "\n\tloot= " +loot + "\n\tfeatures="+features+"\n\toppenents="+opponents;
+    }
 }
