@@ -26,7 +26,9 @@ public class Main {
         for(char c :"BINGO".toCharArray()){
             int[] numbers = new int[5];
             int labelNo = bingoIndex;
-
+            Arrays.setAll(numbers,i->+labelNo);
+            myMap.put(c,numbers);
+            bingoIndex += 15;
         }
     }
 
