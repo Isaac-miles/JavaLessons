@@ -5,7 +5,10 @@ import java.util.stream.IntStream;
 public class Main {
     public static void main(String[] args) {
 
-        IntStream.iterate((int) 'A', i-> i <= (int)'z',i-> i+1)
-                .forEach(d-> System.out.printf("%C ",d));
+        IntStream.iterate((int) 'A', i -> i <= (int) 'z', i-> i+1)
+                .filter(Character::isAlphabetic)
+                .skip(5)
+//                .filter(i->Character.toUpperCase(i)>'E')
+                .forEach(d-> System.out.printf("%c ",d));
     }
 }
