@@ -25,7 +25,20 @@ public class Main {
         seed +=15;
         var streamG = Stream.of("G46","G47","G48","G49","G50","G51");
 
-        streamG.forEach(System.out::println);
+        seed +=15;
+        int rSeed = seed;
 
+        var streamO = Stream.generate(Main::getCounter)
+                        .limit(15)
+                                .map(i->"o"+(rSeed +i));
+        var streamBI = Stream.concat(streamB,streamI);
+        var streamGN = Stream.concat(streamG,streamN);
+        var stringBING = Stream.concat(streamBI,streamGN);
+        Stream.concat(stringBING,streamO).forEach(System.out::println);
+//        streamO.forEach(System.out::println);
+
+    }
+    private static int getCounter(){
+        return counter++;
     }
 }
