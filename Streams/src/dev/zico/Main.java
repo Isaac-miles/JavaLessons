@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.util.*;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -37,6 +38,11 @@ public class Main {
         Stream.generate(()->random.nextInt(2))
                 .limit(10)
                 .forEach(System.out::print);
+
+        System.out.println();
+        IntStream.iterate(1,n->n+1)
+                .limit(20)
+                .forEach(s->System.out.print(s+" "));
     }
 
 }
