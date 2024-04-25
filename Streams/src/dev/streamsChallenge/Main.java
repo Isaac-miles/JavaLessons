@@ -19,6 +19,7 @@ public class Main {
         int finalSeed = seed;
         Arrays.setAll(oLabels, i->"N" +(finalSeed +i));
         var streamN =Arrays.stream(oLabels);
-        streamI.forEach(System.out::println);
+
+        streamN.forEach(System.out::println);
     }
 }
