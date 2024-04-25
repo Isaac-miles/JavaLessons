@@ -1,9 +1,6 @@
 package dev.zico;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class Main {
@@ -35,6 +32,9 @@ public class Main {
                 .stream()
                 .map(e->e.getKey()+" has range: "+ e.getValue()[0]+ " _ "+e.getValue()[e.getValue().length-1])
                 .forEach(System.out::println);
+
+        Random random = new Random();
+
     }
 
 }
