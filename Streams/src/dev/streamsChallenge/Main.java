@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class Main {
+    static int counter = 0;
+
     public static void main(String[] args) {
         int seed = 1;
         var streamB = Stream.iterate(seed,i-> i<=15,i-> i+1)
@@ -20,6 +22,10 @@ public class Main {
         Arrays.setAll(oLabels, i->"N" +(finalSeed +i));
         var streamN =Arrays.stream(oLabels);
 
-        streamN.forEach(System.out::println);
+        seed +=15;
+        var streamG = Stream.of("G46","G47","G48","G49","G50","G51");
+
+        streamG.forEach(System.out::println);
+
     }
 }
