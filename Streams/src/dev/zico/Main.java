@@ -16,6 +16,7 @@ public class Main {
 //                .forEach(System.out::println);
 
         Stream.concat(secondStream,firstStream)
+                .map(s->s.charAt(0)+"_"+s)
                 .forEach(System.out::println);
 
     }
