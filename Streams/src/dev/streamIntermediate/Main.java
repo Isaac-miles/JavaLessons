@@ -7,7 +7,8 @@ public class Main {
 
         IntStream.iterate((int) 'A', i -> i <= (int) 'z', i-> i+1)
                 .filter(Character::isAlphabetic)
-                .skip(5)
+                .dropWhile(i-> Character.toUpperCase(i) <= 'E')
+//                .skip(5)
 //                .filter(i->Character.toUpperCase(i)>'E')
                 .forEach(d-> System.out.printf("%c ",d));
     }
