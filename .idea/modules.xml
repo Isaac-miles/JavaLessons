@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/LambdaEpression/LambdaEpression.iml" filepath="$PROJECT_DIR$/LambdaEpression/LambdaEpression.iml" />
       <module fileurl="file://$PROJECT_DIR$/NestedClass/NestedClass.iml" filepath="$PROJECT_DIR$/NestedClass/NestedClass.iml" />
       <module fileurl="file://$PROJECT_DIR$/Packages/Packages.iml" filepath="$PROJECT_DIR$/Packages/Packages.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Streams/Streams.iml" filepath="$PROJECT_DIR$/Streams/Streams.iml" />
       <module fileurl="file://$PROJECT_DIR$/arrays/arrays.iml" filepath="$PROJECT_DIR$/arrays/arrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/controlflow/controlflow.iml" filepath="$PROJECT_DIR$/controlflow/controlflow.iml" />
       <module fileurl="file://$PROJECT_DIR$/linkedList/linkedList.iml" filepath="$PROJECT_DIR$/linkedList/linkedList.iml" />
