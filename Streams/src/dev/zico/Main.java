@@ -56,6 +56,11 @@ public class Main {
                 .filter(Main::isPrime)
                 .forEach(s->System.out.print(s+" "));
 
+        System.out.println();
+        IntStream.range(1,100)
+                .filter(Main::isPrime)
+                .forEach(s->System.out.print(s+" "));
+
     }
     public static boolean isPrime(int wholeNumber){
         if(wholeNumber<=2){
