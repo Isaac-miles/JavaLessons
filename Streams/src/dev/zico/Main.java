@@ -34,7 +34,9 @@ public class Main {
                 .forEach(System.out::println);
 
         Random random = new Random();
-
+        Stream.generate(()->random.nextInt(2))
+                .limit(10)
+                .forEach(System.out::print);
     }
 
 }
