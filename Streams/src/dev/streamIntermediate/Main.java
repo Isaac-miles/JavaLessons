@@ -17,7 +17,7 @@ public class Main {
 //                .filter(i->Character.toUpperCase(i)>'E')
                 .forEach(d-> System.out.printf("%c ",d));
 
-        System.out.println();
+//        System.out.println();
         Random random = new Random();
         Stream.generate(()->random.nextInt(5));
     }
