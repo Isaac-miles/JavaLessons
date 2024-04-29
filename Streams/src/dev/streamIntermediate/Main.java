@@ -1,5 +1,7 @@
 package dev.streamIntermediate;
 
+import dev.zico.Seat;
+
 import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -28,7 +30,9 @@ public class Main {
         System.out.println();
         int maxSeats = 100;
         int seatsInRow = 10;
-
+        var stream= Stream.iterate(0,i-> i < maxSeats, i->i+1)
+                .map(i->new Seat((char)('A'+i/seatsInRow),
+                        i%seatsInRow + 1));
     }
 }
 
