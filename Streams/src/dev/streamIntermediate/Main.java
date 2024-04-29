@@ -26,3 +26,4 @@ public class Main {
                 .forEach(i -> System.out.printf("%c ",i) );
     }
 }
+
