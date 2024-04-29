@@ -19,6 +19,10 @@ public class Main {
 
         System.out.println();
         Random random = new Random();
-        Stream.generate(()->random.nextInt(5));
+        Stream.generate(()->random.nextInt((int)'A', (int)'Z'+1))
+                .limit(50)
+                .distinct()
+                .sorted()
+                .forEach(i -> System.out.printf("%c",i) );
     }
 }
