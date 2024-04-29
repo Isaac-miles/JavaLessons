@@ -10,6 +10,7 @@ public class StreamTerminal {
 
         var leapYearData = IntStream.iterate(2000,i-> i <=2025, i->i = i+1)
                 .filter(i->i % 4 == 0)
+                .peek(System.out::println)
                 .summaryStatistics();
         System.out.println("Leap Year Data = "+ leapYearData);
     }
