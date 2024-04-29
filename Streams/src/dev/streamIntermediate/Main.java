@@ -2,6 +2,7 @@ package dev.streamIntermediate;
 
 import dev.zico.Seat;
 
+import java.util.Comparator;
 import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -35,8 +36,8 @@ public class Main {
                         i%seatsInRow + 1))
                 .skip(5)
                 .limit(10)
-                .peek(s-> System.out.println("----> "+s))
-                .sorted();
+                .peek(s -> System.out.println("----> " + s))
+                .sorted(Comparator.comparing(Seat::price).thenComparing(Seat::toString));
 //                .mapToDouble(Seat::price)
 //                .boxed()
 //                .map("%2f"::formatted);
