@@ -24,6 +24,11 @@ public class Main {
                 .distinct()
                 .sorted()
                 .forEach(i -> System.out.printf("%c ",i) );
+
+        System.out.println();
+        int maxSeats = 100;
+        int seatsInRow = 10;
+
     }
 }
 
