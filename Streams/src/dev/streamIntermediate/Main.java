@@ -33,11 +33,14 @@ public class Main {
         var stream= Stream.iterate(0,i-> i < maxSeats, i->i+1)
                 .map(i->new Seat((char)('A'+i/seatsInRow),
                         i%seatsInRow + 1))
-                        .sorted();
+                .skip(5)
+                .limit(10)
+                .peek(s-> System.out.println("----> "+s))
+                .sorted();
 //                .mapToDouble(Seat::price)
 //                .boxed()
 //                .map("%2f"::formatted);
-        stream.forEach(System.out::println);
+//        stream.forEach(System.out::println);
     }
 }
 
