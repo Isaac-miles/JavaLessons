@@ -12,6 +12,6 @@ public class StreamTerminal {
                 .filter(i->i % 4 == 0)
                 .peek(System.out::println)
                 .summaryStatistics();
-        System.out.println("Leap Year Data = "+ leapYearData);
-    }
+//        System.out.println("Leap Year Data = "+ leapYearData);
+//    }
 }
