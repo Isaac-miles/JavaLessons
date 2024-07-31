@@ -37,10 +37,10 @@ public class Main {
                 .skip(5)
                 .limit(10)
                 .peek(s -> System.out.println("----> " + s))
-                .sorted(Comparator.comparing(Seat::price).thenComparing(Seat::toString));
-//                .mapToDouble(Seat::price)
-//                .boxed()
-//                .map("%2f"::formatted);
+                .sorted(Comparator.comparing(Seat::price).thenComparing(Seat::toString))
+                .mapToDouble(Seat::price)
+                .boxed()
+                .map("%2f"::formatted);
         stream.forEach(System.out::println);
     }
 }
