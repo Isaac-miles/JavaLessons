@@ -24,7 +24,7 @@ public enum Generation {
     Generation(int startYear, int endYear) {
         this.startYear = startYear;
         this.endYear = endYear;
-//        System.out.println(this);
+        System.out.println(this);
     }
 
     @Override
