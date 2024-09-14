@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public enum Generation {
     GEN_Z{
         {
-//            System.out.println("Special for the Gen z");
+            System.out.println("Special for the Gen z");
         }
     },
     MILLENNIAL(1981,200),
