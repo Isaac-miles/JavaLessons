@@ -26,7 +26,7 @@ public class Main {
                 .limit(50)
                 .distinct()
                 .sorted()
-                .forEach(i -> System.out.printf("%c ",i) );
+//                .forEach(i -> System.out.printf("%c ",i) );
 
         System.out.println();
         int maxSeats = 100;
