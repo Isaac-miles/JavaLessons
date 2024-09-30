@@ -25,7 +25,7 @@ public class Main {
         Stream.generate(()->random.nextInt((int)'A', (int)'Z'+1))
                 .limit(50)
                 .distinct()
-//                .sorted()
+                .sorted()
                 .forEach(i -> System.out.printf("%c ",i) );
 
         System.out.println();
