@@ -34,7 +34,7 @@ public class Main {
         var stream= Stream.iterate(0,i-> i < maxSeats, i->i+1)
                 .map(i->new Seat((char)('A'+i/seatsInRow),
                         i%seatsInRow + 1))
-                .skip(5)
+//                .skip(5)
                 .limit(10)
                 .peek(s -> System.out.println("----> " + s))
                 .sorted(Comparator.comparing(Seat::price).thenComparing(Seat::toString))
