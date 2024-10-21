@@ -40,7 +40,7 @@ public class Main {
                 .sorted(Comparator.comparing(Seat::price).thenComparing(Seat::toString))
                 .mapToDouble(Seat::price)
                 .boxed()
-                .map("%2f"::formatted);
+//                .map("%2f"::formatted);
         stream.forEach(System.out::println);
     }
 }
