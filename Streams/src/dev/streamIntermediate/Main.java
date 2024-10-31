@@ -41,7 +41,7 @@ public class Main {
                 .mapToDouble(Seat::price)
                 .boxed()
                 .map("%2f"::formatted);
-        stream.forEach(System.out::println);
+//        stream.forEach(System.out::println);
     }
 }
 
