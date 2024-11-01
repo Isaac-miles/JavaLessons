@@ -35,7 +35,7 @@ public class Main {
                 .map(i->new Seat((char)('A'+i/seatsInRow),
                         i%seatsInRow + 1))
 //                .skip(5)
-                .limit(10)
+//                .limit(10)
                 .peek(s -> System.out.println("----> " + s))
                 .sorted(Comparator.comparing(Seat::price).thenComparing(Seat::toString))
                 .mapToDouble(Seat::price)
