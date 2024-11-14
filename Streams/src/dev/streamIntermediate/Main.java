@@ -13,7 +13,7 @@ public class Main {
                 .filter(Character::isAlphabetic)
                 .map(Character::toUpperCase)
                 .distinct()
-//                .dropWhile(i-> Character.toUpperCase(i) <= 'E')
+                .dropWhile(i-> Character.toUpperCase(i) <= 'E')
                 .takeWhile(i-> i < 'a')
                 .skip(5)
                 .filter(i->Character.toUpperCase(i)>'E')
