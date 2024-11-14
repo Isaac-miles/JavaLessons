@@ -15,7 +15,7 @@ public class Main {
                 .distinct()
                 .dropWhile(i-> Character.toUpperCase(i) <= 'E')
                 .takeWhile(i-> i < 'a')
-                .skip(5)
+//                .skip(5)
                 .filter(i->Character.toUpperCase(i)>'E')
                 .forEach(d-> System.out.printf("%c ",d));
 
