@@ -12,7 +12,7 @@ public class Main {
         IntStream.iterate((int) 'A', i -> i <= (int) 'z', i-> i+1)
                 .filter(Character::isAlphabetic)
                 .map(Character::toUpperCase)
-//                .distinct()
+                .distinct()
                 .dropWhile(i-> Character.toUpperCase(i) <= 'E')
                 .takeWhile(i-> i < 'a')
                 .skip(5)
