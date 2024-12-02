@@ -24,7 +24,7 @@ class Monitor extends CompositionProduct{
         this.resolution = resolution;
     }
     public void drawPixelAt(int x,int y, String color){
-//        System.out.println(String.format("Drawing pixel at %d,%d in color %s ", x,y, color));
+        System.out.println(String.format("Drawing pixel at %d,%d in color %s ", x,y, color));
     }
 }
 
