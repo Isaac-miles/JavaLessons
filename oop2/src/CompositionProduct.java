@@ -57,6 +57,6 @@ class ComputerCase extends CompositionProduct{
         this.powerSupply = powerSupply;
     }
     public void pressPowerButton(){
-        System.out.println("power button pressed");
+//        System.out.println("power button pressed");
     }
 }
