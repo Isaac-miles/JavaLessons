@@ -43,7 +43,7 @@ class MotherBoard extends CompositionProduct{
         this.bios = bios;
     }
     public void loadProgram(String programName){
-//        System.out.println("Program "+programName+" is loading...");
+        System.out.println("Program "+programName+" is loading...");
     }
 }
 class ComputerCase extends CompositionProduct{
