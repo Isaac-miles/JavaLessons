@@ -6,13 +6,13 @@ import java.time.Period;
 public class CourseEngagement {
     private final Course course;
     private final LocalDate enrollmentDate;
-    private  String engamentType;
+    private  String engagementType;
     private LocalDate lastActivityDate;
     int lastLecture;
-    public CourseEngagement(Course course, LocalDate enrollmentDate, String engamentType) {
+    public CourseEngagement(Course course, LocalDate enrollmentDate, String engagementType) {
         this.course = course;
         this.enrollmentDate = this.lastActivityDate = enrollmentDate;
-        this.engamentType = engamentType;
+        this.engagementType = engagementType;
     }
 
     public String getCourseCode() {
@@ -23,8 +23,8 @@ public class CourseEngagement {
         return enrollmentDate.getYear();
     }
 
-    public String getEngamentType() {
-        return engamentType;
+    public String getEngagementType() {
+        return engagementType;
     }
 
     public int getLastActivityYear() {
@@ -48,12 +48,12 @@ public class CourseEngagement {
     void watchLecture(int lectureNumber, LocalDate currentDate){
         lastLecture = Math.max(lectureNumber, lastLecture);
         lastActivityDate = currentDate;
-        engamentType = "Lecture "+ lastLecture;
+        engagementType = "Lecture "+ lastLecture;
     }
 
     @Override
     public String toString() {
         return "%s: %s %d %s [%d]".formatted(course.courseCode(),getLastActivityMonth(),getLastActivityYear(),
-                engamentType, getMonthsSinceActive());
+                engagementType, getMonthsSinceActive());
     }
 }
