@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class CourseEngagement {
     private final Course course;
@@ -32,5 +33,15 @@ public class CourseEngagement {
 
     public  String getLastActivityMonth(){
         return  "%tb".formatted(lastActivityDate);
+    }
+
+    public double getPercentComplete(){
+        return lastLecture * 100.0/ course.lectureCount();
+    }
+
+    public int getMonthsSinceActive(){
+        LocalDate now = LocalDate.now();
+        var months = Period.between(lastActivityDate, now).toTotalMonths();
+        return (int) months;
     }
 }
