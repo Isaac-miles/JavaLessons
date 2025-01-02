@@ -19,7 +19,7 @@ public class Student {
 
     public Student(String countryCode, int yearEnrolled, String gender,
                    int ageEnrolled, boolean programmingExperience,Course ...courses) {
-        this.studentId = lastStudentId+1;
+        this.studentId = lastStudentId++;
         this.countryCode = countryCode;
         this.yearEnrolled = yearEnrolled;
         this.gender = gender;
@@ -31,7 +31,7 @@ public class Student {
         }
     }
 
-    public void addCourse(Course course, LocalDate enrollDate){
-
+    public void addCourse(Course newcourse, LocalDate enrollDate){
+        engagementMap.put(newcourse.courseCode(), new CourseEngagement(newcourse,enrollDate,"Enrollment"));
     }
 }
