@@ -12,4 +12,8 @@ public record Course(String courseCode, String title, int lectureCount) {
         this(courseCode, title, 40);
     }
 
+    @Override
+    public String toString() {
+        return "%s %s".formatted(courseCode,title);
+    }
 }
