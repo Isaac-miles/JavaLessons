@@ -30,5 +30,7 @@ public class CourseEngagement {
         return lastActivityDate.getYear();
     }
 
-
+    public  String getLastActivityMonth(){
+        return  "%tb".formatted(lastActivityDate);
+    }
 }
