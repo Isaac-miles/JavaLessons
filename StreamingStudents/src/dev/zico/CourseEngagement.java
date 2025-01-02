@@ -10,7 +10,25 @@ public class CourseEngagement {
 
     public CourseEngagement(Course course, LocalDate enrollmentDate, String engamentType) {
         this.course = course;
-        this.enrollmentDate = enrollmentDate;
+        this.enrollmentDate = this.lastActivityDate = enrollmentDate;
         this.engamentType = engamentType;
     }
+
+    public String getCourseCode() {
+        return course.courseCode();
+    }
+
+    public int getEnrollmentYear() {
+        return enrollmentDate.getYear();
+    }
+
+    public String getEngamentType() {
+        return engamentType;
+    }
+
+    public int getLastActivityYear() {
+        return lastActivityDate.getYear();
+    }
+
+
 }
