@@ -1,5 +1,6 @@
 package dev.zico;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -24,5 +25,13 @@ public class Student {
         this.gender = gender;
         this.ageEnrolled = ageEnrolled;
         this.programmingExperience = programmingExperience;
+
+        for (Course course: courses){
+            addCourse(course, LocalDate.of(yearEnrolled,1,1));
+        }
+    }
+
+    public void addCourse(Course course, LocalDate enrollDate){
+
     }
 }
