@@ -105,12 +105,25 @@ public class Student {
     public  static Student getRandomStudent(Course ...courses){
         int maxYear = LocalDate.now().getYear() + 1;
 
-        return new Student(getRandomVal("AG","ESN","NG","CA","UAE","MOR","UK","US"),
+        Student student = new Student(getRandomVal("AG","ESN","NG","CA","UAE","MOR","UK","US"),
                 random.nextInt(2015,maxYear),
                 random.nextInt(18,90),
                 getRandomVal("M","F","O"),
                 random.nextBoolean(),
                 courses);
+
+        for(Course c:courses){
+            int lecture = random.nextInt(1,c.lectureCount());
+            int year = random.nextInt(student.getYearEnrolled(),maxYear);
+            int month = random.nextInt(1,13);
+            if(year ==(maxYear-1)){
+                if(month > LocalDate.now().getMonthValue()){
+                    month = LocalDate.now().getMonthValue();
+                };
+            }
+            student.watchLecture(c.courseCode(),lecture,month,year);
+        }
+        return  student;
     }
     @Override
     public String toString() {
