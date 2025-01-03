@@ -43,6 +43,6 @@ public class Main {
             total +=cnt;
             System.out.printf("# of students (%s) = %d%n", i == 0 ? " < 30" : " >= 30 & < 60", cnt);
         }
-        System.out.println("# of students >= 60 = "+(students.length- total));
+        System.out.println("# of students >= 60 = "+(students.length - total));
     }
 }
