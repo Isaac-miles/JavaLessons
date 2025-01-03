@@ -1,7 +1,5 @@
 package dev.zico;
 
-import java.util.stream.Stream;
-
 public class Main {
     public static void main(String[] args){
         Course jsm = new Course("JSM","Javascript Masterclass");
@@ -13,8 +11,9 @@ public class Main {
 //        miles.watchLecture("CSHARP",10,7,2023);
 //        System.out.println(miles);
 
-        Stream.generate(()->Student.getRandomStudent(jsm,csharp))
-                .limit(10)
-                .forEach(System.out::println);
+//        Stream.generate(()->Student.getRandomStudent(jsm,csharp))
+//                .limit(10)
+//                .forEach(System.out::println);
+
     }
 }
