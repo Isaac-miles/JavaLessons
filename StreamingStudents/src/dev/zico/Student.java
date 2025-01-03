@@ -17,8 +17,8 @@ public class Student {
     private final boolean programmingExperience;
     private final Map<String, CourseEngagement> engagementMap = new HashMap<>();
 
-    public Student(String countryCode, int yearEnrolled, String gender,
-                   int ageEnrolled, boolean programmingExperience,Course ...courses) {
+    public Student(String countryCode, int yearEnrolled,
+                   int ageEnrolled, String gender,boolean programmingExperience,Course ...courses) {
         this.studentId = lastStudentId++;
         this.countryCode = countryCode;
         this.yearEnrolled = yearEnrolled;
@@ -98,6 +98,20 @@ public class Student {
         }
     }
 
+    private static String getRandomVal(String ...data){
+        return data[random.nextInt(data.length)];
+    }
+
+    public  static Student getRandomStudent(Course ...courses){
+        int maxYear = LocalDate.now().getYear() + 1;
+
+        return new Student(getRandomVal("AG","ESN","NG","CA","UAE","MOR","UK","US"),
+                random.nextInt(2015,maxYear),
+                random.nextInt(18,90),
+                getRandomVal("M","F","O"),
+                random.nextBoolean(),
+                courses);
+    }
     @Override
     public String toString() {
         return "Student{" +
