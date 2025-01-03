@@ -1,5 +1,7 @@
 package dev.zico;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args){
         Course jsm = new Course("JSM","Javascript Masterclass");
@@ -15,5 +17,11 @@ public class Main {
 //                .limit(10)
 //                .forEach(System.out::println);
 
+        Student[] students = new Student[1000];
+        Arrays.setAll(students,(i)->Student.getRandomStudent(csharp,jsm));
+
+        var maleStudents = Arrays.stream(students)
+                .filter(student -> student.getGender().equals("M"));
+        System.out.println("# of male female students " + maleStudents.count());
     }
 }
