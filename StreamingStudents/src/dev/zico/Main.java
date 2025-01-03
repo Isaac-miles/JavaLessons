@@ -6,5 +6,9 @@ public class Main {
         Course csharp = new Course("CSHARP","C# Masterclass");
         Student miles = new Student ("NG",2022,"M",28,true,jsm,csharp);
         System.out.println(miles);
+
+        miles.watchLecture("JSM",5,2,2022);
+        miles.watchLecture("CSHARP",10,7,2023);
+        System.out.println(miles);
     }
 }
