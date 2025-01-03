@@ -25,10 +25,10 @@ public class Main {
                 .filter(student -> student.getGender().equals("M"));
         System.out.println("# of male female students " + maleStudents.count());
 
-        for(String gender: List.of("M","F","U")){
+        for(String gender: List.of("M","F","O")){
             var mysStudents = Arrays.stream(students)
                     .filter(s->s.getGender().equals(gender));
-            System.out.println("# of "+ gender + "Students "+ mysStudents.count());
+            System.out.println("# of "+ gender + " students "+ mysStudents.count());
         }
     }
 }
