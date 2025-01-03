@@ -1,6 +1,7 @@
 package dev.zico;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args){
@@ -23,5 +24,11 @@ public class Main {
         var maleStudents = Arrays.stream(students)
                 .filter(student -> student.getGender().equals("M"));
         System.out.println("# of male female students " + maleStudents.count());
+
+        for(String gender: List.of("M","F","U")){
+            var mysStudents = Arrays.stream(students)
+                    .filter(s->s.getGender().equals(gender));
+            System.out.println("# of "+ gender + "Students "+ mysStudents.count());
+        }
     }
 }
