@@ -90,4 +90,11 @@ public class Student {
         var info= engagementMap.get(courseCode);
         return  (info ==null) ? 0: info.getPercentComplete();
     }
+
+    public void watchLecture(String courseCode, int lectureNumber, int month, int year){
+        var activity = engagementMap.get(courseCode);
+        if(activity !=null){
+            activity.watchLecture(lectureNumber, LocalDate.of(year,month,1));
+        }
+    }
 }
