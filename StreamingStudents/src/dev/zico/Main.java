@@ -2,6 +2,7 @@ package dev.zico;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args){
@@ -30,5 +31,9 @@ public class Main {
                     .filter(s->s.getGender().equals(gender));
             System.out.println("# of "+ gender + " students "+ mysStudents.count());
         }
+        List<Predicate<Student>> list = List.of(
+                (s)->s.getAge() < 30,
+                (Student s)-> s.getAge() >= 30 && s.getAge() < 60
+        );
     }
 }
