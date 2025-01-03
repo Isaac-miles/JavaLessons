@@ -74,8 +74,17 @@ public class Student {
         return ageEnrolled + getYearsSinceEnrolled();
     }
 
-    public int getMonthSinceActive(String courseCode){
+    public int getMonthsSinceActive(String courseCode){
         CourseEngagement info = engagementMap.get(courseCode);
         return  info == null ? 0 : info.getMonthsSinceActive();
     }
+
+    public int getMonthsSinceActive(){
+        int inactiveMonths = (LocalDate.now().getYear() - 2025) * 12;
+        for(String key : engagementMap.keySet()){
+            inactiveMonths = Math.min(inactiveMonths, getMonthsSinceActive(key));
+        }
+        return  inactiveMonths;
+    }
+
 }
