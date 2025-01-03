@@ -31,7 +31,43 @@ public class Student {
         }
     }
 
+    public void addCourse(Course newCourse){
+        addCourse(newCourse, LocalDate.now());
+    }
     public void addCourse(Course newcourse, LocalDate enrollDate){
         engagementMap.put(newcourse.courseCode(), new CourseEngagement(newcourse,enrollDate,"Enrollment"));
     }
+
+    public long getStudentId() {
+        return studentId;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public int getYearEnrolled() {
+        return yearEnrolled;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public int getAgeEnrolled() {
+        return ageEnrolled;
+    }
+
+    public boolean hasProgrammingExperience() {
+        return programmingExperience;
+    }
+
+    public Map<String, CourseEngagement> getEngagementMap() {
+        return Map.copyOf(engagementMap);
+    }
+
+    public int getYearsSinceEnrolled(){
+        return LocalDate.now().getYear() - yearEnrolled;
+    }
+
 }
