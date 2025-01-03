@@ -97,4 +97,17 @@ public class Student {
             activity.watchLecture(lectureNumber, LocalDate.of(year,month,1));
         }
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId=" + studentId +
+                ", countryCode='" + countryCode + '\'' +
+                ", yearEnrolled=" + yearEnrolled +
+                ", gender='" + gender + '\'' +
+                ", ageEnrolled=" + ageEnrolled +
+                ", programmingExperience=" + programmingExperience +
+                ", engagementMap=" + engagementMap +
+                '}';
+    }
 }
