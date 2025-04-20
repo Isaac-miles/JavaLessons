@@ -57,7 +57,25 @@ public class Main {
         //what country are my students from?
         Arrays.stream(students)
                 .map(Student::getCountryCode)
-                .forEach(s-> System.out.println(s +" "));
+                .distinct()
+                .sorted()
+                .forEach(s-> System.out.print(s +" "));
 
+        //Are there any students that are still active and that have been enrolled  for the last 7years
+        System.out.println();
+        boolean longTerm = Arrays.stream(students)
+                .anyMatch(s-> (s.getAge() - s.getAgeEnrolled() >= 7) && (s.getMonthsSinceActive() < 12));
+        System.out.println("longTerm students? "+ longTerm);
+
+        long longTermCount = Arrays.stream(students)
+                .filter(s->(s.getAge() - s.getAgeEnrolled() >= 7) && (s.getMonthsSinceActive() < 12))
+                .count();
+        System.out.println("longTerm students "+ longTermCount);
+
+        Arrays.stream(students)
+                .filter(s->(s.getAge() - s.getAgeEnrolled() >=7) && (s.getMonthsSinceActive() < 12))
+                .filter(s->!s.hasProgrammingExperience())
+                .limit(5)
+                .forEach(System.out::println);
     }
 }
