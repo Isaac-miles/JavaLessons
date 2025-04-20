@@ -52,5 +52,12 @@ public class Main {
 
         var currentAgeStream = Arrays.stream(students)
                 .mapToInt(Student::getAge);
+        System.out.println("Stats for Current Age = "+ currentAgeStream.summaryStatistics());
+
+        //what country are my students from?
+        Arrays.stream(students)
+                .map(Student::getCountryCode)
+                .forEach(s-> System.out.println(s +" "));
+
     }
 }
