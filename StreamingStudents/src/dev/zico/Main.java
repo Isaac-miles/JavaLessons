@@ -38,11 +38,16 @@ public class Main {
 
         long total = 0;
         for(int i=0; i< list.size(); i++){
-            var myStudent = Arrays.stream(students).filter(list.get(i));
+            var myStudent = Arrays.stream(students)
+                    .filter(list.get(i));
             long cnt = myStudent.count();
             total +=cnt;
             System.out.printf("# of students (%s) = %d%n", i == 0 ? " < 30" : " >= 30 & < 60", cnt);
         }
         System.out.println("# of students >= 60 = "+(students.length - total));
+
+        var ageStream = Arrays.stream(students)
+                .mapToInt(Student::getAgeEnrolled);
+        System.out.println("Stats for Enrollment Age = "+ ageStream.summaryStatistics());
     }
 }
