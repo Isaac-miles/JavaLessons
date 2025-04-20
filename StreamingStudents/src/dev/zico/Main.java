@@ -49,5 +49,8 @@ public class Main {
         var ageStream = Arrays.stream(students)
                 .mapToInt(Student::getAgeEnrolled);
         System.out.println("Stats for Enrollment Age = "+ ageStream.summaryStatistics());
+
+        var currentAgeStream = Arrays.stream(students)
+                .mapToInt(Student::getAge);
     }
 }
