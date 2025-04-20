@@ -74,7 +74,7 @@ public class Main {
 
         Arrays.stream(students)
                 .filter(s->(s.getAge() - s.getAgeEnrolled() >=7) && (s.getMonthsSinceActive() < 12))
-                .filter(s->!s.hasProgrammingExperience())
+                .filter(Student::hasProgrammingExperience)
                 .limit(5)
                 .forEach(System.out::println);
     }
