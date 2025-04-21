@@ -72,11 +72,11 @@ public class Main {
                 .count();
         System.out.println("longTerm students " + longTermCount);
 
-        List<Student> longTimeLearners = Arrays.stream(students)
+        var longTimeLearners = Arrays.stream(students)
                 .filter(s -> (s.getAge() - s.getAgeEnrolled() >= 7) && (s.getMonthsSinceActive() < 12))
                 .filter(Student::hasProgrammingExperience)
                 .limit(5)
-                .toList();
+                .toArray(Student[]::new);
 
     }
 }
