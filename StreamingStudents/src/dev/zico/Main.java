@@ -1,8 +1,10 @@
 package dev.zico;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -78,5 +80,12 @@ public class Main {
                 .limit(5)
                 .toArray(Student[]::new);
 
+        var learners = Arrays.stream(students)
+                .filter(s -> (s.getAge() - s.getAgeEnrolled() >= 7) && (s.getMonthsSinceActive() < 12))
+                .filter(Student::hasProgrammingExperience)
+                .limit(5)
+                .collect(Collectors.toList());
+
+        Collections.shuffle(learners);
     }
 }
