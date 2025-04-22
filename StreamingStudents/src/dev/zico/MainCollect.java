@@ -28,5 +28,14 @@ public class MainCollect {
         youngNG.retainAll(underThirty);
         youngNG.forEach(s-> System.out.print(s.getStudentId()+" " ));
         System.out.println();
+
+        Set<Student> youngNG2 = students.stream()
+                .filter(s->s.getAgeEnrolled() < 30)
+                .filter(s->s.getCountryCode().equals("NG"))
+                .collect(Collectors.toSet());
+
+        youngNG2.forEach(s-> System.out.print(s.getStudentId()+" " ));
+        System.out.println();
+
     }
 }
