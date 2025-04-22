@@ -32,10 +32,17 @@ public class MainCollect {
         Set<Student> youngNG2 = students.stream()
                 .filter(s->s.getAgeEnrolled() < 30)
                 .filter(s->s.getCountryCode().equals("NG"))
-                .collect(Collectors.toSet());
+                .collect(()->new TreeSet<>(Comparator.comparing(Student::getStudentId)), TreeSet::add, TreeSet::addAll); //supplier accumulator and combiner
 
         youngNG2.forEach(s-> System.out.print(s.getStudentId()+" " ));
         System.out.println();
+
+        String countryList = students.stream()
+                .map(Student::getCountryCode)
+                .distinct()
+                .sorted()
+                .reduce("",(r,v)->r+" "+ v);
+        System.out.println("countryList = "+ countryList);
 
     }
 }
