@@ -12,10 +12,11 @@ public class MainCollect {
 
         List<Student> students =
                 Stream.generate(()->Student.getRandomStudent(jsm,pym))
-                        .limit(500)
+                        .limit(1000)
                         .toList();
         Set<Student> nigerianStudents = students.stream()
                 .filter(s->s.getCountryCode().equals("NG"))
                 .collect(Collectors.toSet());
+        System.out.println("# of Nigerian Student = "+ nigerianStudents.size());
     }
 }
