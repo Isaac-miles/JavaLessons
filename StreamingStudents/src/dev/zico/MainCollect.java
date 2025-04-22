@@ -18,5 +18,10 @@ public class MainCollect {
                 .filter(s->s.getCountryCode().equals("NG"))
                 .collect(Collectors.toSet());
         System.out.println("# of Nigerian Student = "+ nigerianStudents.size());
+
+        Set<Student> underThirty = students.stream()
+                .filter(s->s.getAgeEnrolled() < 30)
+                .collect(Collectors.toSet());
+        System.out.println("# of Under Thirty Students = "+ underThirty.size());
     }
 }
