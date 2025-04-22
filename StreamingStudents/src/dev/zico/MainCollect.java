@@ -1,7 +1,6 @@
 package dev.zico;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -23,5 +22,11 @@ public class MainCollect {
                 .filter(s->s.getAgeEnrolled() < 30)
                 .collect(Collectors.toSet());
         System.out.println("# of Under Thirty Students = "+ underThirty.size());
+
+        Set<Student> youngNG = new TreeSet<>(Comparator.comparing(Student::getStudentId));
+        youngNG.addAll(nigerianStudents);
+        youngNG.retainAll(underThirty);
+        youngNG.forEach(s-> System.out.print(s.getStudentId()+" " ));
+        System.out.println();
     }
 }
