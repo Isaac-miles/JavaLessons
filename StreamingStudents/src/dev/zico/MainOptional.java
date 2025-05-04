@@ -37,6 +37,11 @@ public class MainOptional {
                 .map(Student::getCountryCode)
                 .distinct()
                 .toList();
+
+        Optional.of(countries)
+                .map(l->String.join(",",l))
+                .filter(l->l.contains("FR"))
+                .ifPresentOrElse(System.out::println,()-> System.out.println("Missing FR"));
     }
 
     private static Optional<Student> getStudent(List<Student> list, String type){
