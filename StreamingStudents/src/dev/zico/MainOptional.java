@@ -32,6 +32,11 @@ public class MainOptional {
         Student firstStudent = o2.orElseGet(()->getDummyStudent(pym));
         long id = firstStudent.getStudentId();
         System.out.println("firstStudent's id is "+id);
+
+        List<String> countries = students.stream()
+                .map(Student::getCountryCode)
+                .distinct()
+                .toList();
     }
 
     private static Optional<Student> getStudent(List<Student> list, String type){
