@@ -12,5 +12,12 @@ public class MainTerminalOptional {
                 Stream.generate(()->Student.getRandomStudent(jsm,pym))
                         .limit(1000)
                         .toList();
+
+        int minAge = 21;
+        students.stream()
+                .filter(s-> s.getAge() <= minAge)
+                .findAny()
+                .ifPresentOrElse(student -> System.out.printf("Student %d from %s is %d%n", student.getStudentId(),student.getCountryCode(),student.getAge()),
+                        ()-> System.out.println("No student found under "+ minAge));
     }
 }
