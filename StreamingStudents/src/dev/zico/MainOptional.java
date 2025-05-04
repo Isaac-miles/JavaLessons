@@ -28,7 +28,7 @@ public class MainOptional {
         System.out.println(o2);
         o2.ifPresent(System.out::println);
 
-        Student firstStudent = (o2.orElse(null));
+        Student firstStudent = (o2.orElse(getDummyStudent(jsm)));
         long id = firstStudent==null ? -1 : firstStudent.getStudentId();
     }
 
