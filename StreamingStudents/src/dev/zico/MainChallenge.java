@@ -31,5 +31,6 @@ public class MainChallenge {
         int topPercent = (int)(1.25 * averagePercentage);
         System.out.printf("Best Percentage Complete = %d%% %n", topPercent);
 
+
     }
 }
