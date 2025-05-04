@@ -59,7 +59,7 @@ public class MainTerminalOptional {
                 .map(l->String.join(",",l))
                 .filter(l->l.contains("NG"))
                 .findAny()
-                .ifPresentOrElse(System.out::println,()-> System.out.println("Missing NG"));
+                .ifPresentOrElse(System.out::println,()-> System.out.println("Missing NG from"));
 
     }
 }
