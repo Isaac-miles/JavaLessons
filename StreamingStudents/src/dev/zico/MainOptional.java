@@ -28,7 +28,7 @@ public class MainOptional {
         System.out.println(o2);
         o2.ifPresent(System.out::println);
 
-        Student firstStudent = (o2.isPresent()? o2.get() : null);
+        Student firstStudent = (o2.orElse(null));
         long id = firstStudent==null ? -1 : firstStudent.getStudentId();
     }
 
@@ -41,5 +41,10 @@ public class MainOptional {
             return Optional.ofNullable(list.get(list.size()-1));
         }
         return Optional.ofNullable(list.get(new Random().nextInt(list.size())));
+    }
+
+    private static Student getDummyStudent (Course ...courses){
+        System.out.println("Getting the dummy student");
+        return new Student("NO",1,1,"U",false,courses);
     }
 }
