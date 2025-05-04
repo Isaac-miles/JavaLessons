@@ -14,7 +14,7 @@ public class MainTerminalOptional {
                         .limit(1000)
                         .toList();
 
-        int minAge = 21;
+        int minAge = 18;
         students.stream()
                 .filter(s-> s.getAge() <= minAge)
                 .findAny()
