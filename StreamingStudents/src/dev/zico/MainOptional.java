@@ -20,10 +20,16 @@ public class MainOptional {
         Optional<Student> o1 = getStudent(new ArrayList<>(),"first");
         System.out.println("Empty = "+o1.isEmpty()+ ", Present = "+o1.isPresent());
         System.out.println(o1);
+        o1.ifPresent(System.out::println);
+        o1.ifPresentOrElse(System.out::println,()-> System.out.println("-----< empty"));
 
         Optional<Student> o2 = getStudent(students,"first");
         System.out.println("Empty = "+o2.isEmpty()+ ", Present = "+o2.isPresent());
         System.out.println(o2);
+        o2.ifPresent(System.out::println);
+
+        Student firstStudent = (o2.isPresent()? o2.get() : null);
+        long id = firstStudent==null ? -1 : firstStudent.getStudentId();
     }
 
     private static Optional<Student> getStudent(List<Student> list, String type){
