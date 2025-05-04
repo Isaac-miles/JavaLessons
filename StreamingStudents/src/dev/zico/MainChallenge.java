@@ -2,6 +2,7 @@ package dev.zico;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -43,8 +44,23 @@ public class MainChallenge {
 
         hardWorkers.forEach(s->{
             s.addCourse(jgame);
-            System.out.println(s);
+            System.out.print(s.getStudentId()+" ");
         });
-        System.out.println("_".repeat(30));
+        System.out.println();
+
+        Comparator<Student> uniqueSorted = longTermStudent.thenComparing(Student::getStudentId);
+
+        students.stream()
+                .filter(s->s.getMonthsSinceActive("JSM") ==0)
+                .filter(s->s.getPercentComplete("JSM")>=topPercent)
+                .sorted(longTermStudent)
+                .limit(10)
+//                .toList()
+//                .collect(Collectors.toSet())
+                .collect(()->new TreeSet<>(longTermStudent),TreeSet::add, TreeSet::addAll)
+                .forEach(s->{
+                s.addCourse(jgame);
+                System.out.print(s.getStudentId()+" ");
+        });
     }
 }
