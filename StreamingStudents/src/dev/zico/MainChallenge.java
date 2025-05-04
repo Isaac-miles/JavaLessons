@@ -40,6 +40,11 @@ public class MainChallenge {
                 .sorted(longTermStudent)
                 .limit(10)
                 .toList();
-        System.out.println("hard workers = " + hardWorkers.size());
+
+        hardWorkers.forEach(s->{
+            s.addCourse(jgame);
+            System.out.println(s);
+        });
+        System.out.println("_".repeat(30));
     }
 }
