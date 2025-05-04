@@ -53,5 +53,13 @@ public class MainTerminalOptional {
                 .reduce((a,b)->String.join(",",a,b))
                 .ifPresentOrElse(System.out::println,()-> System.out.println("Non found"));
 
+        students.stream()
+                .map(Student::getCountryCode)
+                .distinct()
+                .map(l->String.join(",",l))
+                .filter(l->l.contains("NG"))
+                .findAny()
+                .ifPresentOrElse(System.out::println,()-> System.out.println("Missing NG"));
+
     }
 }
