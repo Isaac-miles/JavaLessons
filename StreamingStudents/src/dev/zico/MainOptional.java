@@ -28,8 +28,10 @@ public class MainOptional {
         System.out.println(o2);
         o2.ifPresent(System.out::println);
 
-        Student firstStudent = (o2.orElse(getDummyStudent(jsm)));
-        long id = firstStudent==null ? -1 : firstStudent.getStudentId();
+//        Student firstStudent = (o2.orElse(getDummyStudent(jsm)));
+        Student firstStudent = o2.orElseGet(()->getDummyStudent(pym));
+        long id = firstStudent.getStudentId();
+        System.out.println("firstStudent's id is "+id);
     }
 
     private static Optional<Student> getStudent(List<Student> list, String type){
