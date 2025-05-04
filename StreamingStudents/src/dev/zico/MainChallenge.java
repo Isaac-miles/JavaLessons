@@ -1,5 +1,6 @@
 package dev.zico;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -31,9 +32,13 @@ public class MainChallenge {
         int topPercent = (int)(1.25 * averagePercentage);
         System.out.printf("Best Percentage Complete = %d%% %n", topPercent);
 
+        Comparator<Student> longTermStudent = Comparator.comparing(Student::getAgeEnrolled);
+
         List<Student> hardWorkers = students.stream()
                 .filter(s->s.getMonthsSinceActive("JSM") ==0)
                 .filter(s->s.getPercentComplete("JSM")>=topPercent)
+                .sorted(longTermStudent)
+                .limit(10)
                 .toList();
         System.out.println("hard workers = " + hardWorkers.size());
     }
