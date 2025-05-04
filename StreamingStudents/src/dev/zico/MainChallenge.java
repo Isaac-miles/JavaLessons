@@ -31,6 +31,10 @@ public class MainChallenge {
         int topPercent = (int)(1.25 * averagePercentage);
         System.out.printf("Best Percentage Complete = %d%% %n", topPercent);
 
-
+        List<Student> hardWorkers = students.stream()
+                .filter(s->s.getMonthsSinceActive("JSM") ==0)
+                .filter(s->s.getPercentComplete("JSM")>=topPercent)
+                .toList();
+        System.out.println("hard workers = " + hardWorkers.size());
     }
 }
