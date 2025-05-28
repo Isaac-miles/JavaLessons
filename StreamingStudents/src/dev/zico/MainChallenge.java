@@ -2,7 +2,6 @@ package dev.zico;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class MainChallenge {
@@ -15,12 +14,6 @@ public class MainChallenge {
                 Stream.generate(()->Student.getRandomStudent(jsm,pym))
                 .limit(5000)
                 .toList();
-
-        //using rangeClosed
-        List<Student> students_ =
-                IntStream.rangeClosed(1, 5000)
-                        .mapToObj((s)->Student.getRandomStudent(jsm,pym))
-                        .toList();
 
         double totalPercent = students.stream()
                 .mapToDouble(s->s.getPercentComplete("JSM"))
@@ -46,8 +39,6 @@ public class MainChallenge {
             System.out.print(s.getStudentId()+" ");
         });
         System.out.println();
-
-        Comparator<Student> uniqueSorted = longTermStudent.thenComparing(Student::getStudentId);
 
         students.stream()
                 .filter(s->s.getMonthsSinceActive("JSM") ==0)
