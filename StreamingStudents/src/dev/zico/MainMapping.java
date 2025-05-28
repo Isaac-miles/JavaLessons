@@ -58,6 +58,10 @@ public class MainMapping {
 
 //   the flatMap intermediate operation performs one-to-many transformations on elements in a stream pipeline.
 
-
+        long studentBodyCount = 0;
+        for (var list : experienced.values()){
+            studentBodyCount += list.size();
+        }
+        System.out.println("studentBodyCount = "+studentBodyCount);
     }
 }
