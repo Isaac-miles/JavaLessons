@@ -110,15 +110,15 @@ public class Student {
 
     public  static Student getRandomStudent(Course ...courses){
         int maxYear = LocalDate.now().getYear() + 1;
-
+        Course[] randomCourses = getRandomSelection(courses);
         Student student = new Student(getRandomVal("AG","ESN","NG","CA","UAE","MOR","UK","US"),
                 random.nextInt(2015,maxYear),
                 random.nextInt(18,90),
                 getRandomVal("M","F","O"),
                 random.nextBoolean(),
-                courses);
+                randomCourses);
 
-        for(Course c:courses){
+        for(Course c:randomCourses){
             int lecture = random.nextInt(30,c.lectureCount());
             int year = random.nextInt(student.getYearEnrolled(),maxYear);
             int month = random.nextInt(1,13);
