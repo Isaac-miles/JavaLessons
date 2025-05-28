@@ -47,5 +47,14 @@ public class MainMapping {
                         s->s.hasProgrammingExperience() && s.getMonthsSinceActive() == 0
                         ,counting()));
         System.out.println("Experience and Active Student = "+ experienceAndActive.get(true));
+
+        var multiLevel = students.stream()
+                .collect(groupingBy(Student::getCountryCode, groupingBy(Student::getGender)));
+
+        multiLevel.forEach((key, value)->{
+            System.out.println(key);
+            value.forEach((key1,value1)->
+                    System.out.println("\t"+ key1+" "+value1.size()));
+        });
     }
 }
