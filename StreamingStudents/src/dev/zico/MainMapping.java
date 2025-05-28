@@ -55,5 +55,9 @@ public class MainMapping {
             value.forEach((key1,value1)->
                     System.out.println("\t"+ key1+" "+value1.size()));
         });
+
+//   the flatMap intermediate operation performs one-to-many transformations on elements in a stream pipeline.
+
+
     }
 }
