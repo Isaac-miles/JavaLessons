@@ -63,5 +63,21 @@ public class MainMapping {
             studentBodyCount += list.size();
         }
         System.out.println("studentBodyCount = "+studentBodyCount);
+
+        studentBodyCount = experienced.values().stream()
+                .mapToInt(l->l.size())
+                .sum();
+        System.out.println("studentBodyCount = "+ studentBodyCount);
+
+        studentBodyCount = experienced.values().stream()
+                .map(l->l.stream()
+                        .filter(s->s.getMonthsSinceActive() <=3)
+                .count())
+                .mapToLong(l->l)
+                .sum();
+        System.out.println("studentBodyCount = "+ studentBodyCount);
+
+//  let's use the flatMap instead
+
     }
 }
