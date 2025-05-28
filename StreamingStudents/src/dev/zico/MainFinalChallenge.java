@@ -1,0 +1,15 @@
+package dev.zico;
+
+import java.time.LocalDate;
+
+public class MainFinalChallenge {
+    public static void main(String[] args) {
+        Course jsm = new Course("JSM", "Javascript Masterclass",100);
+        Course pym = new Course("PYM", "Python Masterclass",50);
+        Course jgame = new Course("J-GAME", "Creating Games in Java");
+
+        int currentYear = LocalDate.now().getYear();
+
+
+    }
+}
