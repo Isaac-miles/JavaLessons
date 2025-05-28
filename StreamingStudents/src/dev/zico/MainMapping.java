@@ -9,7 +9,6 @@ public class MainMapping {
     public static void main(String[] args) {
         Course jsm = new Course("JSM", "Javascript Masterclass",100);
         Course pym = new Course("PYM", "Python Masterclass",50);
-        Course jgame = new Course("J-GAME", "Creating Games in Java");
 
         List<Student> students = IntStream
                 .rangeClosed(1,1000)
@@ -24,7 +23,7 @@ public class MainMapping {
         mappedStudents.forEach((k,s)-> System.out.println(k +" "+ s.size()));
 
         System.out.println("-".repeat(30));
-//  The static import statement lets you import one or more static members of a class, I cam use the static import statement,
+//  The static import statement lets you import one or more static members of a class, I can use the static import statement,
 //  specifying the collectors class, with a wild card to import all static members.
 //        import static java.util.stream.Collectors.*;
 
