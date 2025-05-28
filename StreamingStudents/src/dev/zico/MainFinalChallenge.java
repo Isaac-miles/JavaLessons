@@ -45,8 +45,24 @@ public class MainFinalChallenge {
         var percentages = students.stream()
                 .flatMap(s ->s.getEngagementMap().values().stream())
                 .collect(Collectors.groupingBy(CourseEngagement::getCourseCode,
-                        Collectors.averagingDouble(CourseEngagement::getPercentComplete)));
+                        Collectors.summarizingDouble(CourseEngagement::getPercentComplete)));
 
         percentages.forEach((k,v)-> System.out.println(k+" "+v));
+
+        var yearMap = students.stream()
+                .flatMap(s ->s.getEngagementMap().values().stream())
+                .collect(Collectors.groupingBy(CourseEngagement::getCourseCode,
+                        Collectors.groupingBy(CourseEngagement::getLastActivityYear,
+                                Collectors.counting())));
+
+        yearMap.forEach((k,v)-> System.out.println(k+" "+v));
+
+        students.stream()
+                .flatMap(s->s.getEngagementMap().values().stream())
+                .collect(Collectors.groupingBy(CourseEngagement::getEnrollmentYear,
+                        Collectors.groupingBy(CourseEngagement::getCourseCode,
+                        Collectors.counting())))
+                .forEach((k,v)-> System.out.println(k +" "+v));
+
     }
 }
