@@ -44,7 +44,8 @@ public class MainFinalChallenge {
 
         var percentages = students.stream()
                 .flatMap(s ->s.getEngagementMap().values().stream())
-                .collect(Collectors.groupingBy(CourseEngagement::getCourseCode,Collectors.counting()));
+                .collect(Collectors.groupingBy(CourseEngagement::getCourseCode,
+                        Collectors.averagingDouble(CourseEngagement::getPercentComplete)));
 
         percentages.forEach((k,v)-> System.out.println(k+" "+v));
     }
