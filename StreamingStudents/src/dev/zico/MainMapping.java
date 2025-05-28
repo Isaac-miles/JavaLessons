@@ -11,7 +11,7 @@ public class MainMapping {
         Course pym = new Course("PYM", "Python Masterclass",50);
 
         List<Student> students = IntStream
-                .rangeClosed(1,1000)
+                .rangeClosed(1,2000)
                 .mapToObj(s->Student.getRandomStudent(jsm,pym))
                 .toList();
 
@@ -78,6 +78,19 @@ public class MainMapping {
         System.out.println("studentBodyCount = "+ studentBodyCount);
 
 //  let's use the flatMap instead
+        long count = experienced.values().stream()
+                .flatMap(l->l.stream())
+                .filter(s->s.getMonthsSinceActive() <=3)
+                .count();
+        System.out.println("Active students = "+ count);
+
+        count = multiLevel.values().stream()
+                .flatMap(map->map.values().stream()
+                        .flatMap(l->l.stream())
+                )
+                .filter(s->s.getMonthsSinceActive() <=3)
+                .count();
+        System.out.println("Active students in multi level = "+ count);
 
     }
 }
