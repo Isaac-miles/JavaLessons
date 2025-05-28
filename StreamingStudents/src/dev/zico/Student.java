@@ -1,9 +1,7 @@
 package dev.zico;
 
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class Student {
     private static long lastStudentId = 1;
@@ -100,6 +98,14 @@ public class Student {
 
     private static String getRandomVal(String ...data){
         return data[random.nextInt(data.length)];
+    }
+
+    private static  Course[] getRandomSelection(Course ...courses){
+        int courseCount = random.nextInt(1,courses.length+1);
+        List<Course> courseList = new ArrayList<>(Arrays.asList(courses));
+        Collections.shuffle(courseList);
+        List<Course> selectedCourses = courseList.subList(0, courseCount);
+        return  selectedCourses.toArray(new  Course[0]);
     }
 
     public  static Student getRandomStudent(Course ...courses){
