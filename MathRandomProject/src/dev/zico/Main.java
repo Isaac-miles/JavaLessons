@@ -73,6 +73,11 @@ public class Main {
         Random pseudoRandom = new Random(nanoTime);
         System.out.println("_".repeat(30));
         pseudoRandom.ints(10, 0,10)
-                .forEach(i-> System.out.println(i+ " "));
+                .forEach(i-> System.out.print(i+ " "));
+
+        Random notReallyRandom = new Random(nanoTime);
+        System.out.println("\n--------------------");
+        notReallyRandom.ints(10, 0,10)
+                .forEach(i-> System.out.print(i+ " "));
     }
 }
