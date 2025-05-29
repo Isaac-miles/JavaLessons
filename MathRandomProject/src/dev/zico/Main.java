@@ -69,6 +69,10 @@ public class Main {
         r.ints(10 )
                 .forEach(System.out::println);
 
-
+        long nanoTime = System.nanoTime();
+        Random pseudoRandom = new Random(nanoTime);
+        System.out.println("_".repeat(30));
+        pseudoRandom.ints(10, 0,10)
+                .forEach(i-> System.out.println(i+ " "));
     }
 }
