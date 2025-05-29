@@ -24,5 +24,12 @@ public class Main {
         System.out.println("Floor = "+ Math.floor(10.8)); //will always round down irrespective
         System.out.println("Ceil = "+ Math.ceil(10.2)); //will always round up irrespective
 
+        System.out.println("Square root of 100 "+ Math.sqrt(100));
+        System.out.println("2 to the third power (2*2*2) = "+ Math.pow(2,3));
+        System.out.println("10 to the fifth power  = "+ Math.pow(10,5));
+
+        for (int i=0; i < 10; i++){
+            System.out.println(Math.random());
+        }
     }
 }
