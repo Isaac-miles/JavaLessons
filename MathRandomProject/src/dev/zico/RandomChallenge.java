@@ -10,11 +10,10 @@ public class RandomChallenge {
     private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         List<Integer> currentDice = new ArrayList<>();
-        int rolls = 0;
         do{
             rollDice(currentDice);
-            currentDice.clear();
-        }while (++rolls < 5);
+        }while (!pickLosers(currentDice));
+        System.out.println("Game over. Real game would score and continue.");
     }
     private static void rollDice(List<Integer> currentDice){
         int randomCount = 5 - currentDice.size();
@@ -34,7 +33,7 @@ public class RandomChallenge {
                 Type "ALL" to re-roll all the dice.
                 List numbers (separated by spaces) to re-roll selected dice.
                 """;
-        System.out.println(prompt + "--> ");
+        System.out.print(prompt + "--> ");
         String userInput = scanner.nextLine();
         if(userInput.isBlank()){
             return true;
