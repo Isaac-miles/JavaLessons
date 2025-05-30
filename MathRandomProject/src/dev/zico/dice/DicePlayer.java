@@ -77,7 +77,12 @@ public class DicePlayer implements Player {
         do{
             rollDice();
         }while (!pickLosers());
-        return  false;
+
+        do{
+            System.out.println("You must select a score category: ");
+        }while(!scoreDice());
+        currentDice.clear();
+        return  (getItemList().size()==0);
     }
     public  List<String> getItemList(){
         return scoreCard
