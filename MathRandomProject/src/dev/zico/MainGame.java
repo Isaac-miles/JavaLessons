@@ -12,5 +12,6 @@ public class MainGame {
 //        }
 
         var console = new GameConsole<>(new DiceGame("Dice Game"));
+        console.playGame(console.addPlayer());
     }
 }
