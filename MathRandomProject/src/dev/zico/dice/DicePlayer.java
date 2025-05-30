@@ -79,4 +79,28 @@ public class DicePlayer implements Player {
         }while (!pickLosers());
         return  false;
     }
+    public  List<String> getItemList(){
+        return scoreCard
+                .entrySet()
+                .stream()
+                .filter(e->e.getValue()==null)
+                .map(e->e.getKey().name())
+                .toList();
+    }
+    private  boolean scoreDice(){
+        List<String> remainingItems = getItemList();
+        String prompt = String.join("\n", remainingItems.toArray(new String[0]));
+        String userInput =
+                GameConsole.getUserInput(prompt+"\n--> ").toUpperCase();
+        if(userInput.isBlank()){
+            return false;
+        }
+        if(!remainingItems.contains(userInput)){
+            System.out.println("Invalid selection");
+            return false;
+        }
+        ScoredItem item = ScoredItem.valueOf(userInput);
+        scoreCard.put(item, item.score(currentDice));
+        return  true;
+    }
 }
