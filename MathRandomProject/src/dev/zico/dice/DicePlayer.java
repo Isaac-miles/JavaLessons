@@ -1,5 +1,6 @@
 package dev.zico.dice;
 
+import dev.zico.game.GameConsole;
 import dev.zico.game.Player;
 
 import java.util.*;
@@ -41,5 +42,41 @@ public class DicePlayer implements Player {
 
         currentDice.addAll(newDice);
         System.out.println("Your dice are: "+ currentDice);
+    }
+    private  boolean pickLosers(){
+        String prompt = """
+                Press Enter to Score.
+                Type "ALL" to re-roll all the dice.
+                List numbers (separated by spaces) to re-roll selected dice.
+                """;
+
+        String userInput = GameConsole.getUserInput(prompt+ "-->");
+        if(userInput.isBlank()){
+            return true;
+        }
+        try{
+            removeDice(userInput.split(" "));
+        }catch (Exception e){
+            e.printStackTrace(System.out);
+            System.out.println("Bad input, Try again");
+        }
+        return false;
+    }
+
+    private  void removeDice( String[] selected){
+        if(selected.length==1 && selected[0].contains("ALL")){
+            currentDice.clear();
+        }else {
+            for(String remove:selected){
+                currentDice.remove(Integer.valueOf(remove));
+            }
+            System.out.println("Keeping "+ currentDice);
+        }
+    }
+    public  boolean rollDiceAndSelect(){
+        do{
+            rollDice();
+        }while (!pickLosers());
+        return  false;
     }
 }
