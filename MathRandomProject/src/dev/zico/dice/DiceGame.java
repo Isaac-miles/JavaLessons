@@ -26,7 +26,6 @@ public class DiceGame extends Game<DicePlayer> {
           return  map;
     }
     private boolean rollDice(int playerIndex){
-        getPlayer(playerIndex).rollDice();
-        return false;
+        getPlayer(playerIndex).rollDiceAndSelect();
     }
 }
