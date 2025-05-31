@@ -24,5 +24,30 @@ public class Main {
         String[] tests = {"15.456","8","10000.000001",".123"};
         BigDecimal[] bds = new BigDecimal[tests.length];
         Arrays.setAll(bds, i->new BigDecimal(tests[i]));
+        System.out.printf("%-14s %-15s %-8s %s%n", "Value", "Unscaled Value", "Scale","Precision");
+
+        for(var bd: bds){
+            System.out.printf("%-15s %-15d %-8d %d %n", bd, bd.unscaledValue(),bd.scale(),bd.precision());
+        }
+
+        double[] doubles = {15.456,8,10000.000001,.123};
+        Arrays.setAll(bds, i-> BigDecimal.valueOf(doubles[i]));
+        System.out.println("------------------------------------");
+        System.out.printf("%-14s %-15s %-8s  %s%n", "Value", "Unscaled Value", "Scale","Precision");
+
+        for(var bd: bds){
+            System.out.printf("%-15s %-15d %-8d %d  %n", bd, bd.unscaledValue(),bd.scale(),bd.precision());
+        }
+
+        BigDecimal test1 = new BigDecimal("1.111112222223333344455566");
+        BigDecimal test2 = BigDecimal.valueOf(1.111112222223333344455566);
+        System.out.println("------------------------------------");
+        System.out.printf("%-30s %-30s %-8s %s%n", "Value", "Unscaled Value", "Scale","Precision");
+
+        System.out.printf("%-30s %-30d %-8d %d %n", test1,test1.unscaledValue(), test1.scale(),test1.precision());
+        System.out.printf("%-30s %-30d %-8d  %d %n", test2,test2.unscaledValue(), test2.scale(),test2.precision());
+
+
+
     }
 }
