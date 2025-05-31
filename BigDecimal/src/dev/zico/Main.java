@@ -15,5 +15,7 @@ public class Main {
 
         double total = policyAmount-((policyAmount * percentage) * beneficiaries);
         System.out.printf("totalUsingFloat: %,.2f%n", total);
+
+//  Big decimal lets you control how numbers are rounded without loosing precisions in calculations
     }
 }
