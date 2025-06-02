@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -15,15 +16,24 @@ public class Main {
 // EAFP -> Easier to Ask Forgiveness than Permission: This assumes an operation will usually succeed, then handles any
 // error that occur, if they do occur
     public static void main(String[] args){
-        String fileName = "testing.csv";
-        testFile2(null);
-
+        String fileName = "files/testing.csv";
+        System.out.println("Current working directory (cwd) = "+ new File("").getAbsolutePath());
         File file = new File(fileName);
         if(!file.exists()){
             System.out.println("No such file exist");
-            System.out.println("system shutting down");
         }
         System.out.println("Good to go.");
+
+        for(File f : File.listRoots()){
+            System.out.println(f);
+        }
+
+        Path path = Paths.get("files/testing.csv");
+        System.out.println("Current working directory (cwd) = "+ new File("").getAbsolutePath());
+        if(!Files.exists(path)){
+            System.out.println("2 No such file exist");
+        }
+        System.out.println(" 2 Good to go.");
     }
 
     private static  void testFile(String fileName){
