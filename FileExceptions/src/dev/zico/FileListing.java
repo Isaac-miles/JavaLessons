@@ -30,7 +30,7 @@ public class FileListing {
             throw new RuntimeException(e);
         }
         System.out.println("---------------------------");
-        try(Stream<Path> paths = Files.find(path, 2,(p,attr)->Files.isRegularFile(p))) {
+        try(Stream<Path> paths = Files.find(path, 3,(p,attr)->attr.isRegularFile() && attr.size()> 500)) {
             paths
                     .map(FileListing::listDir)
                     .forEach(System.out::println);
