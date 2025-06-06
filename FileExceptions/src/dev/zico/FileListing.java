@@ -37,9 +37,11 @@ public class FileListing {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        path = path.resolve(".idea");
         System.out.println("===========Directory Stream==============");
-        try(var dirs = Files.newDirectoryStream(path)) {
-            dirs.forEach(d-> System.out.println(FileListing.listDir(path)));
+        try(var dirs = Files.newDirectoryStream(path,"*.xml")) {
+            dirs.forEach(d-> System.out.println(FileListing.listDir(d)));
         }catch (IOException e){
             throw new RuntimeException(e);
         }
