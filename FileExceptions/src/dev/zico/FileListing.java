@@ -11,11 +11,14 @@ public class FileListing {
         Path path = Path.of("");
         System.out.println("cwd = "+path.toAbsolutePath());
         try(Stream<Path> paths = Files.list(path)) {
-            paths.forEach(System.out::println);
+            paths.
+                    map(FileListing::listDir)
+                    .forEach(System.out::println);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     private static String listDir(Path path){
         try{
             boolean isDir = Files.isDirectory(path);
