@@ -8,6 +8,7 @@ import java.nio.file.Path;
 public class FileAndPath {
     public static void main(String[] args) {
         useFile("testFile.txt");
+        System.out.println("------------------------------------------------");
         usePath("pathFile.tst");
     }
 
@@ -33,7 +34,7 @@ public class FileAndPath {
         }
     }
     private static void usePath(String fileName){
-        Path path = new Path.of(fileName);
+        Path path = Path.of(fileName);
 
         boolean fileExists = Files.exists(path);
         System.out.printf("File '%s' %s%n", fileName, fileExists ? "exists." : "does not exist.");
@@ -50,12 +51,19 @@ public class FileAndPath {
         if(!fileExists){
             try {
                 Files.createFile(path);
-            } catch (IOException e) {
-                System.out.println("Something went wrong!!! ");;
-            }
+
             System.out.println("Created File: "+ fileName);
             if(Files.isWritable(path)){
-                System.out.println("Would write to file here");
+                Files.writeString(path,"""
+                        Here to test that write file works as expected
+                        In all things Praise God
+                        """);
+            }
+                System.out.println("Reading the file back to base");
+                System.out.println("-------------------------------");
+                System.out.println(Files.readString(path));
+            } catch (IOException e) {
+                System.out.println("Something went wrong!!! ");;
             }
         }
     }
