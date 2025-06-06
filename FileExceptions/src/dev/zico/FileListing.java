@@ -37,6 +37,12 @@ public class FileListing {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        System.out.println("===========Directory Stream==============");
+        try(var dirs = Files.newDirectoryStream(path)) {
+            dirs.forEach(d-> System.out.println(FileListing.listDir(path)));
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
     }
 
     private static String listDir(Path path){
