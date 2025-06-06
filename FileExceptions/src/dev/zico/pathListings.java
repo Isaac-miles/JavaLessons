@@ -25,7 +25,9 @@ public class pathListings {
 //        }
 
         int pathParts = absolutePath.getNameCount();
-
+        for(int i=0; i<pathParts; i++){
+            System.out.println(".".repeat(i + 1)+" "+absolutePath.getName(i));
+        }
         System.out.println("------------------------------------");
 
     }
