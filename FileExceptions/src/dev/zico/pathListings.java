@@ -3,11 +3,15 @@ package dev.zico;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.time.Instant;
 
 public class pathListings {
     public static void main(String[] args) {
         Path path = Path.of("files/testing.txt");
-        printPathInfo(path);
+//        printPathInfo(path);
+        logStatement(path);
+        extraInfo(path);
     }
     private static void printPathInfo(Path path){
         System.out.println("Path: "+ path);
@@ -40,8 +44,18 @@ public class pathListings {
             if(!Files.exists(parent)){
                 Files.createDirectory(parent);
             }
+            Files.writeString(path, Instant.now() +": file world\n", StandardOpenOption.CREATE,StandardOpenOption.APPEND);
         }catch (IOException e){
             e.printStackTrace();
+        }
+    }
+    private static void extraInfo(Path path){
+        try {
+            var atts = Files.readAttributes(path, "*");
+           atts.entrySet().forEach(System.out::println);
+            System.out.println(Files.probeContentType(path));
+        }catch (IOException e){
+            System.out.println("Problem getting attributes");
         }
     }
 }
