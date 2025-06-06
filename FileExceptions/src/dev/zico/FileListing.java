@@ -29,6 +29,14 @@ public class FileListing {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        System.out.println("---------------------------");
+        try(Stream<Path> paths = Files.find(path, 2,(p,attr)->Files.isRegularFile(p))) {
+            paths
+                    .map(FileListing::listDir)
+                    .forEach(System.out::println);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static String listDir(Path path){
