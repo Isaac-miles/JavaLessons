@@ -1,5 +1,7 @@
 package dev.zico;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class pathListings {
@@ -30,5 +32,16 @@ public class pathListings {
         }
         System.out.println("------------------------------------");
 
+    }
+
+    private static void logStatement(Path path){
+        try {
+            Path parent = path.getParent();
+            if(!Files.exists(parent)){
+                Files.createDirectory(parent);
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
