@@ -1,10 +1,9 @@
 package dev.zico;
 
 import java.io.IOException;
-import java.nio.file.FileVisitor;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Objects;
 
 public class FileWalker {
     public static void main(String[] args) {
@@ -18,6 +17,12 @@ public class FileWalker {
     }
 
     private static class StatsVisitor extends SimpleFileVisitor<Path>{
-
+        @Override
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+            Objects.requireNonNull(file);
+            Objects.requireNonNull(attrs);
+            System.out.println(file.getFileName());
+            return FileVisitResult.CONTINUE;
+        }
     }
 }
