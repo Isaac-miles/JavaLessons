@@ -10,7 +10,7 @@ import java.util.Objects;
 public class FileWalker {
     public static void main(String[] args) {
         Path startingPath  = Path.of(".");
-        FileVisitor<Path> statsVisitor = new StatsVisitor();
+        FileVisitor<Path> statsVisitor = new StatsVisitor(1);
         try {
             Files.walkFileTree(startingPath,statsVisitor);
         } catch (IOException e) {
@@ -62,8 +62,8 @@ public class FileWalker {
             if(dir.equals(initialPath)){
                 return FileVisitResult.TERMINATE;
             }
-            int relativelevel = dir.getNameCount() - initialCount;
-            if(relativelevel == 1){
+            int relativeLevel = dir.getNameCount() - initialCount;
+            if(relativeLevel == 1){
                 folderSizes.forEach((key,value)->{
                     int level = key.getNameCount()- initialCount - 1;
                     if(level < printLevel){
