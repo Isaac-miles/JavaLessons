@@ -22,6 +22,12 @@ public class FileWalker {
         private Path initialPath = null;
         private final Map<Path, Long> folderSizes = new LinkedHashMap<>();
         private int initialCount;
+        private int printLevel;
+
+        public StatsVisitor(int printLevel) {
+            this.printLevel = printLevel;
+        }
+
         @Override
         public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
             Objects.requireNonNull(file);
@@ -60,8 +66,13 @@ public class FileWalker {
             if(relativelevel == 1){
                 folderSizes.forEach((key,value)->{
                     int level = key.getNameCount()- initialCount - 1;
-                    System.out.printf("%s[%s]- %,d bytes %n","\t".repeat(level),key.getFileName(),value);
+                    if(level < printLevel){
+                        System.out.printf("%s[%s]- %,d bytes %n","\t".repeat(level),key.getFileName(),value);
+                    }
                 });
+            }else {
+                long folderSize = folderSizes.get(dir);
+                folderSizes.merge(dir.getParent(),0L,(o,n)->o+=folderSize);
             }
             return FileVisitResult.CONTINUE;
         }
