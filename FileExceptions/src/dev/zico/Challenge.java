@@ -51,6 +51,7 @@ public class Challenge {
             if(exc !=null){
                 System.out.println(exc.getClass().getSimpleName()+" "+file);
             }
+            return  FileVisitResult.CONTINUE;
         }
 
         @Override
