@@ -26,7 +26,7 @@ public class FileWalker {
         public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
             Objects.requireNonNull(file);
             Objects.requireNonNull(attrs);
-            System.out.println(file.getFileName());
+          folderSizes.merge(file.getParent(),0L,(o,n)->o += attrs.size());
             return FileVisitResult.CONTINUE;
         }
 
@@ -43,7 +43,7 @@ public class FileWalker {
                 if(relativeLevel == 1){
                     folderSizes.clear();
                 }
-
+                folderSizes.put(dir, 0L);
             }
             return FileVisitResult.CONTINUE;
         }
@@ -53,6 +53,16 @@ public class FileWalker {
             Objects.requireNonNull(dir);
 //            if (exc != null)
 //                throw exc;
+            if(dir.equals(initialPath)){
+                return FileVisitResult.TERMINATE;
+            }
+            int relativelevel = dir.getNameCount() - initialCount;
+            if(relativelevel == 1){
+                folderSizes.forEach((key,value)->{
+                    int level = key.getNameCount()- initialCount - 1;
+                    System.out.printf("%s[%s]- %,d bytes %n","\t".repeat(level),key.getFileName(),value);
+                });
+            }
             return FileVisitResult.CONTINUE;
         }
     }
