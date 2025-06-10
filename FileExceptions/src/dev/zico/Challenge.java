@@ -19,7 +19,7 @@ public class Challenge {
         }
     }
 
-    private static class StatsVisitor extends SimpleFileVisitor<Path>{
+    private static class StatsVisitor implements FileVisitor<Path>{
         private Path initialPath = null;
         private final Map<Path, Map<String, Long>> folderSizes = new LinkedHashMap<>();
         private int initialCount;
@@ -89,8 +89,15 @@ public class Challenge {
                     }
                 });
             }else {
-                long folderSize = folderSizes.get(dir);
-                folderSizes.merge(dir.getParent(),0L,(o,n)->o+=folderSize);
+                var parentMap = folderSizes.get(dir.getParent());
+                var childMap = folderSizes.get(dir);
+                long folderCount = childMap.getOrDefault(DIR_CNT,0L);
+                long fileSize = childMap.getOrDefault(FILE_SIZE,0L);
+                long fileCount = childMap.getOrDefault(FILE_CNT,0L);
+
+                parentMap.merge(DIR_CNT, folderCount+ 1,(o,n)->o +=n);
+                parentMap.merge(FILE_SIZE, fileSize,Math::addExact);
+                parentMap.merge(FILE_CNT,fileCount,Math::addExact);
             }
             return FileVisitResult.CONTINUE;
         }
