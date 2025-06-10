@@ -3,6 +3,8 @@ package dev.zico;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class FileWalker {
@@ -17,13 +19,14 @@ public class FileWalker {
     }
 
     private static class StatsVisitor extends SimpleFileVisitor<Path>{
-        private int level;
+        private Path initialPath = null;
+        private final Map<Path, Long> folderSizes = new LinkedHashMap<>();
+        private int initialCount;
         @Override
         public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
             Objects.requireNonNull(file);
             Objects.requireNonNull(attrs);
             System.out.println(file.getFileName());
-            System.out.println("\t".repeat(level)+ file.getFileName());
             return FileVisitResult.CONTINUE;
         }
 
@@ -31,8 +34,17 @@ public class FileWalker {
         public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
             Objects.requireNonNull(dir);
             Objects.requireNonNull(attrs);
-            level++;
-            System.out.println(dir.getFileName());
+
+            if(initialPath == null){
+                initialPath = dir;
+                initialCount = dir.getNameCount();
+            }else{
+                int relativeLevel = dir.getNameCount() - initialCount;
+                if(relativeLevel == 1){
+                    folderSizes.clear();
+                }
+
+            }
             return FileVisitResult.CONTINUE;
         }
 
@@ -41,7 +53,6 @@ public class FileWalker {
             Objects.requireNonNull(dir);
 //            if (exc != null)
 //                throw exc;
-            level--;
             return FileVisitResult.CONTINUE;
         }
     }
