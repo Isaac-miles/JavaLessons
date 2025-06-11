@@ -15,17 +15,11 @@ public class ChallengeStreams {
                     .filter(Files::isRegularFile)
                     .collect(Collectors.groupingBy(p->p.subpath(index, index+1),
                             Collectors.summarizingLong(
-                                    (p->{
-                                        try{
-                                            return Files.size(p);
-                                        }catch (IOException e){
-                                            throw new RuntimeException(e);
-                                        }
-                                    })
-                            )))
+                               p->p.toFile().length())))
                     .entrySet()
                     .stream()
                     .sorted(Comparator.comparing(e->e.getKey().toString()))
+                    .filter(e->e.getValue().getSum() > 50_000)
                     .forEach(e->{
                         System.out.printf("[%s] %,d bytes, %d files %n",e.getKey(),e.getValue().getSum(),e.getValue().getCount());
                     });
