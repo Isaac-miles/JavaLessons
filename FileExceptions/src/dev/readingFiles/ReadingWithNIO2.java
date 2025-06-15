@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class ReadingWithNIO2 {
     public static void main(String[] args) {
@@ -43,6 +44,16 @@ public class ReadingWithNIO2 {
                         .sorted()
                         .toArray(String[]::new);
                 System.out.println(Arrays.toString(result));
+            }
+            try(var stringStream = Files.lines(path)){
+                var result = stringStream
+                        .skip(1)
+                        .map(p::matcher)
+                        .filter(Matcher::matches)
+                        .collect(Collectors.groupingBy(m->m.group(3).trim(),
+                                Collectors.counting()));
+
+                result.entrySet().forEach(System.out::println);
             }
         }catch (IOException e){
             throw new RuntimeException(e);
