@@ -1,19 +1,13 @@
 package dev.writingFiles;
 
-public record Course(String courseCode, String title, int lectureCount) {
+public record Course(String courseCode, String title) {
 
-    public Course {
-        if(lectureCount <=0){
-            lectureCount = 1;
-        }
-    }
-
-    public Course(String courseCode, String title) {
-        this(courseCode, title, 40);
+    public int getLectureCount() {
+        return 15;
     }
 
     @Override
     public String toString() {
-        return "%s %s".formatted(courseCode,title);
+        return "%s %s".formatted(courseCode, title);
     }
 }
