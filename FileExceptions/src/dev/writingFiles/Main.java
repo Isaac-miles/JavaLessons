@@ -3,6 +3,7 @@ package dev.writingFiles;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -28,7 +29,7 @@ public class Main {
         try{
             Files.writeString(path,header);
             for(Student s : students){
-                Files.write(path,s.getEngagementRecords());
+                Files.write(path,s.getEngagementRecords(), StandardOpenOption.APPEND);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
