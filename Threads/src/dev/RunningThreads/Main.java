@@ -16,22 +16,17 @@ public class Main {
                 System.out.print(". ");
                 try{
                     Thread.sleep(500);
+                    System.out.println("A. State = "+ Thread.currentThread().getState());
                 } catch (InterruptedException e) {
                     System.out.println("\nwhoops!! "+tName+" interrupted. ");
+                    System.out.println("A1. State = "+ Thread.currentThread().getState());
+                    return;
                 }
             }
             System.out.println("\n"+tName+" completed.");
         });
         System.out.println(thread.getName()+ " starting");
         thread.start();
-        System.out.println("Main thread continues running here");
 
-        try{
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        thread.interrupt();
     }
 }
