@@ -34,7 +34,7 @@ public class Main {
             }catch (InterruptedException e){
                 e.printStackTrace();
             }
-        });
+        },"InstallThread");
 
         System.out.println(thread.getName()+ " starting");
         thread.start();
