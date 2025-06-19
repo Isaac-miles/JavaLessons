@@ -12,8 +12,8 @@ public class Main {
         Thread thread = new Thread(()->{
             String tName = Thread.currentThread().getName();
             System.out.println(tName+" should take 10 dots to run");
-            for (int i=1;i<10;i++){
-                System.out.println(". ");
+            for (int i=1;i <= 10;i++){
+                System.out.print(". ");
                 try{
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
@@ -24,6 +24,14 @@ public class Main {
         });
         System.out.println(thread.getName()+ " starting");
         thread.start();
-        System.out.println("Main thread continues running");
+        System.out.println("Main thread continues running here");
+
+        try{
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        thread.interrupt();
     }
 }
