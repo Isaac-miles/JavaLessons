@@ -9,6 +9,7 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         Thread thread = new Thread(()->{
             String tName = Thread.currentThread().getName();
             System.out.println(tName+" should take 10 dots to run");
@@ -16,15 +17,25 @@ public class Main {
                 System.out.print(". ");
                 try{
                     Thread.sleep(500);
-                    System.out.println("A. State = "+ Thread.currentThread().getState());
                 } catch (InterruptedException e) {
                     System.out.println("\nwhoops!! "+tName+" interrupted. ");
-                    System.out.println("A1. State = "+ Thread.currentThread().getState());
                     return;
                 }
             }
             System.out.println("\n"+tName+" completed.");
         });
+
+        Thread installThread = new Thread(()->{
+            try{
+                for(int i=0; i<3; i++){
+                    Thread.sleep(250);
+                    System.out.println("Installation Step "+(i+1)+" is completed.");
+                }
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        });
+
         System.out.println(thread.getName()+ " starting");
         thread.start();
 
@@ -33,7 +44,6 @@ public class Main {
             System.out.println("\nwaiting for thread to complete ");
             try {
                 Thread.sleep(1000);
-                System.out.println("B. State= "+ thread.getState());
                 if(System.currentTimeMillis() - now > 2000){
                     thread.interrupt();
                 }
@@ -41,7 +51,5 @@ public class Main {
                 e.printStackTrace();
             }
         }
-        System.out.println("C. State= "+ thread.getState());
-
     }
 }
