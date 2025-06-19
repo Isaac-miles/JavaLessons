@@ -39,17 +39,29 @@ public class Main {
         System.out.println(thread.getName()+ " starting");
         thread.start();
 
-        long now = System.currentTimeMillis();
-        while(thread.isAlive()){
-            System.out.println("\nwaiting for thread to complete ");
-            try {
-                Thread.sleep(1000);
-                if(System.currentTimeMillis() - now > 2000){
-                    thread.interrupt();
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+      Thread threadMonitor = new Thread(()->{
+          long now = System.currentTimeMillis();
+          while(thread.isAlive()){
+              try {
+                  Thread.sleep(1000);
+                  if(System.currentTimeMillis() - now > 2000){
+                      thread.interrupt();
+                  }
+              } catch (InterruptedException e) {
+                  e.printStackTrace();
+              }
+          }
+      });
+
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        if(!thread.isInterrupted()){
+            installThread.start();
+        }else {
+            System.out.println("Previous thread was interrupted, "+ installThread.getName()+" Can't run. ");
         }
     }
 }
