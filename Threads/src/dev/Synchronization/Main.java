@@ -2,11 +2,11 @@ package dev.Synchronization;
 
 public class Main {
     public static void main(String[] args) {
-        BankAccount companyAccount = new BankAccount(10000);
+        BankAccount companyAccount = new BankAccount("Isaac",10000);
 
         Thread thread1 = new Thread(()->companyAccount.withdraw(2500));
         Thread thread2 = new Thread(()->companyAccount.deposit(5000));
-        Thread thread3 = new Thread(()->companyAccount.withdraw(2500));
+        Thread thread3 = new Thread(()->companyAccount.setName("Miles"));
         Thread thread4 = new Thread(()->companyAccount.withdraw(5000));
 
         thread1.start();
