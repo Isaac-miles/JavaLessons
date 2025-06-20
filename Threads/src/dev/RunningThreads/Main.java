@@ -16,9 +16,13 @@ public class Main {
             for (int i=1;i <= 10;i++){
                 System.out.print(". ");
                 try{
-                    Thread.sleep(500);
+                    Thread.sleep(800);
                 } catch (InterruptedException e) {
                     System.out.println("\nwhoops!! "+tName+" interrupted. ");
+//java recommends that any method that catches InterruptedException, and it's not prepared
+// to deal with it immediately should reAssert the exception. better than rethrow it, because sometimes you can't
+// rethrow it, the throw has to re-interrupt itself in other words, call interrupt on itself
+                    Thread.currentThread().interrupt();
                     return;
                 }
             }
@@ -36,23 +40,23 @@ public class Main {
             }
         },"InstallThread");
 
-        System.out.println(thread.getName()+ " starting");
-        thread.start();
-
-      Thread threadMonitor = new Thread(()->{
+        Thread threadMonitor = new Thread(()->{
           long now = System.currentTimeMillis();
           while(thread.isAlive()){
               try {
                   Thread.sleep(1000);
-                  if(System.currentTimeMillis() - now > 2000){
+                  if(System.currentTimeMillis() - now > 8000){
                       thread.interrupt();
                   }
               } catch (InterruptedException e) {
                   e.printStackTrace();
               }
-          }
-      });
+             }
+          });
 
+        System.out.println(thread.getName()+ " starting");
+        thread.start();
+        threadMonitor.start();
         try {
             thread.join();
         } catch (InterruptedException e) {
