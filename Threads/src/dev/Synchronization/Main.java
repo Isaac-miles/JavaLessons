@@ -11,6 +11,11 @@ public class Main {
 
         thread1.start();
         thread2.start();
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         thread3.start();
         thread4.start();
 
