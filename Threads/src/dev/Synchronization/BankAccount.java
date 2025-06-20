@@ -25,7 +25,7 @@ public class BankAccount {
     public double getBalance(){
         return balance;
     }
-    public synchronized void deposit(double amount){
+    public  void deposit(double amount){
         try{
             System.out.println("Deposit - Talking to the teller at the bank...");
             Thread.sleep(7000);
@@ -33,13 +33,13 @@ public class BankAccount {
             throw new RuntimeException(e);
         }
 //A thread acquires a lock by executing a synchronized method on the instance, or by using the instance as the parameter to synchronized statement
-//A thread releases a lock when it exits from a synchronized block or method, even if it throws an exception
-//        synchronized (this){
+//A thread releases a lock when it exits from a synchronized block or method, even if it throws an exception, an intrisic lock is only available on an obj
+        synchronized (this){
             double originalBalance = balance;
             balance+=amount;
             System.out.printf("STARTING BALANCE: %.0f, DEPOSIT(%.0f)"+
                     " : NEW BALANCE = %.0f%n", originalBalance,amount,balance);
-//        }
+        }
     }
     public synchronized void withdraw(double amount){
         try{
