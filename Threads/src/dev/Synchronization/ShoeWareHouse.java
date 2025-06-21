@@ -30,7 +30,7 @@ public class ShoeWareHouse {
             }
         }
         Order item = shippingItems.remove(0);
-        System.out.println("Fulfilled: "+item);
+        System.out.println(Thread.currentThread().getName()+"Fulfilled "+item);
         notifyAll();
         return item;
     }
