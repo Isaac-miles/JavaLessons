@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoeWareHouse {
+    private int MAX_BUFFER_SEIZE = 20;
     private List<Order> shippingItems;
     public final String[] PRODUCT_LIST = {"Running Shoes", "Sandals","Boots","Slippers","High Tops"};
     public ShoeWareHouse(){
         this.shippingItems = new ArrayList<>();
     }
     public synchronized void receiveOrder(Order item){
-        while (shippingItems.size() > 20){
+        while (shippingItems.size() > MAX_BUFFER_SEIZE){
             try{
                 wait();
             } catch (InterruptedException e) {
