@@ -6,7 +6,6 @@ class MessageRepository {
 
     private String message;
     private boolean hasMessage = false;
-
     public synchronized String read() {
 
         while (!hasMessage) {
