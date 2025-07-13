@@ -1,7 +1,5 @@
 package dev.Executors;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -27,9 +25,18 @@ public class Challenge {
             return newOrder;
             }
        };
-        List<Callable<Order>> tasks = Collections.nCopies(15, orderingTask);
-        try {
-            executorService.invokeAll(tasks);
+//        List<Callable<Order>> tasks = Collections.nCopies(15, orderingTask);
+//        try {
+//            executorService.invokeAll(tasks);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+
+        try{
+            for(int j = 0; j< 15; j++){
+                Thread.sleep(random.nextInt(500, 2000));
+                executorService.submit(()->wareHouse.receiveOrder(generateOrder()));
+            }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -39,6 +46,7 @@ public class Challenge {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        wareHouse.shutDown();
     }
 
 
