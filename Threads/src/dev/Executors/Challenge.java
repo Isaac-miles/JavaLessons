@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 record Order(long orderId,String item, int qty){}
 public class Challenge {
@@ -33,7 +34,11 @@ public class Challenge {
             throw new RuntimeException(e);
         }
         executorService.shutdown();
-
+        try {
+            executorService.awaitTermination(6, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
