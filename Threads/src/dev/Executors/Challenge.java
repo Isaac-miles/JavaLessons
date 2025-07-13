@@ -1,5 +1,6 @@
 package dev.Executors;
 import java.util.Random;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -9,7 +10,16 @@ public class Challenge {
     public static void main(String[] args) {
       ShoeWareHouse wareHouse = new ShoeWareHouse();
         ExecutorService executorService = Executors.newCachedThreadPool();
-
+        Callable<Order> orderingTask = ()->{
+            Order newOrder = generateOrder();
+            try{
+                Thread.sleep(random.nextInt(500,5000));
+                wareHouse.receiveOrder(newOrder);
+            }catch (InterruptedException e){
+                throw new RuntimeException(e);
+            }
+            return newOrder;
+        };
     }
     private static Order generateOrder(){
         return new Order(
