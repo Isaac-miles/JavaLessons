@@ -28,7 +28,8 @@ public class ShoeWareHouse {
             }
         }
         shippingItems.add(item);
-        System.out.println("Incoming: "+ item);
+        System.out.println(Thread.currentThread().getName()+" Incoming: "+ item);
+        fuflillmentService.submit(this::fulfillOrder);
         notifyAll();
     }
     public synchronized Order fulfillOrder(){
