@@ -20,5 +20,6 @@ public class QueryMusic {
         datasource.setServerName(props.getProperty("serverName"));
         datasource.setPort(Integer.parseInt(props.getProperty("port")));
         datasource.setDatabaseName(props.getProperty("databaseName"));
+
     }
 }
