@@ -19,7 +19,8 @@ public class QueryMusic {
         }catch (IOException e){
             throw new RuntimeException(e);
         }
-        String query = "SELECT * FROM music.artists";
+        String albumName = "Tapestry";
+        String query = "SELECT * FROM music.albumview WHERE album_name='%s'".formatted(albumName);
 
         var datasource = new MysqlDataSource();
         datasource.setServerName(props.getProperty("serverName"));
