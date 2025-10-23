@@ -32,7 +32,9 @@ public class QueryMusic {
             System.out.println("Connection Established successfully");
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()){
-                System.out.printf("%d %s %n",resultSet.getInt(1),resultSet.getString("artist_name"));
+                System.out.printf("%d %s %s %n",resultSet.getInt("track_number"),
+                        resultSet.getString("artist_name"),
+                        resultSet.getString("song_title"));
             }
         }catch (SQLException e){
             throw  new RuntimeException(e);
