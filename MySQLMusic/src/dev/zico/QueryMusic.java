@@ -31,10 +31,17 @@ public class QueryMusic {
         ); Statement statement = connection.createStatement()){
             System.out.println("Connection Established successfully");
             ResultSet resultSet = statement.executeQuery(query);
+
+            var meta = resultSet.getMetaData();
+            for (int i = 1; i <= meta.getColumnCount(); i++) {
+                System.out.printf("%d %s %s%n", i, meta.getColumnName(i), meta.getColumnTypeName(i));
+            }
+            System.out.println("=".repeat(30));
             while (resultSet.next()){
-                System.out.printf("%d %s %s %n",resultSet.getInt("track_number"),
-                        resultSet.getString("artist_name"),
-                        resultSet.getString("song_title"));
+//                System.out.printf("%d %s %s %n",resultSet.getInt("track_number"),
+//                        resultSet.getString("artist_name"),
+//                        resultSet.getString("song_title"));
+
             }
         }catch (SQLException e){
             throw  new RuntimeException(e);
