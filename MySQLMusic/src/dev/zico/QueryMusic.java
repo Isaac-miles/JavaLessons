@@ -37,7 +37,15 @@ public class QueryMusic {
                 System.out.printf("%d %s %s%n", i, meta.getColumnName(i), meta.getColumnTypeName(i));
             }
             System.out.println("=".repeat(30));
+            for(var i = 1; i <= meta.getColumnCount(); i++) {
+                System.out.printf("%-15s", meta.getColumnName(i).toUpperCase());
+            }
+            System.out.println();
             while (resultSet.next()){
+                for(var i = 1; i <= meta.getColumnCount(); i++) {
+                    System.out.printf("%-15s", resultSet.getString(i).toLowerCase());
+                }
+                System.out.println();
 //                System.out.printf("%d %s %s %n",resultSet.getInt("track_number"),
 //                        resultSet.getString("artist_name"),
 //                        resultSet.getString("song_title"));
