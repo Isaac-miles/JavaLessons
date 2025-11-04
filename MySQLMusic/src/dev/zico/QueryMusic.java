@@ -27,10 +27,15 @@ public class QueryMusic {
         datasource.setDatabaseName(props.getProperty("databaseName"));
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter an artist Id: ");
-        int artistID = Integer.parseInt(sc.nextLine());
+//        System.out.println("Enter an artist Id: ");
+//        int artistID = Integer.parseInt(sc.nextLine());
 
 //        String query = "SELECT * FROM music.albumview WHERE album_name='%s'".formatted(artistID);
+        try {
+            datasource.setMaxRows(10);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         String query = "SELECT * FROM music.artists limit 10";
 
 //        String query =
