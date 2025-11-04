@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
+import java.util.Scanner;
 
 public class QueryMusic {
     public static void main(String[] args) {
@@ -19,13 +20,26 @@ public class QueryMusic {
         }catch (IOException e){
             throw new RuntimeException(e);
         }
-        String albumName = "Tapestry";
-        String query = "SELECT * FROM music.albumview WHERE album_name='%s'".formatted(albumName);
 
         var datasource = new MysqlDataSource();
         datasource.setServerName(props.getProperty("serverName"));
         datasource.setPort(Integer.parseInt(props.getProperty("port")));
         datasource.setDatabaseName(props.getProperty("databaseName"));
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an artist Id: ");
+        int artistID = Integer.parseInt(sc.nextLine());
+
+//        String query = "SELECT * FROM music.albumview WHERE album_name='%s'".formatted(artistID);
+        String query = "SELECT * FROM music.artists limit 10";
+
+//        String query =
+//                """
+//                 WITH RankedRows As (
+//                                    SELECT *,
+//                                    ROW_NUMBER() OVER (ORDER BY artist_id) AS row_num FROM music.artists
+//                                    )
+//                                SELECT * FROM RankedRows WHERE row_num <=10""";
 
         try(var connection = datasource.getConnection(props.getProperty("user"),System.getenv("MYSQL_PASS")
         ); Statement statement = connection.createStatement()){
@@ -33,9 +47,7 @@ public class QueryMusic {
             ResultSet resultSet = statement.executeQuery(query);
 
             var meta = resultSet.getMetaData();
-            for (int i = 1; i <= meta.getColumnCount(); i++) {
-                System.out.printf("%d %s %s%n", i, meta.getColumnName(i), meta.getColumnTypeName(i));
-            }
+
             System.out.println("=".repeat(30));
             for(var i = 1; i <= meta.getColumnCount(); i++) {
                 System.out.printf("%-15s", meta.getColumnName(i).toUpperCase());
