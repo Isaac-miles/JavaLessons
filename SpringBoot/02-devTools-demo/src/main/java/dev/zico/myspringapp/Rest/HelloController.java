@@ -9,4 +9,10 @@ public class HelloController {
     public String index() {
         return "Hello World myself";
     }
+
+    //expose a new endpoint for "workout"
+    @GetMapping("/workout")
+    public String getDailyWorkout() {
+        return "Hello World myself";
+    }
 }
