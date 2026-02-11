@@ -13,6 +13,12 @@ public class HelloController {
     //expose a new endpoint for "workout"
     @GetMapping("/workout")
     public String getDailyWorkout() {
-        return "Hello World myself";
+        return "Run a hard 5k";
+    }
+
+    // expose a new endpoint for "fortune"
+    @GetMapping("/fortune")
+    public String getFortune() {
+        return "Fortune today is your lucky day";
     }
 }
