@@ -1,5 +1,6 @@
-package dev.zico.springcoredemo;
+package dev.zico.springcoredemo.rest;
 
+import dev.zico.util.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
