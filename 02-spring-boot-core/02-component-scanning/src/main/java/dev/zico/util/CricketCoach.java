@@ -1,4 +1,4 @@
-package dev.zico.springcoredemo;
+package dev.zico.util;
 
 import org.springframework.stereotype.Component;
 
