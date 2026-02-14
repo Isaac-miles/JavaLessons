@@ -1,4 +1,4 @@
-package dev.zico.util;
+package dev.zico.springcoredemo.common;
 
 public interface Coach {
     String getDailyWorkout();
