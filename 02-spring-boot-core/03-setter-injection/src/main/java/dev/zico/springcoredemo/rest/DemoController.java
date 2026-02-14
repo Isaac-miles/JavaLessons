@@ -10,9 +10,8 @@ public class DemoController {
     //define a private field for the dependency
     private Coach myCoach;
 
-    //define a constructor for dependency injection
-    @Autowired //this is optional when you only have one constructor
-    public DemoController(Coach myCoach) {
+    @Autowired
+    public void setMyCoach(Coach myCoach) {
         this.myCoach = myCoach;
     }
 
