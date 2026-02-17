@@ -3,6 +3,7 @@ package dev.zico.springcoredemo.rest;
 import dev.zico.springcoredemo.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +13,7 @@ public class DemoController {
     private Coach myCoach;
 
     @Autowired
-     public DemoController( Coach myCoach) {
+     public DemoController(@Qualifier("cricketCoach") Coach myCoach) {
          this.myCoach = myCoach;
      }
     public void setMyCoach(Coach myCoach) {
