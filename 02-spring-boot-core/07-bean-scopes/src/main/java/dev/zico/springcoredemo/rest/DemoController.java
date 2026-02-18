@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     //define a private field for the dependency
     private Coach myCoach;
+    private Coach myCoach2;
 
     @Autowired
-     public DemoController(@Qualifier("cricketCoach") Coach myCoach) {
+     public DemoController(@Qualifier("cricketCoach") Coach myCoach, @Qualifier("cricketCoach") Coach myCoach2) {
         System.out.println("In constructor: "+ getClass().getSimpleName());
          this.myCoach = myCoach;
+         this.myCoach2 = myCoach2;
      }
     public void setMyCoach(Coach myCoach) {
         this.myCoach = myCoach;
@@ -24,5 +26,10 @@ public class DemoController {
     @GetMapping("/getDailyWorkout")
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
+    }
+
+    @GetMapping("/check")
+    public String check() {
+        return "comparing the beans; myCaoch === myCoach2 "+ (myCoach == myCoach2);
     }
 }
