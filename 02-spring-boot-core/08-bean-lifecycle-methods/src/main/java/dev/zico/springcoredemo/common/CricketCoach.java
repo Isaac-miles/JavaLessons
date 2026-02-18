@@ -1,17 +1,26 @@
 package dev.zico.springcoredemo.common;
 
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Scope;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CricketCoach implements Coach {
 
     public CricketCoach() {
         System.out.println("In constructor: "+ getClass().getSimpleName());
+    }
+
+    //    define our init method
+    @PostConstruct
+    public void init() {
+        System.out.println("In postConstruct doMyStartUpStuff(): "+ getClass().getSimpleName());
+    }
+    //    define our destroy method
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("In preDestroy doMyCleanUpStuff(): "+ getClass().getSimpleName());
     }
     @Override
     public String getDailyWorkout() {
