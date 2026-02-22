@@ -1,6 +1,6 @@
-package dev.zico.dao;
+package dev.zico.cruddemo.dao;
 
-import dev.zico.entity.Student;
+import dev.zico.cruddemo.entity.Student;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
