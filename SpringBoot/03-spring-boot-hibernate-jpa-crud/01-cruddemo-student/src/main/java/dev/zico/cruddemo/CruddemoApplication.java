@@ -1,11 +1,10 @@
 package dev.zico.cruddemo;
 
-import dev.zico.dao.StudentDAO;
-import dev.zico.entity.Student;
+import dev.zico.cruddemo.dao.StudentDAO;
+import dev.zico.cruddemo.entity.Student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
@@ -24,7 +23,7 @@ public class CruddemoApplication {
 
     private void createStudent(StudentDAO studentDAO) {
         //create the student object
-        System.out.println("Creating student " + studentDAO);
+        System.out.println("Creating student ");
         Student student = new Student("paul","Doe","paul@dev.zio");
 
         //save the student object
