@@ -1,4 +1,4 @@
-package dev.zico.entity;
+package dev.zico.cruddemo.entity;
 
 import jakarta.persistence.*;
 
