@@ -24,4 +24,19 @@ public class StudentDAOImpl implements StudentDAO {
     public void save(Student student) {
         entityManager.persist(student);
     }
+
+    @Override
+    public void findById(Integer id) {
+        entityManager.find(Student.class, id);
+    }
+
+    @Override
+    public void update(Student student) {
+
+    }
+
+    @Override
+    public void delete(Student student) {
+
+    }
 }
