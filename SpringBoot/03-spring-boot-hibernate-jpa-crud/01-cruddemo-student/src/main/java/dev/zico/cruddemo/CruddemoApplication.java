@@ -1,5 +1,7 @@
 package dev.zico.cruddemo;
 
+import dev.zico.dao.StudentDAO;
+import dev.zico.entity.Student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,9 +16,22 @@ public class CruddemoApplication {
 	}
 
     @Bean
-    public CommandLineRunner commandLineRunner(String[] args) {
+    public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return runner -> {
-            System.out.println("Loading application context");
+            createStudent(studentDAO);
         };
+    }
+
+    private void createStudent(StudentDAO studentDAO) {
+        //create the student object
+        System.out.println("Creating student " + studentDAO);
+        Student student = new Student("paul","Doe","paul@dev.zio");
+
+        //save the student object
+        System.out.println("Saved student " + student);
+        studentDAO.save(student);
+
+        //display id of the saved student
+        System.out.println("Saved student. Generated ID " + student.getId());
     }
 }
