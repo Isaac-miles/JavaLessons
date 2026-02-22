@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 @Table(name = "student")
 public class Student {
     //define fields
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -30,7 +29,6 @@ public class Student {
     }
 
     //define getters/setters
-
     public int getId() {
         return id;
     }
