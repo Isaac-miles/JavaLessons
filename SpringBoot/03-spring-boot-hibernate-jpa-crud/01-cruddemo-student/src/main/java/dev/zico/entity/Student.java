@@ -28,6 +28,7 @@ public class Student {
         this.lastName = lastName;
         this.email = email;
     }
+
     //define getters/setters
 
     public int getId() {
@@ -63,7 +64,6 @@ public class Student {
     }
 
     //define toString() method
-
 
     @Override
     public String toString() {
