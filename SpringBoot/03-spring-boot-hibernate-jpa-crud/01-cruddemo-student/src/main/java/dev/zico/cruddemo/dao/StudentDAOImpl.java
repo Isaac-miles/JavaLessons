@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 public class StudentDAOImpl implements StudentDAO {
     // define field for entity manager
@@ -28,6 +30,11 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     public Student findById(Integer id) {
        return entityManager.find(Student.class, id);
+    }
+
+    @Override
+    public List<Student> findAll() {
+        return entityManager.createNamedQuery("Student.findAll", Student.class).getResultList();
     }
 
     @Override
