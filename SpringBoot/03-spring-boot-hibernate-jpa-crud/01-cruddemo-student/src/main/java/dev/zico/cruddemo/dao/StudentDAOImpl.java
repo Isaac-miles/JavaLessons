@@ -2,6 +2,7 @@ package dev.zico.cruddemo.dao;
 
 import dev.zico.cruddemo.entity.Student;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,7 +35,21 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public List<Student> findAll() {
-        return entityManager.createNamedQuery("Student.findAll", Student.class).getResultList();
+        //creat query
+        TypedQuery<Student> query = entityManager.createQuery("FROM Student", Student.class);
+
+        //return the query result
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Student> findByLastName(String lastName) {
+        //create query
+        TypedQuery<Student> query = entityManager.createQuery("FROM Student WHERE lastName = :theData", Student.class);
+
+        //set the query
+        query.setParameter("theData", lastName);
+        return query.getResultList();
     }
 
     @Override
