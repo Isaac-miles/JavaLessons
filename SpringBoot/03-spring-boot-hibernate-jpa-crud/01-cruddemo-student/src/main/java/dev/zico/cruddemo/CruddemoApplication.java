@@ -29,8 +29,13 @@ public class CruddemoApplication {
 
           //  findByLastName(studentDAO);
 
-            updateStudent(studentDAO);
+          //  updateStudent(studentDAO);
+            
+            deleteStudent(studentDAO);
         };
+    }
+
+    private void deleteStudent(StudentDAO studentDAO) {
     }
 
     private void updateStudent(StudentDAO studentDAO) {
