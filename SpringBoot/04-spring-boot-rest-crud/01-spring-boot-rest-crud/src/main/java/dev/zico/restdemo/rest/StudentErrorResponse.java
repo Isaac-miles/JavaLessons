@@ -13,4 +13,28 @@ public class StudentErrorResponse {
         this.message = message;
         this.timestamp = timestamp;
     }
+
+    public int getStaus() {
+        return staus;
+    }
+
+    public void setStaus(int staus) {
+        this.staus = staus;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
