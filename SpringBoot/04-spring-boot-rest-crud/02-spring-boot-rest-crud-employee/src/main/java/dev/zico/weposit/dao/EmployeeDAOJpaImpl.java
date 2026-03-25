@@ -2,6 +2,7 @@ package dev.zico.weposit.dao;
 
 import dev.zico.weposit.entity.Employee;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -19,7 +20,9 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
     }
     @Override
     public List<Employee> getEmployees(){
-        List<Employee> employees = new ArrayList<>();
-        return employees;
+
+        TypedQuery<Employee> theQuery = entityManager.createNamedQuery("from Employee", Employee.class);
+
+        return theQuery.getResultList();
     };
 }
