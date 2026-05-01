@@ -60,7 +60,7 @@ public class EmployeeRestController {
             throw new RuntimeException("Employee id not allowed in request body - "+employeeId);
         }
 
-        //apply
+        //apply the partial  updates to the existing employee object
         return employeeService.saveEmployee(employee);
     }
 }
