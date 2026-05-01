@@ -48,12 +48,19 @@ public class EmployeeRestController {
     }
 
     @PatchMapping("/employee/{id}")
-    public Employee patchEmployee(@PathVariable int Id, @RequestBody Map<String, Object> payload){
-        Employee em = employeeService.getEmployee(Id);
+    public Employee patchEmployee(@PathVariable int employeeId, @RequestBody Map<String, Object> payload){
+        Employee employee = employeeService.getEmployee(Id);
 
         //throw null exception
-        if(em == null){}
+        if(employee == null){
+            throw new RuntimeException("Employee id not found - "+employeeId);
+        }
+        //throw exception if payload contains an Id
+        if(payload.containsKey("Id")){
+            throw new RuntimeException("Employee id not allowed in request body - "+employeeId);
+        }
 
+        //apply
         return employeeService.saveEmployee(employee);
     }
 }
