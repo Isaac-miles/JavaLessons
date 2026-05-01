@@ -49,7 +49,7 @@ public class EmployeeRestController {
 
     @PatchMapping("/employee/{id}")
     public Employee patchEmployee(@PathVariable int employeeId, @RequestBody Map<String, Object> payload){
-        Employee employee = employeeService.getEmployee(Id);
+        Employee employee = employeeService.getEmployee(employeeId);
 
         //throw null exception
         if(employee == null){
