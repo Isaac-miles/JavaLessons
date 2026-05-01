@@ -56,7 +56,7 @@ public class EmployeeRestController {
             throw new RuntimeException("Employee id not found - "+employeeId);
         }
         //throw exception if payload contains an Id
-        if(payload.containsKey("Id")){
+        if(payload.containsKey("id")){
             throw new RuntimeException("Employee id not allowed in request body - "+employeeId);
         }
 
