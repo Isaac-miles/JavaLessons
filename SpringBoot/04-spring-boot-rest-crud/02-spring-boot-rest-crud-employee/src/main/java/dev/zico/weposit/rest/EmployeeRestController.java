@@ -47,7 +47,7 @@ public class EmployeeRestController {
         return employeeService.saveEmployee(employee);
     }
 
-    @PatchMapping("/employee/{id}")
+    @PatchMapping("/employee/{employeeId}")
     public Employee patchEmployee(@PathVariable int employeeId, @RequestBody Map<String, Object> payload){
         Employee employee = employeeService.getEmployee(employeeId);
 
