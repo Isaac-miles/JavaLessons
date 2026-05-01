@@ -61,6 +61,7 @@ public class EmployeeRestController {
         }
 
         //apply the partial  updates to the existing employee object
-        return employeeService.saveEmployee(employee);
+        Employee patchedEmployee = jsonMapper.updateValue(employee, payload);
+        return employeeService.saveEmployee(patchedEmployee);
     }
 }
