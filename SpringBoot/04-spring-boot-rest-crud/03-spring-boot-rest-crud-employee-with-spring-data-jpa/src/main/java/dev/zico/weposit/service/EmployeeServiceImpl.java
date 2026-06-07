@@ -1,40 +1,47 @@
 package dev.zico.weposit.service;
-
+import dev.zico.weposit.dao.EmployeeRepository;
 import dev.zico.weposit.entity.Employee;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-    private EmployeeDAO employeeDAO;
+    private EmployeeRepository employeeRepository;
 
     @Autowired
-    public  EmployeeServiceImpl(EmployeeDAO employeeDAO) {
-        this.employeeDAO = employeeDAO;
+    public  EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
     }
 
     @Override
     public List<Employee> getEmployees() {
-        return employeeDAO.getEmployees();
+        return employeeRepository.findAll();
     }
 
     @Override
     public Employee getEmployee(int id) {
-        return employeeDAO.getEmployee(id);
+        Optional<Employee> result = employeeRepository.findById(id);
+        Employee employee = null;
+        if (result.isPresent()) {
+            employee = result.get();
+        }else{
+            throw new RuntimeException("Employee not found id "+ id);
+        }
+        return  employee;
     }
 
-    @Transactional
     @Override
     public Employee saveEmployee(Employee employee) {
-        return employeeDAO.saveEmployee(employee);
+        return employeeRepository.save(employee);
     }
 
-    @Transactional
+
     @Override
-    public Employee deleteEmployee(int id) {
-        return employeeDAO.deleteEmployee(id);
+    public void deleteEmployee(int id) {
+         employeeRepository.deleteById(id);
     }
 }
