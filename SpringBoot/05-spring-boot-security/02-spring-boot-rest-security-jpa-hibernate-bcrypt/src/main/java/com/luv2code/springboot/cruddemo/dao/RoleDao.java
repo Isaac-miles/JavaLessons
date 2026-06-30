@@ -4,6 +4,6 @@ import com.luv2code.springboot.cruddemo.entity.Role;
 
 public interface RoleDao {
 
-	public Role findRoleByName(String theRoleName);
+	 Role findRoleByName(String theRoleName);
 	
 }
