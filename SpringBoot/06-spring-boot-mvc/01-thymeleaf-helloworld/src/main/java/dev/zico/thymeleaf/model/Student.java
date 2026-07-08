@@ -1,5 +1,6 @@
 package dev.zico.thymeleaf.model;
 
+import java.util.List;
 import java.util.UUID;
 
 public class Student {
@@ -7,6 +8,8 @@ public class Student {
     private String firstName;
     private String lastName;
     private String country;
+    private String language;
+    private List<String> system;
 
     public Student() {}
 
@@ -14,6 +17,7 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.country = country;
+
     }
 
     public String getId() {
@@ -46,6 +50,22 @@ public class Student {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public List<String> getSystem() {
+        return system;
+    }
+
+    public void setSystem(List<String> system) {
+        this.system = system;
     }
 
     @Override
