@@ -18,6 +18,21 @@
    </select>
 
     <br><br>
+    Favorite Programming Language
+    <input type="radio" th:field="*{language}"
+           th:each="tempLanguage : ${languages}"
+           th:value="${tempLanguage}"
+           th:text="${tempLanguage}" />
+
+    <br><br>
+    Operating System
+    <input type="checkbox" th:field="*{system}"
+           th:each="tempSys : ${systems}"
+           th:value="${tempSys}"
+           th:text="${tempSys}" />
+
+
+    <br><br>
     <input type="submit" value="Submit">
 </form>
 </body>
