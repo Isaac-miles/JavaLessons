@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer Registration Form</title>
+</head>
+<style>
+    .success {color: green}
+</style>
+<body>
+<li>Customer Registration Successfull</li>
+<br/><br>
+
+  Customer is confirmed: <span th:text="${customerAtt.firstName+ ' ' + customerAtt.lastName}" class="success"></span>
+<br><br>
+Free pass: <span th:text="${customerAtt.freePass" class="success"></span>
+
+
+
+</form>
+</body>
+</html>
