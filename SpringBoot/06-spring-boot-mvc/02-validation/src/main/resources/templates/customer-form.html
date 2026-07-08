@@ -12,12 +12,24 @@
     <li>Fill out the form. </li>
     <br/><br>
 
-  <form th:action="@{/processForm}" th:object="customerAtt" method="post">
-      First Name: <input type="text" th:field="*{firstName}"><br><br>
+  <form th:action="@{/processForm}" th:object="${customerAtt}" method="post">
+      First Name: <label>
+      <input type="text" th:field="*{firstName}">
+  </label><br><br>
 
-      Last Name (*):  <input type="text" th:field="*{lastName}"><br><br>
+      Last Name (*): <label>
+      <input type="text" th:field="*{lastName}">
       <!-- error messages     -->
-      <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error" />
+      <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></span>
+  </label><br><br>
+
+      Free pass: <label>
+      <input type="number" th:field="*{freePass}">
+      <!-- error messages     -->
+      <span th:if="${#fields.hasErrors('freePass')}" th:errors="*{freePass}" class="error"></span>
+  </label>
+      <br><br>
+
 
       <input type="submit" value="Submit">
   </form>
