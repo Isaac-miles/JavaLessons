@@ -1,9 +1,6 @@
 package devzico;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class Customer {
     private  String firstName;
@@ -11,12 +8,27 @@ public class Customer {
     @Size(min = 1, message = "is required")
     private String lastName;
 
-    @Min(value = 0,message = "must be greater than 0")
+    @Min(value = 1,message = "must be greater than 0")
     @Max(value = 10,message = "must be less than 10")
-    private int freePass;
+    private int freePasses;
 
-    public int getFreePass() {
-        return freePass;
+    @Pattern(regexp = "^[a-zA-Z0-9]{5}",message = "only 5 chars/digits")
+    private String postalCode;
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public int getFreePasses() {
+        return freePasses;
+    }
+
+    public void setFreePasses(int freePasses) {
+        this.freePasses = freePasses;
     }
 
     public String getFirstName() {
