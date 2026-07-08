@@ -14,9 +14,10 @@
 
   Customer is confirmed: <span th:text="${customerAtt.firstName+ ' ' + customerAtt.lastName}" class="success"></span>
 <br><br>
-Free pass: <span th:text="${customerAtt.freePass" class="success"></span>
+Free pass: <span th:text="${customerAtt.freePasses}" class="success"></span>
 
-
+<br><br>
+postal Code: <span th:text="${customerAtt.postalCode}" class="success"></span>
 
 </form>
 </body>
