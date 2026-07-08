@@ -9,6 +9,15 @@
  The student is confirmed: <span th:text="${student.firstName} + ' ' + ${student.lastName}"/>
 <br><br>
   Country: <span th:text="${student.country}"/>
+<br><br>
+
+Language: <span th:text="${student.language}"/>
+<br><br>
+Systems: <ul>
+          <li th:each="tempSys : ${student.system}" th:text="${tempSys}" />
+        </ul>
+<br><br>
+ID: <span th:text="${student.id}"/>
 <br>
 </body>
 </html>
