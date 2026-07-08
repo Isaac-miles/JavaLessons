@@ -15,18 +15,24 @@ public class StudentController {
     @Value("${countries}")
     private List<String> countries;
 
+    @Value("${languages}")
+    private List<String> languages;
+
+    @Value("${systems}")
+    private List<String> systems;
+
     @GetMapping("/showStudentForm")
     public String showForm(Model model) {
         Student theStudent = new Student();
         model.addAttribute("student", theStudent);
         model.addAttribute("countries", countries);
+        model.addAttribute("languages", languages);
+        model.addAttribute("systems", systems);
         return "studentForm";
     }
 
     @PostMapping("/processStudentForm")
     public String processStudentForm(@ModelAttribute("student") Student theStudent) {
-
-        System.out.println("Student form posted "+theStudent.getFirstName()+" "+theStudent.getLastName());
 
         return "student-confirmation";
 //        return "redirect:/showStudentForm";
