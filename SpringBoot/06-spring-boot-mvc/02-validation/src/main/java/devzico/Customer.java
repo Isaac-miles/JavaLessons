@@ -1,5 +1,6 @@
 package devzico;
 
+import devzico.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -10,7 +11,21 @@ public class Customer {
 
     @Min(value = 1,message = "must be greater than 0")
     @Max(value = 10,message = "must be less than 10")
-    private int freePasses;
+    @NotNull(message = "field is required")
+    private Integer freePasses;
+
+    @CourseCode(value = "UPS", message = "must start with UPS!!")
+    private String courseCode;
+
+    public String getcourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
+
+    @Min(value = 1,message = "must be greater than 0")
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}",message = "only 5 chars/digits")
     private String postalCode;
@@ -23,11 +38,11 @@ public class Customer {
         this.postalCode = postalCode;
     }
 
-    public int getFreePasses() {
+    public Integer getFreePasses() {
         return freePasses;
     }
 
-    public void setFreePasses(int freePasses) {
+    public void setFreePasses(Integer freePasses) {
         this.freePasses = freePasses;
     }
 
