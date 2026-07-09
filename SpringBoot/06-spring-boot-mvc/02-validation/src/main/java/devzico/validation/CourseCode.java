@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CourseCode {
     public String message() default "must start with zico";
-    public String value() default "Zico";
+    public String value() default "miles";
     public Class<?>[] groups() default {};
 
     public Class<? extends Payload>[] payload() default {};
