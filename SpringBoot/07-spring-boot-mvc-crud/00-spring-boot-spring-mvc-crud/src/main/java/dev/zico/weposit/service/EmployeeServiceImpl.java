@@ -6,7 +6,9 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -19,7 +21,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> getEmployees() {
-        return employeeDAO.getEmployees();
+        Comparator<Employee> sortByLastname = Comparator.comparing(Employee::getLastName).reversed();
+        return employeeDAO.getEmployees()
+                .stream()
+                .sorted(Comparator.comparing(e -> e.getLastName().toLowerCase()))
+                .collect(Collectors.toList());
     }
 
     @Override
