@@ -16,19 +16,30 @@
         <table class="table table-bordered table-hover table-striped">
             <thead  class="table-dark">
              <tr>
-                 <th scope="col">ID</th>
+<!--                 <th scope="col">ID</th>-->
                  <th scope="col">First Name</th>
                  <th scope="col">Last Name</th>
                  <th scope="col">Email</th>
+                 <th scope="col">Action</th>
+
              </tr>
             </thead>
 
             <tbody>
              <tr th:each="tempEmployee : ${employees}">
-                 <td th:text="${tempEmployee.id}"></td>
+<!--                 <td th:text="${tempEmployee.id}"></td>-->
                  <td th:text="${tempEmployee.firstName}"></td>
                  <td th:text="${tempEmployee.lastName}"></td>
                  <td th:text="${tempEmployee.email}"></td>
+                 <td>
+                     <a th:href="@{/employees/updateForm(employeeId=${tempEmployee.id})}" class="btn btn-info btn-sm m-2">
+                         Update
+                     </a>
+                     <a th:href="@{/employees/deleteEmp(employeeId=${tempEmployee.id})}" class="btn btn-danger btn-sm"
+                       onClick="return confirm('Are you sure?')">
+                         Delete
+                     </a>
+                 </td>
              </tr>
             </tbody>
         </table>
