@@ -19,12 +19,12 @@
     </p>
     <hr>
 
-    <p>
+    <p sec:authorize="hasRole('MANAGER')">
         <a th:href="@{/leaders}">Leadership board</a>
         only for board members
     </p>
 
-    <p>
+    <p sec:authorize="hasRole('ADMIN')">
         <a th:href="@{/systems}">Systems Admin</a>
         only for Admin
     </p>
