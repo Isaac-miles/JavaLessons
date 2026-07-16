@@ -1,6 +1,7 @@
 package devzico.dao;
 
 import devzico.entity.Instructor;
+import devzico.entity.InstructorDetail;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -36,5 +37,10 @@ public class AppDAOImpl implements AppDAO {
     public void delete(int id) {
         Instructor findById = em.find(Instructor.class, id);
         em.remove(findById);
+    }
+
+    @Override
+    public InstructorDetail findInstructorDetailById(int id) {
+        return em.find(InstructorDetail.class, id);
     }
 }
