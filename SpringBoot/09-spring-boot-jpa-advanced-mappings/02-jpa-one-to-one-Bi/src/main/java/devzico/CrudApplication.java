@@ -16,13 +16,22 @@ public class CrudApplication {
 	}
 
     @Bean
-    public CommandLineRunner commandLineRunner(AppDAO appDAO) {
+    public CommandLineRunner commandLineRunner(AppDAO appDAO)
+    {
         return runer->{
 //            createInstructor(appDAO);
 //            findInstructor(appDAO);
 //            removeInstructor(appDAO);
-              findInstructorDetail(appDAO);
+//            findInstructorDetail(appDAO);
+             deleteInstructorDetail(appDAO);
         };
+    }
+
+    private void deleteInstructorDetail(AppDAO appDAO) {
+        int id = 3;
+        System.out.println("Deleting instructor detail with id " + id);
+        appDAO.deleteInstructorDetailById(id);
+        System.out.println("Deleted instructor detail with id " + id);
     }
 
     private void findInstructorDetail(AppDAO appDAO) {
@@ -54,10 +63,10 @@ public class CrudApplication {
     }
 
     private void createInstructor(AppDAO appDAO) {
-//        Instructor tempInstructor = new Instructor("Miles","Omokafe","miles@hayoo.com");
-        Instructor tempInstructor = new Instructor("Zico","avies","zico@hayoo.com");
+        Instructor tempInstructor = new Instructor("Miles","Omokafe","miles@hayoo.com");
+//        Instructor tempInstructor = new Instructor("Zico","avies","zico@hayoo.com");
 
-        InstructorDetail tempInstructorDetail = new InstructorDetail("www.miles/home","music");
+        InstructorDetail tempInstructorDetail = new InstructorDetail("www.miles/home","Dancing");
         tempInstructor.setInstructorDetail(tempInstructorDetail);
         System.out.println("Instructor created "+ tempInstructor);
         appDAO.save(tempInstructor);
