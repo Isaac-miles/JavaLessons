@@ -20,8 +20,17 @@ public class CrudApplication {
         return runer->{
 //            createInstructor(appDAO);
 //            findInstructor(appDAO);
-            removeInstructor(appDAO);
+//            removeInstructor(appDAO);
+              findInstructorDetail(appDAO);
         };
+    }
+
+    private void findInstructorDetail(AppDAO appDAO) {
+        int id = 2;
+        System.out.println("Finding instructor detail by id " + id);
+        var instructorDetail = appDAO.findInstructorDetailById(id);
+        System.out.println("Instructor Detail found "+ instructorDetail );
+        System.out.println("associate details "+ instructorDetail.getInstructor());
     }
 
     private void removeInstructor(AppDAO appDAO) {
