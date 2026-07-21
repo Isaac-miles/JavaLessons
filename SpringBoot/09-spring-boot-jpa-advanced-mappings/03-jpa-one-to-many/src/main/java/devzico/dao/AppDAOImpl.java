@@ -1,11 +1,15 @@
 package devzico.dao;
 
+import devzico.entity.Course;
 import devzico.entity.Instructor;
 import devzico.entity.InstructorDetail;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Repository
 public class AppDAOImpl implements AppDAO {
@@ -52,5 +56,12 @@ public class AppDAOImpl implements AppDAO {
         //break bidirectional link
         tempInstructorDetail.getInstructor().setInstructorDetail(null);
         em.remove(tempInstructorDetail);
+    }
+
+    @Override
+    public List<Course> findCoursesByInstructorId(int id) {
+        TypedQuery<Course> query = em.createQuery("from Course where instructor.id = :instructorId", Course.class);
+        query.setParameter("instructorId", id);
+        return query.getResultList();
     }
 }
