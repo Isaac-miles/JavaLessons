@@ -3,7 +3,7 @@ package devzico.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Course")
+@Table(name = "course")
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +15,9 @@ public class Course {
     @ManyToOne(cascade ={CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST})
     @JoinColumn(name = "instructor_id")
     private Instructor instructor;
+
+    public Course() {
+    }
 
     public Course(String title) {
         this.title = title;
