@@ -1,12 +1,15 @@
 package devzico;
 
 import devzico.dao.AppDAO;
+import devzico.entity.Course;
 import devzico.entity.Instructor;
 import devzico.entity.InstructorDetail;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import java.util.List;
 
 @SpringBootApplication
 public class CrudApplication {
@@ -23,8 +26,50 @@ public class CrudApplication {
 //            findInstructor(appDAO);
 //            removeInstructor(appDAO);
 //            findInstructorDetail(appDAO);
-             deleteInstructorDetail(appDAO);
+//             deleteInstructorDetail(appDAO);
+//            createInstructorWithCourses(appDAO);
+//            findInstructorWithCourses(appDAO);
+              findCoursesForInstructor(appDAO);
         };
+    }
+
+    private void findCoursesForInstructor(AppDAO appDAO) {
+        int id = 1;
+        System.out.println("Finding instructor with courses by id " + id);
+        Instructor instructor = appDAO.findById(id);
+        System.out.println("Found instructor with courses by id " + instructor);
+        List<Course> courses = appDAO.findCoursesByInstructorId(instructor.getId());
+        instructor.setCourses(courses);
+        System.out.println("Found instructor with courses by id " + instructor.getCourses());
+    }
+
+    private void findInstructorWithCourses(AppDAO appDAO) {
+        int id = 1;
+        System.out.println("Finding instructor with courses by id " + id);
+        Instructor instructor = appDAO.findById(id);
+        System.out.println("Found instructor with courses by id " + instructor);
+        System.out.println("Associated courses: " + instructor.getCourses());
+
+    }
+
+    private void createInstructorWithCourses(AppDAO appDAO) {
+        Instructor tempInstructor = new Instructor("Nonso","Kone","nonso@hayoo.com");
+        InstructorDetail tempInstructorDetail = new InstructorDetail("www.nonso/foodie","Talking");
+        tempInstructor.setInstructorDetail(tempInstructorDetail);
+
+        Course pyth = new Course("Python Tutorials");
+        Course java = new Course("Java Tutorials");
+        tempInstructor.addCourse(pyth);
+        tempInstructor.addCourse(java);
+
+        //save the instructor
+        //Note this will also save the course
+        //Because of the CascadeType.PERSIST
+        System.out.println("Instructor added "+tempInstructor);
+        System.out.println("-".repeat(30));
+        System.out.println("The Courses: "+tempInstructor.getCourses());
+        appDAO.save(tempInstructor);
+        System.out.println("Done");
     }
 
     private void deleteInstructorDetail(AppDAO appDAO) {
