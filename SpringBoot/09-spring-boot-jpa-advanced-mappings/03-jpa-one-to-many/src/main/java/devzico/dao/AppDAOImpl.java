@@ -64,4 +64,9 @@ public class AppDAOImpl implements AppDAO {
         query.setParameter("instructorId", id);
         return query.getResultList();
     }
+
+    @Override
+    public Instructor findInstructorByIdJoinFetch(int id) {
+        return null;
+    }
 }
