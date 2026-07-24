@@ -4,6 +4,7 @@ import devzico.dao.AppDAO;
 import devzico.entity.Course;
 import devzico.entity.Instructor;
 import devzico.entity.InstructorDetail;
+import devzico.entity.Review;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,8 +23,19 @@ public class CrudApplication {
     public CommandLineRunner commandLineRunner(AppDAO appDAO)
     {
         return runer->{
-
+            createCourseAndReviews(appDAO);
         };
+    }
+
+    private void createCourseAndReviews(AppDAO appDAO) {
+        var tempCourse = new Course("Consistency");
+        tempCourse.addReview(new Review("Key to successful living"));
+        tempCourse.addReview(new Review("Consistency pays in life"));
+        tempCourse.addReview(new Review("Live like you mean it"));
+
+//        save the course... and leverage the cascade all
+        appDAO.saveCourse(tempCourse);
+        System.out.println("Course created successfully "+ tempCourse.getReviews());
     }
 
     private void deleteCourseById(AppDAO appDAO) {
