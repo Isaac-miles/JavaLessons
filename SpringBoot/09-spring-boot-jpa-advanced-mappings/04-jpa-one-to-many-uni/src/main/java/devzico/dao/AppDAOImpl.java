@@ -109,7 +109,7 @@ public class AppDAOImpl implements AppDAO {
     public Course findCourseAndReviews(int id) {
         TypedQuery<Course> query = em.createQuery(
                 "select c from Course c "
-                + "JOIN FETCH c.reviews"
+                + "JOIN FETCH c.reviews "
                 + "where c.id = :data ", Course.class);
         query.setParameter("data", id);
         return (Course) query.getSingleResult();
