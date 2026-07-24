@@ -88,4 +88,15 @@ public class AppDAOImpl implements AppDAO {
         return em.find(Course.class, id);
     }
 
+    @Override
+    @Transactional
+    public void deleteInstructor(int id) {
+        var tempInstructor = em.find(Instructor.class, id);
+        List<Course> courses = tempInstructor.getCourses();
+        for (Course course : courses) {
+            course.setInstructor(null);
+        }
+        em.remove(tempInstructor);
+    }
+
 }
