@@ -37,6 +37,12 @@ public class CrudApplication {
         };
     }
 
+    private void deleteInstructor(AppDAO appDAO) {
+        int id = 1;
+        appDAO.delete(id);
+        System.out.println("Instructor deleted");
+    }
+
     private void updateCourse(AppDAO appDAO) {
         int id = 10;
         var tempCourse = appDAO.findCourseById(id);
