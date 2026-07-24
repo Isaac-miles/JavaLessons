@@ -104,4 +104,14 @@ public class AppDAOImpl implements AppDAO {
     public void saveCourse(Course course) {
         em.persist(course);
     }
+
+    @Override
+    public Course findCourseAndReviews(int id) {
+        TypedQuery<Course> query = em.createQuery(
+                "select c from Course c "
+                + "JOIN FETCH c.reviews"
+                + "where c.id = :data ", Course.class);
+        query.setParameter("data", id);
+        return (Course) query.getSingleResult();
+    }
 }
