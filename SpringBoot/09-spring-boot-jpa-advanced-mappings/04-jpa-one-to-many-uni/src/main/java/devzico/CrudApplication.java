@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
@@ -23,8 +24,16 @@ public class CrudApplication {
     public CommandLineRunner commandLineRunner(AppDAO appDAO)
     {
         return runer->{
-            createCourseAndReviews(appDAO);
+//            createCourseAndReviews(appDAO);
+            retrieveCourseAndReviews(appDAO);
         };
+    }
+
+    private void retrieveCourseAndReviews(AppDAO appDAO) {
+        int id = 1;
+        Course course = appDAO.findCourseAndReviews(id);
+        System.out.println("Retrieved Course: " + course);
+        System.out.println("Retrieved Course and Reviews: " + course.getReviews());
     }
 
     private void createCourseAndReviews(AppDAO appDAO) {
