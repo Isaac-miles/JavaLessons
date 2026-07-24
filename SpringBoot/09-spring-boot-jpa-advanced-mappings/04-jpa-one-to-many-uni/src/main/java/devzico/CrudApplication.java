@@ -30,7 +30,7 @@ public class CrudApplication {
     }
 
     private void retrieveCourseAndReviews(AppDAO appDAO) {
-        int id = 1;
+        int id = 10;
         Course course = appDAO.findCourseAndReviews(id);
         System.out.println("Retrieved Course: " + course);
         System.out.println("Retrieved Course and Reviews: " + course.getReviews());
