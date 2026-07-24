@@ -33,7 +33,7 @@ public class AppDAOImpl implements AppDAO {
     @Override
     @Transactional
     public void update(Instructor instructor) {
-        
+        em.merge(instructor);
     }
 
     @Override
@@ -76,4 +76,16 @@ public class AppDAOImpl implements AppDAO {
         query.setParameter("instructorId", id);
         return (Instructor) query.getSingleResult();
     }
+
+    @Override
+    @Transactional
+    public void updateCourse(Course course) {
+        em.merge(course);
+    }
+
+    @Override
+    public Course findCourseById(int id) {
+        return em.find(Course.class, id);
+    }
+
 }
