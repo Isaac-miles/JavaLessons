@@ -25,8 +25,15 @@ public class CrudApplication {
     {
         return runer->{
 //            createCourseAndReviews(appDAO);
-            retrieveCourseAndReviews(appDAO);
+//            retrieveCourseAndReviews(appDAO);
+            deleteCourseAndReviews(appDAO);
         };
+    }
+
+    private void deleteCourseAndReviews(AppDAO appDAO) {
+        int id = 10;
+        appDAO.deleteCourse(id);
+        System.out.println("Deleted course with id " + id);
     }
 
     private void retrieveCourseAndReviews(AppDAO appDAO) {
@@ -37,10 +44,10 @@ public class CrudApplication {
     }
 
     private void createCourseAndReviews(AppDAO appDAO) {
-        var tempCourse = new Course("Consistency");
-        tempCourse.addReview(new Review("Key to successful living"));
-        tempCourse.addReview(new Review("Consistency pays in life"));
-        tempCourse.addReview(new Review("Live like you mean it"));
+        var tempCourse = new Course("Emergency");
+        tempCourse.addReview(new Review("health tips"));
+        tempCourse.addReview(new Review("First Aid"));
+        tempCourse.addReview(new Review("Why always slow"));
 
 //        save the course... and leverage the cascade all
         appDAO.saveCourse(tempCourse);
