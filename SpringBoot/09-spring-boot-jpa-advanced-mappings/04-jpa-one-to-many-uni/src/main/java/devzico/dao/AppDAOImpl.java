@@ -98,4 +98,10 @@ public class AppDAOImpl implements AppDAO {
         var course = em.find(Course.class, id);
         em.remove(course);
     }
+
+    @Override
+    @Transactional
+    public void saveCourse(Course course) {
+        em.persist(course);
+    }
 }
