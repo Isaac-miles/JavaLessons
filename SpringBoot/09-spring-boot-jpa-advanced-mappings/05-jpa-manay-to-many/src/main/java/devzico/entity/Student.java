@@ -2,6 +2,9 @@ package devzico.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="student")
 public class Student {
@@ -17,6 +20,9 @@ public class Student {
 
     @Column(name="email")
     private String email;
+
+    @ManyToMany(mappedBy = "students",fetch = FetchType.LAZY,cascade ={CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST})
+    private List<Course> courses;
 
     public Student() {
     }
@@ -58,6 +64,22 @@ public class Student {
         this.email = email;
     }
 
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
+    //convenience method
+    public void addCourse(Course course) {
+        if(this.courses == null) {
+            this.courses = new ArrayList<>();
+        }
+        this.courses.add(course);
+        course.addStudent(this);
+    }
     @Override
     public String toString() {
         return "Student{" +
