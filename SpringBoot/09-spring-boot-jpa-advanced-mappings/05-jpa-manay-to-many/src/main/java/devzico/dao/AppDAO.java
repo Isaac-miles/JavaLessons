@@ -3,6 +3,7 @@ package devzico.dao;
 import devzico.entity.Course;
 import devzico.entity.Instructor;
 import devzico.entity.InstructorDetail;
+import devzico.entity.Student;
 
 import java.util.List;
 
@@ -21,4 +22,8 @@ public interface AppDAO {
     void deleteCourse(int id);
     void saveCourse(Course course);
     Course findCourseAndReviews(int id);
+    Course findCourseAndStudentsByCourseId(int id);
+    Student findStudentAndCoursesById(int id);
+    void updateStudent(Student student);
+    void deleteStudent(int id);
 }
