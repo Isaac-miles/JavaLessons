@@ -1,10 +1,7 @@
 package devzico;
 
 import devzico.dao.AppDAO;
-import devzico.entity.Course;
-import devzico.entity.Instructor;
-import devzico.entity.InstructorDetail;
-import devzico.entity.Review;
+import devzico.entity.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,8 +21,60 @@ public class CrudApplication {
     public CommandLineRunner commandLineRunner(AppDAO appDAO)
     {
         return runer->{
-
+//            createCourseAndStudents(appDAO);
+//            findCourseAndStudents(appDAO);
+//            findStudentAndCourses(appDAO);
+//            addMoreCoursesForStudents(appDAO);
+//            deleteCourseById(appDAO);
+            deleteStudent(appDAO);
         };
+    }
+
+    private void deleteStudent(AppDAO appDAO) {
+        int id = 4;
+        appDAO.deleteStudent(id);
+        System.out.println("Deleted student with id " + id);
+    }
+
+    private void addMoreCoursesForStudents(AppDAO appDAO) {
+        int id = 4;
+        Student tempStudent = appDAO.findStudentAndCoursesById(id);
+        Course tc1 = new Course("C# development");
+        Course tc = new Course("Java development");
+        tempStudent.addCourse(tc1);
+        tempStudent.addCourse(tc);
+        appDAO.updateStudent(tempStudent);
+
+        System.out.println("Course added successfully "+ tempStudent);
+        System.out.println("Course added successfully "+ tempStudent.getCourses());
+    }
+
+    private void findStudentAndCourses(AppDAO appDAO) {
+        int id = 3;
+        var student = appDAO.findStudentAndCoursesById(id);
+        System.out.println("Student ID: " + student);
+        System.out.println("Student Courses: " + student.getCourses());
+    }
+
+    private void findCourseAndStudents(AppDAO appDAO) {
+        int id = 11;
+        var tc = appDAO.findCourseAndStudentsByCourseId(id);
+        System.out.println("findCourseAndStudentsByCourseId: " + tc);
+        System.out.println("associating students "+ tc.getStudents());
+    }
+
+    private void createCourseAndStudents(AppDAO appDAO) {
+        Course tempCourse = new Course("Hibernate Java Persistence");
+        Student tempStudent = new Student("Joe","Isaac","joe@email.com");
+        Student tempStudent1 = new Student("Mile","Two","two@email.com");
+
+        tempCourse.addStudent(tempStudent);
+        tempCourse.addStudent(tempStudent1);
+
+        System.out.println("Saving courses ... "+tempCourse);
+        System.out.println("Assigning students ... "+tempCourse.getStudents());
+        appDAO.saveCourse(tempCourse);
+
     }
 
     private void deleteCourseAndReviews(AppDAO appDAO) {
@@ -53,7 +102,7 @@ public class CrudApplication {
     }
 
     private void deleteCourseById(AppDAO appDAO) {
-        int id = 10;
+        int id = 12;
         appDAO.deleteCourse(id);
         System.out.println("Course with id " + id + " deleted");
     }
