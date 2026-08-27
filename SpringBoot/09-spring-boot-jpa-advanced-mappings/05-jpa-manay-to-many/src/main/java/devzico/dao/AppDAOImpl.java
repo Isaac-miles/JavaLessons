@@ -3,6 +3,7 @@ package devzico.dao;
 import devzico.entity.Course;
 import devzico.entity.Instructor;
 import devzico.entity.InstructorDetail;
+import devzico.entity.Student;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -113,5 +114,46 @@ public class AppDAOImpl implements AppDAO {
                 + "where c.id = :data ", Course.class);
         query.setParameter("data", id);
         return (Course) query.getSingleResult();
+    }
+
+    @Override
+    public Course findCourseAndStudentsByCourseId(int id) {
+        TypedQuery<Course> query = em.createQuery(
+                "select c from Course c "
+                        + "JOIN FETCH c.students "
+                        + "where c.id = :data ", Course.class);
+        query.setParameter("data", id);
+
+        return (Course) query.getSingleResult();
+    }
+
+    @Override
+    public Student findStudentAndCoursesById(int id) {
+        TypedQuery<Student> query = em.createQuery(
+                "select s from Student s "
+                        + "JOIN FETCH s.courses "
+                        + "where s.id = :data ", Student.class);
+        query.setParameter("data", id);
+
+        return (Student) query.getSingleResult();
+    }
+
+    @Override
+    @Transactional
+    public void updateStudent(Student student) {
+        em.merge(student);
+    }
+
+    @Override
+    @Transactional
+    public void deleteStudent(int id) {
+        Student tempStudent = em.find(Student.class, id);
+        if (tempStudent != null) {
+            List<Course> courses = tempStudent.getCourses();
+            for (Course course : courses) {
+                course.getStudents().remove(tempStudent);
+            }
+            em.remove(tempStudent);
+        }
     }
 }
