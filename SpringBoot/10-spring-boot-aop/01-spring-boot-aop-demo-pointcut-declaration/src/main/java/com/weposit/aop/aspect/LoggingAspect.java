@@ -8,9 +8,6 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class LoggingAspect {
-    //this is where we add all of our related advice for logging
-    //@Before("execution(public void addAccount())")
-    //@Before("execution(public void add*())")
 
     @Pointcut("execution(* com.weposit.aop.dao.*.*(..))")
     public void forDaoPackage() {}
@@ -18,5 +15,10 @@ public class LoggingAspect {
     @Before("forDaoPackage()")
     public void beforeAddAccount(){
         System.out.println("\n====>>> Executing @Before  advice on addAccount()");
+    }
+
+    @Before("forDaoPackage()")
+    public void performAnalytics(){
+        System.out.println("\n====>>> Performing API Analytics");
     }
 }
