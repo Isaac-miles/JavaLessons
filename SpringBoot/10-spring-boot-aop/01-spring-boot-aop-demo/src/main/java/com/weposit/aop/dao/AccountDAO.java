@@ -1,5 +1,6 @@
 package com.weposit.aop.dao;
 
 public interface AccountDAO {
-    void addAccount();
+    void addAccount(Account account, boolean vip);
+    boolean doWork();
 }
