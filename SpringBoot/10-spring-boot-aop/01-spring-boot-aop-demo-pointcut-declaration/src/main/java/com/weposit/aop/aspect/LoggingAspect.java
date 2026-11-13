@@ -21,7 +21,7 @@ public class LoggingAspect {
     public void setterMethod() {}
 
     //create a pointcut: include package ... exclude getter/setter
-    @Pointcut("forDaoPackage() && !(getterMethod() || setterMethod()")
+    @Pointcut("forDaoPackage() && !(getterMethod() || setterMethod())")
     private void forDaoPackageMethodNoGetterSetter() {}
 
     @Before("forDaoPackageMethodNoGetterSetter()")
