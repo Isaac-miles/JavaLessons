@@ -1,5 +1,6 @@
 package com.weposit.aop;
 
+import com.weposit.aop.dao.Account;
 import com.weposit.aop.dao.AccountDAO;
 import com.weposit.aop.dao.MembershipDAO;
 import org.springframework.boot.CommandLineRunner;
@@ -23,8 +24,10 @@ public class AopApplication {
     }
 
     public void demoTheBeforeAdvice(AccountDAO accountDAO, MembershipDAO membershipDAO) {
-        accountDAO.addAccount();
+        accountDAO.addAccount(new Account(), true);
+        accountDAO.doWork();
         //call addAccount from membership
         membershipDAO.addAccount();
+        membershipDAO.addMember();
     }
 }
