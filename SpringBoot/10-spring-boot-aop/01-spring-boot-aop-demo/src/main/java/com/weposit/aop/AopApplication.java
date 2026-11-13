@@ -1,6 +1,7 @@
 package com.weposit.aop;
 
 import com.weposit.aop.dao.AccountDAO;
+import com.weposit.aop.dao.MembershipDAO;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,14 +16,15 @@ public class AopApplication {
 	}
 
     @Bean
-    public CommandLineRunner commandLineRunner(AccountDAO accountDAO) {
+    public CommandLineRunner commandLineRunner(AccountDAO accountDAO, MembershipDAO membershipDAO) {
         return runner->{
-            demoTheBeforeAdvice(accountDAO);
+            demoTheBeforeAdvice(accountDAO,membershipDAO);
         };
     }
 
-    public void demoTheBeforeAdvice(AccountDAO accountDAO) {
-
+    public void demoTheBeforeAdvice(AccountDAO accountDAO, MembershipDAO membershipDAO) {
         accountDAO.addAccount();
+        //call addAccount from membership
+        membershipDAO.addAccount();
     }
 }
