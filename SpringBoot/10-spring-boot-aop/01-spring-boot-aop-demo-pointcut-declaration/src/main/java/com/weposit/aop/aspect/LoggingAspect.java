@@ -2,6 +2,7 @@ package com.weposit.aop.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -11,7 +12,10 @@ public class LoggingAspect {
     //@Before("execution(public void addAccount())")
     //@Before("execution(public void add*())")
 
-    @Before("execution(* com.weposit.aop.dao.*.*(..))")
+    @Pointcut("execution(* com.weposit.aop.dao.*.*(..))")
+    public void forDaoPackage() {}
+
+    @Before("forDaoPackage()")
     public void beforeAddAccount(){
         System.out.println("\n====>>> Executing @Before  advice on addAccount()");
     }
