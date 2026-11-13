@@ -26,6 +26,15 @@ public class AopApplication {
     public void demoTheBeforeAdvice(AccountDAO accountDAO, MembershipDAO membershipDAO) {
         accountDAO.addAccount(new Account(), true);
         accountDAO.doWork();
+
+        //CALL THE ACCOUNT GETTER/SETTER
+        accountDAO.setName("January");
+        accountDAO.setSocialSecurityNumber("socialSecurityNumber");
+
+        String name=accountDAO.getName();
+        String socialSecurityNumber=accountDAO.getSocialSecurityNumber();
+
+
         //call addAccount from membership
         membershipDAO.addAccount();
         membershipDAO.addMember();
